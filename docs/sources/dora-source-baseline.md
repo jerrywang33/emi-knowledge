@@ -174,3 +174,43 @@ Article 17 已识别的来源主题包括安全要求验证、批准与申请或
 - 每次发布前重新检查来源状态、勘误、替代关系和链接。
 
 本基线没有收录法规全文，没有形成机构适用性结论，也没有把 MFSA 说明材料提升为欧盟法律要求。知识 Schema、稳定来源 ID 和机器可读文件在 Roadmap 第 4 步设计。
+
+## 9. 待复核来源增量
+
+| 项目 | 值 |
+| --- | --- |
+| 增量标识 | `DORA-SOURCES-DELTA-2026-08-31-01` |
+| 状态 | 待人工复核，尚未并入 `DORA-SOURCES-2026-08-31` |
+| 获取日期 | 2026-08-31 |
+| 发现步骤 | Roadmap 第 3 步，DORA 全景目录 |
+| 增量原因 | 当前 FIR/03 直接引用 DORA 和 amended EBA/GL/2019/04，需要补齐 Malta 持续性规则及其上游 EBA 指引 |
+
+本增量保留第 2 步已确认基线的审查记录。以下来源完成复核前，只能作为 DORA 全景目录的待确认输入。
+
+### 9.1 EBA/GL/2025/02
+
+- **正式名称**：[Guidelines amending Guidelines EBA/GL/2019/04 on ICT and security risk management](https://www.eba.europa.eu/sites/default/files/2025-02/23684f95-f669-4852-94a0-dac6c2ae67ad/Final%20report%20on%20amending%20GLs%20on%20ICT%20risk%20and%20security.pdf)。
+- **文件类型**：EBA Guidelines；修订 `EBA/GL/2019/04`，与 DORA 二级法规和 ESA 联合指引分层记录。
+- **标识和日期**：`EBA/GL/2025/02`；文件日期 2025-02-11；最迟自 2025-05-20 适用。当前状态和适用日期见 [EBA regulatory activity](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/internal-governance/guidelines-ict-and-security-risk-management)。
+- **适用对象来源位置**：修订文本 paragraph 10 将对象限定为 PSD2 Article 1(1)(a)、(b) 和 (d) 的 payment service providers，同时包括 PSD2 Articles 32、33 的豁免主体和 EMD2 Article 9 的豁免 EMI。
+- **修订范围**：修订文本 paragraphs 8-12 将主题收窄至 payment service user relationship management，删除原指引的范围和定义，以及 paragraphs 1-91 对应的 Sections 3.1-3.7。当前保留内容为 Section 3.8、paragraphs 92-98，可通过 [EBA consolidated version](https://www.eba.europa.eu/sites/default/files/2026-05/c8fb6168-0aef-42f6-8da9-114a8baf21b9/Consolidated%20version%20of%20EBA%20ameding%20Guidelines%20on%20ICT%20and%20security%20risk%20management.pdf) 阅读。
+- **DORA 关系**：修订后的指引补充 DORA 及相关 Regulatory Technical Standards 下的 ICT 风险管理措施，保留内容聚焦支付服务用户安全意识、功能和限额控制、交易提醒、安全更新及支持渠道。
+
+### 9.2 MFSA FIR/03
+
+- **正式文件**：[Chapter 3 of the Financial Institutions Rulebook, FIR/03](https://www.mfsa.mt/wp-content/uploads/2025/11/MFSA-Chapter-3-of-the-Financial-Institutions-Rulebook-FIR03.pdf)。
+- **文件类型和版本**：当前 MFSA Financial Institutions Rulebook Chapter 3；Version 6.00；MFSA 于 2025-11-20 发布修订版并说明自发布时适用，见 [publication circular](https://www.mfsa.mt/wp-content/uploads/2025/11/Circular-to-the-Industry-on-Publication-of-Chapter-3-of-the-Financial-Institutions-Rulebook.pdf)。
+- **适用范围来源位置**：R3-1.1.1 覆盖获准提供 Financial Institutions Act Second Schedule paragraph 2(a)-2(h) 支付服务或发行电子货币的 financial institutions；各具体规则仍需结合 FIR/03 中的主体分支和排除项判断。
+- **DORA 来源位置**：R3-1.1.4(x) 在相关法律和监管要求中列出 DORA；R3-2.10.1 要求 Licence Holder 遵守 DORA；R3-2.10.2 要求参考并遵守 amended EBA/GL/2019/04。
+- **文件关系**：R3-2.10.2 所称 amended EBA/GL/2019/04 对应 `EBA/GL/2025/02`。该引用只覆盖修订后保留的 payment service user relationship management 内容，不能据此恢复已删除的 Sections 3.1-3.7。
+
+### 9.3 增量复核事项
+
+人工复核需要确认：
+
+- FIR/03 的版本、发布日期、替代关系和适用范围定位。
+- `EBA/GL/2025/02` 的标识、适用日期、适用对象和保留条款。
+- FIR/03 与 EBA 指引的文件层级，以及两者和 DORA 的关系。
+- 全景目录对这两份来源的引用没有扩大其适用范围或效力。
+
+复核通过后，仓库将生成新的来源基线标识，并同步更新 DORA 全景目录和 Roadmap。复核未完成时，`DORA-SOURCES-2026-08-31` 继续作为当前已确认来源基线。

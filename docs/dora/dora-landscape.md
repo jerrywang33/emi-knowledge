@@ -247,18 +247,18 @@ Chapter V Section I 为 Articles 28-30，主要面向 financial entities 的 ICT
 | Cap. 376 Article 11B | 事件报告和欺诈统计 | 原有 paragraphs (1)-(5) 已由 Act XI of 2025 section 40 删除；现有 paragraph (6) 保留支付欺诈统计。 |
 | [FIR/01/2025](https://www.mfsa.mt/wp-content/uploads/2025/10/Chapter-1-of-the-Financial-Institutions-Rulebook-FIR01.pdf) R1-2.2.2(ix) | 牌照申请 | 初步会议材料需要说明 internal system and IT/platform，包括申请人拟如何遵守 DORA。 |
 
-### 7.2 本步新发现的待复核来源
+### 7.2 已进入待复核来源增量
 
-[FIR/03/2025 version 6.00](https://www.mfsa.mt/wp-content/uploads/2025/11/MFSA-Chapter-3-of-the-Financial-Institutions-Rulebook-FIR03.pdf) 是当前适用于提供支付服务或发行电子货币的 financial institutions 的持续性 Rulebook Chapter。本目录已识别以下位置：
+[FIR/03/2025 version 6.00](https://www.mfsa.mt/wp-content/uploads/2025/11/MFSA-Chapter-3-of-the-Financial-Institutions-Rulebook-FIR03.pdf) 是当前适用于提供支付服务或发行电子货币的 financial institutions 的持续性 Rulebook Chapter。本目录已识别以下位置，并将来源事实记录到 [`DORA-SOURCES-DELTA-2026-08-31-01`](../sources/dora-source-baseline.md#9-待复核来源增量)：
 
 | 位置 | 内容定位 | 当前状态 |
 | --- | --- | --- |
-| R3-1.1.1 | FIR/03 对支付服务机构和 EMI 的范围入口。 | 待加入下一版来源基线 |
-| R3-1.1.4(x) | 要求 Licence Holder 参考适用法律和监管要求，其中列出 DORA。 | 待加入下一版来源基线 |
-| R3-2.10.1 | ICT and Cybersecurity Risk 部分明确要求 Licence Holder comply with DORA。 | 待加入下一版来源基线 |
-| R3-2.10.2 | 引用 amended EBA/GL/2019/04。该指引的当前版本、适用对象和 DORA 后关系仍需单独核对。 | 待加入下一版来源基线 |
+| R3-1.1.1 | FIR/03 对支付服务机构和 EMI 的范围入口。 | 已记录，待人工复核 |
+| R3-1.1.4(x) | 要求 Licence Holder 参考适用法律和监管要求，其中列出 DORA。 | 已记录，待人工复核 |
+| R3-2.10.1 | ICT and Cybersecurity Risk 部分明确要求 Licence Holder comply with DORA。 | 已记录，待人工复核 |
+| R3-2.10.2 | 引用 amended EBA/GL/2019/04，对应 `EBA/GL/2025/02`。修订后保留 Section 3.8、paragraphs 92-98 的 payment service user relationship management 内容。 | 已记录，待人工复核 |
 
-FIR/03 在第 2 步人工复核后才被本步识别，因此当前目录不把它写入已确认来源集合。下一版来源基线需要记录文件版本、发布日期、替代关系和 R3-2.10.2 所引用指引的状态。
+FIR/03 在第 2 步人工复核后才被本步识别。新增记录保存在独立的待复核增量中，当前已确认来源基线继续使用 `DORA-SOURCES-2026-08-31`。人工复核通过后再生成新的来源基线标识。
 
 ## 8. 当前覆盖和缺口
 
@@ -267,10 +267,10 @@ FIR/03 在第 2 步人工复核后才被本步识别，因此当前目录不把�
 | DORA Chapters I-IX | 已覆盖 9 个 Chapter 和 Articles 1-64 的标题与主题定位。 | 变更时重新核对 Official Journal。 |
 | DORA 五个核心领域 | 已覆盖 ICT 风险、事件、韧性测试、第三方风险和信息共享。 | 第 5 步只对 ICT 变更管理做深度建模。 |
 | Level 2 文件 | 12 项文件均已映射到授权条款和主题。 | 后续按具体要求建立精确引用。 |
-| ESA 指引 | 2 项已确认指引映射到 Articles 11 和 32。 | 其他 Q&A、指引和 2026 年监督材料尚未建立完整目录。 |
+| ESA 和 EBA 指引 | 2 项已确认 ESA 联合指引映射到 Articles 11 和 32；`EBA/GL/2025/02` 已单独记录为待复核增量。 | 其他 Q&A、指引和 2026 年监督材料尚未建立完整目录。 |
 | EMI 适用入口 | 已区分未获 EMD2 Article 9(1) 豁免与已获该豁免 EMI 的 ICT 风险管理路径。 | 具体机构事实和最终适用结论保持待确认。 |
 | 比例原则和规模 | 已记录 Articles 3、4、16 的关系。 | 各具体条款中的 microenterprise 或比例安排尚未逐项索引。 |
-| Malta 国内层 | 已定位 S.L. 330.20、Cap. 376 和 FIR/01 的相关位置。 | FIR/03 和 amended EBA/GL/2019/04 需要进入下一版来源基线。 |
+| Malta 国内层 | 已定位 S.L. 330.20、Cap. 376 和 FIR/01 的相关位置；FIR/03 与 `EBA/GL/2025/02` 已进入待复核来源增量。 | 增量通过人工复核后生成新的来源基线标识。 |
 | ICT 变更管理 | 已建立完整框架和简化框架的上下游目录。 | 要求、控制、检查和证据在第 5 步建立。 |
 | Recitals 和 Article 3 全部定义 | 当前只索引与目录边界直接相关的内容。 | 有明确使用场景后再扩展，避免无差别复制法规。 |
 | 其他成员国 | 当前只覆盖 Malta。 | 进入其他司法辖区时独立建立国内层。 |
@@ -286,5 +286,5 @@ FIR/03 在第 2 步人工复核后才被本步识别，因此当前目录不把�
 - 未获 EMD2 Article 9(1) 豁免与已获该豁免 EMI 的两条路径表达准确。
 - ICT 变更管理的直接条款和目录关联已经明确区分。
 - Malta S.L. 330.20、Cap. 376、FIR/01 的条款位置准确。
-- FIR/03 作为待复核来源进入下一版来源基线，并继续核对 amended EBA/GL/2019/04。
+- FIR/03 与 `EBA/GL/2025/02` 的来源增量记录准确，并维持待人工复核状态。
 - 当前缺口能够支持 v0.1 继续进入知识模型与 Schema 设计。
