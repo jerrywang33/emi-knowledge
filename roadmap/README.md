@@ -142,7 +142,9 @@ ICT 变更管理的首批来源基线为：
 - 已确认 `Source`、`Provision`、`Requirement`、`Decision`、`Control` 和 `Verification` 六种核心对象。
 - 已确认 `Applicability`、`ImplementationRule` 和 `EvidenceRequirement` 分别作为后三类业务对象的内嵌结构。
 - 核心关系和暂不独立建模的内容已记录在 [Decision 0001：v0.1 最小知识模型](../docs/decisions/0001-v0.1-minimal-knowledge-model.md)。
-- 下一项工作是确认对象的通用字段，再逐类确认专属字段；确认前不创建 Schema 或实现目录。
+- 已形成 [v0.1 知识模型字段草案](../docs/model/v0.1-knowledge-model-draft.md)，一次性给出通用字段、六类对象、三个内嵌结构、状态、引用、校验分工和完整字段组合示例。
+- 字段草案当前等待逐项人工复核，顺序为 `Source`、`Provision`、`Requirement`、`Decision`、`Control`、`Verification`。
+- 六类对象全部确认前不创建 Schema、知识对象目录或实现代码。
 
 完成条件：
 
