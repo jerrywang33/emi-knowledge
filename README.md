@@ -2,6 +2,8 @@
 
 EMI Knowledge 目前处于初始化阶段。本 README 先确定项目定位、知识边界和建设方式；仓库中尚未发布可用于真实业务判断的正式知识版本。
 
+当前建设范围、步骤和完成条件见 [Roadmap](roadmap/README.md)。
+
 ---
 
 ## EMI Knowledge 是什么
