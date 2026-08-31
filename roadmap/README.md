@@ -139,7 +139,10 @@ ICT 变更管理的首批来源基线为：
 当前进展（2026-08-31）：
 
 - 已确定使用 `DORA-SOURCES-2026-08-31-R2` 和 `DORA-LANDSCAPE-2026-08-31` 作为设计输入。
-- 下一项工作是逐类确认最小内容对象、对象关系、状态和适用范围表达；确认前不创建 Schema 或实现目录。
+- 已确认 `Source`、`Provision`、`Requirement`、`Decision`、`Control` 和 `Verification` 六种核心对象。
+- 已确认 `Applicability`、`ImplementationRule` 和 `EvidenceRequirement` 分别作为后三类业务对象的内嵌结构。
+- 核心关系和暂不独立建模的内容已记录在 [Decision 0001：v0.1 最小知识模型](../docs/decisions/0001-v0.1-minimal-knowledge-model.md)。
+- 下一项工作是确认对象的通用字段，再逐类确认专属字段；确认前不创建 Schema 或实现目录。
 
 完成条件：
 
