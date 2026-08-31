@@ -15,7 +15,7 @@
 ## 1. 阅读规则
 
 1. DORA Article 标题保留 Official Journal 英文写法，中文内容只用于说明目录位置。
-2. 具有约束力的欧盟法律、ESA 指引、Malta 法律、MFSA 规则和 MFSA 说明材料分层记录。
+2. 具有约束力的欧盟法律、ESA 与 EBA 指引、Malta 法律、MFSA 规则和 MFSA 说明材料分层记录。
 3. “授权关系”表示文件由对应 DORA 条款授权；“相关配套”表示文件细化或支持该主题；“目录关联”表示为了查找上下游主题建立的导航关系，不增加法律义务。
 4. 主体是否属于 EMI、是否获得 EMD2 豁免、是否符合特定规模定义，以及具体要求如何适用，都需要机构事实支持。
 5. 本目录使用已人工复核的 [DORA 权威来源基线](../sources/dora-source-baseline.md)。目录中新发现的来源需要先完成独立复核，再进入后续要求建模。
@@ -209,8 +209,8 @@ Chapter V Section I 为 Articles 28-30，主要面向 financial entities 的 ICT
 | 保护和预防入口 | DORA Article 9(4)(e) | 明确要求 ICT change management policies、procedures and controls。 |
 | ICT 项目 | Regulation 2024/1774 Article 15 | 项目治理、风险评估、里程碑、变更要求、测试和上线批准。 |
 | 系统获取、开发和维护 | Regulation 2024/1774 Article 16 | 系统安全要求，以及首次使用和维护后的测试、批准。 |
-| ICT 变更程序 | Regulation 2024/1774 Article 17 | 安全要求验证、职责独立、计划、测试、质量保证、记录、回退、紧急变更和实施后复核。 |
-| 运行记录和检测 | DORA Article 10；Regulation 2024/1774 Article 8 | 变更日志、异常和事件检测的目录关联。 |
+| ICT 变更程序 | Regulation 2024/1774 Article 17 | 安全要求验证、职责独立、计划、测试、质量保证、记录、回退，以及紧急变更及其实施后的记录、重新评估和批准。 |
+| 运行记录和检测 | DORA Article 10；Regulation 2024/1774 Article 8 | 运行日志、审计轨迹、异常和事件检测的目录关联。 |
 | 响应和恢复 | DORA Articles 11-12；Regulation 2024/1774 Article 17(1)(e) | 失败变更的中止、回退、恢复及更广泛连续性安排。 |
 | 韧性测试 | DORA Articles 24-25 | 变更后的系统测试与整体韧性测试之间的目录关联。 |
 | 第三方参与 | DORA Articles 28-30；Regulations 2024/1773、2025/532 | 外部 ICT 服务、合同、分包和依赖发生变化时的第三方风险查找路径。 |
@@ -247,7 +247,7 @@ Chapter V Section I 为 Articles 28-30，主要面向 financial entities 的 ICT
 | Cap. 376 Article 11B | 事件报告和欺诈统计 | 原有 paragraphs (1)-(5) 已由 Act XI of 2025 section 40 删除；现有 paragraph (6) 保留支付欺诈统计。 |
 | [FIR/01/2025](https://www.mfsa.mt/wp-content/uploads/2025/10/Chapter-1-of-the-Financial-Institutions-Rulebook-FIR01.pdf) R1-2.2.2(ix) | 牌照申请 | 初步会议材料需要说明 internal system and IT/platform，包括申请人拟如何遵守 DORA。 |
 
-### 7.2 FIR/03 与 EBA 指引
+### 7.2 FIR/03 对 DORA 与 EBA 指引的引用
 
 [FIR/03/2025 version 6.00](https://www.mfsa.mt/wp-content/uploads/2025/11/MFSA-Chapter-3-of-the-Financial-Institutions-Rulebook-FIR03.pdf) 是当前适用于提供支付服务或发行电子货币的 financial institutions 的持续性 Rulebook Chapter。以下位置已进入 `DORA-SOURCES-2026-08-31-R2`：
 
@@ -277,14 +277,26 @@ FIR/03 在第 2 步人工复核后由全景目录识别，其来源增量现已�
 
 本目录没有收录法规全文，没有逐条提取监管要求，没有建立工程控制，也没有判断任何具体 EMI 机构已经符合 DORA。
 
-## 9. 待人工复核
+## 9. 复核记录与待确认事项
+
+### 9.1 已完成复核
+
+2026-08-31 已完成以下检查：
+
+- 对照 [DORA Official Journal 英文文本](https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng)，核对 9 个 Chapter、Section 边界、Articles 1-64 及其正式标题。
+- 对照 European Commission 的 [DORA implementing and delegated acts full list](https://finance.ec.europa.eu/document/download/7a2d42d8-4b48-4e2e-9b4c-c4e9107686d1_en?filename=dora-level-2-measures-full_en.pdf)，核对 12 项二级法规的授权条款和主题位置。
+- 对照 DORA Articles 2、4、16、23、46，核对 EMI 范围、比例原则、完整与简化 ICT 风险管理路径、支付相关事件和主管机关入口。
+- 对照 Regulation (EU) 2024/1774 Articles 15-17、37-38，核对完整与简化框架中的 ICT 项目、系统获取开发维护和变更管理路径。
+- 核对 2 项 ESA 联合指引与 `EBA/GL/2025/02` 的层级和目录位置。
+- 对照 Malta S.L. 330.20、Cap. 376、Act XI of 2025、FIR/01 和 FIR/03，核对 Malta 国内层的条款位置和文件关系。
+- 区分法规直接要求、配套文件关系和目录导航关系；本轮收紧了紧急变更实施后处理及运行日志的表述。
+
+### 9.2 最终人工确认
 
 进入 Roadmap 第 4 步前需要确认：
 
-- 9 个 Chapter、64 个 Article 标题和主题定位准确。
-- 12 项二级法规与 2 项 ESA 指引的映射没有遗漏或层级混淆。
-- 未获 EMD2 Article 9(1) 豁免与已获该豁免 EMI 的两条路径表达准确。
-- ICT 变更管理的直接条款和目录关联已经明确区分。
-- Malta S.L. 330.20、Cap. 376、FIR/01 的条款位置准确。
-- FIR/03 与 `EBA/GL/2025/02` 的来源位置及分层关系准确。
-- 当前缺口能够支持 v0.1 继续进入知识模型与 Schema 设计。
+- 接受本目录只承担主题和来源导航，不在第 3 步提取全部监管要求或形成机构适用性结论。
+- 接受未获 EMD2 Article 9(1) 豁免与已获该豁免 EMI 的两条 ICT 风险管理路径。
+- 接受 ICT 变更管理的直接条款、上下游目录关联和完整、简化框架边界。
+- 接受当前 Malta 国内层的范围，以及具体机构适用性继续保持待确认。
+- 接受第 8 节列出的覆盖和缺口，可以进入知识模型与 Schema 设计。
