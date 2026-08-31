@@ -2,7 +2,8 @@
 
 | 项目 | 值 |
 | --- | --- |
-| 基线标识 | `DORA-SOURCES-2026-08-31` |
+| 基线标识 | `DORA-SOURCES-2026-08-31-R2` |
+| 前序基线 | `DORA-SOURCES-2026-08-31` |
 | 状态 | 已人工复核，供 v0.1 建设使用 |
 | 获取日期 | 2026-08-31 |
 | 复核日期 | 2026-08-31 |
@@ -11,14 +12,14 @@
 | 工作语言 | English |
 | 当前用途 | v0.1 DORA 全景目录和 ICT 变更管理知识链的来源输入 |
 
-本文件记录 DORA v0.1 已核对的官方来源、版本、效力层级和文件关系。当前内容只确认来源事实，不给出具体 EMI 机构的适用性、合规状态或工程控制结论。
+本文件记录 DORA v0.1 已核对的官方来源、版本、效力层级和文件关系。R2 收录全景目录阶段补充核对的当前 FIR/03 和 `EBA/GL/2025/02`。当前内容只确认来源事实，不给出具体 EMI 机构的适用性、合规状态或工程控制结论。
 
 ## 1. 使用规则
 
 1. 欧盟法律文件以 Official Journal 中的正式文本为基准，使用 ELI 作为稳定链接，使用 CELEX 作为文件标识。
 2. EUR-Lex 合并文本用于阅读和定位。涉及版本复现时，同时记录原始 Official Journal 文本和影响所用语言的勘误。
 3. 本基线固定使用英文。某项勘误只影响其他语言时，保留关系记录，不把它合并进英文参考文本。
-4. 欧盟法律文件、ESA 监管指引、Malta 法律、MFSA 规则和 MFSA 说明材料分别分类。
+4. 欧盟法律文件、ESA 与 EBA 监管指引、Malta 法律、MFSA 规则和 MFSA 说明材料分别分类。
 5. “有效”只表示官方来源在获取日显示为 in force 或 applicable，不表示它适用于任何具体机构、业务或场景。
 6. 每次正式发布都要重新核对状态、勘误、替代文件和链接。本文件的获取日期不能代替持续更新。
 
@@ -96,7 +97,9 @@ European Commission 在 2025-07-02 发布的 [full list](https://finance.ec.euro
 
 截至 2026-08-31，没有在 EUR-Lex 关系记录中发现其余 7 项二级法规的勘误。该结果受获取日期和英文工作语言限制。
 
-## 5. ESA 联合指引
+## 5. ESA 与 EBA 指引
+
+### 5.1 DORA 下的 ESA 联合指引
 
 以下文件属于 ESA Guidelines，和 Official Journal 中的 Regulation 分层记录。它们依据各 ESA Regulations 的 Article 16 发布，文件中的 comply-or-explain 机制和适用对象需要按指引原文处理。
 
@@ -104,6 +107,15 @@ European Commission 在 2025-07-02 发布的 [full list](https://finance.ec.euro
 | --- | --- | --- | --- | --- |
 | `JC/GL/2024/34` | Joint Guidelines on the estimation of aggregated annual costs and losses caused by major ICT-related incidents | Article 11(11) | Final；EBA 页面显示 applicable，application date 和 compliance deadline 均为 2025-05-19 | [EBA regulatory activity](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/joint-guidelines-estimation-aggregated-annual-costs-and-losses-caused-major-ict-related-incidents) |
 | `JC/GL/2024/36` | Joint Guidelines on the oversight cooperation and information exchange between the ESAs and the competent authorities | Article 32(7) | 文件日期 2024-06-05；Final；application date 2025-01-17 | [EBA regulatory activity](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/joint-guidelines-oversight-cooperation-and-information-exchange-between-esas-and-competent?version=2024) |
+
+### 5.2 EBA/GL/2025/02
+
+- **正式名称**：[Guidelines amending Guidelines EBA/GL/2019/04 on ICT and security risk management](https://www.eba.europa.eu/sites/default/files/2025-02/23684f95-f669-4852-94a0-dac6c2ae67ad/Final%20report%20on%20amending%20GLs%20on%20ICT%20risk%20and%20security.pdf)。
+- **文件类型**：EBA Guidelines；修订 `EBA/GL/2019/04`，与 DORA 二级法规和 ESA 联合指引分层记录。
+- **标识和日期**：`EBA/GL/2025/02`；文件日期 2025-02-11；最迟自 2025-05-20 适用。当前状态和适用日期见 [EBA regulatory activity](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/internal-governance/guidelines-ict-and-security-risk-management)。
+- **适用对象来源位置**：修订文本 paragraph 10 将对象限定为 PSD2 Article 1(1)(a)、(b) 和 (d) 的 payment service providers，同时包括 PSD2 Articles 32、33 的豁免主体和 EMD2 Article 9 的豁免 EMI。
+- **修订范围**：修订文本 paragraphs 8-12 将主题收窄至 payment service user relationship management，删除原指引的范围和定义，以及 paragraphs 1-91 对应的 Sections 3.1-3.7。当前保留内容为 Section 3.8、paragraphs 92-98，可通过 [EBA consolidated version](https://www.eba.europa.eu/sites/default/files/2026-05/c8fb6168-0aef-42f6-8da9-114a8baf21b9/Consolidated%20version%20of%20EBA%20ameding%20Guidelines%20on%20ICT%20and%20security%20risk%20management.pdf) 阅读。
+- **DORA 关系**：修订后的指引补充 DORA 及相关 Regulatory Technical Standards 下的 ICT 风险管理措施，保留内容聚焦支付服务用户安全意识、功能和限额控制、交易提醒、安全更新及支持渠道。
 
 以下页面只作为持续发现和导航入口：
 
@@ -124,6 +136,7 @@ Interactive Single Rulebook 提供文档化阅读能力，关键法律结论仍�
 | [Financial Institutions Act, Cap. 376](https://legislation.mt/eli/cap/376/eng) | Malta primary legislation；Legislation Malta 显示 in force | 当前官方合并入口；页面记录 Act XI of 2025 的修改关系 | EMI 和 payment institution 的国内基础法律之一；具体 DORA 修改位置需在后续条款目录中核对 |
 | Financial Institutions Rule FIR/01, published 2025-01-06 | MFSA Rule；EUR-Lex 记录的 Malta national transposition measure，NIM [`72022L2556MLT_202502756`](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=NIM:202502756) | 2025-01-06 | MFSA 当前 [Financial Institutions](https://www.mfsa.mt/our-work/financial-institutions/) 页面已将该版本列入 superseded FIRs；不能作为当前规则版本使用 |
 | [Chapter 1 of the Financial Institutions Rulebook, FIR/01/2025](https://www.mfsa.mt/wp-content/uploads/2025/10/Chapter-1-of-the-Financial-Institutions-Rulebook-FIR01.pdf) | 当前 MFSA Rulebook Chapter 1 | MFSA 于 2025-10-14 发布当前 Chapter 1 | 当前授权规则入口；它与 2025-01-06 转化记录之间的替代和条款关系需要在后续 Malta 条款目录中继续核对 |
+| [Chapter 3 of the Financial Institutions Rulebook, FIR/03](https://www.mfsa.mt/wp-content/uploads/2025/11/MFSA-Chapter-3-of-the-Financial-Institutions-Rulebook-FIR03.pdf) | 当前 MFSA Rulebook Chapter 3；Version 6.00 | MFSA 于 2025-11-20 发布修订版并说明自发布时适用，见 [publication circular](https://www.mfsa.mt/wp-content/uploads/2025/11/Circular-to-the-Industry-on-Publication-of-Chapter-3-of-the-Financial-Institutions-Rulebook.pdf) | R3-1.1.1 是支付服务机构和 EMI 的范围入口；R3-1.1.4(x) 列出 DORA；R3-2.10.1 要求遵守 DORA；R3-2.10.2 引用 amended EBA/GL/2019/04，即 `EBA/GL/2025/02` |
 
 European Commission 的 [Directive (EU) 2022/2556 transposition tracker](https://finance.ec.europa.eu/regulation-and-supervision/financial-services-legislation/enforcement-and-infringements-banking-and-finance-law/monitoring-banking-and-finance-directives/digital-operational-resilience-financial-sector-directive_en) 在 2026-05-04 显示 Malta 已通报 full transposition，同时列出一项因未通报、延迟通报或通报不完整而仍 pending 的 non-communication infringement proceeding。本基线原样保留这两个状态，不据此推导 Malta 的最终转化充分性。
 
@@ -161,56 +174,37 @@ Article 17 已识别的来源主题包括安全要求验证、批准与申请或
 - DORA 和 Directive (EU) 2022/2556 的官方标识、日期、状态和关系。
 - European Commission 清单中的 12 项二级法规及其当前状态。
 - 影响英文参考文本的勘误集合。
-- 两项 ESA 联合指引的标识、状态和适用日期。
-- Malta 的 DORA subsidiary legislation、主要转化记录、当前 Financial Institutions Act 和 FIR/01 版本变化。
+- 两项 ESA 联合指引及 `EBA/GL/2025/02` 的标识、状态、适用日期和文件关系。
+- Malta 的 DORA subsidiary legislation、主要转化记录、当前 Financial Institutions Act、FIR/01 和 FIR/03 版本变化。
 - ICT 变更管理首条来源链。
 
-仓库维护者于 2026-08-31 确认了本基线的来源标识、标题、日期、分类、链接和文件关系。Roadmap 第 2 步据此完成。
+仓库维护者于 2026-08-31 确认了本基线及 R2 增量的来源标识、标题、日期、分类、链接和文件关系。Roadmap 第 2 步及其后续来源补充据此完成。
 
 后续阶段继续处理：
 
-- 在 DORA 全景目录中精确定位 Malta Act XI of 2025、Cap. 376 和当前 Financial Institutions Rulebook 的 DORA 相关条款。
+- 在后续知识建模中继续核对 Malta Act XI of 2025、Cap. 376 和 Financial Institutions Rulebook 各条款的具体适用条件。
 - 确认当前阶段是否需要纳入更多 MFSA circular、ESA Q&A 或 2026 年后续监督材料。
 - 每次发布前重新检查来源状态、勘误、替代关系和链接。
 
 本基线没有收录法规全文，没有形成机构适用性结论，也没有把 MFSA 说明材料提升为欧盟法律要求。知识 Schema、稳定来源 ID 和机器可读文件在 Roadmap 第 4 步设计。
 
-## 9. 待复核来源增量
+## 9. R2 变更与复核记录
 
 | 项目 | 值 |
 | --- | --- |
 | 增量标识 | `DORA-SOURCES-DELTA-2026-08-31-01` |
-| 状态 | 待人工复核，尚未并入 `DORA-SOURCES-2026-08-31` |
+| 状态 | 已人工复核并并入 `DORA-SOURCES-2026-08-31-R2` |
 | 获取日期 | 2026-08-31 |
+| 复核日期 | 2026-08-31 |
+| 复核角色 | 仓库维护者 |
 | 发现步骤 | Roadmap 第 3 步，DORA 全景目录 |
 | 增量原因 | 当前 FIR/03 直接引用 DORA 和 amended EBA/GL/2019/04，需要补齐 Malta 持续性规则及其上游 EBA 指引 |
 
-本增量保留第 2 步已确认基线的审查记录。以下来源完成复核前，只能作为 DORA 全景目录的待确认输入。
-
-### 9.1 EBA/GL/2025/02
-
-- **正式名称**：[Guidelines amending Guidelines EBA/GL/2019/04 on ICT and security risk management](https://www.eba.europa.eu/sites/default/files/2025-02/23684f95-f669-4852-94a0-dac6c2ae67ad/Final%20report%20on%20amending%20GLs%20on%20ICT%20risk%20and%20security.pdf)。
-- **文件类型**：EBA Guidelines；修订 `EBA/GL/2019/04`，与 DORA 二级法规和 ESA 联合指引分层记录。
-- **标识和日期**：`EBA/GL/2025/02`；文件日期 2025-02-11；最迟自 2025-05-20 适用。当前状态和适用日期见 [EBA regulatory activity](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/internal-governance/guidelines-ict-and-security-risk-management)。
-- **适用对象来源位置**：修订文本 paragraph 10 将对象限定为 PSD2 Article 1(1)(a)、(b) 和 (d) 的 payment service providers，同时包括 PSD2 Articles 32、33 的豁免主体和 EMD2 Article 9 的豁免 EMI。
-- **修订范围**：修订文本 paragraphs 8-12 将主题收窄至 payment service user relationship management，删除原指引的范围和定义，以及 paragraphs 1-91 对应的 Sections 3.1-3.7。当前保留内容为 Section 3.8、paragraphs 92-98，可通过 [EBA consolidated version](https://www.eba.europa.eu/sites/default/files/2026-05/c8fb6168-0aef-42f6-8da9-114a8baf21b9/Consolidated%20version%20of%20EBA%20ameding%20Guidelines%20on%20ICT%20and%20security%20risk%20management.pdf) 阅读。
-- **DORA 关系**：修订后的指引补充 DORA 及相关 Regulatory Technical Standards 下的 ICT 风险管理措施，保留内容聚焦支付服务用户安全意识、功能和限额控制、交易提醒、安全更新及支持渠道。
-
-### 9.2 MFSA FIR/03
-
-- **正式文件**：[Chapter 3 of the Financial Institutions Rulebook, FIR/03](https://www.mfsa.mt/wp-content/uploads/2025/11/MFSA-Chapter-3-of-the-Financial-Institutions-Rulebook-FIR03.pdf)。
-- **文件类型和版本**：当前 MFSA Financial Institutions Rulebook Chapter 3；Version 6.00；MFSA 于 2025-11-20 发布修订版并说明自发布时适用，见 [publication circular](https://www.mfsa.mt/wp-content/uploads/2025/11/Circular-to-the-Industry-on-Publication-of-Chapter-3-of-the-Financial-Institutions-Rulebook.pdf)。
-- **适用范围来源位置**：R3-1.1.1 覆盖获准提供 Financial Institutions Act Second Schedule paragraph 2(a)-2(h) 支付服务或发行电子货币的 financial institutions；各具体规则仍需结合 FIR/03 中的主体分支和排除项判断。
-- **DORA 来源位置**：R3-1.1.4(x) 在相关法律和监管要求中列出 DORA；R3-2.10.1 要求 Licence Holder 遵守 DORA；R3-2.10.2 要求参考并遵守 amended EBA/GL/2019/04。
-- **文件关系**：R3-2.10.2 所称 amended EBA/GL/2019/04 对应 `EBA/GL/2025/02`。该引用只覆盖修订后保留的 payment service user relationship management 内容，不能据此恢复已删除的 Sections 3.1-3.7。
-
-### 9.3 增量复核事项
-
-人工复核需要确认：
+本次复核确认：
 
 - FIR/03 的版本、发布日期、替代关系和适用范围定位。
 - `EBA/GL/2025/02` 的标识、适用日期、适用对象和保留条款。
 - FIR/03 与 EBA 指引的文件层级，以及两者和 DORA 的关系。
 - 全景目录对这两份来源的引用没有扩大其适用范围或效力。
 
-复核通过后，仓库将生成新的来源基线标识，并同步更新 DORA 全景目录和 Roadmap。复核未完成时，`DORA-SOURCES-2026-08-31` 继续作为当前已确认来源基线。
+前序基线 `DORA-SOURCES-2026-08-31` 通过 Git 历史继续保留，R2 作为当前已确认来源基线。
