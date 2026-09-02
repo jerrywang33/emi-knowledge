@@ -1,0 +1,27 @@
+{
+  "name": "emi-knowledge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "npm run typecheck && npm test && npm run validate",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/**/*.test.ts",
+    "validate": "tsx src/cli.ts validate knowledge/v0.1 schemas/v0.1/knowledge-object.schema.json",
+    "release:v0.1": "tsx src/cli.ts release releases/v0.1.0/release.config.json"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.4.1",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2"
+  }
+}
+
