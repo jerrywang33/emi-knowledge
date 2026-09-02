@@ -1,0 +1,1035 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/knowledge-object.schema.json",
+  "title": "EMI Knowledge v0.1 knowledge object",
+  "description": "Structural schema for one Source, Provision, Requirement, Decision, Control, or Verification object.",
+  "oneOf": [
+    { "$ref": "#/$defs/source" },
+    { "$ref": "#/$defs/provision" },
+    { "$ref": "#/$defs/requirement" },
+    { "$ref": "#/$defs/decision" },
+    { "$ref": "#/$defs/control" },
+    { "$ref": "#/$defs/verification" }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "localIdentifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "knowledgeId": {
+      "type": "string",
+      "pattern": "^(src|prv|req|dec|ctl|ver)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sourceId": {
+      "type": "string",
+      "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "provisionId": {
+      "type": "string",
+      "pattern": "^prv-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "requirementId": {
+      "type": "string",
+      "pattern": "^req-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "decisionId": {
+      "type": "string",
+      "pattern": "^dec-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "controlId": {
+      "type": "string",
+      "pattern": "^ctl-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "verificationId": {
+      "type": "string",
+      "pattern": "^ver-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "dateOrNull": {
+      "oneOf": [
+        { "type": "string", "format": "date" },
+        { "type": "null" }
+      ]
+    },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyString" },
+      "uniqueItems": true
+    },
+    "confirmation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "open_questions"],
+          "properties": {
+            "status": { "const": "not_required" },
+            "open_questions": { "$ref": "#/$defs/nonEmptyStringArray", "maxItems": 0 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "open_questions"],
+          "properties": {
+            "status": { "const": "pending" },
+            "open_questions": { "$ref": "#/$defs/nonEmptyStringArray", "minItems": 1 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "open_questions"],
+          "properties": {
+            "status": { "const": "confirmed" },
+            "open_questions": { "$ref": "#/$defs/nonEmptyStringArray", "maxItems": 0 }
+          }
+        }
+      ]
+    },
+    "notRequiredConfirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "open_questions"],
+      "properties": {
+        "status": { "const": "not_required" },
+        "open_questions": { "$ref": "#/$defs/nonEmptyStringArray", "maxItems": 0 }
+      }
+    },
+    "baseObject": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "schema_version",
+        "revision",
+        "title",
+        "language",
+        "lifecycle_status",
+        "confirmation",
+        "replaces"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/knowledgeId" },
+        "type": {
+          "enum": ["source", "provision", "requirement", "decision", "control", "verification"]
+        },
+        "schema_version": { "const": "0.1.0" },
+        "revision": { "type": "integer", "minimum": 1 },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "language": { "const": "en" },
+        "lifecycle_status": {
+          "enum": ["draft", "in_review", "approved", "superseded", "retired"]
+        },
+        "confirmation": { "$ref": "#/$defs/confirmation" },
+        "replaces": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/knowledgeId" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "scopeSelector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "values"],
+      "properties": {
+        "mode": { "enum": ["all", "include", "exclude", "not_applicable", "unknown"] },
+        "values": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "mode": { "enum": ["include", "exclude"] } },
+            "required": ["mode"]
+          },
+          "then": { "properties": { "values": { "minItems": 1 } } }
+        },
+        {
+          "if": {
+            "properties": { "mode": { "enum": ["all", "not_applicable", "unknown"] } },
+            "required": ["mode"]
+          },
+          "then": { "properties": { "values": { "maxItems": 0 } } }
+        }
+      ]
+    },
+    "jurisdictionSelector": {
+      "allOf": [
+        { "$ref": "#/$defs/scopeSelector" },
+        {
+          "properties": {
+            "values": {
+              "items": { "type": "string", "pattern": "^(EU|EEA|[A-Z]{2})$" }
+            }
+          }
+        }
+      ]
+    },
+    "entityTypeSelector": {
+      "allOf": [
+        { "$ref": "#/$defs/scopeSelector" },
+        {
+          "properties": {
+            "values": {
+              "items": { "enum": ["financial_entity", "electronic_money_institution"] }
+            }
+          }
+        }
+      ]
+    },
+    "licenseRoleSelector": {
+      "allOf": [
+        { "$ref": "#/$defs/scopeSelector" },
+        {
+          "properties": {
+            "values": {
+              "items": {
+                "enum": [
+                  "emi_without_emd2_article_9_1_exemption",
+                  "emi_with_emd2_article_9_1_exemption"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "activitySelector": {
+      "allOf": [
+        { "$ref": "#/$defs/scopeSelector" },
+        {
+          "properties": {
+            "values": {
+              "items": { "enum": ["ict_risk_management", "ict_change_management"] }
+            }
+          }
+        }
+      ]
+    },
+    "productSelector": {
+      "allOf": [
+        { "$ref": "#/$defs/scopeSelector" },
+        {
+          "properties": {
+            "values": {
+              "items": { "enum": ["electronic_money", "payment_service"] }
+            }
+          }
+        }
+      ]
+    },
+    "dataCategorySelector": {
+      "allOf": [
+        { "$ref": "#/$defs/scopeSelector" },
+        {
+          "properties": {
+            "values": {
+              "items": {
+                "enum": ["personal_data", "payment_data", "authentication_data", "operational_data"]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "frameworkBranchSelector": {
+      "allOf": [
+        { "$ref": "#/$defs/scopeSelector" },
+        {
+          "properties": {
+            "values": {
+              "items": {
+                "enum": ["dora_full_ict_risk_management", "dora_simplified_ict_risk_management"]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "jurisdictions",
+        "entity_types",
+        "license_roles",
+        "activities",
+        "products",
+        "data_categories",
+        "framework_branches",
+        "effective_from",
+        "effective_to",
+        "conditions",
+        "exclusions"
+      ],
+      "properties": {
+        "basis": { "enum": ["source_defined", "decision_defined", "pending"] },
+        "jurisdictions": { "$ref": "#/$defs/jurisdictionSelector" },
+        "entity_types": { "$ref": "#/$defs/entityTypeSelector" },
+        "license_roles": { "$ref": "#/$defs/licenseRoleSelector" },
+        "activities": { "$ref": "#/$defs/activitySelector" },
+        "products": { "$ref": "#/$defs/productSelector" },
+        "data_categories": { "$ref": "#/$defs/dataCategorySelector" },
+        "framework_branches": { "$ref": "#/$defs/frameworkBranchSelector" },
+        "effective_from": { "$ref": "#/$defs/dateOrNull" },
+        "effective_to": { "$ref": "#/$defs/dateOrNull" },
+        "conditions": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "exclusions": { "$ref": "#/$defs/nonEmptyStringArray" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              { "properties": { "jurisdictions": { "properties": { "mode": { "const": "unknown" } } } } },
+              { "properties": { "entity_types": { "properties": { "mode": { "const": "unknown" } } } } },
+              { "properties": { "license_roles": { "properties": { "mode": { "const": "unknown" } } } } },
+              { "properties": { "activities": { "properties": { "mode": { "const": "unknown" } } } } },
+              { "properties": { "products": { "properties": { "mode": { "const": "unknown" } } } } },
+              { "properties": { "data_categories": { "properties": { "mode": { "const": "unknown" } } } } },
+              { "properties": { "framework_branches": { "properties": { "mode": { "const": "unknown" } } } } }
+            ]
+          },
+          "then": { "properties": { "basis": { "const": "pending" } } }
+        }
+      ]
+    },
+    "registryIdentifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry", "value"],
+      "properties": {
+        "registry": {
+          "enum": ["celex", "eli", "oj", "eba", "eiopa", "esma", "mfsa", "legislation_mt"]
+        },
+        "value": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "sourceRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relation", "source_id"],
+      "properties": {
+        "relation": {
+          "enum": ["amends", "corrects", "supplements", "implements", "supersedes", "references"]
+        },
+        "source_id": { "$ref": "#/$defs/sourceId" }
+      }
+    },
+    "locatorSegment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "title",
+            "chapter",
+            "section",
+            "article",
+            "recital",
+            "rule",
+            "paragraph",
+            "point",
+            "subpoint",
+            "annex",
+            "page",
+            "other"
+          ]
+        },
+        "value": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "segments"],
+      "properties": {
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "segments": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/locatorSegment" },
+          "minItems": 1
+        }
+      }
+    },
+    "provisionRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provision_id", "relation"],
+      "properties": {
+        "provision_id": { "$ref": "#/$defs/provisionId" },
+        "relation": { "enum": ["direct_basis", "scope_basis", "definition_basis", "supporting_context"] }
+      }
+    },
+    "requirementRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirement_id", "relation"],
+      "properties": {
+        "requirement_id": { "$ref": "#/$defs/requirementId" },
+        "relation": { "enum": ["implements", "supports"] }
+      }
+    },
+    "implementationParameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "value", "unit"],
+      "properties": {
+        "name": { "$ref": "#/$defs/localIdentifier" },
+        "value": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "number" },
+            { "type": "boolean" },
+            { "type": "null" }
+          ]
+        },
+        "unit": {
+          "oneOf": [
+            { "$ref": "#/$defs/nonEmptyString" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "fixedImplementationParameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "value", "unit"],
+      "properties": {
+        "name": { "$ref": "#/$defs/localIdentifier" },
+        "value": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "number" },
+            { "type": "boolean" }
+          ]
+        },
+        "unit": {
+          "oneOf": [
+            { "$ref": "#/$defs/nonEmptyString" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "implementationRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "rule_type",
+        "statement",
+        "parameter_status",
+        "parameters",
+        "conditions",
+        "failure_handling",
+        "open_questions"
+      ],
+      "properties": {
+        "key": { "$ref": "#/$defs/localIdentifier" },
+        "rule_type": {
+          "enum": ["process", "access", "data", "interface", "configuration", "operations", "exception"]
+        },
+        "statement": { "$ref": "#/$defs/nonEmptyString" },
+        "parameter_status": { "enum": ["not_applicable", "fixed", "institution_defined", "pending"] },
+        "parameters": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/implementationParameter" },
+          "uniqueItems": true
+        },
+        "conditions": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "failure_handling": { "$ref": "#/$defs/nonEmptyString" },
+        "open_questions": { "$ref": "#/$defs/nonEmptyStringArray" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "parameter_status": { "const": "not_applicable" } },
+            "required": ["parameter_status"]
+          },
+          "then": {
+            "properties": {
+              "parameters": { "maxItems": 0 },
+              "open_questions": { "maxItems": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "parameter_status": { "const": "fixed" } },
+            "required": ["parameter_status"]
+          },
+          "then": {
+            "properties": {
+              "parameters": {
+                "minItems": 1,
+                "items": { "$ref": "#/$defs/fixedImplementationParameter" }
+              },
+              "open_questions": { "maxItems": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "parameter_status": { "const": "institution_defined" } },
+            "required": ["parameter_status"]
+          },
+          "then": { "properties": { "parameters": { "minItems": 1 } } }
+        },
+        {
+          "if": {
+            "properties": { "parameter_status": { "const": "pending" } },
+            "required": ["parameter_status"]
+          },
+          "then": { "properties": { "open_questions": { "minItems": 1 } } }
+        }
+      ]
+    },
+    "evidenceRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "artifact_type",
+        "description",
+        "required_fields",
+        "source_status",
+        "source_system",
+        "retention_status",
+        "retention_period",
+        "data_classifications",
+        "redaction_required",
+        "open_questions"
+      ],
+      "properties": {
+        "key": { "$ref": "#/$defs/localIdentifier" },
+        "artifact_type": {
+          "enum": [
+            "change_record",
+            "approval_record",
+            "audit_log",
+            "test_report",
+            "configuration_snapshot",
+            "document",
+            "ticket",
+            "other"
+          ]
+        },
+        "description": { "$ref": "#/$defs/nonEmptyString" },
+        "required_fields": { "$ref": "#/$defs/nonEmptyStringArray", "minItems": 1 },
+        "source_status": { "enum": ["known", "institution_defined", "pending"] },
+        "source_system": {
+          "oneOf": [
+            { "$ref": "#/$defs/nonEmptyString" },
+            { "type": "null" }
+          ]
+        },
+        "retention_status": { "enum": ["fixed", "institution_defined", "pending", "not_applicable"] },
+        "retention_period": {
+          "oneOf": [
+            { "type": "string", "format": "duration" },
+            { "type": "null" }
+          ]
+        },
+        "data_classifications": {
+          "type": "array",
+          "items": { "enum": ["public", "internal", "confidential", "personal_data", "restricted"] },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "redaction_required": { "type": "boolean" },
+        "open_questions": { "$ref": "#/$defs/nonEmptyStringArray" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "source_status": { "const": "known" } },
+            "required": ["source_status"]
+          },
+          "then": { "properties": { "source_system": { "$ref": "#/$defs/nonEmptyString" } } }
+        },
+        {
+          "if": {
+            "properties": { "retention_status": { "const": "fixed" } },
+            "required": ["retention_status"]
+          },
+          "then": { "properties": { "retention_period": { "type": "string", "format": "duration" } } },
+          "else": { "properties": { "retention_period": { "type": "null" } } }
+        },
+        {
+          "if": {
+            "anyOf": [
+              { "properties": { "source_status": { "const": "pending" } }, "required": ["source_status"] },
+              { "properties": { "retention_status": { "const": "pending" } }, "required": ["retention_status"] }
+            ]
+          },
+          "then": { "properties": { "open_questions": { "minItems": 1 } } }
+        }
+      ]
+    },
+    "source": {
+      "allOf": [
+        { "$ref": "#/$defs/baseObject" },
+        {
+          "type": "object",
+          "required": [
+            "issuer_name",
+            "issuer_acronym",
+            "jurisdictions",
+            "document_type",
+            "authority_level",
+            "official_identifier",
+            "registry_identifiers",
+            "version_label",
+            "official_url",
+            "published_on",
+            "effective_from",
+            "applies_from",
+            "effective_to",
+            "retrieved_on",
+            "document_status",
+            "source_relations"
+          ],
+          "properties": {
+            "id": { "$ref": "#/$defs/sourceId" },
+            "type": { "const": "source" },
+            "confirmation": { "$ref": "#/$defs/notRequiredConfirmation" },
+            "replaces": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/sourceId" },
+              "uniqueItems": true
+            },
+            "issuer_name": { "$ref": "#/$defs/nonEmptyString" },
+            "issuer_acronym": {
+              "oneOf": [
+                { "$ref": "#/$defs/nonEmptyString" },
+                { "type": "null" }
+              ]
+            },
+            "jurisdictions": {
+              "type": "array",
+              "items": { "type": "string", "pattern": "^(EU|EEA|[A-Z]{2})$" },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "document_type": {
+              "enum": [
+                "eu_regulation",
+                "eu_directive",
+                "eu_delegated_regulation",
+                "eu_implementing_regulation",
+                "corrigendum",
+                "esa_guideline",
+                "national_legislation",
+                "regulator_rule",
+                "regulator_guidance",
+                "official_webpage",
+                "standard"
+              ]
+            },
+            "authority_level": {
+              "enum": [
+                "binding_law",
+                "regulatory_guideline",
+                "supervisory_guidance",
+                "official_information",
+                "supporting_standard"
+              ]
+            },
+            "official_identifier": { "$ref": "#/$defs/nonEmptyString" },
+            "registry_identifiers": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/registryIdentifier" },
+              "uniqueItems": true
+            },
+            "version_label": {
+              "oneOf": [
+                { "$ref": "#/$defs/nonEmptyString" },
+                { "type": "null" }
+              ]
+            },
+            "official_url": { "type": "string", "format": "uri", "pattern": "^https://" },
+            "published_on": { "type": "string", "format": "date" },
+            "effective_from": { "$ref": "#/$defs/dateOrNull" },
+            "applies_from": { "$ref": "#/$defs/dateOrNull" },
+            "effective_to": { "$ref": "#/$defs/dateOrNull" },
+            "retrieved_on": { "type": "string", "format": "date" },
+            "document_status": { "enum": ["current", "superseded", "withdrawn", "unknown"] },
+            "source_relations": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/sourceRelation" },
+              "uniqueItems": true
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "lifecycle_status": { "const": "approved" } },
+            "required": ["lifecycle_status"]
+          },
+          "then": { "properties": { "document_status": { "not": { "const": "unknown" } } } }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "provision": {
+      "allOf": [
+        { "$ref": "#/$defs/baseObject" },
+        {
+          "type": "object",
+          "required": ["source_id", "locator", "heading", "content_kind", "content"],
+          "properties": {
+            "id": { "$ref": "#/$defs/provisionId" },
+            "type": { "const": "provision" },
+            "confirmation": { "$ref": "#/$defs/notRequiredConfirmation" },
+            "replaces": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/provisionId" },
+              "uniqueItems": true
+            },
+            "source_id": { "$ref": "#/$defs/sourceId" },
+            "locator": { "$ref": "#/$defs/locator" },
+            "heading": {
+              "oneOf": [
+                { "$ref": "#/$defs/nonEmptyString" },
+                { "type": "null" }
+              ]
+            },
+            "content_kind": { "enum": ["verbatim_excerpt", "editorial_summary"] },
+            "content": { "$ref": "#/$defs/nonEmptyString" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "requirement": {
+      "allOf": [
+        { "$ref": "#/$defs/baseObject" },
+        {
+          "type": "object",
+          "required": ["statement", "requirement_kind", "derivation_type", "provision_refs", "applicability"],
+          "properties": {
+            "id": { "$ref": "#/$defs/requirementId" },
+            "type": { "const": "requirement" },
+            "replaces": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/requirementId" },
+              "uniqueItems": true
+            },
+            "statement": { "$ref": "#/$defs/nonEmptyString" },
+            "requirement_kind": { "enum": ["obligation", "prohibition", "condition", "permission", "deadline"] },
+            "derivation_type": { "enum": ["direct", "combined", "interpreted"] },
+            "provision_refs": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/provisionRef" },
+              "minItems": 1,
+              "uniqueItems": true,
+              "contains": {
+                "type": "object",
+                "properties": { "relation": { "const": "direct_basis" } },
+                "required": ["relation"]
+              },
+              "minContains": 1
+            },
+            "applicability": { "$ref": "#/$defs/applicability" }
+          }
+        },
+        {
+          "if": {
+            "properties": { "derivation_type": { "const": "combined" } },
+            "required": ["derivation_type"]
+          },
+          "then": {
+            "properties": {
+              "provision_refs": {
+                "contains": {
+                  "type": "object",
+                  "properties": { "relation": { "const": "direct_basis" } },
+                  "required": ["relation"]
+                },
+                "minContains": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "derivation_type": { "const": "interpreted" } },
+            "required": ["derivation_type"]
+          },
+          "then": {
+            "properties": {
+              "confirmation": {
+                "properties": { "status": { "enum": ["pending", "confirmed"] } }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "properties": { "basis": { "const": "source_defined" } },
+                "required": ["basis"]
+              }
+            },
+            "required": ["applicability"]
+          },
+          "then": {
+            "properties": {
+              "provision_refs": {
+                "contains": {
+                  "type": "object",
+                  "properties": { "relation": { "const": "scope_basis" } },
+                  "required": ["relation"]
+                },
+                "minContains": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "properties": { "basis": { "const": "decision_defined" } },
+                "required": ["basis"]
+              }
+            },
+            "required": ["applicability"]
+          },
+          "then": { "properties": { "confirmation": { "properties": { "status": { "const": "confirmed" } } } } }
+        },
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "properties": { "basis": { "const": "pending" } },
+                "required": ["basis"]
+              }
+            },
+            "required": ["applicability"]
+          },
+          "then": { "properties": { "confirmation": { "properties": { "status": { "const": "pending" } } } } }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "decision": {
+      "allOf": [
+        { "$ref": "#/$defs/baseObject" },
+        {
+          "type": "object",
+          "required": [
+            "decision_type",
+            "subject_requirement_ids",
+            "subject_control_ids",
+            "question",
+            "conclusion",
+            "rationale",
+            "basis_provision_ids",
+            "assumptions",
+            "conditions",
+            "decided_by_role",
+            "decided_on",
+            "effective_from",
+            "effective_to",
+            "review_due_on"
+          ],
+          "properties": {
+            "id": { "$ref": "#/$defs/decisionId" },
+            "type": { "const": "decision" },
+            "confirmation": { "$ref": "#/$defs/notRequiredConfirmation" },
+            "replaces": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/decisionId" },
+              "uniqueItems": true
+            },
+            "decision_type": {
+              "enum": ["interpretation", "applicability", "exception", "implementation_choice", "risk_acceptance"]
+            },
+            "subject_requirement_ids": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/requirementId" },
+              "uniqueItems": true
+            },
+            "subject_control_ids": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/controlId" },
+              "uniqueItems": true
+            },
+            "question": { "$ref": "#/$defs/nonEmptyString" },
+            "conclusion": { "$ref": "#/$defs/nonEmptyString" },
+            "rationale": { "$ref": "#/$defs/nonEmptyString" },
+            "basis_provision_ids": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/provisionId" },
+              "uniqueItems": true
+            },
+            "assumptions": { "$ref": "#/$defs/nonEmptyStringArray" },
+            "conditions": { "$ref": "#/$defs/nonEmptyStringArray" },
+            "decided_by_role": { "$ref": "#/$defs/nonEmptyString" },
+            "decided_on": { "type": "string", "format": "date" },
+            "effective_from": { "type": "string", "format": "date" },
+            "effective_to": { "$ref": "#/$defs/dateOrNull" },
+            "review_due_on": { "$ref": "#/$defs/dateOrNull" }
+          },
+          "anyOf": [
+            { "properties": { "subject_requirement_ids": { "minItems": 1 } } },
+            { "properties": { "subject_control_ids": { "minItems": 1 } } }
+          ]
+        },
+        {
+          "if": {
+            "properties": { "decision_type": { "enum": ["interpretation", "applicability"] } },
+            "required": ["decision_type"]
+          },
+          "then": {
+            "properties": {
+              "subject_requirement_ids": { "minItems": 1 },
+              "basis_provision_ids": { "minItems": 1 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "decision_type": { "const": "implementation_choice" } },
+            "required": ["decision_type"]
+          },
+          "then": { "properties": { "subject_control_ids": { "minItems": 1 } } }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "control": {
+      "allOf": [
+        { "$ref": "#/$defs/baseObject" },
+        {
+          "type": "object",
+          "required": [
+            "objective",
+            "requirement_refs",
+            "control_category",
+            "control_functions",
+            "owner_role",
+            "operation_mode",
+            "trigger_or_frequency",
+            "implementation_rules"
+          ],
+          "properties": {
+            "id": { "$ref": "#/$defs/controlId" },
+            "type": { "const": "control" },
+            "replaces": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/controlId" },
+              "uniqueItems": true
+            },
+            "objective": { "$ref": "#/$defs/nonEmptyString" },
+            "requirement_refs": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/requirementRef" },
+              "minItems": 1,
+              "uniqueItems": true,
+              "contains": {
+                "type": "object",
+                "properties": { "relation": { "const": "implements" } },
+                "required": ["relation"]
+              },
+              "minContains": 1
+            },
+            "control_category": { "enum": ["governance", "process", "technical", "operational"] },
+            "control_functions": {
+              "type": "array",
+              "items": { "enum": ["preventive", "detective", "corrective", "recovery"] },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "owner_role": { "$ref": "#/$defs/nonEmptyString" },
+            "operation_mode": { "enum": ["event_driven", "scheduled", "continuous", "on_demand"] },
+            "trigger_or_frequency": { "$ref": "#/$defs/nonEmptyString" },
+            "implementation_rules": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/implementationRule" },
+              "minItems": 1
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "verification": {
+      "allOf": [
+        { "$ref": "#/$defs/baseObject" },
+        {
+          "type": "object",
+          "required": [
+            "control_ids",
+            "verification_type",
+            "execution_mode",
+            "executor_role",
+            "operation_mode",
+            "trigger_or_frequency",
+            "preconditions",
+            "procedure",
+            "expected_result",
+            "failure_criteria",
+            "on_failure",
+            "evidence_requirements"
+          ],
+          "properties": {
+            "id": { "$ref": "#/$defs/verificationId" },
+            "type": { "const": "verification" },
+            "confirmation": { "$ref": "#/$defs/notRequiredConfirmation" },
+            "replaces": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/verificationId" },
+              "uniqueItems": true
+            },
+            "control_ids": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/controlId" },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "verification_type": { "enum": ["inspection", "test", "query", "review", "observation"] },
+            "execution_mode": { "enum": ["manual", "automated", "hybrid"] },
+            "executor_role": { "$ref": "#/$defs/nonEmptyString" },
+            "operation_mode": { "enum": ["event_driven", "scheduled", "continuous", "on_demand"] },
+            "trigger_or_frequency": { "$ref": "#/$defs/nonEmptyString" },
+            "preconditions": { "$ref": "#/$defs/nonEmptyStringArray" },
+            "procedure": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/nonEmptyString" },
+              "minItems": 1
+            },
+            "expected_result": { "$ref": "#/$defs/nonEmptyString" },
+            "failure_criteria": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/nonEmptyString" },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "on_failure": { "$ref": "#/$defs/nonEmptyString" },
+            "evidence_requirements": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/evidenceRequirement" },
+              "minItems": 1
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    }
+  }
+}

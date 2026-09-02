@@ -1,0 +1,32 @@
+{
+  "id": "dec-change-role-separation-baseline",
+  "type": "decision",
+  "schema_version": "0.1.0",
+  "revision": 1,
+  "title": "Baseline implementation choice for ICT change role separation",
+  "language": "en",
+  "lifecycle_status": "approved",
+  "confirmation": {
+    "status": "not_required",
+    "open_questions": []
+  },
+  "replaces": [],
+  "decision_type": "implementation_choice",
+  "subject_requirement_ids": [],
+  "subject_control_ids": ["ctl-change-role-separation"],
+  "question": "How should the public control example enforce independence between ICT change approval, request, and implementation?",
+  "conclusion": "Compare recorded actor identities and prevent an approver from acting as requester or implementer for the same change.",
+  "rationale": "A deterministic identity comparison makes the independence requirement testable while leaving institution-specific workflow and identity systems open.",
+  "basis_provision_ids": ["prv-eu-reg-2024-1774-art-17-1-b"],
+  "assumptions": [
+    "The institution can record stable identities for requester, implementer, and approver."
+  ],
+  "conditions": [
+    "A specific institution must map the generic roles to its authorised workflow roles before use."
+  ],
+  "decided_by_role": "emi_knowledge_control_design_owner",
+  "decided_on": "2026-09-02",
+  "effective_from": "2026-09-02",
+  "effective_to": null,
+  "review_due_on": null
+}

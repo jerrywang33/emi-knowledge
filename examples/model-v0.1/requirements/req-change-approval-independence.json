@@ -1,0 +1,66 @@
+{
+  "id": "req-change-approval-independence",
+  "type": "requirement",
+  "schema_version": "0.1.0",
+  "revision": 1,
+  "title": "Keep ICT change approval independent",
+  "language": "en",
+  "lifecycle_status": "approved",
+  "confirmation": {
+    "status": "not_required",
+    "open_questions": []
+  },
+  "replaces": [],
+  "statement": "Financial entities shall include mechanisms in the ICT change management procedure that keep change approval functions independent from the functions responsible for requesting and implementing changes.",
+  "requirement_kind": "obligation",
+  "derivation_type": "direct",
+  "provision_refs": [
+    {
+      "provision_id": "prv-eu-reg-2024-1774-art-17-1-b",
+      "relation": "direct_basis"
+    },
+    {
+      "provision_id": "prv-eu-reg-2024-1774-art-17-1",
+      "relation": "scope_basis"
+    },
+    {
+      "provision_id": "prv-eu-reg-2022-2554-art-64-2",
+      "relation": "scope_basis"
+    }
+  ],
+  "applicability": {
+    "basis": "source_defined",
+    "jurisdictions": {
+      "mode": "include",
+      "values": ["EU"]
+    },
+    "entity_types": {
+      "mode": "include",
+      "values": ["financial_entity"]
+    },
+    "license_roles": {
+      "mode": "not_applicable",
+      "values": []
+    },
+    "activities": {
+      "mode": "include",
+      "values": ["ict_change_management"]
+    },
+    "products": {
+      "mode": "not_applicable",
+      "values": []
+    },
+    "data_categories": {
+      "mode": "not_applicable",
+      "values": []
+    },
+    "framework_branches": {
+      "mode": "include",
+      "values": ["dora_full_ict_risk_management"]
+    },
+    "effective_from": "2025-01-17",
+    "effective_to": null,
+    "conditions": [],
+    "exclusions": []
+  }
+}

@@ -2,7 +2,7 @@
 
 - 当前阶段：`v0.1 DORA`
 - 当前步骤：第 4 步，确认最小知识模型与 Schema
-- 最后更新：2026-08-31
+- 最后更新：2026-09-02
 
 ## 阶段目标
 
@@ -142,9 +142,16 @@ ICT 变更管理的首批来源基线为：
 - 已确认 `Source`、`Provision`、`Requirement`、`Decision`、`Control` 和 `Verification` 六种核心对象。
 - 已确认 `Applicability`、`ImplementationRule` 和 `EvidenceRequirement` 分别作为后三类业务对象的内嵌结构。
 - 核心关系和暂不独立建模的内容已记录在 [Decision 0001：v0.1 最小知识模型](../docs/decisions/0001-v0.1-minimal-knowledge-model.md)。
-- 已形成 [v0.1 知识模型字段草案](../docs/model/v0.1-knowledge-model-draft.md)，一次性给出通用字段、六类对象、三个内嵌结构、状态、引用、校验分工和完整字段组合示例。
-- 字段草案当前等待逐项人工复核，顺序为 `Source`、`Provision`、`Requirement`、`Decision`、`Control`、`Verification`。
-- 六类对象全部确认前不创建 Schema、知识对象目录或实现代码。
+- [v0.1 知识模型](../docs/model/v0.1-knowledge-model-draft.md) 已从字段草案推进为工程候选版，覆盖通用字段、六类对象、三个内嵌结构、状态、引用、校验分工和完整字段组合示例。
+- 工程候选版当前等待逐项人工复核，顺序为 `Source`、`Provision`、`Requirement`、`Decision`、`Control`、`Verification`。
+- 当前采用“先形成完整候选版，再逐项复核”的方式。正式知识对象目录和实现代码在确认后创建。
+
+2026-09-02 工程候选版进展：
+
+- 已完成六类对象的工程审查并形成 `KNOWLEDGE-MODEL-V0.1-RC1`，人工确认状态保持待复核。
+- 已建立 [v0.1 JSON Schema](../schemas/v0.1/knowledge-object.schema.json)，覆盖六类对象、三个内嵌结构和单对象条件规则。
+- 已建立 [模型示例](../examples/model-v0.1/README.md)，使用 Article 17(1)(a)、(b) 和 (g) 三项真实要求验证字段，并跑通 Article 17(1)(b) 的来源到证据链。
+- 待仓库维护者按 `Source`、`Provision`、`Requirement`、`Decision`、`Control`、`Verification` 顺序逐项确认；确认完成后固定 Schema 并进入第 5 步。
 
 完成条件：
 
