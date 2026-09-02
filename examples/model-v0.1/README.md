@@ -1,6 +1,6 @@
 # v0.1 知识模型示例
 
-本目录用于检查 `KNOWLEDGE-MODEL-V0.1-RC1` 和 [JSON Schema](../../schemas/v0.1/knowledge-object.schema.json) 的表达能力。每个 JSON 文件保存一个对象，内容覆盖六类核心对象和以下三项 ICT 变更管理要求：
+本目录用于检查 `KNOWLEDGE-MODEL-V0.1` 和 [JSON Schema](../../schemas/v0.1/knowledge-object.schema.json) 的表达能力。每个 JSON 文件保存一个对象，内容覆盖六类核心对象和以下三项 ICT 变更管理要求：
 
 1. Regulation (EU) 2024/1774 Article 17(1)(a)：验证 ICT 安全要求是否得到满足。
 2. Regulation (EU) 2024/1774 Article 17(1)(b)：保持变更批准职能与申请、实施职能独立。
