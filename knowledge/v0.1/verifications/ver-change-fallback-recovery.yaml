@@ -1,0 +1,50 @@
+id: ver-change-fallback-recovery
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify change fall-back and recovery readiness
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-change-fallback-recovery]
+verification_type: test
+execution_mode: hybrid
+executor_role: operational_resilience_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before production implementation and after material fall-back design changes
+preconditions:
+  - The change has a fall-back and recovery plan with identified owners and dependencies.
+procedure:
+  - Inspect abort criteria, decision authority, fall-back steps, recovery steps, backups, and restored-service checks.
+  - Confirm the selected verification depth follows the institution's approved risk and criticality rule.
+  - Execute or review the required fall-back test and confirm remediation of failed results.
+expected_result: The plan is complete, owned, feasible, and verified at the required depth before implementation.
+failure_criteria:
+  - Required fall-back or recovery information is missing.
+  - A required backup or dependency is unavailable.
+  - Verification fails or does not meet the approved depth.
+on_failure: Block implementation, remediate the plan or environment, and repeat the required test.
+evidence_requirements:
+  - key: fallback-plan
+    artifact_type: document
+    description: Versioned fall-back and recovery plan for the change.
+    required_fields: [change identifier, abort criteria, decision authority, steps, owner roles, backups, dependencies, restored-service checks]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []
+  - key: fallback-test-report
+    artifact_type: test_report
+    description: Results of the required fall-back or recovery verification.
+    required_fields: [change identifier, test scope, environment, steps executed, results, defects, remediation status, test timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []

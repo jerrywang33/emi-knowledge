@@ -1,0 +1,50 @@
+id: ver-change-role-separation
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify ICT change approval independence
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-change-role-separation]
+verification_type: query
+execution_mode: automated
+executor_role: control_assurance
+operation_mode: event_driven
+trigger_or_frequency: At approval and before each production deployment
+preconditions:
+  - Requester, implementer, and approver identities are recorded using stable identity keys.
+procedure:
+  - Read requester, implementer, and approver identities from the change record.
+  - Compare the approver identity with requester and implementer identities.
+  - Check the approval timestamp and workflow result before deployment.
+expected_result: The approver differs from requester and implementer, and valid approval precedes deployment.
+failure_criteria:
+  - The approver matches the requester.
+  - The approver matches the implementer.
+  - Approval is missing, rejected, or recorded after deployment.
+on_failure: Block approval or deployment, retain the failed attempt, and escalate to the change management owner.
+evidence_requirements:
+  - key: role-record
+    artifact_type: change_record
+    description: Change record containing stable identities for conflicting roles.
+    required_fields: [change identifier, requester identity, implementer identity, approver identity, approval timestamp, deployment timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, personal_data]
+    redaction_required: true
+    open_questions: []
+  - key: approval-audit-log
+    artifact_type: audit_log
+    description: Audit trail for approval attempts and workflow decisions.
+    required_fields: [change identifier, actor identity, action, timestamp, workflow result]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, personal_data]
+    redaction_required: true
+    open_questions: []

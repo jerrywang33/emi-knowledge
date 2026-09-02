@@ -1,0 +1,35 @@
+id: ctl-change-planning-record
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Record change responsibilities, plans, and expected outcomes
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Each change record names responsible roles and contains an approved plan, transition approach, quality assurance, purpose, scope, timeline, and expected outcomes.
+requirement_refs:
+  - {requirement_id: req-full-change-roles-and-quality, relation: implements}
+  - {requirement_id: req-full-change-details, relation: implements}
+control_category: process
+control_functions: [preventive, detective]
+owner_role: change_owner
+operation_mode: event_driven
+trigger_or_frequency: During change planning and before implementation approval
+implementation_rules:
+  - key: responsibility-and-plan-record
+    rule_type: data
+    statement: Require named accountable roles and documented specification, implementation plan, transition design, testing approach, and quality assurance before approval.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Return the change to planning and prevent implementation approval.
+    open_questions: []
+  - key: communicated-change-details
+    rule_type: process
+    statement: Record and communicate purpose, scope, implementation timeline, and expected outcomes to the roles affected by the change.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Hold implementation until required details are complete and communication is recorded.
+    open_questions: []

@@ -1,0 +1,33 @@
+id: src-mfsa-ict-change-management-2026
+type: source
+schema_version: 0.1.0
+revision: 1
+title: ICT Change Management under the Digital Operational Resilience Act
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+issuer_name: Malta Financial Services Authority
+issuer_acronym: MFSA
+jurisdictions: [MT]
+document_type: official_webpage
+authority_level: official_information
+official_identifier: MFSA publication dated 7 April 2026
+registry_identifiers:
+  - registry: mfsa
+    value: ict-change-management-dora-2026-04-07
+version_label: Web page retrieved on 2026-09-02
+official_url: https://www.mfsa.mt/publication/ict-change-management-under-the-digital-operational-resilience-act-dora/
+published_on: "2026-04-07"
+effective_from: null
+applies_from: null
+effective_to: null
+retrieved_on: "2026-09-02"
+document_status: current
+source_relations:
+  - relation: references
+    source_id: src-eu-reg-2022-2554
+  - relation: references
+    source_id: src-eu-reg-2024-1774

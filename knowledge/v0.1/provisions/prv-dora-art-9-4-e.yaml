@@ -1,0 +1,24 @@
+id: prv-dora-art-9-4-e
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Documented risk-based ICT change management
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 9(4)(e)
+  segments:
+    - kind: article
+      value: "9"
+    - kind: paragraph
+      value: "4"
+    - kind: point
+      value: e
+heading: Protection and prevention
+content_kind: editorial_summary
+content: Financial entities implement documented, risk-based ICT change management policies, procedures, and controls as part of overall change management so all ICT system changes are recorded, tested, assessed, approved, implemented, and verified in a controlled manner.

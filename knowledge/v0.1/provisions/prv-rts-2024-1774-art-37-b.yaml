@@ -1,0 +1,24 @@
+id: prv-rts-2024-1774-art-37-b
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Test and approve systems before production changes
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 37(b)
+  segments:
+    - kind: title
+      value: III
+    - kind: article
+      value: "37"
+    - kind: point
+      value: b
+heading: ICT systems acquisition, development, and maintenance
+content_kind: editorial_summary
+content: Simplified-framework entities ensure testing and approval of ICT systems before first use and before introducing changes to the production environment.

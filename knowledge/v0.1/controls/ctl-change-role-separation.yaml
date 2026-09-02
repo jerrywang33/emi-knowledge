@@ -1,0 +1,26 @@
+id: ctl-change-role-separation
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Enforce independence of ICT change approval
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: No actor approves an ICT change for which the same actor is recorded as requester or implementer.
+requirement_refs:
+  - {requirement_id: req-full-change-approval-independence, relation: implements}
+control_category: technical
+control_functions: [preventive]
+owner_role: change_management_owner
+operation_mode: event_driven
+trigger_or_frequency: At every ICT change approval action
+implementation_rules:
+  - key: conflicting-role-block
+    rule_type: access
+    statement: Compare approver identity with requester and implementer identities and reject the approval when the approver holds either conflicting role for the same change.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Block approval, retain the failed attempt in the audit trail, and notify the change management owner.
+    open_questions: []

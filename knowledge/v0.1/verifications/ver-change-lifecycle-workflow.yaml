@@ -1,0 +1,50 @@
+id: ver-change-lifecycle-workflow
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify controlled ICT change lifecycle gates
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-change-lifecycle-workflow]
+verification_type: query
+execution_mode: automated
+executor_role: control_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before production implementation and before change closure
+preconditions:
+  - The change system exposes lifecycle states, gate results, approvals, and timestamps.
+procedure:
+  - Resolve the stable change identifier and read its complete lifecycle history.
+  - Check that assessment, testing, and approval gates passed before implementation.
+  - Check that implementation and post-implementation verification are recorded before closure.
+expected_result: The change has one traceable identity and all required gates occur in the permitted order with passing results.
+failure_criteria:
+  - A stable change identifier or lifecycle history is missing.
+  - Implementation occurs before a required gate passes.
+  - The change closes without post-implementation verification.
+on_failure: Block the pending transition where possible, reopen the change when necessary, and repeat verification after remediation.
+evidence_requirements:
+  - key: lifecycle-record
+    artifact_type: change_record
+    description: The complete controlled record of the ICT change lifecycle.
+    required_fields: [change identifier, classification, affected assets, lifecycle states, gate results, timestamps]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal]
+    redaction_required: false
+    open_questions: []
+  - key: lifecycle-audit-log
+    artifact_type: audit_log
+    description: The append-only history of lifecycle transitions and control decisions.
+    required_fields: [change identifier, actor identity, previous state, new state, action, timestamp, result]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, personal_data]
+    redaction_required: true
+    open_questions: []

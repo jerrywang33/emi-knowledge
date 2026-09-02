@@ -1,0 +1,26 @@
+id: prv-rts-2024-1774-art-17-1-h
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Assess impact on existing ICT security measures
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 17(1)(h)
+  segments:
+    - kind: title
+      value: II
+    - kind: article
+      value: "17"
+    - kind: paragraph
+      value: "1"
+    - kind: point
+      value: h
+heading: null
+content_kind: editorial_summary
+content: Financial entities identify the potential impact of a change on existing ICT security measures and assess whether additional ICT security measures are required.

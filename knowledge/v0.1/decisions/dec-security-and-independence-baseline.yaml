@@ -1,0 +1,34 @@
+id: dec-security-and-independence-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Public engineering baseline for security gates and approval independence
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-change-security-test-gate
+  - ctl-change-role-separation
+  - ctl-change-security-impact
+question: Which reusable control pattern should the public engineering baseline use for security verification, role independence, and change risk assessment?
+conclusion: Use traceable requirement-to-test mapping, risk-based test depth, deterministic identity comparison for conflicting roles, and a recorded security-control impact assessment.
+rationale: These controls create repeatable pass and fail conditions and preserve institution-level choices for test depth, major-change criteria, and system mapping.
+basis_provision_ids:
+  - prv-rts-2024-1774-art-17-1-a
+  - prv-rts-2024-1774-art-17-1-b
+  - prv-rts-2024-1774-art-17-1-h
+  - prv-rts-2024-1774-art-31-1-e
+  - prv-rts-2024-1774-art-36-1
+  - prv-rts-2024-1774-art-37-b
+assumptions:
+  - The institution can identify actors consistently across change, approval, deployment, and audit records.
+conditions:
+  - The institution defines approved test-depth and major-change rules before operational use.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-02"
+effective_from: "2026-09-02"
+effective_to: null
+review_due_on: null

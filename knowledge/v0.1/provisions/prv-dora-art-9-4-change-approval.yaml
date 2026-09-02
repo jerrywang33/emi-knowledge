@@ -1,0 +1,24 @@
+id: prv-dora-art-9-4-change-approval
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Management approval and specific protocols for ICT change management
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 9(4), second subparagraph
+  segments:
+    - kind: article
+      value: "9"
+    - kind: paragraph
+      value: "4"
+    - kind: other
+      value: second subparagraph
+heading: Protection and prevention
+content_kind: editorial_summary
+content: The ICT change management process is approved by appropriate lines of management and has specific protocols in place.

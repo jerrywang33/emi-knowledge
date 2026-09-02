@@ -1,0 +1,26 @@
+id: prv-rts-2024-1774-art-31-1-e
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Assess ICT risk from major changes under the simplified framework
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 31(1)(e)
+  segments:
+    - kind: title
+      value: III
+    - kind: article
+      value: "31"
+    - kind: paragraph
+      value: "1"
+    - kind: point
+      value: e
+heading: ICT risk management
+content_kind: editorial_summary
+content: Simplified-framework entities identify and assess ICT and information security risks resulting from any major change in ICT systems, ICT services, processes, or procedures.

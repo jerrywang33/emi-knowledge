@@ -1,0 +1,50 @@
+id: ver-change-governance
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify ICT change governance and process approval
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-change-governance]
+verification_type: review
+execution_mode: manual
+executor_role: control_assurance
+operation_mode: event_driven
+trigger_or_frequency: When the ICT change process is established or materially revised
+preconditions:
+  - The proposed process version and protocols are available for review.
+procedure:
+  - Confirm the process version has approval from the institution's authorised management role.
+  - Confirm protocols cover intake, classification, assessment, approval, implementation, verification, exceptions, and closure.
+  - Confirm the effective process version matches the approved version.
+expected_result: Management approval is valid, required protocols are complete, and only the approved process version is effective.
+failure_criteria:
+  - Management approval is missing or issued by an unauthorised role.
+  - A required protocol area is absent.
+  - The effective process differs from the approved version.
+on_failure: Prevent the process version from becoming effective and track governance remediation to closure.
+evidence_requirements:
+  - key: process-approval
+    artifact_type: approval_record
+    description: Approval of the identified ICT change management process version.
+    required_fields: [process version, approver role, decision, approval timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal]
+    redaction_required: false
+    open_questions: []
+  - key: change-protocol
+    artifact_type: document
+    description: The approved ICT change management protocols reviewed by assurance.
+    required_fields: [document identifier, version, owner role, effective date, protocol sections]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal]
+    redaction_required: false
+    open_questions: []

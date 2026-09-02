@@ -1,0 +1,35 @@
+id: ctl-change-lifecycle-workflow
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Enforce the controlled ICT change lifecycle
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Every ICT change has one traceable record and cannot move through assessment, approval, implementation, verification, and closure without satisfying the required gates.
+requirement_refs:
+  - {requirement_id: req-full-change-controlled-lifecycle, relation: implements}
+  - {requirement_id: req-simplified-change-controlled-lifecycle, relation: implements}
+control_category: technical
+control_functions: [preventive, detective]
+owner_role: change_management_owner
+operation_mode: event_driven
+trigger_or_frequency: For every ICT change from registration through closure
+implementation_rules:
+  - key: immutable-change-identity
+    rule_type: data
+    statement: Assign one stable identifier to the change and retain its scope, classification, affected assets, decisions, timestamps, and lifecycle status in a traceable record.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Reject lifecycle actions that do not reference a valid change identifier.
+    open_questions: []
+  - key: lifecycle-gates
+    rule_type: process
+    statement: Prevent implementation until required assessment, testing, and approval gates pass, then require post-implementation verification before closure.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Block the transition, record the failed gate, and notify the change owner.
+    open_questions: []

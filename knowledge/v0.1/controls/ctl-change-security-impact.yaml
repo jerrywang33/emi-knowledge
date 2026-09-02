@@ -1,0 +1,37 @@
+id: ctl-change-security-impact
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Assess change risk and impact on ICT security controls
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Each change has a recorded assessment of affected ICT security measures, additional safeguards, and, for simplified-framework major changes, resulting ICT and information security risks.
+requirement_refs:
+  - {requirement_id: req-full-change-security-impact, relation: implements}
+  - {requirement_id: req-simplified-major-change-risk-assessment, relation: implements}
+control_category: process
+control_functions: [preventive, detective]
+owner_role: ict_risk_owner
+operation_mode: event_driven
+trigger_or_frequency: During assessment of every change and again when scope materially changes
+implementation_rules:
+  - key: security-control-impact
+    rule_type: process
+    statement: Identify affected ICT security measures, evaluate whether their effectiveness changes, and record any additional measures required before implementation.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Prevent approval until unresolved impacts have an authorised treatment decision.
+    open_questions: []
+  - key: major-change-risk-assessment
+    rule_type: process
+    statement: Apply the institution's approved major-change criteria and complete an ICT and information security risk assessment for changes classified as major.
+    parameter_status: institution_defined
+    parameters:
+      - {name: major-change-criteria, value: null, unit: null}
+    conditions:
+      - The change is assessed under the simplified ICT risk management framework.
+    failure_handling: Treat an unclassified change as requiring assessment or escalate to the ICT risk owner.
+    open_questions: []

@@ -1,0 +1,37 @@
+id: ctl-emergency-change
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Control emergency changes before and after implementation
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Emergency changes use restricted safeguards during implementation and complete documented re-evaluation, assessment, and approval within the institution's authorised period.
+requirement_refs:
+  - {requirement_id: req-full-emergency-change-safeguards, relation: implements}
+  - {requirement_id: req-full-emergency-change-post-review, relation: implements}
+control_category: process
+control_functions: [preventive, detective, corrective]
+owner_role: emergency_change_owner
+operation_mode: event_driven
+trigger_or_frequency: For every emergency change
+implementation_rules:
+  - key: emergency-safeguards
+    rule_type: exception
+    statement: Restrict emergency-path access, require a recorded justification and authorised emergency approval, preserve an audit trail, and apply all safeguards that remain feasible before implementation.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The normal change path cannot meet the documented operational need.
+    failure_handling: Deny emergency-path use or escalate immediately to the emergency change authority.
+    open_questions: []
+  - key: post-implementation-review
+    rule_type: process
+    statement: After implementation, document the final change, re-evaluate and assess its effects, complete the omitted controls, and obtain retrospective approval within the authorised period.
+    parameter_status: institution_defined
+    parameters:
+      - {name: maximum-post-review-delay, value: null, unit: hours}
+    conditions: []
+    failure_handling: Escalate overdue review, restrict further emergency access where appropriate, and track remediation to closure.
+    open_questions: []

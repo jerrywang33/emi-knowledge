@@ -1,0 +1,24 @@
+id: prv-dora-art-2-1-d
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: DORA scope includes electronic money institutions
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 2(1)(d)
+  segments:
+    - kind: article
+      value: "2"
+    - kind: paragraph
+      value: "1"
+    - kind: point
+      value: d
+heading: Scope
+content_kind: editorial_summary
+content: DORA applies to electronic money institutions, including electronic money institutions exempted pursuant to Directive 2009/110/EC.

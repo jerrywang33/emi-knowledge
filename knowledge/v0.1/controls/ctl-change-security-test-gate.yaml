@@ -1,0 +1,37 @@
+id: ctl-change-security-test-gate
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Gate production changes on security requirements and testing
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: A production change proceeds only after applicable ICT security requirements are mapped, tested at an appropriate depth, and approved with recorded results.
+requirement_refs:
+  - {requirement_id: req-full-change-security-verification, relation: implements}
+  - {requirement_id: req-simplified-change-security-testing-plan, relation: implements}
+  - {requirement_id: req-simplified-production-change-test-approval, relation: implements}
+control_category: technical
+control_functions: [preventive, detective]
+owner_role: ict_security_assurance_owner
+operation_mode: event_driven
+trigger_or_frequency: Before each change is approved for production implementation
+implementation_rules:
+  - key: security-requirement-mapping
+    rule_type: process
+    statement: Map applicable ICT security requirements and identified threats and vulnerabilities to test cases and acceptance results for the change.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Block approval until the mapping and missing test evidence are completed.
+    open_questions: []
+  - key: risk-based-test-depth
+    rule_type: configuration
+    statement: Select test depth using the institution's approved risk and criticality rules and record the resulting test scope.
+    parameter_status: institution_defined
+    parameters:
+      - {name: test-depth-rule, value: null, unit: null}
+    conditions: []
+    failure_handling: Apply the institution's highest required test depth or escalate for an authorised decision.
+    open_questions: []

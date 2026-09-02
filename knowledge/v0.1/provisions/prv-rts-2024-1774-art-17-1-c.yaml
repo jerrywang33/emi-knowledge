@@ -1,0 +1,26 @@
+id: prv-rts-2024-1774-art-17-1-c
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Roles for planning, transition, controlled testing, and quality assurance
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 17(1)(c)
+  segments:
+    - kind: title
+      value: II
+    - kind: article
+      value: "17"
+    - kind: paragraph
+      value: "1"
+    - kind: point
+      value: c
+heading: null
+content_kind: editorial_summary
+content: ICT change management procedures clearly describe roles and responsibilities that ensure changes are specified and planned, an adequate transition is designed, changes are tested and finalised in a controlled manner, and quality assurance is effective.

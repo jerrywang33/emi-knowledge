@@ -1,0 +1,26 @@
+id: prv-rts-2024-1774-art-17-1-d
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Document and communicate change details
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 17(1)(d)
+  segments:
+    - kind: title
+      value: II
+    - kind: article
+      value: "17"
+    - kind: paragraph
+      value: "1"
+    - kind: point
+      value: d
+heading: null
+content_kind: editorial_summary
+content: Change details are documented and communicated, including purpose and scope, implementation timeline, and expected outcomes.

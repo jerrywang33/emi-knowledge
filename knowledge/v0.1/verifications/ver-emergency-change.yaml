@@ -1,0 +1,50 @@
+id: ver-emergency-change
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify emergency change safeguards and post-implementation review
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-emergency-change]
+verification_type: review
+execution_mode: hybrid
+executor_role: emergency_change_assurance
+operation_mode: event_driven
+trigger_or_frequency: During emergency execution and after every emergency change
+preconditions:
+  - The change is classified as emergency and has a complete audit trail.
+procedure:
+  - Confirm emergency justification, authorised access, approval, and safeguards applied before implementation.
+  - Confirm the final implementation, workarounds, and patches are documented after execution.
+  - Confirm re-evaluation, assessment, omitted controls, and retrospective approval complete within the institution's authorised period.
+expected_result: Emergency-path use is justified and authorised, safeguards are traceable, and post-implementation review and approval complete on time.
+failure_criteria:
+  - Emergency-path justification, approval, access record, or audit trail is missing.
+  - Implemented workarounds or patches are not documented and assessed.
+  - Retrospective review or approval exceeds the authorised period.
+on_failure: Escalate immediately, restrict emergency access where appropriate, and track review and remediation to closure.
+evidence_requirements:
+  - key: emergency-change-record
+    artifact_type: change_record
+    description: Complete emergency change record before, during, and after implementation.
+    required_fields: [change identifier, emergency justification, authorised actors, safeguards, implementation details, workarounds, patches, timestamps]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data]
+    redaction_required: true
+    open_questions: []
+  - key: emergency-post-review
+    artifact_type: approval_record
+    description: Re-evaluation, assessment, omitted-control results, and retrospective approval.
+    required_fields: [change identifier, impact assessment, control completion, findings, approver identity, decision, approval timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, personal_data]
+    redaction_required: true
+    open_questions: []

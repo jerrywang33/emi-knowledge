@@ -1,0 +1,36 @@
+id: ctl-change-governance
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Govern and approve the ICT change management process
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: The ICT change management process has recorded management approval, named ownership, and specific protocols before it is used.
+requirement_refs:
+  - {requirement_id: req-full-change-management-approval, relation: implements}
+  - {requirement_id: req-full-change-specific-protocols, relation: implements}
+control_category: governance
+control_functions: [preventive, detective]
+owner_role: ict_change_governance_owner
+operation_mode: event_driven
+trigger_or_frequency: When the ICT change management process is established or materially revised
+implementation_rules:
+  - key: management-approval
+    rule_type: process
+    statement: Record approval of the ICT change management process by the institution's authorised management role before the process becomes effective.
+    parameter_status: institution_defined
+    parameters:
+      - {name: authorised-management-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Prevent the revised process from becoming effective and escalate to the ICT change governance owner.
+    open_questions: []
+  - key: specific-protocols
+    rule_type: process
+    statement: Maintain approved protocols covering change intake, classification, assessment, approval, implementation, verification, exceptions, and closure.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Suspend use of an incomplete protocol and open a governance remediation item.
+    open_questions: []

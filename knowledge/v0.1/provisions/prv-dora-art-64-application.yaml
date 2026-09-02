@@ -1,0 +1,22 @@
+id: prv-dora-art-64-application
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: DORA application date
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 64, second paragraph
+  segments:
+    - kind: article
+      value: "64"
+    - kind: paragraph
+      value: second
+heading: Entry into force and application
+content_kind: editorial_summary
+content: Regulation (EU) 2022/2554 applies from 17 January 2025.

@@ -1,0 +1,20 @@
+id: prv-mfsa-material-change-expectations
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: MFSA public expectations for material ICT changes
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-mfsa-ict-change-management-2026
+locator:
+  label: Material change considerations
+  segments:
+    - kind: paragraph
+      value: bullet list following body paragraph 4
+heading: null
+content_kind: editorial_summary
+content: For material changes, MFSA encourages management oversight, role separation, detailed transition planning, asset and critical-function mapping, secure development, formal change control, tested failover and rollback, incident integration, third-party participation, early supervisory engagement, and evidence through testing and documentation.

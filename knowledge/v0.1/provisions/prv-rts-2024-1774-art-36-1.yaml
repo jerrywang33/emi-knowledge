@@ -1,0 +1,24 @@
+id: prv-rts-2024-1774-art-36-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Simplified-framework ICT security testing plan
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 36(1)
+  segments:
+    - kind: title
+      value: III
+    - kind: article
+      value: "36"
+    - kind: paragraph
+      value: "1"
+heading: ICT security testing
+content_kind: editorial_summary
+content: Simplified-framework entities establish and implement an ICT security testing plan that validates the effectiveness of ICT security measures, including measures under Articles 37 and 38, and considers identified threats and vulnerabilities.

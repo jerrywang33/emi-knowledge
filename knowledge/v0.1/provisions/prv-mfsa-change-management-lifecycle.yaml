@@ -1,0 +1,20 @@
+id: prv-mfsa-change-management-lifecycle
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: MFSA description of ICT change management lifecycle
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-mfsa-ict-change-management-2026
+locator:
+  label: Body paragraphs 2-3
+  segments:
+    - kind: paragraph
+      value: 2-3
+heading: null
+content_kind: editorial_summary
+content: MFSA describes clear governance, segregation of duties, comprehensive records, impact assessment, pre-deployment testing, rollback and recovery, and a structured workflow as important elements of ICT change management.

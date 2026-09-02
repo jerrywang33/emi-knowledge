@@ -1,0 +1,50 @@
+id: ver-change-security-impact
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify ICT security impact and major-change risk assessment
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-change-security-impact]
+verification_type: review
+execution_mode: hybrid
+executor_role: ict_risk_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before change approval and whenever change scope materially changes
+preconditions:
+  - The change scope, affected assets, existing security measures, and framework branch are identified.
+procedure:
+  - Check the assessment identifies affected ICT security measures and evaluates changes to their effectiveness.
+  - Check required additional security measures have owners and completion status before implementation.
+  - For the simplified branch, apply approved major-change criteria and confirm a risk assessment exists when the criteria are met.
+expected_result: Security impacts and additional measures are complete and approved; simplified-framework major changes have a documented ICT and information security risk assessment.
+failure_criteria:
+  - An affected ICT security measure is omitted.
+  - An additional required measure lacks treatment or completion evidence.
+  - A simplified-framework major change lacks the required risk assessment.
+on_failure: Block change approval, complete or correct the assessment and treatments, and repeat verification.
+evidence_requirements:
+  - key: security-impact-assessment
+    artifact_type: document
+    description: Assessment of affected ICT security measures and additional safeguards.
+    required_fields: [change identifier, affected assets, existing controls, impact conclusions, additional measures, owners, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []
+  - key: major-change-risk-assessment
+    artifact_type: document
+    description: Simplified-framework ICT and information security risk assessment for a major change.
+    required_fields: [change identifier, major-change classification, risk scenarios, likelihood, impact, treatments, residual risk, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []

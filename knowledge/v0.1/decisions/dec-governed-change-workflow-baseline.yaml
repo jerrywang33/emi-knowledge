@@ -1,0 +1,33 @@
+id: dec-governed-change-workflow-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Public engineering baseline for governed ICT change workflow
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-change-governance
+  - ctl-change-lifecycle-workflow
+  - ctl-change-planning-record
+question: Which reusable control pattern should the public engineering baseline use for ICT change governance, lifecycle gates, planning, and records?
+conclusion: Use a management-approved process, a stable change identity, explicit lifecycle gates, named responsibilities, and required planning and communication fields.
+rationale: The pattern converts source requirements into deterministic workflow and record checks while leaving institution-specific roles and systems configurable.
+basis_provision_ids:
+  - prv-dora-art-9-4-e
+  - prv-dora-art-9-4-change-approval
+  - prv-rts-2024-1774-art-17-1-c
+  - prv-rts-2024-1774-art-17-1-d
+  - prv-rts-2024-1774-art-38-2
+assumptions:
+  - The institution operates a system capable of maintaining stable change identifiers, lifecycle states, approvals, and audit history.
+conditions:
+  - Each institution maps the generic roles and workflow gates to its approved organisation and systems before use.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-02"
+effective_from: "2026-09-02"
+effective_to: null
+review_due_on: null

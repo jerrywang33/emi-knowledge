@@ -1,0 +1,50 @@
+id: ver-change-planning-record
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify change planning, responsibilities, and communication
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-change-planning-record]
+verification_type: inspection
+execution_mode: hybrid
+executor_role: change_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before implementation approval
+preconditions:
+  - The change plan and communication record are available.
+procedure:
+  - Check that accountable roles, specification, implementation plan, transition design, testing approach, and quality assurance are documented.
+  - Check that purpose, scope, timeline, and expected outcomes are complete.
+  - Check that affected roles received the current change details before implementation.
+expected_result: Required planning fields and responsibilities are complete, internally consistent, and communicated before implementation.
+failure_criteria:
+  - A required role or planning field is missing.
+  - Scope, timeline, or expected outcomes conflict across records.
+  - Required communication is missing or late.
+on_failure: Return the change to planning and repeat inspection after records and communication are corrected.
+evidence_requirements:
+  - key: change-plan
+    artifact_type: change_record
+    description: Approved change plan and transition information.
+    required_fields: [change identifier, accountable roles, purpose, scope, timeline, expected outcomes, transition design, test approach, quality assurance]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal]
+    redaction_required: false
+    open_questions: []
+  - key: communication-record
+    artifact_type: document
+    description: Record showing distribution of current change details to affected roles.
+    required_fields: [change identifier, content version, recipient roles, communication timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, personal_data]
+    redaction_required: true
+    open_questions: []

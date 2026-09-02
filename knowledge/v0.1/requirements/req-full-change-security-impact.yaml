@@ -1,0 +1,33 @@
+id: req-full-change-security-impact
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Assess change impact on ICT security measures
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An electronic money institution using the full ICT risk management framework shall identify each change's potential impact on existing ICT security measures and assess whether additional ICT security measures are required.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-rts-2024-1774-art-17-1-h, relation: direct_basis}
+  - {provision_id: prv-rts-2024-1774-art-17-1, relation: scope_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+  - {provision_id: prv-mfsa-material-change-expectations, relation: supporting_context}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: include, values: [emi_without_emd2_article_9_1_exemption]}
+  activities: {mode: include, values: [ict_change_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: not_applicable, values: []}
+  framework_branches: {mode: include, values: [dora_full_ict_risk_management]}
+  effective_from: "2025-01-17"
+  effective_to: null
+  conditions: []
+  exclusions:
+    - Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch.

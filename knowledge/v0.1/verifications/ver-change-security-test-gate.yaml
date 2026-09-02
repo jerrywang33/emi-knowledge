@@ -1,0 +1,50 @@
+id: ver-change-security-test-gate
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify security requirements and tests before production change
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-change-security-test-gate]
+verification_type: test
+execution_mode: hybrid
+executor_role: ict_security_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before production implementation approval
+preconditions:
+  - Applicable ICT security requirements and change risk classification are recorded.
+procedure:
+  - Check that each applicable ICT security requirement maps to one or more test cases.
+  - Check that test depth follows the institution's approved risk and criticality rule.
+  - Confirm required tests passed and approval occurred before production implementation.
+expected_result: Security requirement coverage is complete, test depth is justified, all required tests pass, and approval precedes implementation.
+failure_criteria:
+  - An applicable security requirement lacks a test or accepted treatment.
+  - Test depth does not follow the approved rule.
+  - A required test fails, is missing, or completes after implementation.
+on_failure: Block production implementation, remediate failed coverage or results, and repeat verification.
+evidence_requirements:
+  - key: security-test-report
+    artifact_type: test_report
+    description: Test scope, requirement coverage, execution results, defects, and final disposition for the change.
+    required_fields: [change identifier, requirement identifiers, test cases, test environment, results, defects, test timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []
+  - key: production-approval
+    artifact_type: approval_record
+    description: Approval confirming that security and testing gates passed before production implementation.
+    required_fields: [change identifier, approver identity, approval scope, decision, timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, personal_data]
+    redaction_required: true
+    open_questions: []

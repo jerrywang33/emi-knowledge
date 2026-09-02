@@ -1,0 +1,24 @@
+id: prv-rts-2024-1774-art-17-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Scope of full-framework ICT change safeguards
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 17(1)
+  segments:
+    - kind: title
+      value: II
+    - kind: article
+      value: "17"
+    - kind: paragraph
+      value: "1"
+heading: ICT change management
+content_kind: editorial_summary
+content: Full-framework financial entities include the listed safeguards in ICT change management procedures for all changes to software, hardware, firmware components, systems, or security parameters.

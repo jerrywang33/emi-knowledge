@@ -1,0 +1,24 @@
+id: prv-rts-2024-1774-art-38-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Simplified-framework controlled ICT change procedure
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 38(2)
+  segments:
+    - kind: title
+      value: III
+    - kind: article
+      value: "38"
+    - kind: paragraph
+      value: "2"
+heading: ICT project and change management
+content_kind: editorial_summary
+content: Simplified-framework entities develop, document, and implement an ICT change management procedure so all ICT system changes are recorded, tested, assessed, approved, implemented, and verified in a controlled manner with adequate safeguards for digital operational resilience.

@@ -1,0 +1,36 @@
+id: ctl-change-fallback-recovery
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Prepare and verify change fall-back and recovery
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Every in-scope change has owned, feasible, and tested arrangements to abort implementation or recover when implementation is unsuccessful.
+requirement_refs:
+  - {requirement_id: req-full-change-fallback, relation: implements}
+  - {requirement_id: req-simplified-change-controlled-lifecycle, relation: supports}
+control_category: operational
+control_functions: [preventive, recovery]
+owner_role: change_owner
+operation_mode: event_driven
+trigger_or_frequency: Before production implementation and when the fall-back design changes
+implementation_rules:
+  - key: fallback-plan
+    rule_type: operations
+    statement: Define abort criteria, fall-back steps, recovery steps, responsible roles, required backups, decision authority, and verification of restored service for the change.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Block implementation when a required fall-back or recovery plan is missing or infeasible.
+    open_questions: []
+  - key: fallback-test
+    rule_type: process
+    statement: Test or otherwise verify the fall-back and recovery arrangements at a depth determined by the institution's risk and criticality rules.
+    parameter_status: institution_defined
+    parameters:
+      - {name: fallback-test-depth-rule, value: null, unit: null}
+    conditions: []
+    failure_handling: Escalate failed results, remediate the plan, and repeat verification before implementation.
+    open_questions: []

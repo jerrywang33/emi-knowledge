@@ -1,0 +1,30 @@
+id: dec-recovery-and-emergency-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Public engineering baseline for fall-back and emergency changes
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-change-fallback-recovery
+  - ctl-emergency-change
+question: Which reusable control pattern should the public engineering baseline use for failed implementations and emergency changes?
+conclusion: Require owned fall-back and recovery arrangements, restricted emergency-path access, a complete audit trail, and time-bound post-implementation review and approval.
+rationale: The pattern supports controlled recovery and emergency execution while leaving test depth and the retrospective review deadline to institution approval.
+basis_provision_ids:
+  - prv-rts-2024-1774-art-17-1-e
+  - prv-rts-2024-1774-art-17-1-f
+  - prv-rts-2024-1774-art-17-1-g
+assumptions:
+  - The institution can restrict emergency-path access and record all emergency actions.
+conditions:
+  - The institution defines the permitted post-implementation review period and fall-back test-depth rule before operational use.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-02"
+effective_from: "2026-09-02"
+effective_to: null
+review_due_on: null

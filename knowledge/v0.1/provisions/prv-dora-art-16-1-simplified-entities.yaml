@@ -1,0 +1,24 @@
+id: prv-dora-art-16-1-simplified-entities
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Exempted electronic money institutions use the simplified ICT framework
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 16(1), first subparagraph
+  segments:
+    - kind: article
+      value: "16"
+    - kind: paragraph
+      value: "1"
+    - kind: other
+      value: first subparagraph
+heading: Simplified ICT risk management framework
+content_kind: editorial_summary
+content: DORA Articles 5 to 15 do not apply to electronic money institutions exempted pursuant to Directive 2009/110/EC; those entities follow the simplified ICT risk management framework in Article 16.
