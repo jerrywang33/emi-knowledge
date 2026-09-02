@@ -110,9 +110,9 @@ test("graph validation rejects replacement cycles and incomplete chains", async 
 
 test("graph validation rejects credential-like material", async () => {
   const entries = cloneEntries(await loadedEntries());
-  entries[0]!.rawContent += "\naccess_token: ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456\n";
+  const tokenLikeValue = ["ghp", "A".repeat(30)].join("_");
+  entries[0]!.rawContent += `\naccess_token: ${tokenLikeValue}\n`;
   const issues = validateKnowledgeGraph(entries);
   assert.ok(issues.some((issue) => issue.code === "sensitive.github_token"));
   assert.ok(issues.some((issue) => issue.code === "sensitive.credential_field"));
 });
-

@@ -4,7 +4,7 @@ EMI Knowledge 正在建设 DORA `v0.1` 工程基线。仓库已经形成首条 I
 
 当前建设范围、步骤和完成条件见 [Roadmap](roadmap/README.md)。
 
-当前固定发布候选为 [`v0.1.0`](releases/v0.1.0/README.md)，版本范围和限制见[发布记录](docs/releases/v0.1.0.md)。独立使用验收完成后再创建同名 Git tag。
+当前固定发布为 [`v0.1.0`](releases/v0.1.0/README.md)，版本范围和限制见[发布记录](docs/releases/v0.1.0.md)，三类使用结果见[独立使用验收](docs/acceptance/v0.1.0.md)。Git tag `v0.1.0` 用于检出完整版本。
 
 ---
 
@@ -210,12 +210,13 @@ DORA 的正式结构、主题、条款、配套文件和 EMI 适用路径见 [DO
 npm ci
 npm run check
 npm run release:v0.1
+npm run example:query -- req-full-change-controlled-lifecycle
 ```
 
-`npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、知识链缺口或已配置的敏感内容模式都会使命令失败。`npm run release:v0.1` 根据固定配置重新生成发布目录，自动化测试检查生成结果与仓库版本一致。
+`npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、知识链缺口或已配置的敏感内容模式都会使命令失败。`npm run release:v0.1` 根据固定配置重新生成发布目录，自动化测试检查生成结果与仓库版本一致。`npm run example:query` 展示产品如何锁定版本并查询一条完整关系链。
 
 ## 当前状态
 
-项目已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及 `v0.1.0` 固定发布候选。当前正在独立验证人员、Agent 和产品三类使用方式。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
+`v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。后续通过真实项目使用继续校准内容和接口。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。
