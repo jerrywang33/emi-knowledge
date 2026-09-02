@@ -10,7 +10,10 @@ import {
   type VerificationObject,
 } from "./model.js";
 import { sha256, stableJson } from "./stable-json.js";
+import { assertMatchesSchema } from "./schema-validator.js";
 import { assertValid, validateKnowledge } from "./validation.js";
+
+const RELEASE_ARTIFACT_SCHEMA_ID = "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/release-artifact.schema.json";
 
 export interface ReleaseInput {
   id: string;
@@ -29,6 +32,7 @@ export interface ReleaseConfig {
     landscape: ReleaseInput;
     knowledge_model: ReleaseInput;
     schema: ReleaseInput & { version: string };
+    release_artifact_schema: ReleaseInput & { version: string };
   };
   scope: {
     title: string;
@@ -56,6 +60,7 @@ interface InputManifest extends ReleaseInput {
 }
 
 export interface ReleaseManifest extends Record<string, unknown> {
+  $schema: typeof RELEASE_ARTIFACT_SCHEMA_ID;
   manifest_schema_version: "0.1.0";
   release_version: string;
   release_level: ReleaseConfig["release_level"];
@@ -68,6 +73,7 @@ export interface ReleaseManifest extends Record<string, unknown> {
   object_count: number;
   reference_count: number;
   content_sha256: string;
+  config_sha256: string;
   objects: Array<{
     id: string;
     type: string;
@@ -126,6 +132,7 @@ export function validateReleaseConfig(config: ReleaseConfig): void {
     requireString(input.path, `inputs.${key}.path`);
   }
   requireString(config.inputs.schema.version, "inputs.schema.version");
+  requireString(config.inputs.release_artifact_schema.version, "inputs.release_artifact_schema.version");
 }
 
 function resolveRepositoryPath(repositoryRoot: string, configuredPath: string): string {
@@ -361,7 +368,7 @@ async function readInputs(config: ReleaseConfig, repositoryRoot: string): Promis
       id: input.id,
       path: input.path,
       sha256: sha256(content),
-      ...(key === "schema" ? { version: config.inputs.schema.version } : {}),
+      ...("version" in input ? { version: input.version } : {}),
     };
   }
   return result;
@@ -400,7 +407,8 @@ export async function generateRelease(
     sha256: sha256(stableJson(entry.object)),
   }));
 
-  const knowledgeBundle = stableJson({
+  const knowledgeBundleValue = {
+    $schema: RELEASE_ARTIFACT_SCHEMA_ID,
     bundle_schema_version: "0.1.0",
     release_version: config.release_version,
     release_level: config.release_level,
@@ -408,11 +416,13 @@ export async function generateRelease(
     content_sha256: contentHash,
     unresolved_items: unresolvedItems,
     objects,
-  });
-  const agentContext = stableJson({
+  };
+  const agentContextValue = {
+    $schema: RELEASE_ARTIFACT_SCHEMA_ID,
     context_schema_version: "0.1.0",
     release_version: config.release_version,
     release_level: config.release_level,
+    released_on: config.released_on,
     content_sha256: contentHash,
     usage_constraints: [
       "Use only the object IDs and relationships present in this fixed release.",
@@ -421,7 +431,9 @@ export async function generateRelease(
     ],
     unresolved_items: unresolvedItems,
     objects,
-  });
+  };
+  const knowledgeBundle = stableJson(knowledgeBundleValue);
+  const agentContext = stableJson(agentContextValue);
   const humanDocument = generateHumanDocument(config, objects, contentHash, unresolvedItems);
   const artifacts: Record<string, string> = {
     "README.md": humanDocument,
@@ -430,6 +442,7 @@ export async function generateRelease(
   };
 
   const manifest: ReleaseManifest = {
+    $schema: RELEASE_ARTIFACT_SCHEMA_ID,
     manifest_schema_version: "0.1.0",
     release_version: config.release_version,
     release_level: config.release_level,
@@ -442,6 +455,7 @@ export async function generateRelease(
     object_count: report.entries.length,
     reference_count: report.referenceCount,
     content_sha256: contentHash,
+    config_sha256: sha256(stableJson(config)),
     objects: objectManifest,
     unresolved_items: unresolvedItems,
     limitations: config.limitations,
@@ -449,6 +463,11 @@ export async function generateRelease(
       .sort(([left], [right]) => left.localeCompare(right))
       .map(([artifactPath, content]) => ({ path: artifactPath, sha256: sha256(content) })),
   };
+
+  const releaseArtifactSchemaPath = resolveRepositoryPath(root, config.inputs.release_artifact_schema.path);
+  await assertMatchesSchema(knowledgeBundleValue, releaseArtifactSchemaPath, [schemaPath]);
+  await assertMatchesSchema(agentContextValue, releaseArtifactSchemaPath, [schemaPath]);
+  await assertMatchesSchema(manifest, releaseArtifactSchemaPath, [schemaPath]);
   artifacts["manifest.json"] = stableJson(manifest);
 
   await fs.mkdir(outputDirectory, { recursive: true });
@@ -463,4 +482,3 @@ export async function generateReleaseFromFile(configPath: string, repositoryRoot
   const config = JSON.parse(await fs.readFile(configPath, "utf8")) as ReleaseConfig;
   return generateRelease(config, repositoryRoot);
 }
-

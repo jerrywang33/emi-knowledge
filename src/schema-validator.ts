@@ -8,7 +8,10 @@ function formatSchemaError(error: ErrorObject): string {
   return `${error.instancePath || "/"} ${detail}`;
 }
 
-export async function compileKnowledgeSchema(schemaPath: string): Promise<ValidateFunction> {
+export async function compileJsonSchema(
+  schemaPath: string,
+  referencedSchemaPaths: string[] = [],
+): Promise<ValidateFunction> {
   const schema = JSON.parse(await fs.readFile(schemaPath, "utf8")) as object;
   const addFormats = ((formatsModule as unknown as { default?: FormatsPlugin }).default
     ?? formatsModule) as unknown as FormatsPlugin;
@@ -18,7 +21,27 @@ export async function compileKnowledgeSchema(schemaPath: string): Promise<Valida
     strictTypes: false,
   });
   addFormats(ajv);
+  for (const referencedSchemaPath of referencedSchemaPaths) {
+    const referencedSchema = JSON.parse(await fs.readFile(referencedSchemaPath, "utf8")) as object;
+    ajv.addSchema(referencedSchema);
+  }
   return ajv.compile(schema);
+}
+
+export async function compileKnowledgeSchema(schemaPath: string): Promise<ValidateFunction> {
+  return compileJsonSchema(schemaPath);
+}
+
+export async function assertMatchesSchema(
+  value: unknown,
+  schemaPath: string,
+  referencedSchemaPaths: string[] = [],
+): Promise<void> {
+  const validate = await compileJsonSchema(schemaPath, referencedSchemaPaths);
+  if (!validate(value)) {
+    const details = (validate.errors ?? []).map(formatSchemaError).join("\n");
+    throw new Error(`Generated artifact failed Schema validation:\n${details}`);
+  }
 }
 
 export async function validateSchema(

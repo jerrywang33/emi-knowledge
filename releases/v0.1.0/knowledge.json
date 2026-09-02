@@ -1,0 +1,3652 @@
+{
+  "$schema": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/release-artifact.schema.json",
+  "bundle_schema_version": "0.1.0",
+  "content_sha256": "572112de29790efa365b5fd25b764ada419fde99c34ee59e38be881dfb88f3e7",
+  "objects": [
+    {
+      "applies_from": "2025-01-17",
+      "authority_level": "binding_law",
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "document_status": "current",
+      "document_type": "eu_regulation",
+      "effective_from": "2023-01-16",
+      "effective_to": null,
+      "id": "src-eu-reg-2022-2554",
+      "issuer_acronym": null,
+      "issuer_name": "European Parliament and Council of the European Union",
+      "jurisdictions": [
+        "EU"
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "official_identifier": "Regulation (EU) 2022/2554",
+      "official_url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng",
+      "published_on": "2022-12-27",
+      "registry_identifiers": [
+        {
+          "registry": "celex",
+          "value": "32022R2554"
+        },
+        {
+          "registry": "eli",
+          "value": "http://data.europa.eu/eli/reg/2022/2554/oj"
+        }
+      ],
+      "replaces": [],
+      "retrieved_on": "2026-09-02",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_relations": [],
+      "title": "Regulation (EU) 2022/2554",
+      "type": "source",
+      "version_label": "English Official Journal text; identified corrigenda do not amend EN"
+    },
+    {
+      "applies_from": null,
+      "authority_level": "binding_law",
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "document_status": "current",
+      "document_type": "eu_delegated_regulation",
+      "effective_from": "2024-07-15",
+      "effective_to": null,
+      "id": "src-eu-reg-2024-1774",
+      "issuer_acronym": "EC",
+      "issuer_name": "European Commission",
+      "jurisdictions": [
+        "EU"
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "official_identifier": "Commission Delegated Regulation (EU) 2024/1774",
+      "official_url": "https://eur-lex.europa.eu/eli/reg_del/2024/1774/2024-06-25/eng",
+      "published_on": "2024-06-25",
+      "registry_identifiers": [
+        {
+          "registry": "celex",
+          "value": "02024R1774-20240625"
+        },
+        {
+          "registry": "eli",
+          "value": "http://data.europa.eu/eli/reg_del/2024/1774/2024-06-25"
+        }
+      ],
+      "replaces": [],
+      "retrieved_on": "2026-09-02",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_relations": [
+        {
+          "relation": "supplements",
+          "source_id": "src-eu-reg-2022-2554"
+        }
+      ],
+      "title": "Commission Delegated Regulation (EU) 2024/1774",
+      "type": "source",
+      "version_label": "Consolidated English text including the corrigendum published on 2025-05-15"
+    },
+    {
+      "applies_from": null,
+      "authority_level": "official_information",
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "document_status": "current",
+      "document_type": "official_webpage",
+      "effective_from": null,
+      "effective_to": null,
+      "id": "src-mfsa-ict-change-management-2026",
+      "issuer_acronym": "MFSA",
+      "issuer_name": "Malta Financial Services Authority",
+      "jurisdictions": [
+        "MT"
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "official_identifier": "MFSA publication dated 7 April 2026",
+      "official_url": "https://www.mfsa.mt/publication/ict-change-management-under-the-digital-operational-resilience-act-dora/",
+      "published_on": "2026-04-07",
+      "registry_identifiers": [
+        {
+          "registry": "mfsa",
+          "value": "ict-change-management-dora-2026-04-07"
+        }
+      ],
+      "replaces": [],
+      "retrieved_on": "2026-09-02",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_relations": [
+        {
+          "relation": "references",
+          "source_id": "src-eu-reg-2022-2554"
+        },
+        {
+          "relation": "references",
+          "source_id": "src-eu-reg-2024-1774"
+        }
+      ],
+      "title": "ICT Change Management under the Digital Operational Resilience Act",
+      "type": "source",
+      "version_label": "Web page retrieved on 2026-09-02"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "DORA Articles 5 to 15 do not apply to electronic money institutions exempted pursuant to Directive 2009/110/EC; those entities follow the simplified ICT risk management framework in Article 16.",
+      "content_kind": "editorial_summary",
+      "heading": "Simplified ICT risk management framework",
+      "id": "prv-dora-art-16-1-simplified-entities",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 16(1), first subparagraph",
+        "segments": [
+          {
+            "kind": "article",
+            "value": "16"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "other",
+            "value": "first subparagraph"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2022-2554",
+      "title": "Exempted electronic money institutions use the simplified ICT framework",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "DORA applies to electronic money institutions, including electronic money institutions exempted pursuant to Directive 2009/110/EC.",
+      "content_kind": "editorial_summary",
+      "heading": "Scope",
+      "id": "prv-dora-art-2-1-d",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 2(1)(d)",
+        "segments": [
+          {
+            "kind": "article",
+            "value": "2"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "d"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2022-2554",
+      "title": "DORA scope includes electronic money institutions",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Regulation (EU) 2022/2554 applies from 17 January 2025.",
+      "content_kind": "editorial_summary",
+      "heading": "Entry into force and application",
+      "id": "prv-dora-art-64-application",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 64, second paragraph",
+        "segments": [
+          {
+            "kind": "article",
+            "value": "64"
+          },
+          {
+            "kind": "paragraph",
+            "value": "second"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2022-2554",
+      "title": "DORA application date",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "The ICT change management process is approved by appropriate lines of management and has specific protocols in place.",
+      "content_kind": "editorial_summary",
+      "heading": "Protection and prevention",
+      "id": "prv-dora-art-9-4-change-approval",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 9(4), second subparagraph",
+        "segments": [
+          {
+            "kind": "article",
+            "value": "9"
+          },
+          {
+            "kind": "paragraph",
+            "value": "4"
+          },
+          {
+            "kind": "other",
+            "value": "second subparagraph"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2022-2554",
+      "title": "Management approval and specific protocols for ICT change management",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Financial entities implement documented, risk-based ICT change management policies, procedures, and controls as part of overall change management so all ICT system changes are recorded, tested, assessed, approved, implemented, and verified in a controlled manner.",
+      "content_kind": "editorial_summary",
+      "heading": "Protection and prevention",
+      "id": "prv-dora-art-9-4-e",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 9(4)(e)",
+        "segments": [
+          {
+            "kind": "article",
+            "value": "9"
+          },
+          {
+            "kind": "paragraph",
+            "value": "4"
+          },
+          {
+            "kind": "point",
+            "value": "e"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2022-2554",
+      "title": "Documented risk-based ICT change management",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "MFSA describes clear governance, segregation of duties, comprehensive records, impact assessment, pre-deployment testing, rollback and recovery, and a structured workflow as important elements of ICT change management.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-mfsa-change-management-lifecycle",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Body paragraphs 2-3",
+        "segments": [
+          {
+            "kind": "paragraph",
+            "value": "2-3"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-mfsa-ict-change-management-2026",
+      "title": "MFSA description of ICT change management lifecycle",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "For material changes, MFSA encourages management oversight, role separation, detailed transition planning, asset and critical-function mapping, secure development, formal change control, tested failover and rollback, incident integration, third-party participation, early supervisory engagement, and evidence through testing and documentation.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-mfsa-material-change-expectations",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Material change considerations",
+        "segments": [
+          {
+            "kind": "paragraph",
+            "value": "bullet list following body paragraph 4"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-mfsa-ict-change-management-2026",
+      "title": "MFSA public expectations for material ICT changes",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Full-framework financial entities include the listed safeguards in ICT change management procedures for all changes to software, hardware, firmware components, systems, or security parameters.",
+      "content_kind": "editorial_summary",
+      "heading": "ICT change management",
+      "id": "prv-rts-2024-1774-art-17-1",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Scope of full-framework ICT change safeguards",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "ICT change management procedures include verification of whether ICT security requirements have been met.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-a",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(a)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "a"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Verify ICT security requirements",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "ICT change management procedures include mechanisms that keep approval functions independent from functions responsible for requesting and implementing changes.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-b",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(b)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "b"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Independent ICT change approval",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "ICT change management procedures clearly describe roles and responsibilities that ensure changes are specified and planned, an adequate transition is designed, changes are tested and finalised in a controlled manner, and quality assurance is effective.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-c",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(c)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "c"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Roles for planning, transition, controlled testing, and quality assurance",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Change details are documented and communicated, including purpose and scope, implementation timeline, and expected outcomes.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-d",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(d)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "d"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Document and communicate change details",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "ICT change management identifies fall-back procedures and responsibilities, including aborting changes and recovering from unsuccessfully implemented changes.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-e",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(e)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "e"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Fall-back, abort, and recovery procedures",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Procedures, protocols, and tools manage emergency changes with adequate safeguards.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-f",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(f)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "f"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Safeguards for emergency changes",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Procedures document, re-evaluate, assess, and approve emergency changes after implementation, including workarounds and patches.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-g",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(g)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "g"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Post-implementation handling of emergency changes",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Financial entities identify the potential impact of a change on existing ICT security measures and assess whether additional ICT security measures are required.",
+      "content_kind": "editorial_summary",
+      "heading": null,
+      "id": "prv-rts-2024-1774-art-17-1-h",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 17(1)(h)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "II"
+          },
+          {
+            "kind": "article",
+            "value": "17"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "h"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Assess impact on existing ICT security measures",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Simplified-framework entities identify and assess ICT and information security risks resulting from any major change in ICT systems, ICT services, processes, or procedures.",
+      "content_kind": "editorial_summary",
+      "heading": "ICT risk management",
+      "id": "prv-rts-2024-1774-art-31-1-e",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 31(1)(e)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "III"
+          },
+          {
+            "kind": "article",
+            "value": "31"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          },
+          {
+            "kind": "point",
+            "value": "e"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Assess ICT risk from major changes under the simplified framework",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Simplified-framework entities establish and implement an ICT security testing plan that validates the effectiveness of ICT security measures, including measures under Articles 37 and 38, and considers identified threats and vulnerabilities.",
+      "content_kind": "editorial_summary",
+      "heading": "ICT security testing",
+      "id": "prv-rts-2024-1774-art-36-1",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 36(1)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "III"
+          },
+          {
+            "kind": "article",
+            "value": "36"
+          },
+          {
+            "kind": "paragraph",
+            "value": "1"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Simplified-framework ICT security testing plan",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Simplified-framework entities ensure testing and approval of ICT systems before first use and before introducing changes to the production environment.",
+      "content_kind": "editorial_summary",
+      "heading": "ICT systems acquisition, development, and maintenance",
+      "id": "prv-rts-2024-1774-art-37-b",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 37(b)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "III"
+          },
+          {
+            "kind": "article",
+            "value": "37"
+          },
+          {
+            "kind": "point",
+            "value": "b"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Test and approve systems before production changes",
+      "type": "provision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "content": "Simplified-framework entities develop, document, and implement an ICT change management procedure so all ICT system changes are recorded, tested, assessed, approved, implemented, and verified in a controlled manner with adequate safeguards for digital operational resilience.",
+      "content_kind": "editorial_summary",
+      "heading": "ICT project and change management",
+      "id": "prv-rts-2024-1774-art-38-2",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "locator": {
+        "label": "Article 38(2)",
+        "segments": [
+          {
+            "kind": "title",
+            "value": "III"
+          },
+          {
+            "kind": "article",
+            "value": "38"
+          },
+          {
+            "kind": "paragraph",
+            "value": "2"
+          }
+        ]
+      },
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "source_id": "src-eu-reg-2024-1774",
+      "title": "Simplified-framework controlled ICT change procedure",
+      "type": "provision"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-approval-independence",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-b",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-change-management-lifecycle",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall use mechanisms that keep change approval functions independent from functions responsible for requesting and implementing changes.",
+      "title": "Keep ICT change approval independent",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-controlled-lifecycle",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-dora-art-9-4-e",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-change-management-lifecycle",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall implement documented, risk-based ICT change management policies, procedures, and controls as part of overall change management so every ICT system change is recorded, tested, assessed, approved, implemented, and verified in a controlled manner.",
+      "title": "Operate a documented and controlled ICT change lifecycle",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-details",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-d",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-change-management-lifecycle",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall document and communicate each change's purpose and scope, implementation timeline, and expected outcomes.",
+      "title": "Document and communicate change details",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-fallback",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-e",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-material-change-expectations",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall identify fall-back procedures and responsibilities, including arrangements for aborting changes and recovering from changes that were not implemented successfully.",
+      "title": "Define change fall-back, abort, and recovery arrangements",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-management-approval",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-dora-art-9-4-change-approval",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-material-change-expectations",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall have its ICT change management process approved by appropriate lines of management.",
+      "title": "Obtain appropriate management approval for the change process",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-roles-and-quality",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-c",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-material-change-expectations",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall clearly describe roles and responsibilities that ensure changes are specified and planned, an adequate transition is designed, changes are tested and finalised in a controlled manner, and quality assurance is effective.",
+      "title": "Assign roles for planning, transition, testing, and quality assurance",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-security-impact",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-h",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-material-change-expectations",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall identify each change's potential impact on existing ICT security measures and assess whether additional ICT security measures are required.",
+      "title": "Assess change impact on ICT security measures",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-security-verification",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-a",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall include verification that ICT security requirements have been met for every change to software, hardware, firmware components, systems, or security parameters.",
+      "title": "Verify ICT security requirements for every change",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-change-specific-protocols",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-dora-art-9-4-change-approval",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-change-management-lifecycle",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall maintain specific protocols for its ICT change management process.",
+      "title": "Maintain specific ICT change protocols",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-emergency-change-post-review",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-g",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall document, re-evaluate, assess, and approve emergency changes after implementation, including workarounds and patches.",
+      "title": "Review and approve emergency changes after implementation",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [
+          "Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch."
+        ],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_full_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_without_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-full-emergency-change-safeguards",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1-f",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-rts-2024-1774-art-17-1",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An electronic money institution using the full ICT risk management framework shall maintain procedures, protocols, and tools that manage emergency changes with adequate safeguards.",
+      "title": "Apply adequate safeguards to emergency changes",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_simplified_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_with_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-simplified-change-controlled-lifecycle",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-38-2",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-change-management-lifecycle",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An exempted electronic money institution using the simplified ICT risk management framework shall develop, document, and implement an ICT change management procedure so every ICT system change is recorded, tested, assessed, approved, implemented, and verified in a controlled manner with adequate safeguards for digital operational resilience.",
+      "title": "Operate a controlled ICT change procedure under the simplified framework",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_simplified_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_with_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-simplified-change-security-testing-plan",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-36-1",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An exempted electronic money institution using the simplified ICT risk management framework shall establish and implement an ICT security testing plan that validates the effectiveness of ICT security measures under Articles 37 and 38 and considers threats and vulnerabilities identified through its simplified ICT risk management framework.",
+      "title": "Cover change controls in the ICT security testing plan",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [
+          "The change is a major change in an ICT system, ICT service, process, or procedure."
+        ],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_simplified_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_with_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-simplified-major-change-risk-assessment",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-31-1-e",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-mfsa-material-change-expectations",
+          "relation": "supporting_context"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An exempted electronic money institution using the simplified ICT risk management framework shall identify and assess ICT and information security risks resulting from any major change in ICT systems, ICT services, processes, or procedures.",
+      "title": "Assess ICT risk arising from major changes",
+      "type": "requirement"
+    },
+    {
+      "applicability": {
+        "activities": {
+          "mode": "include",
+          "values": [
+            "ict_change_management"
+          ]
+        },
+        "basis": "source_defined",
+        "conditions": [],
+        "data_categories": {
+          "mode": "not_applicable",
+          "values": []
+        },
+        "effective_from": "2025-01-17",
+        "effective_to": null,
+        "entity_types": {
+          "mode": "include",
+          "values": [
+            "electronic_money_institution"
+          ]
+        },
+        "exclusions": [],
+        "framework_branches": {
+          "mode": "include",
+          "values": [
+            "dora_simplified_ict_risk_management"
+          ]
+        },
+        "jurisdictions": {
+          "mode": "include",
+          "values": [
+            "EU"
+          ]
+        },
+        "license_roles": {
+          "mode": "include",
+          "values": [
+            "emi_with_emd2_article_9_1_exemption"
+          ]
+        },
+        "products": {
+          "mode": "not_applicable",
+          "values": []
+        }
+      },
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "derivation_type": "direct",
+      "id": "req-simplified-production-change-test-approval",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "provision_refs": [
+        {
+          "provision_id": "prv-rts-2024-1774-art-37-b",
+          "relation": "direct_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-2-1-d",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-16-1-simplified-entities",
+          "relation": "scope_basis"
+        },
+        {
+          "provision_id": "prv-dora-art-64-application",
+          "relation": "scope_basis"
+        }
+      ],
+      "replaces": [],
+      "requirement_kind": "obligation",
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "statement": "An exempted electronic money institution using the simplified ICT risk management framework shall test and approve ICT systems before introducing changes to the production environment.",
+      "title": "Test and approve ICT systems before production changes",
+      "type": "requirement"
+    },
+    {
+      "assumptions": [
+        "The institution operates a system capable of maintaining stable change identifiers, lifecycle states, approvals, and audit history."
+      ],
+      "basis_provision_ids": [
+        "prv-dora-art-9-4-e",
+        "prv-dora-art-9-4-change-approval",
+        "prv-rts-2024-1774-art-17-1-c",
+        "prv-rts-2024-1774-art-17-1-d",
+        "prv-rts-2024-1774-art-38-2"
+      ],
+      "conclusion": "Use a management-approved process, a stable change identity, explicit lifecycle gates, named responsibilities, and required planning and communication fields.",
+      "conditions": [
+        "Each institution maps the generic roles and workflow gates to its approved organisation and systems before use."
+      ],
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "decided_by_role": "emi_knowledge_engineering_maintainer",
+      "decided_on": "2026-09-02",
+      "decision_type": "implementation_choice",
+      "effective_from": "2026-09-02",
+      "effective_to": null,
+      "id": "dec-governed-change-workflow-baseline",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "question": "Which reusable control pattern should the public engineering baseline use for ICT change governance, lifecycle gates, planning, and records?",
+      "rationale": "The pattern converts source requirements into deterministic workflow and record checks while leaving institution-specific roles and systems configurable.",
+      "replaces": [],
+      "review_due_on": null,
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "subject_control_ids": [
+        "ctl-change-governance",
+        "ctl-change-lifecycle-workflow",
+        "ctl-change-planning-record"
+      ],
+      "subject_requirement_ids": [],
+      "title": "Public engineering baseline for governed ICT change workflow",
+      "type": "decision"
+    },
+    {
+      "assumptions": [
+        "The institution can restrict emergency-path access and record all emergency actions."
+      ],
+      "basis_provision_ids": [
+        "prv-rts-2024-1774-art-17-1-e",
+        "prv-rts-2024-1774-art-17-1-f",
+        "prv-rts-2024-1774-art-17-1-g"
+      ],
+      "conclusion": "Require owned fall-back and recovery arrangements, restricted emergency-path access, a complete audit trail, and time-bound post-implementation review and approval.",
+      "conditions": [
+        "The institution defines the permitted post-implementation review period and fall-back test-depth rule before operational use."
+      ],
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "decided_by_role": "emi_knowledge_engineering_maintainer",
+      "decided_on": "2026-09-02",
+      "decision_type": "implementation_choice",
+      "effective_from": "2026-09-02",
+      "effective_to": null,
+      "id": "dec-recovery-and-emergency-baseline",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "question": "Which reusable control pattern should the public engineering baseline use for failed implementations and emergency changes?",
+      "rationale": "The pattern supports controlled recovery and emergency execution while leaving test depth and the retrospective review deadline to institution approval.",
+      "replaces": [],
+      "review_due_on": null,
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "subject_control_ids": [
+        "ctl-change-fallback-recovery",
+        "ctl-emergency-change"
+      ],
+      "subject_requirement_ids": [],
+      "title": "Public engineering baseline for fall-back and emergency changes",
+      "type": "decision"
+    },
+    {
+      "assumptions": [
+        "The institution can identify actors consistently across change, approval, deployment, and audit records."
+      ],
+      "basis_provision_ids": [
+        "prv-rts-2024-1774-art-17-1-a",
+        "prv-rts-2024-1774-art-17-1-b",
+        "prv-rts-2024-1774-art-17-1-h",
+        "prv-rts-2024-1774-art-31-1-e",
+        "prv-rts-2024-1774-art-36-1",
+        "prv-rts-2024-1774-art-37-b"
+      ],
+      "conclusion": "Use traceable requirement-to-test mapping, risk-based test depth, deterministic identity comparison for conflicting roles, and a recorded security-control impact assessment.",
+      "conditions": [
+        "The institution defines approved test-depth and major-change rules before operational use."
+      ],
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "decided_by_role": "emi_knowledge_engineering_maintainer",
+      "decided_on": "2026-09-02",
+      "decision_type": "implementation_choice",
+      "effective_from": "2026-09-02",
+      "effective_to": null,
+      "id": "dec-security-and-independence-baseline",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "question": "Which reusable control pattern should the public engineering baseline use for security verification, role independence, and change risk assessment?",
+      "rationale": "These controls create repeatable pass and fail conditions and preserve institution-level choices for test depth, major-change criteria, and system mapping.",
+      "replaces": [],
+      "review_due_on": null,
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "subject_control_ids": [
+        "ctl-change-security-test-gate",
+        "ctl-change-role-separation",
+        "ctl-change-security-impact"
+      ],
+      "subject_requirement_ids": [],
+      "title": "Public engineering baseline for security gates and approval independence",
+      "type": "decision"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "operational",
+      "control_functions": [
+        "preventive",
+        "recovery"
+      ],
+      "id": "ctl-change-fallback-recovery",
+      "implementation_rules": [
+        {
+          "conditions": [],
+          "failure_handling": "Block implementation when a required fall-back or recovery plan is missing or infeasible.",
+          "key": "fallback-plan",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "operations",
+          "statement": "Define abort criteria, fall-back steps, recovery steps, responsible roles, required backups, decision authority, and verification of restored service for the change."
+        },
+        {
+          "conditions": [],
+          "failure_handling": "Escalate failed results, remediate the plan, and repeat verification before implementation.",
+          "key": "fallback-test",
+          "open_questions": [],
+          "parameter_status": "institution_defined",
+          "parameters": [
+            {
+              "name": "fallback-test-depth-rule",
+              "unit": null,
+              "value": null
+            }
+          ],
+          "rule_type": "process",
+          "statement": "Test or otherwise verify the fall-back and recovery arrangements at a depth determined by the institution's risk and criticality rules."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "Every in-scope change has owned, feasible, and tested arrangements to abort implementation or recover when implementation is unsuccessful.",
+      "operation_mode": "event_driven",
+      "owner_role": "change_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-fallback"
+        },
+        {
+          "relation": "supports",
+          "requirement_id": "req-simplified-change-controlled-lifecycle"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Prepare and verify change fall-back and recovery",
+      "trigger_or_frequency": "Before production implementation and when the fall-back design changes",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "governance",
+      "control_functions": [
+        "preventive",
+        "detective"
+      ],
+      "id": "ctl-change-governance",
+      "implementation_rules": [
+        {
+          "conditions": [],
+          "failure_handling": "Prevent the revised process from becoming effective and escalate to the ICT change governance owner.",
+          "key": "management-approval",
+          "open_questions": [],
+          "parameter_status": "institution_defined",
+          "parameters": [
+            {
+              "name": "authorised-management-role",
+              "unit": null,
+              "value": null
+            }
+          ],
+          "rule_type": "process",
+          "statement": "Record approval of the ICT change management process by the institution's authorised management role before the process becomes effective."
+        },
+        {
+          "conditions": [],
+          "failure_handling": "Suspend use of an incomplete protocol and open a governance remediation item.",
+          "key": "specific-protocols",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "process",
+          "statement": "Maintain approved protocols covering change intake, classification, assessment, approval, implementation, verification, exceptions, and closure."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "The ICT change management process has recorded management approval, named ownership, and specific protocols before it is used.",
+      "operation_mode": "event_driven",
+      "owner_role": "ict_change_governance_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-management-approval"
+        },
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-specific-protocols"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Govern and approve the ICT change management process",
+      "trigger_or_frequency": "When the ICT change management process is established or materially revised",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "technical",
+      "control_functions": [
+        "preventive",
+        "detective"
+      ],
+      "id": "ctl-change-lifecycle-workflow",
+      "implementation_rules": [
+        {
+          "conditions": [],
+          "failure_handling": "Reject lifecycle actions that do not reference a valid change identifier.",
+          "key": "immutable-change-identity",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "data",
+          "statement": "Assign one stable identifier to the change and retain its scope, classification, affected assets, decisions, timestamps, and lifecycle status in a traceable record."
+        },
+        {
+          "conditions": [],
+          "failure_handling": "Block the transition, record the failed gate, and notify the change owner.",
+          "key": "lifecycle-gates",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "process",
+          "statement": "Prevent implementation until required assessment, testing, and approval gates pass, then require post-implementation verification before closure."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "Every ICT change has one traceable record and cannot move through assessment, approval, implementation, verification, and closure without satisfying the required gates.",
+      "operation_mode": "event_driven",
+      "owner_role": "change_management_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-controlled-lifecycle"
+        },
+        {
+          "relation": "implements",
+          "requirement_id": "req-simplified-change-controlled-lifecycle"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Enforce the controlled ICT change lifecycle",
+      "trigger_or_frequency": "For every ICT change from registration through closure",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "process",
+      "control_functions": [
+        "preventive",
+        "detective"
+      ],
+      "id": "ctl-change-planning-record",
+      "implementation_rules": [
+        {
+          "conditions": [],
+          "failure_handling": "Return the change to planning and prevent implementation approval.",
+          "key": "responsibility-and-plan-record",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "data",
+          "statement": "Require named accountable roles and documented specification, implementation plan, transition design, testing approach, and quality assurance before approval."
+        },
+        {
+          "conditions": [],
+          "failure_handling": "Hold implementation until required details are complete and communication is recorded.",
+          "key": "communicated-change-details",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "process",
+          "statement": "Record and communicate purpose, scope, implementation timeline, and expected outcomes to the roles affected by the change."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "Each change record names responsible roles and contains an approved plan, transition approach, quality assurance, purpose, scope, timeline, and expected outcomes.",
+      "operation_mode": "event_driven",
+      "owner_role": "change_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-roles-and-quality"
+        },
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-details"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Record change responsibilities, plans, and expected outcomes",
+      "trigger_or_frequency": "During change planning and before implementation approval",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "technical",
+      "control_functions": [
+        "preventive"
+      ],
+      "id": "ctl-change-role-separation",
+      "implementation_rules": [
+        {
+          "conditions": [],
+          "failure_handling": "Block approval, retain the failed attempt in the audit trail, and notify the change management owner.",
+          "key": "conflicting-role-block",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "access",
+          "statement": "Compare approver identity with requester and implementer identities and reject the approval when the approver holds either conflicting role for the same change."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "No actor approves an ICT change for which the same actor is recorded as requester or implementer.",
+      "operation_mode": "event_driven",
+      "owner_role": "change_management_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-approval-independence"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Enforce independence of ICT change approval",
+      "trigger_or_frequency": "At every ICT change approval action",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "process",
+      "control_functions": [
+        "preventive",
+        "detective"
+      ],
+      "id": "ctl-change-security-impact",
+      "implementation_rules": [
+        {
+          "conditions": [],
+          "failure_handling": "Prevent approval until unresolved impacts have an authorised treatment decision.",
+          "key": "security-control-impact",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "process",
+          "statement": "Identify affected ICT security measures, evaluate whether their effectiveness changes, and record any additional measures required before implementation."
+        },
+        {
+          "conditions": [
+            "The change is assessed under the simplified ICT risk management framework."
+          ],
+          "failure_handling": "Treat an unclassified change as requiring assessment or escalate to the ICT risk owner.",
+          "key": "major-change-risk-assessment",
+          "open_questions": [],
+          "parameter_status": "institution_defined",
+          "parameters": [
+            {
+              "name": "major-change-criteria",
+              "unit": null,
+              "value": null
+            }
+          ],
+          "rule_type": "process",
+          "statement": "Apply the institution's approved major-change criteria and complete an ICT and information security risk assessment for changes classified as major."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "Each change has a recorded assessment of affected ICT security measures, additional safeguards, and, for simplified-framework major changes, resulting ICT and information security risks.",
+      "operation_mode": "event_driven",
+      "owner_role": "ict_risk_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-security-impact"
+        },
+        {
+          "relation": "implements",
+          "requirement_id": "req-simplified-major-change-risk-assessment"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Assess change risk and impact on ICT security controls",
+      "trigger_or_frequency": "During assessment of every change and again when scope materially changes",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "technical",
+      "control_functions": [
+        "preventive",
+        "detective"
+      ],
+      "id": "ctl-change-security-test-gate",
+      "implementation_rules": [
+        {
+          "conditions": [],
+          "failure_handling": "Block approval until the mapping and missing test evidence are completed.",
+          "key": "security-requirement-mapping",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "process",
+          "statement": "Map applicable ICT security requirements and identified threats and vulnerabilities to test cases and acceptance results for the change."
+        },
+        {
+          "conditions": [],
+          "failure_handling": "Apply the institution's highest required test depth or escalate for an authorised decision.",
+          "key": "risk-based-test-depth",
+          "open_questions": [],
+          "parameter_status": "institution_defined",
+          "parameters": [
+            {
+              "name": "test-depth-rule",
+              "unit": null,
+              "value": null
+            }
+          ],
+          "rule_type": "configuration",
+          "statement": "Select test depth using the institution's approved risk and criticality rules and record the resulting test scope."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "A production change proceeds only after applicable ICT security requirements are mapped, tested at an appropriate depth, and approved with recorded results.",
+      "operation_mode": "event_driven",
+      "owner_role": "ict_security_assurance_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-change-security-verification"
+        },
+        {
+          "relation": "implements",
+          "requirement_id": "req-simplified-change-security-testing-plan"
+        },
+        {
+          "relation": "implements",
+          "requirement_id": "req-simplified-production-change-test-approval"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Gate production changes on security requirements and testing",
+      "trigger_or_frequency": "Before each change is approved for production implementation",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "confirmed"
+      },
+      "control_category": "process",
+      "control_functions": [
+        "preventive",
+        "detective",
+        "corrective"
+      ],
+      "id": "ctl-emergency-change",
+      "implementation_rules": [
+        {
+          "conditions": [
+            "The normal change path cannot meet the documented operational need."
+          ],
+          "failure_handling": "Deny emergency-path use or escalate immediately to the emergency change authority.",
+          "key": "emergency-safeguards",
+          "open_questions": [],
+          "parameter_status": "not_applicable",
+          "parameters": [],
+          "rule_type": "exception",
+          "statement": "Restrict emergency-path access, require a recorded justification and authorised emergency approval, preserve an audit trail, and apply all safeguards that remain feasible before implementation."
+        },
+        {
+          "conditions": [],
+          "failure_handling": "Escalate overdue review, restrict further emergency access where appropriate, and track remediation to closure.",
+          "key": "post-implementation-review",
+          "open_questions": [],
+          "parameter_status": "institution_defined",
+          "parameters": [
+            {
+              "name": "maximum-post-review-delay",
+              "unit": "hours",
+              "value": null
+            }
+          ],
+          "rule_type": "process",
+          "statement": "After implementation, document the final change, re-evaluate and assess its effects, complete the omitted controls, and obtain retrospective approval within the authorised period."
+        }
+      ],
+      "language": "en",
+      "lifecycle_status": "approved",
+      "objective": "Emergency changes use restricted safeguards during implementation and complete documented re-evaluation, assessment, and approval within the institution's authorised period.",
+      "operation_mode": "event_driven",
+      "owner_role": "emergency_change_owner",
+      "replaces": [],
+      "requirement_refs": [
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-emergency-change-safeguards"
+        },
+        {
+          "relation": "implements",
+          "requirement_id": "req-full-emergency-change-post-review"
+        }
+      ],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Control emergency changes before and after implementation",
+      "trigger_or_frequency": "For every emergency change",
+      "type": "control"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-change-fallback-recovery"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "document",
+          "data_classifications": [
+            "internal",
+            "confidential"
+          ],
+          "description": "Versioned fall-back and recovery plan for the change.",
+          "key": "fallback-plan",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "abort criteria",
+            "decision authority",
+            "steps",
+            "owner roles",
+            "backups",
+            "dependencies",
+            "restored-service checks"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "test_report",
+          "data_classifications": [
+            "internal",
+            "confidential"
+          ],
+          "description": "Results of the required fall-back or recovery verification.",
+          "key": "fallback-test-report",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "test scope",
+            "environment",
+            "steps executed",
+            "results",
+            "defects",
+            "remediation status",
+            "test timestamp"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "hybrid",
+      "executor_role": "operational_resilience_assurance",
+      "expected_result": "The plan is complete, owned, feasible, and verified at the required depth before implementation.",
+      "failure_criteria": [
+        "Required fall-back or recovery information is missing.",
+        "A required backup or dependency is unavailable.",
+        "Verification fails or does not meet the approved depth."
+      ],
+      "id": "ver-change-fallback-recovery",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Block implementation, remediate the plan or environment, and repeat the required test.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "The change has a fall-back and recovery plan with identified owners and dependencies."
+      ],
+      "procedure": [
+        "Inspect abort criteria, decision authority, fall-back steps, recovery steps, backups, and restored-service checks.",
+        "Confirm the selected verification depth follows the institution's approved risk and criticality rule.",
+        "Execute or review the required fall-back test and confirm remediation of failed results."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify change fall-back and recovery readiness",
+      "trigger_or_frequency": "Before production implementation and after material fall-back design changes",
+      "type": "verification",
+      "verification_type": "test"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-change-governance"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "approval_record",
+          "data_classifications": [
+            "internal"
+          ],
+          "description": "Approval of the identified ICT change management process version.",
+          "key": "process-approval",
+          "open_questions": [],
+          "redaction_required": false,
+          "required_fields": [
+            "process version",
+            "approver role",
+            "decision",
+            "approval timestamp"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "document",
+          "data_classifications": [
+            "internal"
+          ],
+          "description": "The approved ICT change management protocols reviewed by assurance.",
+          "key": "change-protocol",
+          "open_questions": [],
+          "redaction_required": false,
+          "required_fields": [
+            "document identifier",
+            "version",
+            "owner role",
+            "effective date",
+            "protocol sections"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "manual",
+      "executor_role": "control_assurance",
+      "expected_result": "Management approval is valid, required protocols are complete, and only the approved process version is effective.",
+      "failure_criteria": [
+        "Management approval is missing or issued by an unauthorised role.",
+        "A required protocol area is absent.",
+        "The effective process differs from the approved version."
+      ],
+      "id": "ver-change-governance",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Prevent the process version from becoming effective and track governance remediation to closure.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "The proposed process version and protocols are available for review."
+      ],
+      "procedure": [
+        "Confirm the process version has approval from the institution's authorised management role.",
+        "Confirm protocols cover intake, classification, assessment, approval, implementation, verification, exceptions, and closure.",
+        "Confirm the effective process version matches the approved version."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify ICT change governance and process approval",
+      "trigger_or_frequency": "When the ICT change process is established or materially revised",
+      "type": "verification",
+      "verification_type": "review"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-change-lifecycle-workflow"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "change_record",
+          "data_classifications": [
+            "internal"
+          ],
+          "description": "The complete controlled record of the ICT change lifecycle.",
+          "key": "lifecycle-record",
+          "open_questions": [],
+          "redaction_required": false,
+          "required_fields": [
+            "change identifier",
+            "classification",
+            "affected assets",
+            "lifecycle states",
+            "gate results",
+            "timestamps"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "audit_log",
+          "data_classifications": [
+            "internal",
+            "personal_data"
+          ],
+          "description": "The append-only history of lifecycle transitions and control decisions.",
+          "key": "lifecycle-audit-log",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "actor identity",
+            "previous state",
+            "new state",
+            "action",
+            "timestamp",
+            "result"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "automated",
+      "executor_role": "control_assurance",
+      "expected_result": "The change has one traceable identity and all required gates occur in the permitted order with passing results.",
+      "failure_criteria": [
+        "A stable change identifier or lifecycle history is missing.",
+        "Implementation occurs before a required gate passes.",
+        "The change closes without post-implementation verification."
+      ],
+      "id": "ver-change-lifecycle-workflow",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Block the pending transition where possible, reopen the change when necessary, and repeat verification after remediation.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "The change system exposes lifecycle states, gate results, approvals, and timestamps."
+      ],
+      "procedure": [
+        "Resolve the stable change identifier and read its complete lifecycle history.",
+        "Check that assessment, testing, and approval gates passed before implementation.",
+        "Check that implementation and post-implementation verification are recorded before closure."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify controlled ICT change lifecycle gates",
+      "trigger_or_frequency": "Before production implementation and before change closure",
+      "type": "verification",
+      "verification_type": "query"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-change-planning-record"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "change_record",
+          "data_classifications": [
+            "internal"
+          ],
+          "description": "Approved change plan and transition information.",
+          "key": "change-plan",
+          "open_questions": [],
+          "redaction_required": false,
+          "required_fields": [
+            "change identifier",
+            "accountable roles",
+            "purpose",
+            "scope",
+            "timeline",
+            "expected outcomes",
+            "transition design",
+            "test approach",
+            "quality assurance"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "document",
+          "data_classifications": [
+            "internal",
+            "personal_data"
+          ],
+          "description": "Record showing distribution of current change details to affected roles.",
+          "key": "communication-record",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "content version",
+            "recipient roles",
+            "communication timestamp"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "hybrid",
+      "executor_role": "change_assurance",
+      "expected_result": "Required planning fields and responsibilities are complete, internally consistent, and communicated before implementation.",
+      "failure_criteria": [
+        "A required role or planning field is missing.",
+        "Scope, timeline, or expected outcomes conflict across records.",
+        "Required communication is missing or late."
+      ],
+      "id": "ver-change-planning-record",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Return the change to planning and repeat inspection after records and communication are corrected.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "The change plan and communication record are available."
+      ],
+      "procedure": [
+        "Check that accountable roles, specification, implementation plan, transition design, testing approach, and quality assurance are documented.",
+        "Check that purpose, scope, timeline, and expected outcomes are complete.",
+        "Check that affected roles received the current change details before implementation."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify change planning, responsibilities, and communication",
+      "trigger_or_frequency": "Before implementation approval",
+      "type": "verification",
+      "verification_type": "inspection"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-change-role-separation"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "change_record",
+          "data_classifications": [
+            "internal",
+            "personal_data"
+          ],
+          "description": "Change record containing stable identities for conflicting roles.",
+          "key": "role-record",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "requester identity",
+            "implementer identity",
+            "approver identity",
+            "approval timestamp",
+            "deployment timestamp"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "audit_log",
+          "data_classifications": [
+            "internal",
+            "personal_data"
+          ],
+          "description": "Audit trail for approval attempts and workflow decisions.",
+          "key": "approval-audit-log",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "actor identity",
+            "action",
+            "timestamp",
+            "workflow result"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "automated",
+      "executor_role": "control_assurance",
+      "expected_result": "The approver differs from requester and implementer, and valid approval precedes deployment.",
+      "failure_criteria": [
+        "The approver matches the requester.",
+        "The approver matches the implementer.",
+        "Approval is missing, rejected, or recorded after deployment."
+      ],
+      "id": "ver-change-role-separation",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Block approval or deployment, retain the failed attempt, and escalate to the change management owner.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "Requester, implementer, and approver identities are recorded using stable identity keys."
+      ],
+      "procedure": [
+        "Read requester, implementer, and approver identities from the change record.",
+        "Compare the approver identity with requester and implementer identities.",
+        "Check the approval timestamp and workflow result before deployment."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify ICT change approval independence",
+      "trigger_or_frequency": "At approval and before each production deployment",
+      "type": "verification",
+      "verification_type": "query"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-change-security-impact"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "document",
+          "data_classifications": [
+            "internal",
+            "confidential"
+          ],
+          "description": "Assessment of affected ICT security measures and additional safeguards.",
+          "key": "security-impact-assessment",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "affected assets",
+            "existing controls",
+            "impact conclusions",
+            "additional measures",
+            "owners",
+            "approval"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "document",
+          "data_classifications": [
+            "internal",
+            "confidential"
+          ],
+          "description": "Simplified-framework ICT and information security risk assessment for a major change.",
+          "key": "major-change-risk-assessment",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "major-change classification",
+            "risk scenarios",
+            "likelihood",
+            "impact",
+            "treatments",
+            "residual risk",
+            "approval"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "hybrid",
+      "executor_role": "ict_risk_assurance",
+      "expected_result": "Security impacts and additional measures are complete and approved; simplified-framework major changes have a documented ICT and information security risk assessment.",
+      "failure_criteria": [
+        "An affected ICT security measure is omitted.",
+        "An additional required measure lacks treatment or completion evidence.",
+        "A simplified-framework major change lacks the required risk assessment."
+      ],
+      "id": "ver-change-security-impact",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Block change approval, complete or correct the assessment and treatments, and repeat verification.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "The change scope, affected assets, existing security measures, and framework branch are identified."
+      ],
+      "procedure": [
+        "Check the assessment identifies affected ICT security measures and evaluates changes to their effectiveness.",
+        "Check required additional security measures have owners and completion status before implementation.",
+        "For the simplified branch, apply approved major-change criteria and confirm a risk assessment exists when the criteria are met."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify ICT security impact and major-change risk assessment",
+      "trigger_or_frequency": "Before change approval and whenever change scope materially changes",
+      "type": "verification",
+      "verification_type": "review"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-change-security-test-gate"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "test_report",
+          "data_classifications": [
+            "internal",
+            "confidential"
+          ],
+          "description": "Test scope, requirement coverage, execution results, defects, and final disposition for the change.",
+          "key": "security-test-report",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "requirement identifiers",
+            "test cases",
+            "test environment",
+            "results",
+            "defects",
+            "test timestamp"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "approval_record",
+          "data_classifications": [
+            "internal",
+            "personal_data"
+          ],
+          "description": "Approval confirming that security and testing gates passed before production implementation.",
+          "key": "production-approval",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "approver identity",
+            "approval scope",
+            "decision",
+            "timestamp"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "hybrid",
+      "executor_role": "ict_security_assurance",
+      "expected_result": "Security requirement coverage is complete, test depth is justified, all required tests pass, and approval precedes implementation.",
+      "failure_criteria": [
+        "An applicable security requirement lacks a test or accepted treatment.",
+        "Test depth does not follow the approved rule.",
+        "A required test fails, is missing, or completes after implementation."
+      ],
+      "id": "ver-change-security-test-gate",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Block production implementation, remediate failed coverage or results, and repeat verification.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "Applicable ICT security requirements and change risk classification are recorded."
+      ],
+      "procedure": [
+        "Check that each applicable ICT security requirement maps to one or more test cases.",
+        "Check that test depth follows the institution's approved risk and criticality rule.",
+        "Confirm required tests passed and approval occurred before production implementation."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify security requirements and tests before production change",
+      "trigger_or_frequency": "Before production implementation approval",
+      "type": "verification",
+      "verification_type": "test"
+    },
+    {
+      "confirmation": {
+        "open_questions": [],
+        "status": "not_required"
+      },
+      "control_ids": [
+        "ctl-emergency-change"
+      ],
+      "evidence_requirements": [
+        {
+          "artifact_type": "change_record",
+          "data_classifications": [
+            "internal",
+            "confidential",
+            "personal_data"
+          ],
+          "description": "Complete emergency change record before, during, and after implementation.",
+          "key": "emergency-change-record",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "emergency justification",
+            "authorised actors",
+            "safeguards",
+            "implementation details",
+            "workarounds",
+            "patches",
+            "timestamps"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        },
+        {
+          "artifact_type": "approval_record",
+          "data_classifications": [
+            "internal",
+            "personal_data"
+          ],
+          "description": "Re-evaluation, assessment, omitted-control results, and retrospective approval.",
+          "key": "emergency-post-review",
+          "open_questions": [],
+          "redaction_required": true,
+          "required_fields": [
+            "change identifier",
+            "impact assessment",
+            "control completion",
+            "findings",
+            "approver identity",
+            "decision",
+            "approval timestamp"
+          ],
+          "retention_period": null,
+          "retention_status": "institution_defined",
+          "source_status": "institution_defined",
+          "source_system": null
+        }
+      ],
+      "execution_mode": "hybrid",
+      "executor_role": "emergency_change_assurance",
+      "expected_result": "Emergency-path use is justified and authorised, safeguards are traceable, and post-implementation review and approval complete on time.",
+      "failure_criteria": [
+        "Emergency-path justification, approval, access record, or audit trail is missing.",
+        "Implemented workarounds or patches are not documented and assessed.",
+        "Retrospective review or approval exceeds the authorised period."
+      ],
+      "id": "ver-emergency-change",
+      "language": "en",
+      "lifecycle_status": "approved",
+      "on_failure": "Escalate immediately, restrict emergency access where appropriate, and track review and remediation to closure.",
+      "operation_mode": "event_driven",
+      "preconditions": [
+        "The change is classified as emergency and has a complete audit trail."
+      ],
+      "procedure": [
+        "Confirm emergency justification, authorised access, approval, and safeguards applied before implementation.",
+        "Confirm the final implementation, workarounds, and patches are documented after execution.",
+        "Confirm re-evaluation, assessment, omitted controls, and retrospective approval complete within the institution's authorised period."
+      ],
+      "replaces": [],
+      "revision": 1,
+      "schema_version": "0.1.0",
+      "title": "Verify emergency change safeguards and post-implementation review",
+      "trigger_or_frequency": "During emergency execution and after every emergency change",
+      "type": "verification",
+      "verification_type": "review"
+    }
+  ],
+  "release_level": "engineering_baseline",
+  "release_version": "v0.1.0",
+  "released_on": "2026-09-02",
+  "unresolved_items": [
+    {
+      "description": "The consuming institution must set fallback-test-depth-rule.",
+      "object_id": "ctl-change-fallback-recovery",
+      "path": "implementation_rules.fallback-test.parameters.fallback-test-depth-rule",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set authorised-management-role.",
+      "object_id": "ctl-change-governance",
+      "path": "implementation_rules.management-approval.parameters.authorised-management-role",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set major-change-criteria.",
+      "object_id": "ctl-change-security-impact",
+      "path": "implementation_rules.major-change-risk-assessment.parameters.major-change-criteria",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set test-depth-rule.",
+      "object_id": "ctl-change-security-test-gate",
+      "path": "implementation_rules.risk-based-test-depth.parameters.test-depth-rule",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set maximum-post-review-delay.",
+      "object_id": "ctl-emergency-change",
+      "path": "implementation_rules.post-implementation-review.parameters.maximum-post-review-delay",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for fallback-plan.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-plan.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for fallback-plan.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-plan.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for fallback-test-report.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-test-report.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for fallback-test-report.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-test-report.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for change-protocol.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.change-protocol.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for change-protocol.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.change-protocol.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for process-approval.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.process-approval.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for process-approval.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.process-approval.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for lifecycle-audit-log.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-audit-log.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for lifecycle-audit-log.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-audit-log.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for lifecycle-record.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for lifecycle-record.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for change-plan.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.change-plan.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for change-plan.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.change-plan.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for communication-record.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.communication-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for communication-record.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.communication-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for approval-audit-log.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.approval-audit-log.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for approval-audit-log.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.approval-audit-log.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for role-record.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.role-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for role-record.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.role-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for major-change-risk-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.major-change-risk-assessment.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for major-change-risk-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.major-change-risk-assessment.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for security-impact-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.security-impact-assessment.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for security-impact-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.security-impact-assessment.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for production-approval.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.production-approval.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for production-approval.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.production-approval.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for security-test-report.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.security-test-report.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for security-test-report.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.security-test-report.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for emergency-change-record.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-change-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for emergency-change-record.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-change-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for emergency-post-review.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-post-review.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for emergency-post-review.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-post-review.source_system",
+      "status": "institution_defined"
+    }
+  ]
+}

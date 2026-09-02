@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/release-artifact.schema.json",
+  "title": "EMI Knowledge v0.1 release artifact",
+  "description": "Schema for the v0.1 knowledge bundle, Agent context, and release manifest.",
+  "oneOf": [
+    { "$ref": "#/$defs/knowledgeBundle" },
+    { "$ref": "#/$defs/agentContext" },
+    { "$ref": "#/$defs/releaseManifest" }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "releaseVersion": {
+      "type": "string",
+      "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "releaseLevel": {
+      "enum": ["source_baseline", "engineering_baseline"]
+    },
+    "unresolvedItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["object_id", "path", "status", "description"],
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "pattern": "^(src|prv|req|dec|ctl|ver)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "path": { "$ref": "#/$defs/nonEmptyString" },
+        "status": { "enum": ["pending", "institution_defined"] },
+        "description": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "releaseCore": {
+      "type": "object",
+      "required": [
+        "$schema",
+        "release_version",
+        "release_level",
+        "released_on",
+        "content_sha256",
+        "unresolved_items"
+      ],
+      "properties": {
+        "$schema": {
+          "const": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/release-artifact.schema.json"
+        },
+        "release_version": { "$ref": "#/$defs/releaseVersion" },
+        "release_level": { "$ref": "#/$defs/releaseLevel" },
+        "released_on": { "type": "string", "format": "date" },
+        "content_sha256": { "$ref": "#/$defs/hash" },
+        "unresolved_items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/unresolvedItem" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "knowledgeBundle": {
+      "allOf": [
+        { "$ref": "#/$defs/releaseCore" },
+        {
+          "type": "object",
+          "required": ["bundle_schema_version", "objects"],
+          "properties": {
+            "bundle_schema_version": { "const": "0.1.0" },
+            "objects": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/knowledge-object.schema.json"
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "agentContext": {
+      "allOf": [
+        { "$ref": "#/$defs/releaseCore" },
+        {
+          "type": "object",
+          "required": ["context_schema_version", "usage_constraints", "objects"],
+          "properties": {
+            "context_schema_version": { "const": "0.1.0" },
+            "usage_constraints": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/nonEmptyString" },
+              "uniqueItems": true
+            },
+            "objects": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/knowledge-object.schema.json"
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "sha256"],
+      "properties": {
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "path": { "$ref": "#/$defs/nonEmptyString" },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "version": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "includes", "excludes"],
+      "properties": {
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "includes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "excludes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewed_by_role", "reviewed_on", "scope"],
+      "properties": {
+        "reviewed_by_role": { "$ref": "#/$defs/nonEmptyString" },
+        "reviewed_on": { "type": "string", "format": "date" },
+        "scope": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "objectManifestEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "revision",
+        "lifecycle_status",
+        "confirmation_status",
+        "file",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(src|prv|req|dec|ctl|ver)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "type": {
+          "enum": ["source", "provision", "requirement", "decision", "control", "verification"]
+        },
+        "revision": { "type": "integer", "minimum": 1 },
+        "lifecycle_status": { "const": "approved" },
+        "confirmation_status": { "enum": ["not_required", "pending", "confirmed"] },
+        "file": { "$ref": "#/$defs/nonEmptyString" },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "enum": ["README.md", "agent-context.json", "knowledge.json"] },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "releaseManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "manifest_schema_version",
+        "release_version",
+        "release_level",
+        "released_on",
+        "tool",
+        "inputs",
+        "scope",
+        "review",
+        "counts",
+        "object_count",
+        "reference_count",
+        "content_sha256",
+        "config_sha256",
+        "objects",
+        "unresolved_items",
+        "limitations",
+        "artifacts"
+      ],
+      "properties": {
+        "$schema": {
+          "const": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/release-artifact.schema.json"
+        },
+        "manifest_schema_version": { "const": "0.1.0" },
+        "release_version": { "$ref": "#/$defs/releaseVersion" },
+        "release_level": { "$ref": "#/$defs/releaseLevel" },
+        "released_on": { "type": "string", "format": "date" },
+        "tool": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "version"],
+          "properties": {
+            "name": { "const": "emi-knowledge" },
+            "version": { "$ref": "#/$defs/nonEmptyString" }
+          }
+        },
+        "inputs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["knowledge_model", "landscape", "release_artifact_schema", "schema", "source_baseline"],
+          "properties": {
+            "knowledge_model": { "$ref": "#/$defs/input" },
+            "landscape": { "$ref": "#/$defs/input" },
+            "release_artifact_schema": { "$ref": "#/$defs/input" },
+            "schema": { "$ref": "#/$defs/input" },
+            "source_baseline": { "$ref": "#/$defs/input" }
+          }
+        },
+        "scope": { "$ref": "#/$defs/scope" },
+        "review": { "$ref": "#/$defs/review" },
+        "counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "provision", "requirement", "decision", "control", "verification"],
+          "properties": {
+            "source": { "type": "integer", "minimum": 0 },
+            "provision": { "type": "integer", "minimum": 0 },
+            "requirement": { "type": "integer", "minimum": 0 },
+            "decision": { "type": "integer", "minimum": 0 },
+            "control": { "type": "integer", "minimum": 0 },
+            "verification": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "object_count": { "type": "integer", "minimum": 1 },
+        "reference_count": { "type": "integer", "minimum": 0 },
+        "content_sha256": { "$ref": "#/$defs/hash" },
+        "config_sha256": { "$ref": "#/$defs/hash" },
+        "objects": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/objectManifestEntry" }
+        },
+        "unresolved_items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/unresolvedItem" },
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        },
+        "artifacts": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/artifact" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

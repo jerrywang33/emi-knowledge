@@ -1,0 +1,832 @@
+{
+  "$schema": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/release-artifact.schema.json",
+  "artifacts": [
+    {
+      "path": "agent-context.json",
+      "sha256": "a461a5e93a283d13b47a0853dc4678f82934a48541136a387fdc4565516c10bc"
+    },
+    {
+      "path": "knowledge.json",
+      "sha256": "1b42f0e1f0c11560d1fdea0511e712e7ce2e27d1d9608d0e5aa2216414e9e092"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6a42b72f3eb1dd08af22a9082bb6d01dd8ca09e2be99d081d4728b3606856b9d"
+    }
+  ],
+  "config_sha256": "6ed6c86fb8ee28f891c1b437db0c2e41958031497607769822784de5e49226d1",
+  "content_sha256": "572112de29790efa365b5fd25b764ada419fde99c34ee59e38be881dfb88f3e7",
+  "counts": {
+    "control": 8,
+    "decision": 3,
+    "provision": 20,
+    "requirement": 15,
+    "source": 3,
+    "verification": 8
+  },
+  "inputs": {
+    "knowledge_model": {
+      "id": "KNOWLEDGE-MODEL-V0.1",
+      "path": "docs/model/v0.1-knowledge-model.md",
+      "sha256": "b11165767c55cb848c7e5c0a908ba21e0fae3415708e959a915cdd5fe05c33cd"
+    },
+    "landscape": {
+      "id": "DORA-LANDSCAPE-2026-08-31",
+      "path": "docs/dora/dora-landscape.md",
+      "sha256": "e07096f6a99a40658544cd0129f190ef65ab36562a1f9ffeb50f56c95a91434c"
+    },
+    "release_artifact_schema": {
+      "id": "RELEASE-ARTIFACT-SCHEMA-V0.1",
+      "path": "schemas/v0.1/release-artifact.schema.json",
+      "sha256": "8d1798c0e87d4788d3607b2276e7196a408070f34268b400e4b65acd662d106c",
+      "version": "0.1.0"
+    },
+    "schema": {
+      "id": "KNOWLEDGE-OBJECT-SCHEMA-V0.1",
+      "path": "schemas/v0.1/knowledge-object.schema.json",
+      "sha256": "3437ac18710f7d8c04069e167266ba053da778e366da95552b4097a9555cc7cc",
+      "version": "0.1.0"
+    },
+    "source_baseline": {
+      "id": "DORA-SOURCES-2026-08-31-R2",
+      "path": "docs/sources/dora-source-baseline.md",
+      "sha256": "a210ccbea79aa13a24cde7700ae921a96f8d81b6cb983e680fc0ddcf9661d387"
+    }
+  },
+  "limitations": [
+    "当前深度知识链只覆盖 DORA ICT 变更管理。",
+    "公开来源不能确定具体机构是否获得 EMD2 Article 9(1) 豁免。",
+    "机构角色、重大变更标准、测试深度、回退测试深度和紧急复核时限需要使用方确认。",
+    "证据来源系统和保存期限需要使用方结合适用规则及内部政策确认。",
+    "发布内容尚未使用真实机构流程、系统和运行证据完成业务验收。",
+    "工程审查不构成法律意见、监管批准、合规认证或生产就绪结论。"
+  ],
+  "manifest_schema_version": "0.1.0",
+  "object_count": 57,
+  "objects": [
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/sources/src-eu-reg-2022-2554.yaml",
+      "id": "src-eu-reg-2022-2554",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "4baa203a50c5057cfa87d24794e9ed5643a1a8becd981a6885713fc18555ff44",
+      "type": "source"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/sources/src-eu-reg-2024-1774.yaml",
+      "id": "src-eu-reg-2024-1774",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "f0f6a091dad9ec29e07190e733a2b7f0b3451dc4daf3adaf86b8e41bdd59fcc4",
+      "type": "source"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/sources/src-mfsa-ict-change-management-2026.yaml",
+      "id": "src-mfsa-ict-change-management-2026",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "a446713b07f7f2b4c0ae4e46bedd5a97f78aeb5dec60d83f0e0e874673ebc8f1",
+      "type": "source"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-dora-art-16-1-simplified-entities.yaml",
+      "id": "prv-dora-art-16-1-simplified-entities",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "5464fe1077b7617ebe66c97e4b98486c47a5684eb9888e4816c948be10315f13",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-dora-art-2-1-d.yaml",
+      "id": "prv-dora-art-2-1-d",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "53947cbd999e2ca12f50ea69918e25eb29c5e19a491c9e65faac8529a4b736fa",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-dora-art-64-application.yaml",
+      "id": "prv-dora-art-64-application",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "ec6204751303cb0ca298a8d7a174912201cc3c037ee1c12dd605b79ed1048a78",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-dora-art-9-4-change-approval.yaml",
+      "id": "prv-dora-art-9-4-change-approval",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "000678898f3be2c37d2abed2a0b26a2aa9be0c910c560e4e96bc5fd84cb9eb71",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-dora-art-9-4-e.yaml",
+      "id": "prv-dora-art-9-4-e",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "29c7821e51e28bfe55dd4cdaba25cc159b7e5e932ad8d6074d775b2e95fcbe6a",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-mfsa-change-management-lifecycle.yaml",
+      "id": "prv-mfsa-change-management-lifecycle",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "b1498537fbbbe31462c66eaf7af1dc2d4959805c660d2c54a878e34e76bf8d70",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-mfsa-material-change-expectations.yaml",
+      "id": "prv-mfsa-material-change-expectations",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "89303eb9fc98f14b318e186a24507e5308ac8ddddb9df399c8e02c646ef0d4e8",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1.yaml",
+      "id": "prv-rts-2024-1774-art-17-1",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "5fd1855038f6e4649321338cc0c7a332be3e1e82fa9d15dfc05f08042386b544",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-a.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-a",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "cf796cc80eb8154be073bfa640cbc646a8c28331bcd913dda129c52f0a9c1b8b",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-b.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-b",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "db03d2ea2607d9d6935136292863b2f75df5d2cfa31d2fc2c8735b710bedf7df",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-c.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-c",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "3f1d912b04b11b2a1ec6a28d694cfca30280e6d9c87c593e6934703d6ab8b76a",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-d.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-d",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "8b5b20fa0f7ffc45b1fa5dec0564f7c94fa3b6facfc58fca2243b8e3cd995070",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-e.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-e",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "0ab255661b54134d5f2a12c6a03032775e959bf8b8fd1a50d9ca1ffea7bd5494",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-f.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-f",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "147fb39bb5225227d3af39b2ce97446f77e105cca61204795ab9365ab7b729e0",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-g.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-g",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "b90b55774f1e5ab55f7195f590fd4fababe58dede5ee482814b0a94a42836139",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-17-1-h.yaml",
+      "id": "prv-rts-2024-1774-art-17-1-h",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "ee2abe978696181cf5fcddc1c5507f4c02c373c834faaf2fab7067477f6d2476",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-31-1-e.yaml",
+      "id": "prv-rts-2024-1774-art-31-1-e",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "61e0c010addcff2b2023b61e7b62296b09866843472e64e898e5ba35ea002094",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-36-1.yaml",
+      "id": "prv-rts-2024-1774-art-36-1",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "746225cba8fa96fc0c2044b5915ce8a3f6ccc6ac20113ff0dbadb4fd86816c85",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-37-b.yaml",
+      "id": "prv-rts-2024-1774-art-37-b",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "d11da8ba416c1c86b1be15220386b96fc5a3f9c0f3c3ac2460f6295940ff9244",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/provisions/prv-rts-2024-1774-art-38-2.yaml",
+      "id": "prv-rts-2024-1774-art-38-2",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "e10773af4a80375f325dc496fac2bf5af0a192a589c22d1b9e9e3d349fd7e647",
+      "type": "provision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-approval-independence.yaml",
+      "id": "req-full-change-approval-independence",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "b4450936bcb567da7fbff99d0d8056d4ee60bfbb296473adf8c548a188e1c3ba",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-controlled-lifecycle.yaml",
+      "id": "req-full-change-controlled-lifecycle",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "98d60d512f936335c053df7addbe3844efe427bb11ac3373ab2386e0a37d4152",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-details.yaml",
+      "id": "req-full-change-details",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "318c36a1ceaef88eaec0dcbbbf6fc36fb3643a09c2f3a3220111fd870de0b500",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-fallback.yaml",
+      "id": "req-full-change-fallback",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "1b1f0d51982da62c78aac03b9f237e5428afaa5cd7132d98263a2016181e92d0",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-management-approval.yaml",
+      "id": "req-full-change-management-approval",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "e6329126bfdafa35a8e01ef5fbbffe7c5518bf3dea2a57c4fb2aee1dfaece720",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-roles-and-quality.yaml",
+      "id": "req-full-change-roles-and-quality",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "a85e70eaf938194c85f058a948ac8e0fdf22a1c827148153836594d66d830669",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-security-impact.yaml",
+      "id": "req-full-change-security-impact",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "5ed48f1e8f2de7b05043a697c340c1fb17dcc42f379929b24e400c0dca022f0a",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-security-verification.yaml",
+      "id": "req-full-change-security-verification",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "0c35d456fc85ee5fa96624f4219c5021cef15e4e0105c7eb478ca6ef802637d7",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-change-specific-protocols.yaml",
+      "id": "req-full-change-specific-protocols",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "d41001dfcb7918d0862514278d77bbedebe21c72ab8a2bc18ddad2b93d48c8ad",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-emergency-change-post-review.yaml",
+      "id": "req-full-emergency-change-post-review",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "81e355b4ad1be68c943a44ff7a1680f9cb2e5074c0397c522a1a7fbca350d9cd",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-full-emergency-change-safeguards.yaml",
+      "id": "req-full-emergency-change-safeguards",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "dafcd4e0c48bb8bd3a9ba688ae1388e48bdacec4bb82cee51810c95d96d46c86",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-simplified-change-controlled-lifecycle.yaml",
+      "id": "req-simplified-change-controlled-lifecycle",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "198e740b5e75d931d4aa0ad6e1dd05afea41ddd9a2822ca10e35c9d577557353",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-simplified-change-security-testing-plan.yaml",
+      "id": "req-simplified-change-security-testing-plan",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "fdb5c32b8648541c3d5a06ef50cb4498ad6383da2e6c89ba350508b2545c33df",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-simplified-major-change-risk-assessment.yaml",
+      "id": "req-simplified-major-change-risk-assessment",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "0db1cc9409c0f67172c0911ed391725cd5d9b2a09a80e2c12f2a641573864d9a",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/requirements/req-simplified-production-change-test-approval.yaml",
+      "id": "req-simplified-production-change-test-approval",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "71acd942e737565de297a0d52ccd5ab696e37b7a6ec05f15e120e3ee3e16f11b",
+      "type": "requirement"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/decisions/dec-governed-change-workflow-baseline.yaml",
+      "id": "dec-governed-change-workflow-baseline",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "e33917b2447f80353cb3c25accad5bc1cbd104886318769c0f6cce14637de4d2",
+      "type": "decision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/decisions/dec-recovery-and-emergency-baseline.yaml",
+      "id": "dec-recovery-and-emergency-baseline",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "922e8290c31a393e351a34aba09e075460f0ccd7045b9d31de66579a907c2a7f",
+      "type": "decision"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/decisions/dec-security-and-independence-baseline.yaml",
+      "id": "dec-security-and-independence-baseline",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "0554c6795b0c3b4a1dded3448f32dfce49d980083805869c467b82082a6f4915",
+      "type": "decision"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-change-fallback-recovery.yaml",
+      "id": "ctl-change-fallback-recovery",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "480be9c57b742f18f02bde4d6b83e8de7a5d514f1d6050926d32fa1edd80f8fc",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-change-governance.yaml",
+      "id": "ctl-change-governance",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "b6236fdd2a2b0216469b0b58077b78ac7d4994bfe6203e1d66279fd1c908c065",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-change-lifecycle-workflow.yaml",
+      "id": "ctl-change-lifecycle-workflow",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "eac3cd58b97c2904526e772b28990d1c6bdf68f62542308674abde70787dd5b4",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-change-planning-record.yaml",
+      "id": "ctl-change-planning-record",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "a586e51aaaf680afab2388eddcb67eafd34f232b8b518fa100d009bccfa05095",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-change-role-separation.yaml",
+      "id": "ctl-change-role-separation",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "05ad15b410c7be43eebb03ccfdaf0df4d70bc8f7e95ca3f4546c675556de3cd0",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-change-security-impact.yaml",
+      "id": "ctl-change-security-impact",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "a2ca8f035446779de6fcf4692efc7668acb1d4e86d1085af314fc4b7c72dfff9",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-change-security-test-gate.yaml",
+      "id": "ctl-change-security-test-gate",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "a3e21bc8457c131c19a1c8520185c685546cf61ba33c6a20f791833241102388",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "confirmed",
+      "file": "knowledge/v0.1/controls/ctl-emergency-change.yaml",
+      "id": "ctl-emergency-change",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "c6ce97a97c4dfb3578dd3935541d9286ea21cd54f6c649a518a827a4dec6e566",
+      "type": "control"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-change-fallback-recovery.yaml",
+      "id": "ver-change-fallback-recovery",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "cae71fd680c7c6faf0b6e68207032c2b64a29ebe69b488dd78b87cdc03ab9969",
+      "type": "verification"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-change-governance.yaml",
+      "id": "ver-change-governance",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "d46d2b3702ff563b58fef5e97c86b2fd1e21dfffc208824feb06e445d2aea407",
+      "type": "verification"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-change-lifecycle-workflow.yaml",
+      "id": "ver-change-lifecycle-workflow",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "418b497ff2a8f0bbc03b3fbb669a14ecd20647f426aab72b26ba853101879179",
+      "type": "verification"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-change-planning-record.yaml",
+      "id": "ver-change-planning-record",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "2de378739822fca6ab134f20001ef1bda2c61d37949238707084046d10a6507e",
+      "type": "verification"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-change-role-separation.yaml",
+      "id": "ver-change-role-separation",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "7521b0646324373b8bef25f3cac253a9f4b010e78d5818e4c60d3f71168419d8",
+      "type": "verification"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-change-security-impact.yaml",
+      "id": "ver-change-security-impact",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "2875f66ea2fa0e7f44e0e101b1aeefa41ffacd9cbfe31d5d8c9a04f7b5b77f7a",
+      "type": "verification"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-change-security-test-gate.yaml",
+      "id": "ver-change-security-test-gate",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "a4b915049c9c0e42d82287dca122ea345fac101cf4f141649038ec66aaa5d3dc",
+      "type": "verification"
+    },
+    {
+      "confirmation_status": "not_required",
+      "file": "knowledge/v0.1/verifications/ver-emergency-change.yaml",
+      "id": "ver-emergency-change",
+      "lifecycle_status": "approved",
+      "revision": 1,
+      "sha256": "fef3ac51d2d411da42c64ca1d8b2c16e6b37a37e8ea21036e796742e07589f81",
+      "type": "verification"
+    }
+  ],
+  "reference_count": 147,
+  "release_level": "engineering_baseline",
+  "release_version": "v0.1.0",
+  "released_on": "2026-09-02",
+  "review": {
+    "reviewed_by_role": "emi_knowledge_engineering_maintainer",
+    "reviewed_on": "2026-09-02",
+    "scope": "核对来源定位、模型字段、跨对象关系、工程控制、检查方法、证据模板、机器文件 Schema 和发布可重复性；未执行具体机构法律审查。"
+  },
+  "scope": {
+    "excludes": [
+      "任何具体电子货币机构的法律适用性或合规结论。",
+      "机构内部政策、监管往来、风险接受、生产配置和实际证据。",
+      "DORA 其他主题的逐条完整知识链，以及 GDPR、AML/CFT、制裁和 EMD2 详细知识。"
+    ],
+    "includes": [
+      "DORA 及相关正式文件的来源基线和全景目录。",
+      "电子货币机构完整 ICT 风险管理框架下的 ICT 变更管理知识链。",
+      "获得 EMD2 Article 9(1) 豁免的电子货币机构简化框架路径。",
+      "来源、条款、要求、工程决定、控制、验证和证据要求之间的可追溯关系。"
+    ],
+    "title": "EMI Knowledge v0.1｜DORA ICT 变更管理"
+  },
+  "tool": {
+    "name": "emi-knowledge",
+    "version": "0.1.0"
+  },
+  "unresolved_items": [
+    {
+      "description": "The consuming institution must set fallback-test-depth-rule.",
+      "object_id": "ctl-change-fallback-recovery",
+      "path": "implementation_rules.fallback-test.parameters.fallback-test-depth-rule",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set authorised-management-role.",
+      "object_id": "ctl-change-governance",
+      "path": "implementation_rules.management-approval.parameters.authorised-management-role",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set major-change-criteria.",
+      "object_id": "ctl-change-security-impact",
+      "path": "implementation_rules.major-change-risk-assessment.parameters.major-change-criteria",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set test-depth-rule.",
+      "object_id": "ctl-change-security-test-gate",
+      "path": "implementation_rules.risk-based-test-depth.parameters.test-depth-rule",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set maximum-post-review-delay.",
+      "object_id": "ctl-emergency-change",
+      "path": "implementation_rules.post-implementation-review.parameters.maximum-post-review-delay",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for fallback-plan.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-plan.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for fallback-plan.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-plan.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for fallback-test-report.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-test-report.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for fallback-test-report.",
+      "object_id": "ver-change-fallback-recovery",
+      "path": "evidence_requirements.fallback-test-report.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for change-protocol.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.change-protocol.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for change-protocol.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.change-protocol.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for process-approval.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.process-approval.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for process-approval.",
+      "object_id": "ver-change-governance",
+      "path": "evidence_requirements.process-approval.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for lifecycle-audit-log.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-audit-log.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for lifecycle-audit-log.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-audit-log.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for lifecycle-record.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for lifecycle-record.",
+      "object_id": "ver-change-lifecycle-workflow",
+      "path": "evidence_requirements.lifecycle-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for change-plan.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.change-plan.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for change-plan.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.change-plan.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for communication-record.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.communication-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for communication-record.",
+      "object_id": "ver-change-planning-record",
+      "path": "evidence_requirements.communication-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for approval-audit-log.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.approval-audit-log.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for approval-audit-log.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.approval-audit-log.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for role-record.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.role-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for role-record.",
+      "object_id": "ver-change-role-separation",
+      "path": "evidence_requirements.role-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for major-change-risk-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.major-change-risk-assessment.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for major-change-risk-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.major-change-risk-assessment.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for security-impact-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.security-impact-assessment.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for security-impact-assessment.",
+      "object_id": "ver-change-security-impact",
+      "path": "evidence_requirements.security-impact-assessment.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for production-approval.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.production-approval.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for production-approval.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.production-approval.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for security-test-report.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.security-test-report.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for security-test-report.",
+      "object_id": "ver-change-security-test-gate",
+      "path": "evidence_requirements.security-test-report.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for emergency-change-record.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-change-record.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for emergency-change-record.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-change-record.source_system",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must set the retention period for emergency-post-review.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-post-review.retention_period",
+      "status": "institution_defined"
+    },
+    {
+      "description": "The consuming institution must map the source system for emergency-post-review.",
+      "object_id": "ver-emergency-change",
+      "path": "evidence_requirements.emergency-post-review.source_system",
+      "status": "institution_defined"
+    }
+  ]
+}

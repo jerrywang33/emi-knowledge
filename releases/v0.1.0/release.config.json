@@ -1,0 +1,59 @@
+{
+  "release_version": "v0.1.0",
+  "release_level": "engineering_baseline",
+  "released_on": "2026-09-02",
+  "knowledge_directory": "knowledge/v0.1",
+  "output_directory": "releases/v0.1.0",
+  "tool_version": "0.1.0",
+  "inputs": {
+    "source_baseline": {
+      "id": "DORA-SOURCES-2026-08-31-R2",
+      "path": "docs/sources/dora-source-baseline.md"
+    },
+    "landscape": {
+      "id": "DORA-LANDSCAPE-2026-08-31",
+      "path": "docs/dora/dora-landscape.md"
+    },
+    "knowledge_model": {
+      "id": "KNOWLEDGE-MODEL-V0.1",
+      "path": "docs/model/v0.1-knowledge-model.md"
+    },
+    "schema": {
+      "id": "KNOWLEDGE-OBJECT-SCHEMA-V0.1",
+      "version": "0.1.0",
+      "path": "schemas/v0.1/knowledge-object.schema.json"
+    },
+    "release_artifact_schema": {
+      "id": "RELEASE-ARTIFACT-SCHEMA-V0.1",
+      "version": "0.1.0",
+      "path": "schemas/v0.1/release-artifact.schema.json"
+    }
+  },
+  "scope": {
+    "title": "EMI Knowledge v0.1｜DORA ICT 变更管理",
+    "includes": [
+      "DORA 及相关正式文件的来源基线和全景目录。",
+      "电子货币机构完整 ICT 风险管理框架下的 ICT 变更管理知识链。",
+      "获得 EMD2 Article 9(1) 豁免的电子货币机构简化框架路径。",
+      "来源、条款、要求、工程决定、控制、验证和证据要求之间的可追溯关系。"
+    ],
+    "excludes": [
+      "任何具体电子货币机构的法律适用性或合规结论。",
+      "机构内部政策、监管往来、风险接受、生产配置和实际证据。",
+      "DORA 其他主题的逐条完整知识链，以及 GDPR、AML/CFT、制裁和 EMD2 详细知识。"
+    ]
+  },
+  "review": {
+    "reviewed_by_role": "emi_knowledge_engineering_maintainer",
+    "reviewed_on": "2026-09-02",
+    "scope": "核对来源定位、模型字段、跨对象关系、工程控制、检查方法、证据模板、机器文件 Schema 和发布可重复性；未执行具体机构法律审查。"
+  },
+  "limitations": [
+    "当前深度知识链只覆盖 DORA ICT 变更管理。",
+    "公开来源不能确定具体机构是否获得 EMD2 Article 9(1) 豁免。",
+    "机构角色、重大变更标准、测试深度、回退测试深度和紧急复核时限需要使用方确认。",
+    "证据来源系统和保存期限需要使用方结合适用规则及内部政策确认。",
+    "发布内容尚未使用真实机构流程、系统和运行证据完成业务验收。",
+    "工程审查不构成法律意见、监管批准、合规认证或生产就绪结论。"
+  ]
+}

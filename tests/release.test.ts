@@ -32,6 +32,11 @@ const CONFIG: ReleaseConfig = {
       version: "0.1.0",
       path: "schemas/v0.1/knowledge-object.schema.json",
     },
+    release_artifact_schema: {
+      id: "RELEASE-ARTIFACT-SCHEMA-V0.1",
+      version: "0.1.0",
+      path: "schemas/v0.1/release-artifact.schema.json",
+    },
   },
   scope: {
     title: "EMI Knowledge v0.1 DORA ICT Change Management",
@@ -67,3 +72,17 @@ test("release generation is deterministic and exposes unresolved institution ite
   assert.deepEqual(files, ["README.md", "agent-context.json", "knowledge.json", "manifest.json"]);
 });
 
+test("checked-in v0.1.0 artifacts match the fixed release config", async (context) => {
+  const releaseDirectory = path.join(ROOT, "releases/v0.1.0");
+  const config = JSON.parse(
+    await fs.readFile(path.join(releaseDirectory, "release.config.json"), "utf8"),
+  ) as ReleaseConfig;
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-checked-release-"));
+  context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
+
+  const generated = await generateRelease(config, ROOT, temporaryDirectory);
+  for (const [artifactPath, generatedContent] of Object.entries(generated.artifacts)) {
+    const checkedInContent = await fs.readFile(path.join(releaseDirectory, artifactPath), "utf8");
+    assert.equal(checkedInContent, generatedContent, `${artifactPath} has drifted from release.config.json`);
+  }
+});
