@@ -1,0 +1,18 @@
+id: prv-mfsa-major-process-report-stages
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Follow the three MFSA major-incident report stages
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-major-ict-incident-process-2025
+locator:
+  label: The Reporting Process, three-tier reporting
+  segments:
+    - {kind: section, value: The Reporting Process}
+    - {kind: page, value: "7"}
+heading: The Reporting Process
+content_kind: editorial_summary
+content: The MFSA process restates the initial-notification four-hour and 24-hour limits, the intermediate-report 72-hour limit and recovery update, and the final-report one-month limit, and directs Authorised Persons to Regulation (EU) 2025/301 Article 5 for the governing time-limit details.

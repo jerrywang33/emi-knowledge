@@ -3,7 +3,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 专题标识 | `dora-ict-incident-management-reporting` |
-| 状态 | 草稿，事件管理、分类与欧盟层监管报告的 Provision 和 Requirement 已完成 |
+| 状态 | 草稿，Source、Provision 和 Requirement 已完成 |
 | 目标发布 | `v0.2.0` |
 | 来源复核 | [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../../sources/dora-ict-incidents-source-review.md) |
 | 机器清单 | [`knowledge/topics/dora/ict-incident-management-reporting.yaml`](../../../knowledge/topics/dora/ict-incident-management-reporting.yaml) |
@@ -33,7 +33,7 @@
 
 ## 3. 条款覆盖矩阵
 
-状态含义：`纳入` 表示后续建立 Provision 并评估 Requirement；`上下文` 表示保留条款定位或关系，不直接生成 EMI Requirement；`待确认` 表示来源或适用路径仍需补充确认。
+状态含义：`纳入` 表示已进入本专题并按拆分说明建立 Provision 和必要的 Requirement；`上下文` 表示保留条款定位或关系，不直接生成 EMI Requirement；`待确认` 表示来源或适用路径仍需补充确认。
 
 ### 3.1 DORA 与事件管理措施
 
@@ -108,4 +108,6 @@
 
 ## 6. 下一步
 
-前三批已经建立事件管理主干、Regulation (EU) 2024/1772 分类规则以及欧盟层监管报告的 Provision 和 Requirement，覆盖共同义务、完整和简化 ICT 风险管理分支、分类判断、三阶段报告、法定时限、自愿通知、安全提交、重分类、外包和 Article 23 支付事件路径。下一批补充 Malta 操作路径及年度成本与损失指引。
+Source、Provision 和 Requirement 已完成，包含事件管理主干、完整与简化 ICT 风险管理分支、分类判断、三阶段报告、法定时限、自愿通知、安全提交、重分类、外包、Article 23 支付事件路径、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。
+
+下一步建立最小 Control 集合，并逐项补充 Verification 和 EvidenceRequirement。涉及机构路径、内部目标、职责和自愿选择的内容通过 Decision 记录；公开来源仍缺失的 Malta 操作信息继续保持待确认。

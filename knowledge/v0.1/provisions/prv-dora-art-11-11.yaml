@@ -1,0 +1,18 @@
+id: prv-dora-art-11-11
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Establish common guidelines for annual incident cost and loss estimates
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 11(11)
+  segments:
+    - {kind: article, value: "11"}
+    - {kind: paragraph, value: "11"}
+heading: Response and recovery
+content_kind: editorial_summary
+content: The European Supervisory Authorities, through the Joint Committee, develop common guidelines on estimating the aggregated annual costs and losses referred to in Article 11(10).

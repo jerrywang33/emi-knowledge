@@ -1,0 +1,18 @@
+id: prv-mfsa-major-process-scope
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Apply the MFSA major-incident process to DORA entities
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-major-ict-incident-process-2025
+locator:
+  label: Scope and Applicability
+  segments:
+    - {kind: section, value: Scope and Applicability}
+    - {kind: page, value: "5"}
+heading: Scope and Applicability
+content_kind: editorial_summary
+content: The MFSA major ICT-related incident reporting process applies mandatorily from 17 January 2025 to all MFSA Authorised Persons within DORA Article 2 scope; its application to other Authorised Persons is stated separately as an expectation.

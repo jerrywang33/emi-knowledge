@@ -1,0 +1,18 @@
+id: prv-mfsa-major-process-parallel-obligations
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Preserve incident notifications owed to other authorities
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-major-ict-incident-process-2025
+locator:
+  label: The Reporting Process, other notification obligations
+  segments:
+    - {kind: section, value: The Reporting Process}
+    - {kind: page, value: "7"}
+heading: The Reporting Process
+content_kind: editorial_summary
+content: The MFSA process does not replace or supersede an Authorised Person's legal obligation to notify incidents to other competent authorities unless DORA specifically supersedes that obligation.

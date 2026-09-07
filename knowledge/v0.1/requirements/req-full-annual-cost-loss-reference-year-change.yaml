@@ -1,0 +1,35 @@
+id: req-full-annual-cost-loss-reference-year-change
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Change the reference-year basis only after notice and non-objection
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: A non-microenterprise electronic money institution using the full ICT risk management framework may change its annual cost and loss reference-year basis after notifying the competent authority, provided that the authority does not object within two months after receiving the notification.
+requirement_kind: permission
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-jc-gl-2024-34-paragraph-5, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: include, values: [emi_without_emd2_article_9_1_exemption]}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: not_applicable, values: []}
+  framework_branches: {mode: include, values: [dora_full_ict_risk_management]}
+  effective_from: "2025-05-19"
+  effective_to: null
+  conditions:
+    - The institution previously selected a calendar-year or accounting-year basis.
+    - The institution notified the competent authority of the proposed change.
+    - The competent authority did not object within two months after receiving the notification.
+  exclusions:
+    - Microenterprises.
+    - Electronic money institutions using the simplified ICT risk management branch.

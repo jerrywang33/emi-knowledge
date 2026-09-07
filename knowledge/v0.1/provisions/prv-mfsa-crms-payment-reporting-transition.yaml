@@ -1,0 +1,18 @@
+id: prv-mfsa-crms-payment-reporting-transition
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Replace the prior PSD2 incident-reporting path with DORA
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-crms-circular-2025
+locator:
+  label: Major ICT-Related Incidents, payment-related reporting transition
+  segments:
+    - {kind: section, value: Major ICT-Related Incidents}
+    - {kind: page, value: "2"}
+heading: Major ICT-Related Incidents
+content_kind: editorial_summary
+content: For entities in DORA Article 2(1)(a)-(d), including electronic money institutions and exempted electronic money institutions, the prior PSD2 incident-reporting obligation ceases and DORA provides the reporting mechanism for operational or security payment-related incidents irrespective of their ICT nature.

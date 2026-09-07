@@ -1,0 +1,18 @@
+id: prv-jc-gl-2024-34-paragraph-5
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Select and consistently apply a completed reference year
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-esa-jc-gl-2024-34
+locator:
+  label: Title III, paragraph 5
+  segments:
+    - {kind: title, value: III}
+    - {kind: paragraph, value: "5"}
+heading: Provisions on the estimation of aggregated annual costs and losses of major ICT-related incidents
+content_kind: editorial_summary
+content: Financial entities aggregate costs and losses falling within the requested reference year, choose either a completed calendar year or a completed accounting year with finalised financial statements, apply that choice to future estimates, exclude amounts outside the reference year, and may change the choice after notifying the authority if it does not object within two months.

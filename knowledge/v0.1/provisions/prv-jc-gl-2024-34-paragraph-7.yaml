@@ -1,0 +1,18 @@
+id: prv-jc-gl-2024-34-paragraph-7
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Calculate gross costs, losses and financial recoveries sequentially
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-esa-jc-gl-2024-34
+locator:
+  label: Title III, paragraph 7
+  segments:
+    - {kind: title, value: III}
+    - {kind: paragraph, value: "7"}
+heading: Provisions on the estimation of aggregated annual costs and losses of major ICT-related incidents
+content_kind: editorial_summary
+content: Financial entities estimate each included major incident separately to obtain gross costs and losses using the Regulation (EU) 2024/1772 Article 7 cost types, estimate financial recoveries using the Regulation (EU) 2025/302 Annex II specification, and aggregate gross costs and losses and recoveries across those incidents.

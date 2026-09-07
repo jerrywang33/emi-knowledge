@@ -1,0 +1,18 @@
+id: prv-mfsa-crms-dora-reporting-channel
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Use CRMS for Malta DORA incident and threat submissions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-crms-circular-2025
+locator:
+  label: Cyber Reporting Management System, DORA reporting paragraphs
+  segments:
+    - {kind: section, value: Cyber Reporting Management System}
+    - {kind: page, value: 1-2}
+heading: Cyber Reporting Management System
+content_kind: editorial_summary
+content: From 17 January 2025, MFSA Authorised Persons in DORA scope report major ICT-related incidents and may voluntarily notify significant cyber threats through the Cyber Reporting Management System within the Licence Holder Portal using the provided templates.

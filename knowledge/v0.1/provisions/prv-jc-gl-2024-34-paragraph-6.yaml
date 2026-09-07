@@ -1,0 +1,18 @@
+id: prv-jc-gl-2024-34-paragraph-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Include major incidents with financial impact in the reference year
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-esa-jc-gl-2024-34
+locator:
+  label: Title III, paragraph 6
+  segments:
+    - {kind: title, value: III}
+    - {kind: paragraph, value: "6"}
+heading: Provisions on the estimation of aggregated annual costs and losses of major ICT-related incidents
+content_kind: editorial_summary
+content: The estimate includes every incident classified as major for which the entity submitted a final report in the reference year, plus any incident with a final report submitted in an earlier reference year that had a quantifiable financial impact in the current reference year.

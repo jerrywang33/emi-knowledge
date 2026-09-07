@@ -1,0 +1,17 @@
+id: prv-jc-gl-2024-34-annex
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Annual incident cost and loss reporting template fields
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-esa-jc-gl-2024-34
+locator:
+  label: Annex
+  segments:
+    - {kind: annex, value: Reporting template for gross costs and losses and financial recoveries in a reference year}
+heading: Reporting template for gross costs and losses and financial recoveries in a reference year
+content_kind: editorial_summary
+content: The template records the entity name and LEI, reference-year dates, currency, incident number, final-report submission date, incident reference, per-incident gross costs and losses and recoveries in thousands of currency units, and reference-year totals.

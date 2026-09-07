@@ -1,0 +1,18 @@
+id: prv-mfsa-major-process-crms-submission
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Submit every major ICT incident to MFSA through CRMS
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-major-ict-incident-process-2025
+locator:
+  label: The Reporting Process, submission channel
+  segments:
+    - {kind: section, value: The Reporting Process}
+    - {kind: page, value: "7"}
+heading: The Reporting Process
+content_kind: editorial_summary
+content: MFSA Authorised Persons report every major ICT-related incident to the Authority through CRMS within the Licence Holder Portal using the provided template.

@@ -73,6 +73,7 @@ test("a draft topic may have no entry Requirements", async () => {
   const incidentTopic = cloneTopicEntries(loadedTopics.entries).find((entry) =>
     entry.object.id === "dora-ict-incident-management-reporting")!;
   incidentTopic.object.entry_requirement_ids = [];
+  incidentTopic.object.context_object_ids = [];
 
   assert.equal(incidentTopic.object.lifecycle_status, "draft");
   assert.deepEqual(resolveTopicEntries([incidentTopic.object], knowledgeEntries), []);

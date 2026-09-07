@@ -1,0 +1,31 @@
+id: req-malta-parallel-incident-notifications
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Preserve Malta incident notifications owed to other authorities
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An MFSA Authorised Person that is an electronic money institution shall continue to meet any incident-notification obligation owed to another competent authority unless DORA specifically supersedes that obligation.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-mfsa-major-process-parallel-obligations, relation: direct_basis}
+  - {provision_id: prv-mfsa-major-process-scope, relation: scope_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [MT]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: all, values: []}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: all, values: []}
+  framework_branches: {mode: all, values: []}
+  effective_from: "2025-03-24"
+  effective_to: null
+  conditions:
+    - A separate legal obligation requires the institution to notify the incident to another competent authority.
+  exclusions:
+    - An obligation specifically superseded by DORA.

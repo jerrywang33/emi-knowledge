@@ -1,6 +1,6 @@
 id: dora-ict-incident-management-reporting
 schema_version: 0.1.0
-revision: 4
+revision: 5
 title: DORA ICT incident management, classification, and regulatory reporting
 language: en
 domain: dora
@@ -9,13 +9,14 @@ source_review_ids:
   - DORA-SOURCES-2026-08-31-R2
   - DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1
 scope:
-  summary: ICT incident management, classification, major-incident reporting, and voluntary significant-cyber-threat notification for electronic money institutions under DORA, including the Malta public reporting route.
+  summary: ICT incident management, classification, major-incident reporting, annual cost and loss estimates, and voluntary significant-cyber-threat notification for electronic money institutions under DORA, including the Malta public reporting route.
   includes:
     - Recording, detection, handling, escalation, response, recovery, root-cause analysis, follow-up, communication, and evidence retention for ICT-related incidents.
     - Classification criteria and materiality thresholds for major ICT-related incidents, including recurring incidents where applicable.
     - Initial notification, intermediate report, final report, reclassification, secure submission, and reporting-outsourcing procedures.
     - Voluntary classification and notification of significant cyber threats.
     - The DORA Chapter III path for operational or security payment-related incidents affecting electronic money institutions.
+    - Aggregated annual major-incident cost and loss estimates for the full ICT risk management branch when requested by a competent authority.
   excludes:
     - Institution-specific incident decisions, internal severity thresholds, staffing models, and risk acceptance.
     - Automatic submission to a competent authority or automatic approval of an incident classification.
@@ -23,6 +24,14 @@ scope:
 entry_requirement_ids:
   - req-aggregated-reporting-individual-impact-report
   - req-final-report-deadline
+  - req-full-annual-cost-loss-adjustments
+  - req-full-annual-cost-loss-data-basis
+  - req-full-annual-cost-loss-estimation
+  - req-full-annual-cost-loss-incident-population
+  - req-full-annual-cost-loss-reference-year
+  - req-full-annual-cost-loss-reference-year-change
+  - req-full-annual-cost-loss-report-detail
+  - req-full-annual-cost-loss-report-on-request
   - req-full-annual-incident-findings-report
   - req-full-anomaly-record-protection
   - req-full-crisis-communication
@@ -57,6 +66,9 @@ entry_requirement_ids:
   - req-major-incident-report-general-content
   - req-major-incident-report-sequence
   - req-major-incident-secure-submission
+  - req-malta-major-ict-crms-submission
+  - req-malta-parallel-incident-notifications
+  - req-malta-significant-threat-crms-submission
   - req-outsourced-reporting-responsibility
   - req-payment-incident-chapter-three-application
   - req-recurring-incident-monthly-assessment
@@ -76,11 +88,12 @@ entry_requirement_ids:
   - req-simplified-threat-monitoring
   - req-third-party-aggregated-reporting
   - req-weekend-bank-holiday-reporting-extension
-context_object_ids: []
+context_object_ids:
+  - prv-mfsa-crms-payment-reporting-transition
 coverage:
   sources: complete
-  provisions: in_progress
-  requirements: in_progress
+  provisions: complete
+  requirements: complete
   decisions: not_started
   controls: not_started
   verifications: not_started

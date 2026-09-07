@@ -1,0 +1,18 @@
+id: prv-mfsa-threat-process-voluntary-scope
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Keep the MFSA significant-threat process voluntary
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-significant-cyber-threat-process-2025
+locator:
+  label: Introduction, voluntary scope
+  segments:
+    - {kind: section, value: Introduction}
+    - {kind: page, value: "4"}
+heading: Introduction
+content_kind: editorial_summary
+content: The MFSA significant-cyber-threat process applies voluntarily to Authorised Persons inside and outside DORA scope, describes notification as highly encouraged, and provides a notification template and user guidelines.

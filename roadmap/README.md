@@ -1,7 +1,7 @@
 # EMI Knowledge Roadmap
 
 - 当前阶段：`v0.2 DORA ICT 事件管理、分类与监管报告`
-- 当前步骤：专题校验与组合发布已完成，开始建立事件 Source、Provision 和 Requirement
+- 当前步骤：事件 Source、Provision 和 Requirement 已完成，开始建立 Decision、Control 和 Verification
 - 当前固定发布：`v0.1.0`
 - 最后更新：2026-09-07
 
@@ -14,6 +14,8 @@
 事件专题来源已经通过 [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../docs/sources/dora-ict-incidents-source-review.md) 完成工程复核。该增量记录引用现有 DORA 来源基线，不改写 `v0.1.0` 使用的固定输入。
 
 两个专题已经登记到 [`knowledge/topics/dora/`](../knowledge/topics/dora/)，事件条款的纳入、上下文和待确认边界见 [ICT 事件专题说明](../docs/dora/topics/ict-incident-management-reporting.md)。
+
+事件专题现有 66 个入口 Requirement，覆盖事件管理、分类、欧盟层报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。当前进入控制和验证设计，专题在完整知识链通过检查前保持草稿状态。
 
 ## v0.1 阶段目标
 

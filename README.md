@@ -226,6 +226,6 @@ npm run example:query -- req-full-change-controlled-lifecycle
 
 `v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。
 
-当前工作进入 `v0.2`，事件专题所需的 9 个 Source 已经建立或复用，事件管理、分类和欧盟层监管报告的 Provision 与 Requirement 已经完成，下一批处理 Malta 公开操作路径以及年度成本与损失估算。该阶段同时验证两个专题能够共享知识对象、独立检查和组合发布。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
+当前工作进入 `v0.2`，事件专题的 Source、Provision 和 Requirement 已经完成，覆盖事件管理、分类、欧盟层监管报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。下一步建立 Decision、Control、Verification 和 EvidenceRequirement。该阶段同时验证两个专题能够共享知识对象、独立检查和组合发布。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。

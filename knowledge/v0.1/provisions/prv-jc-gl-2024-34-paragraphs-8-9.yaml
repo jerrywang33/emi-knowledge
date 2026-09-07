@@ -1,0 +1,18 @@
+id: prv-jc-gl-2024-34-paragraphs-8-9
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Use financial records and recognise later adjustments
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-esa-jc-gl-2024-34
+locator:
+  label: Title III, paragraphs 8-9
+  segments:
+    - {kind: title, value: III}
+    - {kind: paragraph, value: 8-9}
+heading: Provisions on the estimation of aggregated annual costs and losses of major ICT-related incidents
+content_kind: editorial_summary
+content: Estimates use costs, losses, recoveries and accounting provisions reflected in the reference year's financial statements or applicable supervisory reporting; where accurate data is unavailable, other available information is used to the extent possible, and adjustments to an earlier year's submitted estimate are included in the reference year in which they are made.

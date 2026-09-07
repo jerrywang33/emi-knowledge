@@ -1,0 +1,18 @@
+id: prv-jc-gl-2024-34-paragraphs-10-11
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Submit per-incident breakdowns with stable incident references
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-esa-jc-gl-2024-34
+locator:
+  label: Title III, paragraphs 10-11
+  segments:
+    - {kind: title, value: III}
+    - {kind: paragraph, value: 10-11}
+heading: Provisions on the estimation of aggregated annual costs and losses of major ICT-related incidents
+content_kind: editorial_summary
+content: The submitted estimate includes a breakdown of gross costs and losses and financial recoveries for each included major incident, uses the Annex template, and identifies each included incident or adjustment with the same institution incident reference used in the final incident report.
