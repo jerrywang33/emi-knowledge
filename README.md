@@ -173,7 +173,7 @@ EMI Knowledge 通过稳定 Schema、版本化文件和后续接口发布知识�
 
 第一阶段采用“DORA 全景目录 + ICT 变更管理完整知识链”。全景目录用于说明 DORA 的主题、文件和条款关系；ICT 变更管理用于跑通从权威来源到控制、检查和证据的完整过程。
 
-`v0.2` 在现有方法上增加 DORA ICT 事件管理、分类与监管报告知识链。专题范围、实施步骤和完成条件见 [`v0.2 Roadmap`](roadmap/v0.2-dora-ict-incidents.md)，目录与发布方式见 [Decision 0002](docs/decisions/0002-dora-topic-index-and-release-composition.md)。
+`v0.2` 在现有方法上增加 DORA ICT 事件管理、分类与监管报告知识链。专题范围、实施步骤和完成条件见 [`v0.2 Roadmap`](roadmap/v0.2-dora-ict-incidents.md)，目录与发布方式见 [Decision 0002](docs/decisions/0002-dora-topic-index-and-release-composition.md)，事件专题的来源核对结果见 [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](docs/sources/dora-ict-incidents-source-review.md)。
 
 当前来源收集和版本核对结果见 [DORA 权威来源基线](docs/sources/dora-source-baseline.md)。`DORA-SOURCES-2026-08-31-R2` 已经人工复核，可作为 v0.1 后续知识建设的来源输入；具体机构适用性仍需单独判断。
 
