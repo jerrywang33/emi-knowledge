@@ -3,7 +3,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 专题标识 | `dora-ict-business-continuity-backup-recovery` |
-| 状态 | 建设中，Topic 为 `draft` |
+| 状态 | 知识链完成，Topic 为 `approved` |
 | 目标发布 | `v0.3.0` |
 | 来源复核 | [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](../../sources/dora-ict-business-continuity-source-review.md) |
 | 机器清单 | [`knowledge/topics/dora/ict-business-continuity-backup-recovery.yaml`](../../../knowledge/topics/dora/ict-business-continuity-backup-recovery.yaml) |
@@ -141,4 +141,4 @@
 
 ## 7. 当前结果
 
-专题清单已作为 `draft` 登记 28 个入口 Requirement，包括 23 个新增要求和 5 个复用要求。Source、Provision 和 Requirement 层已经通过 Schema、引用和历史发布复现检查，覆盖法规主链、完整与简化分支、共享关系、测试边界及实体排除条款。下一步建立最小 Decision、Control、Verification 和 EvidenceRequirement 集合，闭合每项入口要求后再批准 Topic。
+专题清单已批准 23 个入口 Requirement，并通过共享 Provision 保留与事件响应、经验学习和危机沟通的关系。完整知识链包含 3 个 Source、44 个 Provision、23 个 Requirement、4 个 Decision、10 个 Control、10 个 Verification 和 20 类 EvidenceRequirement，共 94 个对象；Schema、引用、批准状态、完整闭包和历史发布复现检查均已通过。下一步生成并独立验收三专题 `v0.3.0` 固定发布。

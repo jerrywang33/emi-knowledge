@@ -1,10 +1,10 @@
 id: dora-ict-business-continuity-backup-recovery
 schema_version: 0.1.0
-revision: 2
+revision: 3
 title: DORA ICT business continuity, backup, and recovery
 language: en
 domain: dora
-lifecycle_status: draft
+lifecycle_status: approved
 source_review_ids:
   - DORA-SOURCES-2026-08-31-R2
   - DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1
@@ -29,7 +29,6 @@ entry_requirement_ids:
   - req-full-ict-business-continuity-policy
   - req-full-critical-function-continuity-plans
   - req-full-ict-response-recovery-plans
-  - req-full-incident-response-recovery-arrangements
   - req-full-response-recovery-plan-independent-audit
   - req-full-recovery-objectives
   - req-full-redundant-ict-capacity
@@ -40,25 +39,21 @@ entry_requirement_ids:
   - req-full-continuity-test-scenarios
   - req-full-continuity-test-remediation
   - req-full-crisis-management-function
-  - req-full-crisis-communication
   - req-full-continuity-activation-records
-  - req-full-incident-lessons-risk-assessment
-  - req-full-framework-review-after-major-incident
   - req-simplified-continuity-plan-governance
   - req-simplified-continuity-recovery-backup
   - req-simplified-continuity-alternatives-communication-updates
   - req-simplified-continuity-test-frequency
   - req-simplified-continuity-test-outcomes
   - req-simplified-continuity-findings-risk-assessment
-  - req-simplified-framework-review-after-major-incident
 context_object_ids: []
 coverage:
   sources: complete
   provisions: complete
   requirements: complete
-  decisions: not_started
-  controls: not_started
-  verifications: not_started
+  decisions: complete
+  controls: complete
+  verifications: complete
 open_questions:
   - Confirm the current AX05, Minimum Requirements Guidelines, and Addendum versions and submission scope for a Malta EMI authorisation task.
   - Confirm whether MFSA currently requires an EMI-specific continuity, recovery, or evidence template or submission route beyond the public DORA materials.

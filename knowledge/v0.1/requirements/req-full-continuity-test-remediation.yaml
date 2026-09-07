@@ -1,18 +1,19 @@
 id: req-full-continuity-test-remediation
 type: requirement
 schema_version: 0.1.0
-revision: 1
+revision: 2
 title: Review continuity arrangements and remediate test deficiencies
 language: en
 lifecycle_status: approved
 confirmation: {status: not_required, open_questions: []}
 replaces: []
-statement: An electronic money institution using the full ICT risk management framework shall document continuity-test results, analyse and address identified deficiencies, report them to the management body, and regularly review its ICT business continuity policy and response and recovery plans using test, audit and supervisory findings.
+statement: An electronic money institution using the full ICT risk management framework shall document continuity-test results, analyse and address identified deficiencies, report them to the management body, and regularly review its ICT business continuity policy and response and recovery plans using test, audit and supervisory findings; it shall continuously incorporate lessons from real incidents and continuity or recovery challenges into ICT risk assessment and relevant framework reviews and report resulting findings and recommendations to the management body at least annually.
 requirement_kind: obligation
 derivation_type: combined
 provision_refs:
   - {provision_id: prv-dora-art-11-6-scenarios-review, relation: direct_basis}
   - {provision_id: prv-rts-2024-1774-art-25-5, relation: direct_basis}
+  - {provision_id: prv-dora-art-13-3-5, relation: direct_basis}
   - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
   - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
   - {provision_id: prv-dora-art-64-application, relation: scope_basis}

@@ -231,6 +231,6 @@ npm run example:query -- req-major-incident-determination v0.2.0
 
 `v0.2.0` 已经固定两个 Topic、256 个对象和 679 条关系，并通过人员、Agent 和产品三类独立工程使用验收。事件专题包含 66 项入口 Requirement、13 项 Control、13 项 Verification 和 26 类证据要求，覆盖事件管理、分类、欧盟层监管报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。下一阶段将使用真实 EMI 场景校准知识内容和使用方式；README 中列出的长期内容范围不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
-`v0.3` 已完成专题范围、测试边界、来源复核，以及 Source、Provision 和 Requirement 知识层。草稿 Topic 当前登记 28 个入口 Requirement，正在建立 Control、Verification 和 EvidenceRequirement。来源复核见 [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](docs/sources/dora-ict-business-continuity-source-review.md)，专题边界见[业务连续性、备份与恢复专题说明](docs/dora/topics/ict-business-continuity-backup-recovery.md)。当前固定发布仍为 `v0.2.0`，建设中的内容不能作为固定发布使用。
+`v0.3` 已完成专题范围、测试边界、来源复核和从 Source 到 EvidenceRequirement 的完整知识链。已批准 Topic 包含 23 个入口 Requirement、10 个 Control、10 个 Verification 和 20 类证据要求，正在生成和验收三专题固定发布。来源复核见 [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](docs/sources/dora-ict-business-continuity-source-review.md)，专题边界见[业务连续性、备份与恢复专题说明](docs/dora/topics/ict-business-continuity-backup-recovery.md)。当前固定发布仍为 `v0.2.0`，`v0.3.0` 发布验收完成前不能作为固定发布使用。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。

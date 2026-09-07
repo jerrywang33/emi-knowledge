@@ -1,7 +1,7 @@
 # EMI Knowledge Roadmap
 
 - 当前阶段：`v0.3 DORA ICT 业务连续性、备份与恢复`
-- 当前步骤：第 4 步已完成，正在进行第 5 步控制与验证知识链
+- 当前步骤：第 5 步已完成，正在进行第 6 步发布与独立使用验收
 - 当前固定发布：`v0.2.0`
 - 最后更新：2026-09-07
 
@@ -15,7 +15,7 @@
 
 本专题纳入直接针对 ICT 业务连续性计划和恢复计划的测试要求。DORA Chapter IV 的通用数字运营韧性测试和 TLPT 留给后续独立专题；ICT 第三方依赖只纳入连续性和恢复所需边界，第三方风险管理仍保持独立。
 
-第三个 [`draft` Topic](../knowledge/topics/dora/ict-business-continuity-backup-recovery.yaml) 和[条款覆盖矩阵](../docs/dora/topics/ict-business-continuity-backup-recovery.md) 已经建立。Source、Provision 和 Requirement 层已完成，Topic 登记 28 个入口 Requirement，其中 23 个为本专题新增要求，5 个复用已有的事件响应、经验学习、危机沟通和框架复核对象。下一步建立最小 Decision、Control、Verification 和 EvidenceRequirement 集合。
+第三个 [`approved` Topic](../knowledge/topics/dora/ict-business-continuity-backup-recovery.yaml) 和[条款覆盖矩阵](../docs/dora/topics/ict-business-continuity-backup-recovery.md) 已经完成。Topic 以 23 个 Requirement 为入口，通过共享 Provision 保留与事件响应、经验学习和危机沟通的关系，独立闭包包含 94 个对象、10 个 Control、10 个 Verification 和 20 类 EvidenceRequirement。下一步生成并验收三专题 `v0.3.0` 固定发布。
 
 `v0.2.0` 已固定 ICT 变更管理和 ICT 事件管理两个 Topic、256 个对象和 679 条关系。`v0.3` 将在不改变该历史版本的前提下增加第三个 Topic，并复用已有的主体范围、治理、事件响应、沟通和变更关系。
 
