@@ -1,0 +1,20 @@
+id: prv-dora-art-22-1-responsibility
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Retain incident handling responsibility after supervisory feedback
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 22(1), second subparagraph
+  segments:
+    - {kind: article, value: "22"}
+    - {kind: paragraph, value: "1"}
+    - {kind: other, value: second subparagraph}
+heading: Supervisory feedback
+content_kind: editorial_summary
+content: >-
+  Supervisory feedback does not transfer responsibility: the reporting financial entity remains fully responsible for handling the reported ICT-related incident and its consequences.

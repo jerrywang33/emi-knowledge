@@ -1,0 +1,18 @@
+id: prv-dora-art-19-4
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Submit initial, intermediate, updated and final incident reports
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 19(4)
+  segments:
+    - {kind: article, value: "19"}
+    - {kind: paragraph, value: "4"}
+heading: Reporting of major ICT-related incidents and voluntary notification of significant cyber threats
+content_kind: editorial_summary
+content: Within prescribed time limits, financial entities submit an initial notification; an intermediate report and further updates whenever incident status or handling changes significantly, relevant status information becomes available or the authority requests one; and a final report after root-cause analysis is complete and actual impact figures can replace estimates, regardless of mitigation implementation status.

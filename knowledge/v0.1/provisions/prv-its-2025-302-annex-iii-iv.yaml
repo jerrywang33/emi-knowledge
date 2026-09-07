@@ -1,0 +1,17 @@
+id: prv-its-2025-302-annex-iii-iv
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Significant-cyber-threat notification fields and instructions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Annexes III-IV
+  segments:
+    - {kind: annex, value: III-IV}
+heading: Significant-cyber-threat template, data glossary and instructions
+content_kind: editorial_summary
+content: The significant-cyber-threat template and glossary specify notifying-entity and contact information, detection and relevant timestamps, threat description, status, changes and potential impact, hypothetical major-incident classification criteria, prevention actions, other notifications, indicators of compromise and other available relevant information, with mandatory conditions and field formats.

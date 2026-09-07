@@ -1,0 +1,18 @@
+id: prv-its-2025-302-annex-i-ii-intermediate
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Major-incident intermediate template fields
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Annexes I-II, field group 3
+  segments:
+    - {kind: annex, value: I-II}
+    - {kind: other, value: field group 3}
+heading: Content of the intermediate report
+content_kind: editorial_summary
+content: Intermediate fields cover occurrence and recovery timing, detailed classification impacts and thresholds, incident type and threat techniques, affected functions, processes, infrastructure and third parties, client financial-interest impact, notifications to other authorities, temporary recovery actions and applicable indicators of compromise, with conditional mandatory rules and field formats.

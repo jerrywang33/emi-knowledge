@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-5
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Notify a major-to-non-major reclassification
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 5
+  segments:
+    - {kind: article, value: "5"}
+heading: Reclassification of major ICT-related incidents
+content_kind: editorial_summary
+content: If further assessment shows that a reported major ICT-related incident never met the applicable criteria and thresholds, the financial entity notifies the competent authority of reclassification to non-major using the Annex II instructions for the report-type and other-information fields.

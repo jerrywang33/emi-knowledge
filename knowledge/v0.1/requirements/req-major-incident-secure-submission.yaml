@@ -1,0 +1,30 @@
+id: req-major-incident-secure-submission
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Use the competent authority's secure reporting channel
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An electronic money institution shall submit major-incident notifications and reports through the competent authority's secure electronic channel; if it cannot use that channel, it shall inform the authority through another secure means agreed with the authority and, when required, resubmit through the authority channel once available.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-its-2025-302-art-4, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: all, values: []}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: all, values: []}
+  framework_branches: {mode: all, values: []}
+  effective_from: "2025-03-12"
+  effective_to: null
+  conditions:
+    - The institution is submitting a major-incident notification or report.
+  exclusions: []

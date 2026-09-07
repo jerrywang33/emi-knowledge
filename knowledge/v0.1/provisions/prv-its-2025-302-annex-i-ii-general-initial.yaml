@@ -1,0 +1,18 @@
+id: prv-its-2025-302-annex-i-ii-general-initial
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Major-incident general and initial template fields
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Annexes I-II, field groups 1 and 2
+  segments:
+    - {kind: annex, value: I-II}
+    - {kind: other, value: field groups 1 and 2}
+heading: Major-incident template, data glossary and instructions
+content_kind: editorial_summary
+content: General and initial fields cover submission and entity identity, affected and aggregated entities, authority contacts, parent and currency information, entity and authority incident references, detection and major-classification timestamps, description, criteria and thresholds, impacted EEA states, discovery and origin, continuity-plan activation, reclassification and other relevant information, with stage-specific mandatory conditions and field formats.

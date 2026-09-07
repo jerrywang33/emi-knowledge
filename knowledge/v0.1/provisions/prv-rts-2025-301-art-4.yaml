@@ -1,0 +1,17 @@
+id: prv-rts-2025-301-art-4
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Provide final-report cause, resolution and loss information
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 4
+  segments:
+    - {kind: article, value: "4"}
+heading: Specific information to be provided in final reports
+content_kind: editorial_summary
+content: A final report provides incident root causes, incident-resolution and root-cause-address timestamps, resolution information, applicable resolution-authority information, direct and indirect costs and losses plus financial recoveries, and applicable recurring-incident information.

@@ -1,0 +1,32 @@
+id: req-payment-incident-chapter-three-application
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Apply DORA Chapter III to EMI payment-related incidents
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An electronic money institution shall apply the DORA Chapter III incident-management, classification and reporting requirements to its operational or security payment-related incidents and major operational or security payment-related incidents, including incidents that are not ICT-related.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-dora-art-23, relation: direct_basis}
+  - {provision_id: prv-dora-art-3-9, relation: definition_basis}
+  - {provision_id: prv-dora-art-3-11, relation: definition_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: all, values: []}
+  activities: {mode: all, values: []}
+  products: {mode: include, values: [payment_service]}
+  data_categories: {mode: all, values: []}
+  framework_branches: {mode: all, values: []}
+  effective_from: "2025-01-17"
+  effective_to: null
+  conditions:
+    - The event is an operational or security incident affecting payment-related services.
+  exclusions: []

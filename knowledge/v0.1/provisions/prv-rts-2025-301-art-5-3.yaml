@@ -1,0 +1,18 @@
+id: prv-rts-2025-301-art-5-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Notify and explain an inability to meet a reporting deadline
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 5(3)
+  segments:
+    - {kind: article, value: "5"}
+    - {kind: paragraph, value: "3"}
+heading: Time limits for the initial notification, and for the intermediate and final reports
+content_kind: editorial_summary
+content: An entity unable to submit a notification or report within its deadline informs the competent authority without undue delay and no later than that deadline and explains the delay.

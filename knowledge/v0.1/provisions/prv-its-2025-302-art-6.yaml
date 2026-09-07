@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Notify the authority of a reporting outsourcing arrangement
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 6
+  segments:
+    - {kind: article, value: "6"}
+heading: Notification of outsourcing of the reporting obligations
+content_kind: editorial_summary
+content: A financial entity informs its competent authority of a reporting outsourcing arrangement as soon as it is concluded and before the first outsourced submission, provides the third party's name, contact details and identification code, and informs the authority as soon as reporting is no longer outsourced.

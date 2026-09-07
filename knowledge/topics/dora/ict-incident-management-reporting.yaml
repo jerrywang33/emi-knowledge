@@ -1,6 +1,6 @@
 id: dora-ict-incident-management-reporting
 schema_version: 0.1.0
-revision: 3
+revision: 4
 title: DORA ICT incident management, classification, and regulatory reporting
 language: en
 domain: dora
@@ -21,6 +21,8 @@ scope:
     - Automatic submission to a competent authority or automatic approval of an incident classification.
     - Business continuity, resilience testing, and ICT third-party risk as complete standalone topics.
 entry_requirement_ids:
+  - req-aggregated-reporting-individual-impact-report
+  - req-final-report-deadline
   - req-full-annual-incident-findings-report
   - req-full-anomaly-record-protection
   - req-full-crisis-communication
@@ -41,9 +43,30 @@ entry_requirement_ids:
   - req-incident-recording-and-root-cause-follow-up
   - req-incident-response-and-secure-restoration
   - req-incident-roles-and-responsibilities
+  - req-initial-notification-deadline
+  - req-intermediate-report-deadline-and-updates
+  - req-joint-report-stage-submission
+  - req-late-classification-initial-deadline
+  - req-major-ict-incident-regulatory-reporting
+  - req-major-incident-client-notification
   - req-major-incident-determination
+  - req-major-incident-final-content
+  - req-major-incident-initial-content
+  - req-major-incident-intermediate-content
+  - req-major-incident-reclassification-notification
+  - req-major-incident-report-general-content
+  - req-major-incident-report-sequence
+  - req-major-incident-secure-submission
+  - req-outsourced-reporting-responsibility
+  - req-payment-incident-chapter-three-application
   - req-recurring-incident-monthly-assessment
+  - req-recurring-incidents-aggregated-reporting
+  - req-report-delay-notification
+  - req-reporting-outsourcing-notification
   - req-significant-cyber-threat-classification
+  - req-significant-threat-client-protection-information
+  - req-significant-threat-notification-content
+  - req-significant-threat-voluntary-notification
   - req-simplified-framework-review-after-major-incident
   - req-simplified-incident-alert-thresholds
   - req-simplified-incident-review-report-content
@@ -51,6 +74,8 @@ entry_requirement_ids:
   - req-simplified-security-event-logging
   - req-simplified-security-monitoring
   - req-simplified-threat-monitoring
+  - req-third-party-aggregated-reporting
+  - req-weekend-bank-holiday-reporting-extension
 context_object_ids: []
 coverage:
   sources: complete
@@ -63,4 +88,3 @@ open_questions:
   - Confirm the current MFSA process, template, and submission route for non-ICT major operational or security payment-related incidents under DORA Article 23.
   - Confirm whether and how MFSA requests annual aggregated cost and loss estimates under DORA Article 11(10).
   - Confirm stable dates, versions, and replacement relationships for MFSA portal user guides.
-  - Confirm the Provision granularity for the data fields in the annexes to Commission Implementing Regulation (EU) 2025/302.

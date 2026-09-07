@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Report collectively major recurring incidents in aggregated form
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 3
+  segments:
+    - {kind: article, value: "3"}
+heading: Recurring ICT-related incidents
+content_kind: editorial_summary
+content: Information about recurring non-major ICT-related incidents that cumulatively meet the conditions for one major incident under Regulation (EU) 2024/1772 Article 8(2) is provided in aggregated form.

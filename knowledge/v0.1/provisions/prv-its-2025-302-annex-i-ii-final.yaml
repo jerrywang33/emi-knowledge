@@ -1,0 +1,18 @@
+id: prv-its-2025-302-annex-i-ii-final
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Major-incident final template fields
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Annexes I-II, field group 4
+  segments:
+    - {kind: annex, value: I-II}
+    - {kind: other, value: field group 4}
+heading: Content of the final report
+content_kind: editorial_summary
+content: Final fields cover incident and root-cause resolution status and timing, cause categories and detailed analysis, permanent corrective action, procedural changes, additional controls and lessons, timing differences, applicable resolution-authority impact, detailed economic impact, financial recoveries and recurring-incident information, with conditional mandatory rules and field formats.

@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-8
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Use the significant-cyber-threat template accurately
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 8
+  segments:
+    - {kind: article, value: "8"}
+heading: Notification of significant cyber threats
+content_kind: editorial_summary
+content: A financial entity choosing to notify a significant cyber threat uses Annex III, follows the Annex IV data glossary and instructions, and ensures the notification is complete and accurate.

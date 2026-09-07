@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-7
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Apply conditions for third-party aggregated reporting
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 7
+  segments:
+    - {kind: article, value: "7"}
+heading: Aggregated reporting
+content_kind: editorial_summary
+content: An outsourced reporting provider may aggregate one provider-originated major incident affecting multiple clients only when each affected entity classifies it as major, all covered entities are in one Member State under the same competent authority, and that authority has explicitly allowed aggregation for the entity type. Listed entity types must report individually, and any financial entity provides an individual report when the authority requests its impact.

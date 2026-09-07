@@ -3,7 +3,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 专题标识 | `dora-ict-incident-management-reporting` |
-| 状态 | 草稿，事件管理与分类的 Provision 和 Requirement 已完成 |
+| 状态 | 草稿，事件管理、分类与欧盟层监管报告的 Provision 和 Requirement 已完成 |
 | 目标发布 | `v0.2.0` |
 | 来源复核 | [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../../sources/dora-ict-incidents-source-review.md) |
 | 机器清单 | [`knowledge/topics/dora/ict-incident-management-reporting.yaml`](../../../knowledge/topics/dora/ict-incident-management-reporting.yaml) |
@@ -104,9 +104,8 @@
 1. MFSA 针对非 ICT 重大支付运营或安全事件的当前流程、模板和提交入口。
 2. MFSA 请求提交年度成本与损失估算的条件和传输方式。
 3. 两份 MFSA Portal 用户指南的发布日期、版本号和替代关系。
-4. Regulation (EU) 2025/302 Annex 字段组的最终拆分粒度。
-5. 具体机构的 DORA 完整或简化框架路径、内部严重程度、角色、升级目标和保存期限。
+4. 具体机构的 DORA 完整或简化框架路径、内部严重程度、角色、升级目标和保存期限。
 
 ## 6. 下一步
 
-前两批已经建立事件管理主干及 Regulation (EU) 2024/1772 分类规则的 Provision 和 Requirement，覆盖共同义务、完整和简化 ICT 风险管理分支、分类输入、重大事件组合判断、重复事件及重大网络威胁。下一批处理报告内容、时限和程序，后续补充 Malta 操作路径及年度成本与损失指引。
+前三批已经建立事件管理主干、Regulation (EU) 2024/1772 分类规则以及欧盟层监管报告的 Provision 和 Requirement，覆盖共同义务、完整和简化 ICT 风险管理分支、分类判断、三阶段报告、法定时限、自愿通知、安全提交、重分类、外包和 Article 23 支付事件路径。下一批补充 Malta 操作路径及年度成本与损失指引。

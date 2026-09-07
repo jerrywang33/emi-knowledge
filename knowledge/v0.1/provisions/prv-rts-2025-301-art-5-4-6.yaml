@@ -1,0 +1,18 @@
+id: prv-rts-2025-301-art-5-4-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Apply the conditional weekend and bank-holiday extension
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 5(4)-(6)
+  segments:
+    - {kind: article, value: "5"}
+    - {kind: paragraph, value: 4-6}
+heading: Time limits for the initial notification, and for the intermediate and final reports
+content_kind: editorial_summary
+content: A deadline falling on a weekend or bank holiday in the reporting entity's Member State may move to noon on the next working day. This extension does not apply to initial or intermediate reports by listed entities or financial entities identified as NIS2 essential or important, and a competent authority may prospectively remove it for other significant or systemically important financial entities after notification.

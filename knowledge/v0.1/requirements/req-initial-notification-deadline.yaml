@@ -1,0 +1,30 @@
+id: req-initial-notification-deadline
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Meet both initial-notification time limits
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: When an ICT-related incident is classified as major no later than 24 hours after awareness, an electronic money institution shall submit the initial notification as early as possible, no later than four hours after classification and no later than 24 hours after becoming aware of the incident.
+requirement_kind: deadline
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-rts-2025-301-art-5-1-a, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: all, values: []}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: all, values: []}
+  framework_branches: {mode: all, values: []}
+  effective_from: "2025-03-12"
+  effective_to: null
+  conditions:
+    - The incident is classified as major no later than 24 hours after the institution became aware of it.
+  exclusions: []

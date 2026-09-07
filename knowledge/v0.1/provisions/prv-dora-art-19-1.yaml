@@ -1,0 +1,18 @@
+id: prv-dora-art-19-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Report major incidents to the relevant competent authority
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 19(1)
+  segments:
+    - {kind: article, value: "19"}
+    - {kind: paragraph, value: "1"}
+heading: Reporting of major ICT-related incidents and voluntary notification of significant cyber threats
+content_kind: editorial_summary
+content: Financial entities report major ICT-related incidents to the relevant competent authority, produce and submit the initial notification and reports after collecting and analysing relevant information using the Article 20 templates, use alternative notification means if technical impossibility prevents initial template submission, and include information needed to determine incident significance and possible cross-border impact.

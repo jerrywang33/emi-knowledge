@@ -1,0 +1,19 @@
+id: prv-rts-2025-301-art-5-1-a
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Submit the initial notification within both time limits
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 5(1)(a)
+  segments:
+    - {kind: article, value: "5"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: a}
+heading: Time limits for the initial notification, and for the intermediate and final reports
+content_kind: editorial_summary
+content: The initial notification is submitted as early as possible, no later than four hours after classification as major, and no later than 24 hours after the entity became aware of the ICT-related incident.

@@ -1,0 +1,17 @@
+id: prv-rts-2025-301-art-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Provide initial-notification incident information
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 2
+  segments:
+    - {kind: article, value: "2"}
+heading: Specific information to be provided in initial notifications
+content_kind: editorial_summary
+content: An initial notification provides at least the institution's incident reference, detection and classification timestamps, incident description, major-classification criteria, impacted Member States, discovery method, available origin information, business continuity plan activation, applicable major-to-non-major reclassification information and any other available relevant information.

@@ -1,0 +1,17 @@
+id: prv-dora-art-23
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Apply Chapter III to EMI payment-related incidents
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 23
+  segments:
+    - {kind: article, value: "23"}
+heading: Operational or security payment-related incidents concerning specified financial entities
+content_kind: editorial_summary
+content: DORA Chapter III requirements also apply to operational or security payment-related incidents and major operational or security payment-related incidents concerning electronic money institutions, including incidents that are not ICT-related under Article 3(9).

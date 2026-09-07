@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-4
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Submit through the authority's secure electronic channel
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 4
+  segments:
+    - {kind: article, value: "4"}
+heading: Use of secure electronic channels
+content_kind: editorial_summary
+content: Financial entities submit through secure electronic channels made available by the competent authority. If unable to use them, the entity informs the authority through another secure means agreed with it and, when required, resubmits through the authority channel once available.

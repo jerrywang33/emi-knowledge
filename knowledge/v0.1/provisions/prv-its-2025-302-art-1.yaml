@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Use the major-incident template by reporting stage
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 1
+  segments:
+    - {kind: article, value: "1"}
+heading: Template for reporting ICT-related major incidents
+content_kind: editorial_summary
+content: Financial entities use Annex I for all three report stages, complete the fields required for each stage under Regulation (EU) 2025/301, ensure submitted information is complete and accurate, use estimates where possible when accurate initial or intermediate values are unavailable, resubmit all required and updated prior information with intermediate and final reports, and follow Annex II.

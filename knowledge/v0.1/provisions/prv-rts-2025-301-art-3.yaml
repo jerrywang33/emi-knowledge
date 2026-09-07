@@ -1,0 +1,17 @@
+id: prv-rts-2025-301-art-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Provide intermediate-report incident information
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 3
+  segments:
+    - {kind: article, value: "3"}
+heading: Specific information to be provided in intermediate reports
+content_kind: editorial_summary
+content: An intermediate report provides at least the authority incident reference where applicable, occurrence and regular-activity recovery timestamps, fulfilled major-classification criteria, incident type, applicable threat-actor techniques, affected functions, processes and infrastructure, client financial-interest impact, reports to other authorities, temporary recovery actions and applicable indicators of compromise.

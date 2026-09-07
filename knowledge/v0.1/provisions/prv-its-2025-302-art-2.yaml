@@ -1,0 +1,17 @@
+id: prv-its-2025-302-art-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Combine report stages when completion and deadlines permit
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-302
+locator:
+  label: Article 2
+  segments:
+    - {kind: article, value: "2"}
+heading: Joint submission of initial notification, intermediate and final reports
+content_kind: editorial_summary
+content: A financial entity may submit two or all three reporting stages together when regular activities have recovered or root-cause analysis is complete and every applicable Regulation (EU) 2025/301 Article 5 deadline is met.

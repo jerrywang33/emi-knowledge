@@ -1,0 +1,32 @@
+id: req-third-party-aggregated-reporting
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Permit third-party aggregated reporting only under all conditions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An outsourced reporting provider may submit one aggregated notification or report for a provider-originated or provider-caused major ICT-related incident affecting multiple financial entities only when it provides the relevant ICT service to multiple entities or a group, each covered entity classifies the incident as major, all covered entities are in one Member State and supervised by the same competent authority, and that authority explicitly permits aggregation for the entity type.
+requirement_kind: permission
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-its-2025-302-art-7, relation: direct_basis}
+  - {provision_id: prv-dora-art-19-5, relation: supporting_context}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: all, values: []}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: all, values: []}
+  framework_branches: {mode: all, values: []}
+  effective_from: "2025-03-12"
+  effective_to: null
+  conditions:
+    - Major-incident reporting has been outsourced to a third-party service provider.
+    - Every aggregation condition in Regulation (EU) 2025/302 Article 7 is met.
+  exclusions: []

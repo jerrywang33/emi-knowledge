@@ -1,0 +1,17 @@
+id: prv-rts-2025-301-art-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Provide general information in every incident report stage
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 1
+  segments:
+    - {kind: article, value: "1"}
+heading: General information to be provided in initial notifications and intermediate and final reports on major ICT-related incidents
+content_kind: editorial_summary
+content: Every report stage identifies the submission type, affected financial entity and LEI, entity submitting and its identification code, aggregated entities where applicable, authority-contact persons, parent undertaking where applicable, and currency used for monetary impact.

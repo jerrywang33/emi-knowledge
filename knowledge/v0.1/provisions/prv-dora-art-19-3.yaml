@@ -1,0 +1,18 @@
+id: prv-dora-art-19-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Inform affected clients about major incidents and significant threats
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 19(3)
+  segments:
+    - {kind: article, value: "19"}
+    - {kind: paragraph, value: "3"}
+heading: Reporting of major ICT-related incidents and voluntary notification of significant cyber threats
+content_kind: editorial_summary
+content: When a major ICT-related incident impacts clients' financial interests, the entity informs them without undue delay after becoming aware of it and explains mitigation measures; where applicable for a significant cyber threat, the entity informs potentially affected clients of appropriate protection measures they may take.

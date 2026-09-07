@@ -1,0 +1,19 @@
+id: prv-rts-2025-301-art-5-1-c
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Submit the final report within one month
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 5(1)(c)
+  segments:
+    - {kind: article, value: "5"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: c}
+heading: Time limits for the initial notification, and for the intermediate and final reports
+content_kind: editorial_summary
+content: The final report is submitted no later than one month after the intermediate report or, where applicable, the latest updated intermediate report.

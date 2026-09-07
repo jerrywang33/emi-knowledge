@@ -1,0 +1,17 @@
+id: prv-rts-2025-301-art-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Provide prescribed significant-cyber-threat notification content
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2025-301
+locator:
+  label: Article 6
+  segments:
+    - {kind: article, value: "6"}
+heading: Content of the voluntary notification of significant cyber threats
+content_kind: editorial_summary
+content: A voluntary significant-cyber-threat notification contains notifying-entity information, detection and other relevant timestamps, threat description and potential impact, classification criteria that would trigger a major report if materialised, threat status and changes, applicable prevention actions and indicators of compromise, notifications to other entities or authorities, and other available relevant information.

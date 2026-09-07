@@ -1,0 +1,31 @@
+id: req-aggregated-reporting-individual-impact-report
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Provide an individual impact report after an aggregated submission
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: When the competent authority requests information about an institution-specific impact after an aggregated major-incident submission, an electronic money institution shall provide an individual notification or report.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-its-2025-302-art-7, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: all, values: []}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: all, values: []}
+  framework_branches: {mode: all, values: []}
+  effective_from: "2025-03-12"
+  effective_to: null
+  conditions:
+    - The institution was covered by an aggregated major-incident notification or report.
+    - The competent authority requests an individual notification or report about the impact on the institution.
+  exclusions: []
