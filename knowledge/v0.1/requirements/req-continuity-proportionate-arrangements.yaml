@@ -1,0 +1,32 @@
+id: req-continuity-proportionate-arrangements
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Apply proportionality to ICT continuity arrangements
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An electronic money institution shall develop and implement the ICT continuity policies, procedures, protocols, tools and simplified-framework arrangements applicable to it by taking account of its size, overall risk profile, and the nature, scale and complexity of its services, activities and operations, including the impact of ICT risk and disruption on data and operational continuity and availability.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-rts-2024-1774-art-1-continuity, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: all, values: []}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: not_applicable, values: []}
+  framework_branches: {mode: all, values: []}
+  effective_from: "2025-01-17"
+  effective_to: null
+  conditions: []
+  exclusions:
+    - The institution selects its DORA framework branch from its EMD2 Article 9(1) exemption status, not from proportionality alone.
+    - Institution-specific proportionality choices require documented facts and authorised approval.

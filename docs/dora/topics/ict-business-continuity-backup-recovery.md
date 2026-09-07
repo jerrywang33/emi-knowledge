@@ -141,4 +141,4 @@
 
 ## 7. 当前结果
 
-专题清单已作为 `draft` 登记，当前不包含入口 Requirement。覆盖矩阵已经固定法规主链、适用分支、共享关系、测试边界和实体排除条款。下一步建立受控 Source、Provision 和 Requirement，并在每个入口对象存在且通过 Schema 和引用检查后更新 Topic 清单。
+专题清单已作为 `draft` 登记 28 个入口 Requirement，包括 23 个新增要求和 5 个复用要求。Source、Provision 和 Requirement 层已经通过 Schema、引用和历史发布复现检查，覆盖法规主链、完整与简化分支、共享关系、测试边界及实体排除条款。下一步建立最小 Decision、Control、Verification 和 EvidenceRequirement 集合，闭合每项入口要求后再批准 Topic。

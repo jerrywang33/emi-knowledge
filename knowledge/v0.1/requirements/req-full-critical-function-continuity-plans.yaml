@@ -1,0 +1,36 @@
+id: req-full-critical-function-continuity-plans
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Maintain plans that preserve critical or important functions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An electronic money institution using the full ICT risk management framework shall implement documented arrangements, plans, procedures and mechanisms that ensure continuity of critical or important functions and shall put in place, maintain and periodically test ICT business continuity plans, with particular attention to functions supported through ICT third-party arrangements and severe business disruptions.
+requirement_kind: obligation
+derivation_type: combined
+provision_refs:
+  - {provision_id: prv-dora-art-11-2-a, relation: direct_basis}
+  - {provision_id: prv-dora-art-11-4, relation: direct_basis}
+  - {provision_id: prv-rts-2024-1774-art-24-1-b-i-iii, relation: direct_basis}
+  - {provision_id: prv-dora-art-3-22, relation: definition_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+  - {provision_id: prv-mfsa-dora-authorisation-continuity-findings, relation: supporting_context}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: include, values: [emi_without_emd2_article_9_1_exemption]}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: not_applicable, values: []}
+  framework_branches: {mode: include, values: [dora_full_ict_risk_management]}
+  effective_from: "2025-01-17"
+  effective_to: null
+  conditions: []
+  exclusions:
+    - The institution determines which functions are critical or important from documented facts.
+    - Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch.

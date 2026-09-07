@@ -1,0 +1,32 @@
+id: req-simplified-continuity-alternatives-communication-updates
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Maintain simplified recovery alternatives, communication, and plan updates
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An exempted electronic money institution using the simplified ICT risk management framework shall include alternative options where short-term recovery may not be feasible, internal and external communication and escalation arrangements, and updates to its continuity plans driven by incident and test lessons, new risks and threats, changed recovery objectives, and major organisational or supporting-asset changes.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-rts-2024-1774-art-39-2-h-j, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: include, values: [emi_with_emd2_article_9_1_exemption]}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: not_applicable, values: []}
+  framework_branches: {mode: include, values: [dora_simplified_ict_risk_management]}
+  effective_from: "2025-01-17"
+  effective_to: null
+  conditions: []
+  exclusions:
+    - Communication recipients, escalation times and approval authorities are institution-defined.
+    - Electronic money institutions without the EMD2 Article 9(1) exemption use the full ICT risk management branch.

@@ -1,6 +1,6 @@
 id: dora-ict-business-continuity-backup-recovery
 schema_version: 0.1.0
-revision: 1
+revision: 2
 title: DORA ICT business continuity, backup, and recovery
 language: en
 domain: dora
@@ -22,12 +22,40 @@ scope:
     - DORA Chapter V ICT third-party risk, contracts, subcontracting, exit, and register-of-information requirements as a complete standalone topic.
     - Entity-specific requirements for central counterparties, central securities depositories, data reporting service providers, and trading venues.
     - Automatic disaster declaration, plan activation, recovery acceptance, or compliance approval by an Agent.
-entry_requirement_ids: []
+entry_requirement_ids:
+  - req-continuity-proportionate-arrangements
+  - req-full-continuity-function-dependency-inventory
+  - req-full-continuity-business-impact-analysis
+  - req-full-ict-business-continuity-policy
+  - req-full-critical-function-continuity-plans
+  - req-full-ict-response-recovery-plans
+  - req-full-incident-response-recovery-arrangements
+  - req-full-response-recovery-plan-independent-audit
+  - req-full-recovery-objectives
+  - req-full-redundant-ict-capacity
+  - req-full-backup-restoration-policy
+  - req-full-secure-segregated-backup-restoration
+  - req-full-recovery-data-integrity-reconciliation
+  - req-full-continuity-test-frequency
+  - req-full-continuity-test-scenarios
+  - req-full-continuity-test-remediation
+  - req-full-crisis-management-function
+  - req-full-crisis-communication
+  - req-full-continuity-activation-records
+  - req-full-incident-lessons-risk-assessment
+  - req-full-framework-review-after-major-incident
+  - req-simplified-continuity-plan-governance
+  - req-simplified-continuity-recovery-backup
+  - req-simplified-continuity-alternatives-communication-updates
+  - req-simplified-continuity-test-frequency
+  - req-simplified-continuity-test-outcomes
+  - req-simplified-continuity-findings-risk-assessment
+  - req-simplified-framework-review-after-major-incident
 context_object_ids: []
 coverage:
-  sources: in_progress
-  provisions: not_started
-  requirements: not_started
+  sources: complete
+  provisions: complete
+  requirements: complete
   decisions: not_started
   controls: not_started
   verifications: not_started
