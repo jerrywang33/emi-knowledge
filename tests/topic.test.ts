@@ -45,10 +45,14 @@ test("topic manifests pass Schema and reference validation", async () => {
   const report = await validateTopics(TOPICS, TOPIC_SCHEMA, knowledgeEntries);
 
   assert.deepEqual(report.issues, []);
-  assert.equal(report.entries.length, 2);
+  assert.equal(report.entries.length, 3);
   assert.deepEqual(
     report.entries.map((entry) => entry.object.id).sort(),
-    ["dora-ict-change-management", "dora-ict-incident-management-reporting"],
+    [
+      "dora-ict-business-continuity-backup-recovery",
+      "dora-ict-change-management",
+      "dora-ict-incident-management-reporting",
+    ],
   );
 });
 
@@ -101,14 +105,13 @@ test("the incident topic resolves its complete deterministic object closure", as
 test("a draft topic may have no entry Requirements", async () => {
   const knowledgeEntries = await validKnowledgeEntries();
   const loadedTopics = await loadTopicDirectory(TOPICS);
-  const incidentTopic = cloneTopicEntries(loadedTopics.entries).find((entry) =>
-    entry.object.id === "dora-ict-incident-management-reporting")!;
-  incidentTopic.object.lifecycle_status = "draft";
-  incidentTopic.object.entry_requirement_ids = [];
-  incidentTopic.object.context_object_ids = [];
+  const continuityTopic = loadedTopics.entries.find((entry) =>
+    entry.object.id === "dora-ict-business-continuity-backup-recovery")!;
 
-  assert.equal(incidentTopic.object.lifecycle_status, "draft");
-  assert.deepEqual(resolveTopicEntries([incidentTopic.object], knowledgeEntries), []);
+  assert.equal(continuityTopic.object.lifecycle_status, "draft");
+  assert.deepEqual(continuityTopic.object.entry_requirement_ids, []);
+  assert.deepEqual(continuityTopic.object.context_object_ids, []);
+  assert.deepEqual(resolveTopicEntries([continuityTopic.object], knowledgeEntries), []);
 });
 
 test("topic resolution keeps historical replacements outside the runtime closure", async () => {

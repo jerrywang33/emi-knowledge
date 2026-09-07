@@ -1,0 +1,37 @@
+id: dora-ict-business-continuity-backup-recovery
+schema_version: 0.1.0
+revision: 1
+title: DORA ICT business continuity, backup, and recovery
+language: en
+domain: dora
+lifecycle_status: draft
+source_review_ids:
+  - DORA-SOURCES-2026-08-31-R2
+  - DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1
+scope:
+  summary: ICT business continuity, backup, restoration, and recovery requirements and controls for electronic money institutions under the full and simplified DORA ICT risk management frameworks, with current Malta authorisation observations as supporting context.
+  includes:
+    - Full-framework identification, business impact analysis, ICT business continuity policy, plans, response and recovery arrangements, crisis management, testing, review, and activation records.
+    - Backup scope and frequency, secure activation, segregated restoration, redundant capacity, recovery objectives, data-integrity checks, and reconciliation.
+    - Simplified-framework business continuity plans, response and recovery measures, backup and restoration, testing, findings, remediation, and management reporting.
+    - Disruption scenarios involving cyber-attacks, ICT assets, communication infrastructure, premises, staff, power, environment, and relevant ICT third-party services.
+    - Public MFSA supervisory context on continuity, BIA, response and recovery, backup, restoration, and severe-disruption scenarios in authorisation applications.
+  excludes:
+    - Institution-specific critical-function inventories, BIA conclusions, recovery objectives, backup frequencies, activation thresholds, recovery architectures, and risk acceptance.
+    - DORA Chapter IV digital operational resilience testing and threat-led penetration testing as complete standalone topics.
+    - DORA Chapter V ICT third-party risk, contracts, subcontracting, exit, and register-of-information requirements as a complete standalone topic.
+    - Entity-specific requirements for central counterparties, central securities depositories, data reporting service providers, and trading venues.
+    - Automatic disaster declaration, plan activation, recovery acceptance, or compliance approval by an Agent.
+entry_requirement_ids: []
+context_object_ids: []
+coverage:
+  sources: in_progress
+  provisions: not_started
+  requirements: not_started
+  decisions: not_started
+  controls: not_started
+  verifications: not_started
+open_questions:
+  - Confirm the current AX05, Minimum Requirements Guidelines, and Addendum versions and submission scope for a Malta EMI authorisation task.
+  - Confirm whether MFSA currently requires an EMI-specific continuity, recovery, or evidence template or submission route beyond the public DORA materials.
+  - Confirm the institution's EMD2 Article 9(1) exemption status before selecting the full or simplified ICT risk management branch.
