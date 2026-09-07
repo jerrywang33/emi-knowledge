@@ -1,0 +1,51 @@
+id: ver-regulatory-reporting-trigger
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify regulatory reporting initiation decisions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-regulatory-reporting-trigger]
+verification_type: review
+execution_mode: hybrid
+executor_role: regulatory_reporting_assurance
+operation_mode: event_driven
+trigger_or_frequency: After a major-incident or significant-threat classification and before closing reportability assessment
+preconditions:
+  - The classification, event type, authority routing register, voluntary-decision record, and reporting-case linkage are available.
+procedure:
+  - Confirm every verified major ICT-related incident immediately created a mandatory reporting workflow and deadline ledger without an optional approval dependency.
+  - Confirm each payment-related operational or security incident was routed through the applicable Chapter III assessment, including non-ICT events.
+  - Confirm a significant-threat notification exists only after an authorised relevance and voluntary-notification decision.
+  - Trace the reporting workflow to the source case, classification revision, authority, trigger, decision basis, and deadlines.
+expected_result: Mandatory, payment-event, and voluntary paths are selected through their distinct rules and every outcome is complete and traceable.
+failure_criteria:
+  - A major classification did not initiate reporting immediately or was held for optional approval.
+  - A payment-related event lacks a Chapter III reporting assessment.
+  - A significant-threat notification lacks an authorised voluntary decision or a reporting outcome lacks case linkage.
+on_failure: Open or correct the reporting workflow immediately, preserve original timestamps, escalate the defect, and repeat verification.
+evidence_requirements:
+  - key: reportability-assessment
+    artifact_type: document
+    description: Classification-trigger, payment-event route, authority, and mandatory or voluntary reporting outcome.
+    required_fields: [case identifier, event type, classification revision, classification time, authority, reporting path, trigger, decision basis, deadline-ledger identifier]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: voluntary-notification-decision
+    artifact_type: approval_record
+    description: Authorised decision to submit or decline a significant-cyber-threat notification.
+    required_fields: [case identifier, relevance assessment, decision, decision-maker role, decided at, rationale]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data]
+    redaction_required: true
+    open_questions: []

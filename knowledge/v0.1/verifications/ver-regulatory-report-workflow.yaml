@@ -1,0 +1,51 @@
+id: ver-regulatory-report-workflow
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify regulatory report stages and deadlines
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-regulatory-report-workflow]
+verification_type: query
+execution_mode: hybrid
+executor_role: regulatory_reporting_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before each reporting deadline, after each submission, and when classification or recovery status changes
+preconditions:
+  - Awareness, classification, report, update, recovery, root-cause, calendar, authority-decision, and submission timestamps are available.
+procedure:
+  - Recalculate initial, intermediate, and final deadlines from recorded source timestamps and compare them with the deadline ledger.
+  - Confirm stage order, update triggers, final-report readiness, and any combined-stage submission satisfy all prescribed conditions.
+  - Reperform every weekend or bank-holiday extension decision and confirm excluded stages or authority decisions were applied.
+  - Confirm threatened delays were notified by the applicable deadline with reasons and any reclassification followed the prescribed path.
+expected_result: Every stage, deadline, exception, delay, update, and reclassification is correctly calculated, actioned, and evidenced.
+failure_criteria:
+  - A deadline is miscalculated, missed without timely delay notice, or based on an unsupported extension.
+  - Report stages are missing, out of order, combined without eligibility, or finalised before required inputs are available.
+  - A required update or reclassification notification is absent.
+on_failure: Escalate immediately, notify the authority where required, correct the ledger or submission, and repeat verification.
+evidence_requirements:
+  - key: statutory-deadline-ledger
+    artifact_type: audit_log
+    description: Calculated deadlines, source timestamps, calendar inputs, exceptions, alerts, and completion outcomes.
+    required_fields: [case identifier, awareness time, classification time, stage, calculated deadline, calculation rule, calendar, exception, alert times, completion time]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data]
+    redaction_required: true
+    open_questions: []
+  - key: stage-and-exception-record
+    artifact_type: document
+    description: Stage sequence, combined submission, delay, update, and reclassification decisions for the reporting case.
+    required_fields: [case identifier, stage history, recovery status, root-cause status, combined-stage assessment, delay notices, updates, reclassification assessment, authority responses]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

@@ -1,0 +1,52 @@
+id: ver-annual-incident-cost-loss
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify annual major-incident cost and loss estimates
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-annual-incident-cost-loss]
+verification_type: review
+execution_mode: hybrid
+executor_role: financial_and_regulatory_reporting_assurance
+operation_mode: on_demand
+trigger_or_frequency: Before responding to a competent-authority request and after material corrections to a submitted estimate
+preconditions:
+  - The authority request, applicability assessment, reference-year decision, final incident reports, financial records, calculations, adjustments, and Annex report are available.
+procedure:
+  - Confirm the request and full-framework non-microenterprise applicability and validate the selected completed reference year.
+  - Reconcile included incidents to current- and prior-year final reports and current-year quantifiable impacts.
+  - Reperform per-incident gross cost and loss and separate recovery calculations, then reconcile aggregate totals.
+  - Trace each value and adjustment to financial statements, supervisory reporting, accounting provisions, or a documented alternative estimate basis.
+  - Confirm the Annex contains totals, per-incident details, final-report references, approvals, and the approved submission route.
+expected_result: The annual estimate is applicable, complete, period-consistent, mathematically correct, source-reconciled, and ready for authorised submission.
+failure_criteria:
+  - Request, applicability, reference-year consistency, or reference-year-change approval evidence is missing.
+  - The incident population is incomplete or gross amounts and recoveries are netted or miscalculated.
+  - A value, adjustment, total, or incident reference cannot be reconciled to an approved source.
+on_failure: Block report release, correct applicability, population, calculations, or reconciliation, and repeat the complete review.
+evidence_requirements:
+  - key: annual-estimate-reconciliation
+    artifact_type: document
+    description: Applicability, request, reference year, incident population, calculation, source, and adjustment reconciliation.
+    required_fields: [authority request, applicability conclusion, reference-year basis, change notice and non-objection, incident population, gross calculations, recovery calculations, source records, estimates, adjustments, reconciliations]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: annual-cost-loss-report
+    artifact_type: document
+    description: Completed Joint Guidelines Annex and release record for the authority-requested annual estimate.
+    required_fields: [reference year, reporting currency, aggregate gross costs and losses, aggregate recoveries, per-incident details, final-report references, package digest, approver, submission route]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

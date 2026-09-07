@@ -1,0 +1,59 @@
+id: ctl-secure-regulatory-submission
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Authorise and transmit regulatory incident submissions securely
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: An authorised actor sends each approved reporting package through the competent authority's current secure channel, preserves receipt and package integrity, and uses the agreed secure fallback and resubmission path when required.
+requirement_refs:
+  - {requirement_id: req-major-incident-secure-submission, relation: implements}
+  - {requirement_id: req-malta-major-ict-crms-submission, relation: implements}
+  - {requirement_id: req-malta-significant-threat-crms-submission, relation: implements}
+  - {requirement_id: req-major-ict-incident-regulatory-reporting, relation: supports}
+  - {requirement_id: req-payment-incident-chapter-three-application, relation: supports}
+control_category: technical
+control_functions: [preventive, detective, corrective]
+owner_role: regulatory_submission_owner
+operation_mode: event_driven
+trigger_or_frequency: When a reporting package is ready for external submission or resubmission
+implementation_rules:
+  - key: authority-channel-routing
+    rule_type: interface
+    statement: Select the current secure channel by competent authority, entity, jurisdiction, event type, and report stage; route Malta major ICT reports and chosen significant-threat notifications through MFSA CRMS in the Licence Holder Portal using the provided template.
+    parameter_status: institution_defined
+    parameters:
+      - {name: approved-regulatory-channel-register, value: null, unit: null}
+    conditions: []
+    failure_handling: Prohibit automatic routing, preserve the deadline, and escalate channel confirmation to the authorised regulatory liaison.
+    open_questions: []
+  - key: submission-authorisation
+    rule_type: access
+    statement: Permit external transmission only to an authenticated actor with the approved submission role and a recorded release decision for the exact package digest and destination.
+    parameter_status: institution_defined
+    parameters:
+      - {name: authorised-submission-role, value: null, unit: null}
+      - {name: submission-access-policy, value: null, unit: null}
+    conditions: []
+    failure_handling: Deny transmission, record the access event, and escalate to the submission owner.
+    open_questions: []
+  - key: secure-fallback-and-resubmission
+    rule_type: exception
+    statement: If the authority channel is unavailable, record technical impossibility, notify the authority through another secure means agreed with it, and resubmit through the primary channel when the authority requires and the channel becomes available.
+    parameter_status: institution_defined
+    parameters:
+      - {name: authority-agreed-secure-fallbacks, value: null, unit: null}
+    conditions:
+      - The primary competent-authority channel cannot be used.
+    failure_handling: Escalate immediately, avoid insecure transmission, and preserve evidence of outage, authority contact, and delivery attempts.
+    open_questions: []
+  - key: package-and-receipt-integrity
+    rule_type: data
+    statement: Retain the transmitted package digest, destination, sender, submission time, authority receipt or response, and any later resubmission linked to the reporting case.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Treat delivery as unverified, contact the authority through an approved route, and repeat submission when authorised.
+    open_questions: []

@@ -1,0 +1,35 @@
+id: dec-annual-incident-cost-loss-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Engineering baseline for annual incident cost and loss estimates
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-annual-incident-cost-loss
+question: Which reusable engineering pattern should prepare an authority-requested annual major-incident cost and loss estimate?
+conclusion: Gate the workflow on request and applicability, use one approved completed reference-year basis, reconcile the full incident population, calculate gross amounts and recoveries separately, and preserve source-level and per-incident traceability.
+rationale: This pattern converts the Joint Guidelines sequence into deterministic population, calculation, reconciliation, and report checks while leaving institution financial systems and the selected reference-year basis configurable.
+basis_provision_ids:
+  - prv-dora-art-11-10
+  - prv-dora-art-11-11
+  - prv-jc-gl-2024-34-paragraph-5
+  - prv-jc-gl-2024-34-paragraph-6
+  - prv-jc-gl-2024-34-paragraph-7
+  - prv-jc-gl-2024-34-paragraphs-8-9
+  - prv-jc-gl-2024-34-paragraphs-10-11
+  - prv-jc-gl-2024-34-annex
+assumptions:
+  - Final incident reports and finance or supervisory records can be reconciled through stable incident references.
+conditions:
+  - The workflow applies only after a competent-authority request to an applicable non-microenterprise EMI using the full framework.
+  - The institution approves its reference-year basis, financial data sources, authority route, roles, and retention.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-07"
+effective_from: "2026-09-07"
+effective_to: null
+review_due_on: null

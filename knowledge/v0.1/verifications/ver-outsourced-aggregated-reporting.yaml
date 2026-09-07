@@ -1,0 +1,51 @@
+id: ver-outsourced-aggregated-reporting
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify outsourced and aggregated incident reporting
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-outsourced-aggregated-reporting]
+verification_type: review
+execution_mode: hybrid
+executor_role: outsourcing_and_reporting_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before a first outsourced submission, each aggregated submission, and closure of an outsourcing arrangement or authority request
+preconditions:
+  - The outsourcing arrangement, authority notices, institution classifications, aggregation assessment, submissions, and authority requests are available.
+procedure:
+  - Confirm the arrangement preserves EMI accountability and authority notices contain required third-party details and timing.
+  - Reperform every third-party aggregation condition, including authority permission, and reconcile all covered institutions.
+  - For recurring-incident aggregation, reconcile every constituent incident to the monthly assessment and collective major classification.
+  - Confirm every authority request for institution-specific impact after aggregation has a complete individual response.
+expected_result: Delegation, aggregation, recurring populations, and individual follow-up satisfy every condition and preserve complete EMI accountability.
+failure_criteria:
+  - Responsibility is transferred or an authority notice is missing, incomplete, or late.
+  - Any aggregation condition, institution classification, authority permission, or constituent incident link is missing.
+  - An authority-requested individual report is absent or incomplete.
+on_failure: Prevent or correct the submission, assume direct reporting control where needed, notify the authority, and repeat verification.
+evidence_requirements:
+  - key: outsourcing-and-authority-notices
+    artifact_type: document
+    description: Reporting arrangement, accountability terms, third-party identity, and start or end notices to the authority.
+    required_fields: [arrangement identifier, scope, responsibilities, third-party name, contacts, identification code, concluded at, first submission, start notice, end notice]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data]
+    redaction_required: true
+    open_questions: []
+  - key: aggregation-and-individual-response
+    artifact_type: document
+    description: Eligibility, population, permission, aggregate package, and any institution-specific authority response.
+    required_fields: [case identifier, aggregation type, covered institutions or incidents, classifications, common authority, Member State, authority permission, package digest, individual requests, response outcomes]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

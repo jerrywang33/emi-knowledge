@@ -67,11 +67,43 @@ test("the approved change topic resolves a complete deterministic object closure
   assert.deepEqual(validateKnowledgeGraph(first), []);
 });
 
+test("the incident topic resolves its complete deterministic object closure", async () => {
+  const knowledgeEntries = await validKnowledgeEntries();
+  const loadedTopics = await loadTopicDirectory(TOPICS);
+  assert.deepEqual(loadedTopics.issues, []);
+  const incidentTopic = loadedTopics.entries.find((entry) =>
+    entry.object.id === "dora-ict-incident-management-reporting")!;
+
+  const first = resolveTopicEntries([incidentTopic.object], knowledgeEntries);
+  const second = resolveTopicEntries([incidentTopic.object], [...knowledgeEntries].reverse());
+  const typeCounts = Object.fromEntries(
+    ["source", "provision", "requirement", "decision", "control", "verification"].map((type) => [
+      type,
+      first.filter((entry) => entry.object.type === type).length,
+    ]),
+  );
+
+  assert.equal(first.length, 204);
+  assert.deepEqual(typeCounts, {
+    source: 9,
+    provision: 98,
+    requirement: 66,
+    decision: 5,
+    control: 13,
+    verification: 13,
+  });
+  assert.deepEqual(first.map((entry) => entry.object.id), second.map((entry) => entry.object.id));
+  const approvedTopic = cloneTopicEntries([incidentTopic])[0]!;
+  approvedTopic.object.lifecycle_status = "approved";
+  assert.deepEqual(validateTopicGraph([approvedTopic], knowledgeEntries), []);
+});
+
 test("a draft topic may have no entry Requirements", async () => {
   const knowledgeEntries = await validKnowledgeEntries();
   const loadedTopics = await loadTopicDirectory(TOPICS);
   const incidentTopic = cloneTopicEntries(loadedTopics.entries).find((entry) =>
     entry.object.id === "dora-ict-incident-management-reporting")!;
+  incidentTopic.object.lifecycle_status = "draft";
   incidentTopic.object.entry_requirement_ids = [];
   incidentTopic.object.context_object_ids = [];
 
@@ -115,6 +147,7 @@ test("topic validation rejects unknown fields and incomplete approved topics", a
   incidentTopic.object.uncontrolled_field = true;
   incidentTopic.object.lifecycle_status = "approved";
   incidentTopic.object.entry_requirement_ids = [];
+  incidentTopic.object.coverage.decisions = "not_started";
 
   const issues = await validateSchema(entries, TOPIC_SCHEMA);
   assert.ok(issues.some((issue) => issue.code === "schema.additionalProperties"));
@@ -150,7 +183,11 @@ test("an approved topic rejects a non-approved object in its resolved closure", 
   const loadedTopics = await loadTopicDirectory(TOPICS);
   const changeTopic = loadedTopics.entries.find((entry) =>
     entry.object.id === "dora-ict-change-management")!;
-  const verification = knowledgeEntries.find((entry) => entry.object.type === "verification")!;
+  const closureIds = new Set(
+    resolveTopicEntries([changeTopic.object], knowledgeEntries).map((entry) => entry.object.id),
+  );
+  const verification = knowledgeEntries.find((entry) =>
+    entry.object.type === "verification" && closureIds.has(entry.object.id))!;
   verification.object.lifecycle_status = "draft";
 
   const issues = validateTopicGraph([changeTopic], knowledgeEntries);

@@ -1,0 +1,75 @@
+id: ctl-regulatory-report-content
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Validate regulatory report content and templates
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Every incident report stage and chosen significant-threat notification uses the current prescribed template and contains complete, accurate, internally consistent, and properly qualified information.
+requirement_refs:
+  - {requirement_id: req-major-incident-report-general-content, relation: implements}
+  - {requirement_id: req-major-incident-initial-content, relation: implements}
+  - {requirement_id: req-major-incident-intermediate-content, relation: implements}
+  - {requirement_id: req-major-incident-final-content, relation: implements}
+  - {requirement_id: req-significant-threat-notification-content, relation: implements}
+control_category: process
+control_functions: [preventive, detective]
+owner_role: regulatory_report_quality_owner
+operation_mode: event_driven
+trigger_or_frequency: Before every incident report stage or significant-threat notification is authorised for submission
+implementation_rules:
+  - key: controlled-template-version
+    rule_type: configuration
+    statement: Use the current template and instructions obtained from the applicable official channel and record the source location, retrieval time, version or label, and SHA-256 digest used for the submission.
+    parameter_status: institution_defined
+    parameters:
+      - {name: official-template-source-register, value: null, unit: null}
+    conditions: []
+    failure_handling: Prevent submission with an unverified template and obtain the current official version.
+    open_questions: []
+  - key: general-and-initial-content
+    rule_type: data
+    statement: For each applicable stage, validate the prescribed general entity and submission fields and the initial-notification incident reference, times, description, criteria, Member States, discovery, origin, continuity, reclassification, and other available information.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The package contains an initial notification.
+    failure_handling: Block release, identify missing or inconsistent fields, and return the package to the reporting owner.
+    open_questions: []
+  - key: intermediate-content
+    rule_type: data
+    statement: Validate occurrence and recovery times, criterion impacts and thresholds, incident and threat details, affected functions and infrastructure, third parties, client financial interests, other authority notifications, recovery actions, and applicable indicators of compromise.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The package contains an intermediate report or update.
+    failure_handling: Block release, identify missing or inconsistent fields, and return the package to the reporting owner.
+    open_questions: []
+  - key: final-content
+    rule_type: data
+    statement: Validate resolution and root cause, permanent corrections, procedure and control changes, lessons, resolution-authority impact where applicable, direct and indirect costs and losses, recoveries, and recurring-incident details.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The package contains a final report.
+    failure_handling: Block release, identify missing or inconsistent fields, and return the package to the reporting owner.
+    open_questions: []
+  - key: significant-threat-content
+    rule_type: data
+    statement: For a chosen voluntary notification, validate entity, contact, timing, threat description and status, changes, potential impacts, hypothetical major classification, prevention action, other notifications, indicators of compromise, and other available relevant information.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - An authorised decision selected voluntary significant-threat notification.
+    failure_handling: Block release, identify missing or inconsistent fields, and return the notification to the reporting owner.
+    open_questions: []
+  - key: accuracy-and-estimate-control
+    rule_type: data
+    statement: Reconcile identifiers, timestamps, classifications, currency, impacts, and totals across stages; label estimates and unavailable fields according to the template; replace estimates with actual values when they become available without erasing prior submissions.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Prevent release of inconsistent content and preserve both the rejected and corrected package versions.
+    open_questions: []

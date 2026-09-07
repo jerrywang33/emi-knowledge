@@ -151,6 +151,16 @@ export function validateTopicGraph(
     }
 
     const resolvedEntries = resolveTopicEntries([topic], knowledgeEntries);
+    const entryOnlyEntries = resolveTopicEntries([{
+      ...topic,
+      context_object_ids: [],
+    }], knowledgeEntries);
+    const entryOnlyIds = new Set(entryOnlyEntries.map((resolvedEntry) => resolvedEntry.object.id));
+    const contextOnlyIds = new Set(
+      resolvedEntries
+        .filter((resolvedEntry) => !entryOnlyIds.has(resolvedEntry.object.id))
+        .map((resolvedEntry) => resolvedEntry.object.id),
+    );
     for (const resolvedEntry of resolvedEntries) {
       if (resolvedEntry.object.lifecycle_status !== "approved") {
         issues.push({
@@ -163,6 +173,7 @@ export function validateTopicGraph(
 
     const closureIssues = validateKnowledgeGraph(resolvedEntries, {
       allowExternalHistoricalReferences: true,
+      completeChainExemptIds: contextOnlyIds,
     });
     for (const issue of closureIssues) {
       issues.push({

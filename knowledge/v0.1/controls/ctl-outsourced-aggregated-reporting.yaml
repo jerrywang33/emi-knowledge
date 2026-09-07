@@ -1,0 +1,68 @@
+id: ctl-outsourced-aggregated-reporting
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Govern outsourced and aggregated incident reporting
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Outsourced and aggregated reporting proceeds only under the prescribed conditions, leaves the EMI fully accountable, and supports authority-requested institution-specific reports.
+requirement_refs:
+  - {requirement_id: req-outsourced-reporting-responsibility, relation: implements}
+  - {requirement_id: req-reporting-outsourcing-notification, relation: implements}
+  - {requirement_id: req-third-party-aggregated-reporting, relation: implements}
+  - {requirement_id: req-aggregated-reporting-individual-impact-report, relation: implements}
+  - {requirement_id: req-recurring-incidents-aggregated-reporting, relation: implements}
+control_category: governance
+control_functions: [preventive, detective, corrective]
+owner_role: regulatory_reporting_outsourcing_owner
+operation_mode: event_driven
+trigger_or_frequency: When reporting is outsourced, resumed internally, proposed in aggregated form, or followed by an authority request
+implementation_rules:
+  - key: retained-accountability
+    rule_type: process
+    statement: Keep the EMI responsible for report completeness, accuracy, deadlines, authority communications, incident handling, consequences, and supervisory feedback when any reporting task is performed by a third party.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - Any incident reporting task is outsourced.
+    failure_handling: Suspend the affected delegated action, assume direct control where necessary, and remediate the accountability gap.
+    open_questions: []
+  - key: outsourcing-authority-notice
+    rule_type: process
+    statement: Notify the competent authority as soon as a reporting outsourcing arrangement is concluded and before its first submission, include the third party's name, contacts, and identification code, and notify the authority as soon as the arrangement ends.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - Major-incident reporting is outsourced or returned to the institution.
+    failure_handling: Prevent the third party's first or further submission, notify the authority, and escalate the process breach.
+    open_questions: []
+  - key: third-party-aggregation-gate
+    rule_type: process
+    statement: Permit a third party to aggregate incident reports only when it provides the relevant service, every covered institution classified the event as major, all institutions are in one Member State under the same competent authority, and that authority permits aggregation for the entity type.
+    parameter_status: institution_defined
+    parameters:
+      - {name: authority-aggregation-permission-record, value: null, unit: null}
+    conditions:
+      - A third party proposes one submission for multiple institutions.
+    failure_handling: Reject aggregation and require separate institution submissions.
+    open_questions: []
+  - key: recurring-incident-aggregate-report
+    rule_type: process
+    statement: When recurring individually non-major incidents are collectively classified as one major incident, prepare the prescribed information in aggregated form and link every constituent incident.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - A monthly recurring-incident assessment concludes that a group is collectively major.
+    failure_handling: Keep the reporting case open, correct the population or links, and do not submit an unsupported aggregate.
+    open_questions: []
+  - key: individual-impact-response
+    rule_type: process
+    statement: After an aggregated submission, produce an institution-specific notification or report when the competent authority requests information about the EMI's individual impact.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The competent authority requests an institution-specific impact report.
+    failure_handling: Escalate the request, preserve its deadline, and provide a corrected individual report through the approved channel.
+    open_questions: []

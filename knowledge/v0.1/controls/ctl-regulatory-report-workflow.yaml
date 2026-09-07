@@ -1,0 +1,96 @@
+id: ctl-regulatory-report-workflow
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Control regulatory report stages and deadlines
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Each major-incident reporting case follows the prescribed stage sequence, deadlines, update triggers, delay procedure, permitted extensions, and reclassification path using a traceable deadline ledger.
+requirement_refs:
+  - {requirement_id: req-major-incident-report-sequence, relation: implements}
+  - {requirement_id: req-initial-notification-deadline, relation: implements}
+  - {requirement_id: req-late-classification-initial-deadline, relation: implements}
+  - {requirement_id: req-intermediate-report-deadline-and-updates, relation: implements}
+  - {requirement_id: req-final-report-deadline, relation: implements}
+  - {requirement_id: req-joint-report-stage-submission, relation: implements}
+  - {requirement_id: req-report-delay-notification, relation: implements}
+  - {requirement_id: req-weekend-bank-holiday-reporting-extension, relation: implements}
+  - {requirement_id: req-major-incident-reclassification-notification, relation: implements}
+  - {requirement_id: req-major-ict-incident-regulatory-reporting, relation: supports}
+control_category: process
+control_functions: [preventive, detective, corrective]
+owner_role: regulatory_incident_reporting_owner
+operation_mode: event_driven
+trigger_or_frequency: From major classification until final report or accepted reclassification
+implementation_rules:
+  - key: stage-sequence
+    rule_type: process
+    statement: Maintain initial notification, intermediate report and prescribed updates, and final report as ordered stages; issue the final report after root-cause analysis is complete and actual impact values are available, regardless of whether every mitigation action is complete.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The case is reportable as a major ICT-related incident.
+    failure_handling: Block an invalid stage transition, preserve the pending deadline, and escalate to the reporting owner.
+    open_questions: []
+  - key: initial-notification-deadlines
+    rule_type: configuration
+    statement: Submit the initial notification as early as possible and, when classification occurs within 24 hours after awareness, by both four hours after classification and 24 hours after awareness; when classification occurs later, submit within four hours after classification.
+    parameter_status: fixed
+    parameters:
+      - {name: awareness-window, value: 24, unit: hours}
+      - {name: post-classification-limit, value: 4, unit: hours}
+    conditions:
+      - The case is reportable as a major ICT-related incident.
+    failure_handling: Trigger the delay-notification path before the applicable deadline and escalate immediately.
+    open_questions: []
+  - key: intermediate-and-final-deadlines
+    rule_type: configuration
+    statement: Submit the intermediate report within 72 hours after the initial notification, update it without undue delay after prescribed changes or requests and whenever regular activities recover, and submit the final report within one month after the latest intermediate report.
+    parameter_status: fixed
+    parameters:
+      - {name: intermediate-limit, value: 72, unit: hours-after-initial-notification}
+      - {name: final-limit, value: 1, unit: month-after-latest-intermediate-report}
+    conditions:
+      - The case is reportable as a major ICT-related incident.
+    failure_handling: Trigger the delay-notification path before the applicable deadline and escalate immediately.
+    open_questions: []
+  - key: delay-notification
+    rule_type: exception
+    statement: When a reporting stage cannot be submitted on time, inform the competent authority without undue delay and no later than the missed stage deadline, explain the reason, and retain the revised delivery plan.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - A reporting deadline is at risk of being missed.
+    failure_handling: Use the approved escalation and secure fallback route, record the breach, and prioritise completion of the overdue report.
+    open_questions: []
+  - key: combined-stage-gate
+    rule_type: exception
+    statement: Permit two or three reporting stages in one submission only when regular activities have recovered or root-cause analysis is complete and every deadline applicable to the combined stages is met.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The reporting owner proposes a combined-stage submission.
+    failure_handling: Reject the combined submission and continue with the earliest currently due stage.
+    open_questions: []
+  - key: weekend-and-bank-holiday-rule
+    rule_type: exception
+    statement: Apply a next-working-day noon extension only after checking the Member State calendar, prescribed initial- and intermediate-report exclusions, entity conditions, and any prospective competent-authority decision notified to the institution.
+    parameter_status: institution_defined
+    parameters:
+      - {name: member-state-business-calendar, value: null, unit: null}
+      - {name: competent-authority-extension-decision-register, value: null, unit: null}
+    conditions:
+      - A calculated deadline falls on a weekend or bank holiday in the institution's Member State.
+    failure_handling: Use the unextended deadline when eligibility cannot be demonstrated and escalate any delivery risk.
+    open_questions: []
+  - key: reclassification-notification
+    rule_type: process
+    statement: When later assessment shows the incident never met the major criteria and thresholds, submit the prescribed major-to-non-major reclassification notification and retain the assessment history and authority response.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - A previously reported incident is reassessed as never having met the major criteria.
+    failure_handling: Keep the reporting case open and escalate until the authority is notified through the prescribed path.
+    open_questions: []

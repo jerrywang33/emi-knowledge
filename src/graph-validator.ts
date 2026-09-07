@@ -362,6 +362,7 @@ function checkCompleteChain(
   objects: KnowledgeObject[],
   entriesById: Map<string, LoadedKnowledgeObject>,
   issues: ValidationIssue[],
+  exemptIds: ReadonlySet<string>,
 ): void {
   const sources = objects.filter((object) => object.type === "source");
   const provisions = objects.filter((object) => object.type === "provision").map(asTypedObject);
@@ -370,6 +371,9 @@ function checkCompleteChain(
   const verifications = objects.filter((object) => object.type === "verification").map(asTypedObject) as VerificationObject[];
 
   for (const source of sources) {
+    if (exemptIds.has(source.id)) {
+      continue;
+    }
     if (!provisions.some((provision) => provision.type === "provision" && provision.source_id === source.id)) {
       issues.push({
         code: "graph.source_without_provision",
@@ -380,6 +384,9 @@ function checkCompleteChain(
   }
 
   for (const provision of provisions) {
+    if (exemptIds.has(provision.id)) {
+      continue;
+    }
     if (provision.type === "provision"
       && !requirements.some((requirement) =>
         requirement.provision_refs.some((reference) => reference.provision_id === provision.id))) {
@@ -392,6 +399,9 @@ function checkCompleteChain(
   }
 
   for (const requirement of requirements) {
+    if (exemptIds.has(requirement.id)) {
+      continue;
+    }
     const implementingControls = controls.filter((control) =>
       control.requirement_refs.some((reference) =>
         reference.requirement_id === requirement.id && reference.relation === "implements"));
@@ -405,6 +415,9 @@ function checkCompleteChain(
   }
 
   for (const control of controls) {
+    if (exemptIds.has(control.id)) {
+      continue;
+    }
     if (!verifications.some((verification) => verification.control_ids.includes(control.id))) {
       issues.push({
         code: "graph.control_without_verification",
@@ -422,6 +435,7 @@ export function countReferences(entries: LoadedKnowledgeObject[]): number {
 export interface KnowledgeGraphValidationOptions {
   requireCompleteChain?: boolean;
   allowExternalHistoricalReferences?: boolean;
+  completeChainExemptIds?: ReadonlySet<string>;
 }
 
 export function validateKnowledgeGraph(
@@ -530,7 +544,7 @@ export function validateKnowledgeGraph(
   const decisions = objects.filter((object) => object.type === "decision") as DecisionObject[];
   checkConfirmationSupport(requirements, controls, decisions, entriesById, issues);
   if (options.requireCompleteChain ?? true) {
-    checkCompleteChain(objects, entriesById, issues);
+    checkCompleteChain(objects, entriesById, issues, options.completeChainExemptIds ?? new Set());
   }
 
   return issues.sort((left, right) =>

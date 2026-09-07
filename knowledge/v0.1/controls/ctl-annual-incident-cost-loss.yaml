@@ -1,0 +1,90 @@
+id: ctl-annual-incident-cost-loss
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Estimate and report annual major-incident costs and losses
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: A competent-authority request produces a complete, reconciled, and consistently prepared annual estimate of major-incident gross costs and losses and financial recoveries for an applicable EMI.
+requirement_refs:
+  - {requirement_id: req-full-annual-cost-loss-report-on-request, relation: implements}
+  - {requirement_id: req-full-annual-cost-loss-reference-year, relation: implements}
+  - {requirement_id: req-full-annual-cost-loss-reference-year-change, relation: implements}
+  - {requirement_id: req-full-annual-cost-loss-incident-population, relation: implements}
+  - {requirement_id: req-full-annual-cost-loss-estimation, relation: implements}
+  - {requirement_id: req-full-annual-cost-loss-data-basis, relation: implements}
+  - {requirement_id: req-full-annual-cost-loss-adjustments, relation: implements}
+  - {requirement_id: req-full-annual-cost-loss-report-detail, relation: implements}
+control_category: process
+control_functions: [preventive, detective]
+owner_role: major_incident_financial_reporting_owner
+operation_mode: on_demand
+trigger_or_frequency: On a competent-authority request, supported by preparation after each selected reference year closes
+implementation_rules:
+  - key: applicability-and-request-gate
+    rule_type: process
+    statement: Initiate the report only for a competent-authority request addressed to a non-microenterprise EMI using the full ICT risk management framework, and record the request scope, due date, and submission route.
+    parameter_status: institution_defined
+    parameters:
+      - {name: competent-authority-request-route, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep applicability or request scope unresolved, prohibit unsupported submission, and escalate to the authorised regulatory liaison.
+    open_questions: []
+  - key: consistent-reference-year
+    rule_type: configuration
+    statement: Use either the completed calendar year or completed accounting year with finalised financial statements, apply the selected basis consistently, and exclude amounts outside that reference year.
+    parameter_status: institution_defined
+    parameters:
+      - {name: selected-reference-year-basis, value: null, unit: null}
+    conditions:
+      - The applicability and request gate is satisfied.
+    failure_handling: Stop calculation, reconcile the period and financial-statement status, and obtain approval of the consistent basis.
+    open_questions: []
+  - key: reference-year-change-gate
+    rule_type: process
+    statement: Change the selected reference-year basis only after notifying the competent authority and recording that it did not object within two months after receipt.
+    parameter_status: fixed
+    parameters:
+      - {name: authority-non-objection-period, value: 2, unit: months-after-receipt}
+    conditions:
+      - The institution proposes to change its reference-year basis.
+    failure_handling: Continue using the existing basis and escalate any unapproved change.
+    open_questions: []
+  - key: included-incident-population
+    rule_type: data
+    statement: Include every major incident with a final report in the reference year and every earlier-final-reported major incident with a quantifiable financial impact in the current reference year, using the final-report incident reference.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The applicability and request gate is satisfied.
+    failure_handling: Reconcile the population against final reports and financial records before calculation continues.
+    open_questions: []
+  - key: sequential-estimation
+    rule_type: data
+    statement: For each included incident, calculate gross costs and losses using the prescribed cost types, calculate financial recoveries separately, and aggregate gross amounts and recoveries across all included incidents without netting the two populations.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The included incident population is complete.
+    failure_handling: Reject netted or unreconciled calculations and repeat the prescribed sequence.
+    open_questions: []
+  - key: financial-record-basis-and-adjustments
+    rule_type: data
+    statement: Base values on financial statements or applicable supervisory reporting and their accounting provisions, identify estimates that use other available data, and include earlier-estimate adjustments in the reference year when the adjustment is made.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The applicability and request gate is satisfied.
+    failure_handling: Mark unsupported values, reconcile them to an approved data basis, and prevent report release until differences are explained.
+    open_questions: []
+  - key: annex-report-detail
+    rule_type: data
+    statement: Use the Joint Guidelines Annex to report reference-year totals and per-incident gross costs and losses and recoveries, linked by the incident reference used in each final report.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The annual estimate is prepared for submission.
+    failure_handling: Block release, complete or reconcile the missing totals, details, and incident references, and repeat quality review.
+    open_questions: []

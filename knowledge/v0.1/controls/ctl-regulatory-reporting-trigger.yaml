@@ -1,0 +1,58 @@
+id: ctl-regulatory-reporting-trigger
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Determine and initiate regulatory reporting paths
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: A verified major-incident classification initiates mandatory reporting without an optional approval gate, while a significant-cyber-threat notification proceeds only after an authorised and recorded voluntary decision.
+requirement_refs:
+  - {requirement_id: req-major-ict-incident-regulatory-reporting, relation: implements}
+  - {requirement_id: req-significant-threat-voluntary-notification, relation: implements}
+  - {requirement_id: req-payment-incident-chapter-three-application, relation: supports}
+control_category: process
+control_functions: [preventive, detective]
+owner_role: regulatory_incident_reporting_owner
+operation_mode: event_driven
+trigger_or_frequency: When an incident or cyber-threat classification is created or materially revised
+implementation_rules:
+  - key: mandatory-major-incident-path
+    rule_type: process
+    statement: On a verified major ICT-related incident classification, create the mandatory reporting workflow immediately, identify the relevant competent authority, preserve the classification time, and initiate the initial-notification deadline without waiting for an optional business approval.
+    parameter_status: institution_defined
+    parameters:
+      - {name: competent-authority-routing-register, value: null, unit: null}
+    conditions:
+      - The incident is classified as a major ICT-related incident.
+    failure_handling: Escalate immediately to the regulatory reporting owner, start a manually controlled reporting case, and preserve all original timestamps.
+    open_questions: []
+  - key: payment-incident-path
+    rule_type: process
+    statement: Route operational or security payment-related incidents within EMI scope, including non-ICT incidents, through the applicable Chapter III classification and reporting assessment using the current authority route for that event type.
+    parameter_status: institution_defined
+    parameters:
+      - {name: payment-incident-authority-route, value: null, unit: null}
+    conditions:
+      - The case is an operational or security payment-related incident.
+    failure_handling: Keep reportability open, prohibit automatic submission, and escalate route confirmation to the authorised regulatory liaison.
+    open_questions: []
+  - key: voluntary-significant-threat-decision
+    rule_type: process
+    statement: For a verified significant cyber threat, record whether the threat is relevant to the financial system, service users, or clients and obtain an authorised decision before creating or closing a voluntary-notification workflow.
+    parameter_status: institution_defined
+    parameters:
+      - {name: voluntary-notification-decision-role, value: null, unit: null}
+    conditions:
+      - The case is classified as a significant cyber threat.
+    failure_handling: Do not submit a voluntary notification, preserve the pending assessment, and escalate to the authorised decision role.
+    open_questions: []
+  - key: reporting-case-linkage
+    rule_type: data
+    statement: Link every reporting or voluntary-notification workflow to the incident or threat case, classification revision, applicable authority, trigger, decision basis, and deadline ledger.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Prevent external submission until linkage is complete and internally consistent.
+    open_questions: []

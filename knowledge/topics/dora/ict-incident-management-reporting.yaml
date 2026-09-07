@@ -1,10 +1,10 @@
 id: dora-ict-incident-management-reporting
 schema_version: 0.1.0
-revision: 5
+revision: 6
 title: DORA ICT incident management, classification, and regulatory reporting
 language: en
 domain: dora
-lifecycle_status: draft
+lifecycle_status: in_review
 source_review_ids:
   - DORA-SOURCES-2026-08-31-R2
   - DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1
@@ -94,9 +94,9 @@ coverage:
   sources: complete
   provisions: complete
   requirements: complete
-  decisions: not_started
-  controls: not_started
-  verifications: not_started
+  decisions: complete
+  controls: complete
+  verifications: complete
 open_questions:
   - Confirm the current MFSA process, template, and submission route for non-ICT major operational or security payment-related incidents under DORA Article 23.
   - Confirm whether and how MFSA requests annual aggregated cost and loss estimates under DORA Article 11(10).

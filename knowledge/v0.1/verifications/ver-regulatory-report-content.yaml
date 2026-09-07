@@ -1,0 +1,51 @@
+id: ver-regulatory-report-content
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify regulatory report content and template integrity
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-regulatory-report-content]
+verification_type: test
+execution_mode: hybrid
+executor_role: regulatory_report_quality_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before authorising each external incident report or significant-threat notification
+preconditions:
+  - The official template metadata, candidate package, incident record, classification, prior submissions, recovery record, and financial data are available.
+procedure:
+  - Verify the template source, retrieval time, version or label, and SHA-256 digest against the applicable official channel.
+  - Apply all general and stage-specific required-field, format, and conditional rules to the package.
+  - Reconcile identifiers, times, classification, impacts, costs, recoveries, currency, and status with source records and prior stages.
+  - Confirm estimates and unavailable values are labelled and prior package versions remain preserved.
+expected_result: The exact package passes current template, field, format, consistency, accuracy, estimate, and version-history checks.
+failure_criteria:
+  - The template identity or official origin cannot be verified.
+  - A required or conditionally required field is missing, malformed, inaccurate, or inconsistent.
+  - An estimate is unlabelled, an actual value is not updated, or a prior package version is lost.
+on_failure: Block package release, record field-level defects, correct the package under version control, and repeat the complete validation.
+evidence_requirements:
+  - key: official-template-snapshot
+    artifact_type: configuration_snapshot
+    description: Identity of the official template and instructions applied to the package.
+    required_fields: [authority, official source, retrieval time, version or label, template digest, instruction digest]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal]
+    redaction_required: false
+    open_questions: []
+  - key: report-content-validation
+    artifact_type: test_report
+    description: Field-level validation and reconciliation result for the exact reporting package.
+    required_fields: [case identifier, package digest, report stage, rule set version, field results, reconciliation results, estimate flags, defects, reviewer, completed at]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

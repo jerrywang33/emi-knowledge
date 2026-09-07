@@ -58,6 +58,7 @@ roadmap/
 - 对象文件路径继续由对象类型和稳定 ID 决定，专题归属不写入路径。
 - 一个 Requirement 可以作为多个专题入口，一个 Source、Provision、Decision、Control 或 Verification 可以被多个专题解析得到。
 - 草稿专题可以尚未包含入口 Requirement；进入发布候选前必须至少包含一个入口 Requirement，并通过完整知识链检查。
+- 完整链以入口 Requirement 的解析结果为准；只由补充上下文带入的对象及其专属依赖无需生成下游义务或控制，但仍需通过对象、引用、批准状态和敏感内容检查。
 - 专题说明、Roadmap 和发布清单不得填充未经机构确认的适用性、时限解释或内部处理参数。
 
 ## 结果

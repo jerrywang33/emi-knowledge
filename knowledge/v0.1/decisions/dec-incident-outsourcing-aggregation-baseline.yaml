@@ -1,0 +1,31 @@
+id: dec-incident-outsourcing-aggregation-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Engineering baseline for outsourced and aggregated reporting
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-outsourced-aggregated-reporting
+question: Which reusable engineering pattern should govern reporting delegation and aggregation?
+conclusion: Preserve EMI accountability, gate third-party access on authority notice, evaluate every aggregation condition explicitly, retain constituent links, and support institution-specific follow-up reports.
+rationale: Delegation and aggregation alter execution and packaging but do not remove the institution's responsibility or the need to evidence each eligibility condition and individual impact.
+basis_provision_ids:
+  - prv-dora-art-19-5
+  - prv-dora-art-22-1-responsibility
+  - prv-its-2025-302-art-3
+  - prv-its-2025-302-art-6
+  - prv-its-2025-302-art-7
+assumptions:
+  - The institution can resume direct reporting if the delegated route fails.
+conditions:
+  - Contracts, third parties, competent-authority permissions, and operational access require institution approval.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-07"
+effective_from: "2026-09-07"
+effective_to: null
+review_due_on: null

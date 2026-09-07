@@ -3,7 +3,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 专题标识 | `dora-ict-incident-management-reporting` |
-| 状态 | 草稿，Source、Provision 和 Requirement 已完成 |
+| 状态 | 评审中，完整知识链已建立 |
 | 目标发布 | `v0.2.0` |
 | 来源复核 | [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../../sources/dora-ict-incidents-source-review.md) |
 | 机器清单 | [`knowledge/topics/dora/ict-incident-management-reporting.yaml`](../../../knowledge/topics/dora/ict-incident-management-reporting.yaml) |
@@ -99,15 +99,39 @@
 5. Annex 按报告阶段和字段含义分组，不为每个表格单元建立对象。
 6. 强制报告、自愿通知和 Article 23 支付事件使用独立入口，并复用共同的检测、记录、分类和证据对象。
 
-## 5. 待确认问题
+## 5. 控制与验证设计
+
+66 项入口 Requirement 分别由一个主 Control 直接实现，跨流程依赖使用 `supports` 关系补充。这样的划分可以明确主要责任和验证入口，同时保留检测、分类、报告、沟通和复盘之间的协作关系。
+
+| Control | 直接实现的 Requirement | 主要结果 |
+| --- | ---: | --- |
+| `ctl-incident-governance-records` | 7 | 统一范围、职责、受保护事件记录、根因跟踪和证据保存。 |
+| `ctl-incident-detection-alerting` | 8 | 监控输入、日志、触发条件、初步分级、告警和非工作时间响应。 |
+| `ctl-incident-response-recovery` | 2 | 遏制、影响估算、恢复和安全恢复检查。 |
+| `ctl-incident-classification` | 3 | 法定分类标准、重大事件组合规则和重大网络威胁判断。 |
+| `ctl-regulatory-reporting-trigger` | 2 | 强制报告直接启动，自愿通知保留授权决定。 |
+| `ctl-regulatory-report-workflow` | 9 | 三阶段报告、法定时限、更新、延误、例外和重分类。 |
+| `ctl-regulatory-report-content` | 5 | 模板版本、阶段字段、准确性、估算标识和跨阶段一致性。 |
+| `ctl-secure-regulatory-submission` | 3 | 授权提交、安全通道、MFSA CRMS、回执、备用路径和补交。 |
+| `ctl-outsourced-aggregated-reporting` | 5 | 外包责任、主管机关通知、汇总条件和单体影响补充报告。 |
+| `ctl-incident-communications` | 5 | 内部升级、管理层报告、客户通知、危机沟通和并行义务。 |
+| `ctl-post-incident-review-learning` | 6 | 根因和有效性复核、风险与控制更新、完整或简化框架复核。 |
+| `ctl-incident-trend-management-reporting` | 3 | 每月重复事件评估、趋势分析和年度管理机构报告。 |
+| `ctl-annual-incident-cost-loss` | 8 | 按请求完成年度事件范围、成本损失、收回金额和 Annex 报告。 |
+
+每个 Control 对应一个 Verification，共定义 26 类 EvidenceRequirement。5 个工程 Decision 确认通用实现方式，并将机构系统、人员角色、内部时限、模板来源、提交权限和保存期限保留为机构配置。外部提交需要机构授权角色操作，Agent 结论不能直接触发报送。
+
+专题沿入口 Requirement 解析得到 204 个对象：9 个 Source、98 个 Provision、66 个 Requirement、5 个 Decision、13 个 Control 和 13 个 Verification。该闭包已经通过 Schema、引用、完整知识链和确定性解析检查。
+
+## 6. 待确认问题
 
 1. MFSA 针对非 ICT 重大支付运营或安全事件的当前流程、模板和提交入口。
 2. MFSA 请求提交年度成本与损失估算的条件和传输方式。
 3. 两份 MFSA Portal 用户指南的发布日期、版本号和替代关系。
 4. 具体机构的 DORA 完整或简化框架路径、内部严重程度、角色、升级目标和保存期限。
 
-## 6. 下一步
+## 7. 发布审查
 
-Source、Provision 和 Requirement 已完成，包含事件管理主干、完整与简化 ICT 风险管理分支、分类判断、三阶段报告、法定时限、自愿通知、安全提交、重分类、外包、Article 23 支付事件路径、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。
+Source、Provision、Requirement、Decision、Control、Verification 和 EvidenceRequirement 已经形成完整知识链，包含事件管理主干、完整与简化 ICT 风险管理分支、分类判断、三阶段报告、法定时限、自愿通知、安全提交、重分类、外包、Article 23 支付事件路径、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。
 
-下一步建立最小 Control 集合，并逐项补充 Verification 和 EvidenceRequirement。涉及机构路径、内部目标、职责和自愿选择的内容通过 Decision 记录；公开来源仍缺失的 Malta 操作信息继续保持待确认。
+下一步执行 `v0.2.0` 发布审查，固定两个专题和对象摘要，并完成人员、Agent 和产品三类使用验收。公开来源仍缺失的 Malta 操作信息继续保持待确认，并进入发布限制。

@@ -1,0 +1,39 @@
+id: dec-incident-regulatory-reporting-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Engineering baseline for regulatory incident reporting
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-regulatory-reporting-trigger
+  - ctl-regulatory-report-workflow
+  - ctl-regulatory-report-content
+  - ctl-secure-regulatory-submission
+question: Which reusable engineering pattern should control mandatory and voluntary reporting from classification through authority receipt?
+conclusion: Separate mandatory triggers from voluntary decisions, calculate statutory deadlines from preserved timestamps, validate versioned report packages before release, require authorised human submission, and retain secure delivery evidence.
+rationale: The pattern makes deadlines and content machine-checkable while keeping authority selection, voluntary notification, submission authority, and external side effects under institution-controlled roles and channels.
+basis_provision_ids:
+  - prv-dora-art-19-1
+  - prv-dora-art-19-2
+  - prv-dora-art-19-4
+  - prv-rts-2025-301-art-5-1-a
+  - prv-rts-2025-301-art-5-1-b
+  - prv-rts-2025-301-art-5-1-c
+  - prv-its-2025-302-art-1
+  - prv-its-2025-302-art-4
+  - prv-mfsa-crms-dora-reporting-channel
+assumptions:
+  - The institution maintains reliable awareness, classification, submission, recovery, and root-cause timestamps.
+conditions:
+  - External submission requires an authorised institution role and never follows solely from an Agent recommendation.
+  - Current authority routes, access roles, calendars, templates, and secure fallbacks require institution maintenance.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-07"
+effective_from: "2026-09-07"
+effective_to: null
+review_due_on: null
