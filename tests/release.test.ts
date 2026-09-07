@@ -116,6 +116,27 @@ test("checked-in v0.1.0 artifacts match the fixed release config", async (contex
   }
 });
 
+test("checked-in v0.2.0 artifacts match the fixed topic release config", async (context) => {
+  const releaseDirectory = path.join(ROOT, "releases/v0.2.0");
+  const config = JSON.parse(
+    await fs.readFile(path.join(releaseDirectory, "release.config.json"), "utf8"),
+  ) as ReleaseConfig;
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-v02-release-"));
+  context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
+
+  const generated = await generateRelease(config, ROOT, temporaryDirectory);
+  assert.equal(generated.manifest.object_count, 256);
+  assert.equal(generated.manifest.reference_count, 679);
+  assert.deepEqual(
+    generated.manifest.topics?.map((topic) => topic.id),
+    ["dora-ict-change-management", "dora-ict-incident-management-reporting"],
+  );
+  for (const [artifactPath, generatedContent] of Object.entries(generated.artifacts)) {
+    const checkedInContent = await fs.readFile(path.join(releaseDirectory, artifactPath), "utf8");
+    assert.equal(checkedInContent, generatedContent, `${artifactPath} has drifted from release.config.json`);
+  }
+});
+
 test("a topic-selected release fixes topic and object revisions", async (context) => {
   const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-topic-release-"));
   context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
@@ -139,9 +160,27 @@ test("a topic-selected release fixes topic and object revisions", async (context
   assert.match(generated.artifacts["README.md"]!, /dora-ict-change-management/);
 });
 
-test("a release rejects draft and unknown topic selections", async (context) => {
+test("a release rejects non-approved and unknown topic selections", async (context) => {
   const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-topic-reject-"));
   context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
+
+  const fixtureRoot = path.join(temporaryDirectory, "repository");
+  await fs.mkdir(fixtureRoot, { recursive: true });
+  await Promise.all(
+    ["knowledge", "schemas", "docs"].map((directory) =>
+      fs.cp(path.join(ROOT, directory), path.join(fixtureRoot, directory), { recursive: true })),
+  );
+  const incidentTopicPath = path.join(
+    fixtureRoot,
+    "knowledge/topics/dora/ict-incident-management-reporting.yaml",
+  );
+  const incidentTopic = await fs.readFile(incidentTopicPath, "utf8");
+  assert.match(incidentTopic, /lifecycle_status: approved/);
+  await fs.writeFile(
+    incidentTopicPath,
+    incidentTopic.replace("lifecycle_status: approved", "lifecycle_status: in_review"),
+    "utf8",
+  );
 
   await assert.rejects(
     generateRelease({
@@ -150,7 +189,7 @@ test("a release rejects draft and unknown topic selections", async (context) => 
         ...TOPIC_CONFIG.topic_selection!,
         topic_ids: ["dora-ict-incident-management-reporting"],
       },
-    }, ROOT, temporaryDirectory),
+    }, fixtureRoot, path.join(temporaryDirectory, "non-approved-output")),
     /non-approved topics: dora-ict-incident-management-reporting/,
   );
 
@@ -161,7 +200,7 @@ test("a release rejects draft and unknown topic selections", async (context) => 
         ...TOPIC_CONFIG.topic_selection!,
         topic_ids: ["dora-unknown-topic"],
       },
-    }, ROOT, temporaryDirectory),
+    }, ROOT, path.join(temporaryDirectory, "unknown-output")),
     /Unknown topic ID in release config: dora-unknown-topic/,
   );
 });

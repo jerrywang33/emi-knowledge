@@ -1,0 +1,82 @@
+{
+  "release_version": "v0.2.0",
+  "release_level": "engineering_baseline",
+  "released_on": "2026-09-07",
+  "knowledge_directory": "knowledge/v0.1",
+  "output_directory": "releases/v0.2.0",
+  "tool_version": "0.2.0",
+  "inputs": {
+    "source_baseline": {
+      "id": "DORA-SOURCES-2026-08-31-R2",
+      "path": "docs/sources/dora-source-baseline.md"
+    },
+    "incident_source_review": {
+      "id": "DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1",
+      "path": "docs/sources/dora-ict-incidents-source-review.md"
+    },
+    "landscape": {
+      "id": "DORA-LANDSCAPE-2026-08-31",
+      "path": "docs/dora/dora-landscape.md"
+    },
+    "knowledge_model": {
+      "id": "KNOWLEDGE-MODEL-V0.1",
+      "path": "docs/model/v0.1-knowledge-model.md"
+    },
+    "topic_model": {
+      "id": "TOPIC-MANIFEST-MODEL-V0.1",
+      "path": "docs/model/v0.1-topic-manifest.md"
+    },
+    "schema": {
+      "id": "KNOWLEDGE-OBJECT-SCHEMA-V0.1",
+      "version": "0.1.0",
+      "path": "schemas/v0.1/knowledge-object.schema.json"
+    },
+    "release_artifact_schema": {
+      "id": "RELEASE-ARTIFACT-SCHEMA-V0.2",
+      "version": "0.2.0",
+      "path": "schemas/v0.2/release-artifact.schema.json"
+    }
+  },
+  "topic_selection": {
+    "directory": "knowledge/topics",
+    "schema": {
+      "id": "TOPIC-MANIFEST-SCHEMA-V0.1",
+      "version": "0.1.0",
+      "path": "schemas/v0.1/topic-manifest.schema.json"
+    },
+    "topic_ids": [
+      "dora-ict-change-management",
+      "dora-ict-incident-management-reporting"
+    ]
+  },
+  "scope": {
+    "title": "EMI Knowledge v0.2｜DORA ICT 变更与事件管理",
+    "includes": [
+      "DORA ICT 变更管理完整知识链，包括完整与简化 ICT 风险管理框架路径。",
+      "DORA ICT 事件发现、记录、响应、恢复、分类、沟通、复盘和趋势分析知识链。",
+      "重大 ICT 事件三阶段报告、法定时限、内容、重分类、安全提交、外包和汇总报告控制。",
+      "重大网络威胁分类与自愿通知路径，以及 EMI 支付相关运营或安全事件的 Chapter III 范围。",
+      "年度重大事件成本与损失估算，以及 Malta 已公开确认的 MFSA CRMS 报送路径。"
+    ],
+    "excludes": [
+      "任何具体电子货币机构的法律适用性、事件分类、报告决定或合规结论。",
+      "Agent 自动批准分类、自动作出自愿通知决定或自动向主管机关提交材料。",
+      "机构内部政策、监管往来、客户数据、生产日志、凭据、真实报告和实际证据。",
+      "业务连续性、韧性测试和 ICT 第三方风险的独立完整专题，以及其他法规领域的详细知识链。"
+    ]
+  },
+  "review": {
+    "reviewed_by_role": "emi_knowledge_engineering_maintainer",
+    "reviewed_on": "2026-09-07",
+    "scope": "核对两个专题的来源定位、对象状态、知识链覆盖、工程决定、控制、验证、证据要求、上下文边界、机器文件 Schema 和发布可重复性；未执行具体机构法律审查或真实监管报送。"
+  },
+  "limitations": [
+    "公开来源不能确定具体 EMI 的 EMD2 Article 9(1) 豁免状态及完整或简化框架适用结论。",
+    "Malta 非 ICT 重大支付运营或安全事件的当前流程、模板和提交入口仍待权威材料确认。",
+    "MFSA 对 DORA Article 11(10) 年度成本与损失估算的请求条件和传输方式仍需在具体请求中确认。",
+    "MFSA Portal 用户指南和动态模板需要使用方在执行时核对当前版本、下载时间和内容摘要。",
+    "机构角色、内部严重程度、告警和升级目标、系统、渠道、权限、参考年度及证据保存期限需要使用方确认。",
+    "发布内容尚未使用真实 EMI 组织、系统、事件、监管报告和运行证据完成业务验收。",
+    "工程审查不构成法律意见、监管批准、合规认证或生产就绪结论。"
+  ]
+}

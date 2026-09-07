@@ -1,10 +1,10 @@
 # EMI Knowledge｜面向欧洲 EMI 的法规、业务与技术知识库
 
-EMI Knowledge 当前固定发布为 DORA `v0.1.0` 工程基线，已经形成首条 ICT 变更管理知识链。仓库现进入 `v0.2`，扩展 DORA ICT 事件管理、分类与监管报告专题。当前内容尚未形成可用于具体机构业务判断的法律或合规结论。
+EMI Knowledge 当前固定发布为 DORA `v0.2.0` 工程基线，包含 ICT 变更管理，以及 ICT 事件管理、分类与监管报告两条完整知识链。当前内容不提供具体机构的法律适用性或合规结论。
 
 当前建设范围、步骤和完成条件见 [Roadmap](roadmap/README.md)。
 
-当前固定发布为 [`v0.1.0`](releases/v0.1.0/README.md)，版本范围和限制见[发布记录](docs/releases/v0.1.0.md)，三类使用结果见[独立使用验收](docs/acceptance/v0.1.0.md)。Git tag `v0.1.0` 用于检出完整版本。
+当前固定发布为 [`v0.2.0`](releases/v0.2.0/README.md)，版本范围和限制见[发布记录](docs/releases/v0.2.0.md)，三类使用结果见[独立使用验收](docs/acceptance/v0.2.0.md)。首版 [`v0.1.0`](docs/releases/v0.1.0.md) 继续作为历史固定版本保留。
 
 ---
 
@@ -213,7 +213,8 @@ DORA 的正式结构、主题、条款、配套文件和 EMI 适用路径见 [DO
 npm ci
 npm run check
 npm run release:v0.1
-npm run example:query -- req-full-change-controlled-lifecycle
+npm run release:v0.2
+npm run example:query -- req-major-incident-determination v0.2.0
 ```
 
 `npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、已批准专题的知识链缺口或已配置的敏感内容模式都会使命令失败。`npm run release:v0.1` 根据历史 Manifest 固定的对象集合重新生成发布目录，自动化测试检查生成结果与仓库版本一致。`npm run example:query` 展示产品如何锁定版本并查询一条完整关系链。
@@ -226,6 +227,6 @@ npm run example:query -- req-full-change-controlled-lifecycle
 
 `v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。
 
-当前工作进入 `v0.2.0` 发布审查。事件专题已经形成 Source、Provision、Requirement、Decision、Control、Verification 和 EvidenceRequirement 完整知识链，覆盖事件管理、分类、欧盟层监管报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。专题包含 66 项入口 Requirement、13 项 Control、13 项 Verification 和 26 类证据要求，下一步固定两个专题的组合发布并完成人员、Agent 和产品验收。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
+`v0.2.0` 已经固定两个 Topic、256 个对象和 679 条关系，并通过人员、Agent 和产品三类独立工程使用验收。事件专题包含 66 项入口 Requirement、13 项 Control、13 项 Verification 和 26 类证据要求，覆盖事件管理、分类、欧盟层监管报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。下一阶段将使用真实 EMI 场景校准知识内容和使用方式；README 中列出的长期内容范围不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。

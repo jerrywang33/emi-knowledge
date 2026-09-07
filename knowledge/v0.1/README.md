@@ -2,7 +2,7 @@
 
 本目录保存遵循 EMI Knowledge Schema `0.1.0` 的受控知识对象。对象按 `Source`、`Provision`、`Requirement`、`Decision`、`Control` 和 `Verification` 六种类型保存，通过稳定 ID 建立关系；专题范围由 [`knowledge/topics/`](../topics/) 中的清单选择。
 
-当前目录中的首批已批准对象形成 DORA ICT 变更管理完整知识链，并已经固定在 `v0.1.0` 发布中。DORA ICT 事件管理、分类与监管报告对象在同一模型版本目录继续增加，发布版本通过 Topic 和 Release Manifest 显式选择对象。
+当前目录中的已批准对象形成 DORA ICT 变更管理，以及 ICT 事件管理、分类与监管报告两条完整知识链。首条知识链固定在 `v0.1.0`，两条知识链的组合固定在 `v0.2.0`；发布版本通过 Topic 和 Release Manifest 显式选择对象。
 
 ## ICT 变更管理路径
 

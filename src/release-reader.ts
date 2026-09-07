@@ -6,6 +6,7 @@ import {
   type ProvisionObject,
   type RequirementObject,
   type SourceObject,
+  type TopicManifest,
   type VerificationObject,
 } from "./model.js";
 import type { UnresolvedItem } from "./release.js";
@@ -14,6 +15,7 @@ import { assertMatchesSchema } from "./schema-validator.js";
 export interface ArtifactSchemaPaths {
   releaseArtifactSchema: string;
   knowledgeObjectSchema: string;
+  topicManifestSchema?: string;
 }
 
 export interface KnowledgeBundle {
@@ -24,6 +26,7 @@ export interface KnowledgeBundle {
   released_on: string;
   content_sha256: string;
   unresolved_items: UnresolvedItem[];
+  topics?: TopicManifest[];
   objects: KnowledgeObject[];
 }
 
@@ -36,7 +39,20 @@ export interface AgentContext {
   content_sha256: string;
   usage_constraints: string[];
   unresolved_items: UnresolvedItem[];
+  topics?: TopicManifest[];
   objects: KnowledgeObject[];
+}
+
+const SUPPORTED_ARTIFACT_MODEL_VERSIONS = new Set(["0.1.0", "0.2.0"]);
+
+function assertSupportedArtifactModelVersion(
+  value: unknown,
+  field: string,
+  filePath: string,
+): void {
+  if (typeof value !== "string" || !SUPPORTED_ARTIFACT_MODEL_VERSIONS.has(value)) {
+    throw new Error(`${filePath} uses unsupported ${field}: ${String(value)}.`);
+  }
 }
 
 export interface ProvisionTrace {
@@ -106,10 +122,16 @@ async function loadArtifact(
 ): Promise<Record<string, unknown>> {
   const value = JSON.parse(await fs.readFile(filePath, "utf8")) as unknown;
   assertRecord(value, filePath);
+  if (Array.isArray(value.topics) && !schemaPaths.topicManifestSchema) {
+    throw new Error(`${filePath} contains topics and requires topicManifestSchema for validation.`);
+  }
   await assertMatchesSchema(
     value,
     schemaPaths.releaseArtifactSchema,
-    [schemaPaths.knowledgeObjectSchema],
+    [
+      schemaPaths.knowledgeObjectSchema,
+      ...(schemaPaths.topicManifestSchema ? [schemaPaths.topicManifestSchema] : []),
+    ],
   );
 
   if (value.release_version !== expectedVersion) {
@@ -126,9 +148,7 @@ export async function loadKnowledgeBundle(
   schemaPaths: ArtifactSchemaPaths,
 ): Promise<KnowledgeBundle> {
   const value = await loadArtifact(filePath, expectedVersion, schemaPaths);
-  if (value.bundle_schema_version !== "0.1.0") {
-    throw new Error(`${filePath} is not a v0.1 knowledge bundle.`);
-  }
+  assertSupportedArtifactModelVersion(value.bundle_schema_version, "bundle_schema_version", filePath);
   return value as unknown as KnowledgeBundle;
 }
 
@@ -138,9 +158,7 @@ export async function loadAgentContext(
   schemaPaths: ArtifactSchemaPaths,
 ): Promise<AgentContext> {
   const value = await loadArtifact(filePath, expectedVersion, schemaPaths);
-  if (value.context_schema_version !== "0.1.0") {
-    throw new Error(`${filePath} is not a v0.1 Agent context.`);
-  }
+  assertSupportedArtifactModelVersion(value.context_schema_version, "context_schema_version", filePath);
   return value as unknown as AgentContext;
 }
 

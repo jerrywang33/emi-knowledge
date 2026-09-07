@@ -1,10 +1,10 @@
 id: dora-ict-incident-management-reporting
 schema_version: 0.1.0
-revision: 6
+revision: 7
 title: DORA ICT incident management, classification, and regulatory reporting
 language: en
 domain: dora
-lifecycle_status: in_review
+lifecycle_status: approved
 source_review_ids:
   - DORA-SOURCES-2026-08-31-R2
   - DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1

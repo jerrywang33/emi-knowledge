@@ -14,7 +14,7 @@ import {
 import { countReferences, emptyCounts, validateKnowledgeGraph } from "./graph-validator.js";
 import { sha256, stableJson } from "./stable-json.js";
 import { assertMatchesSchema } from "./schema-validator.js";
-import { resolveTopicEntries, validateTopics } from "./topic.js";
+import { resolveTopicClosure, validateTopics } from "./topic.js";
 import { assertValid, formatIssues, validateKnowledge } from "./validation.js";
 
 export interface ReleaseInput {
@@ -280,6 +280,22 @@ function markdownLink(label: string, url: unknown): string {
   return typeof url === "string" ? `[${label}](${url})` : label;
 }
 
+function formatScopeSelector(mode: string, values: string[]): string {
+  const formattedValues = values.map((item) => `\`${item}\``).join("、");
+  switch (mode) {
+    case "all":
+      return "全部";
+    case "include":
+      return formattedValues;
+    case "exclude":
+      return `除 ${formattedValues} 外全部`;
+    case "not_applicable":
+      return "不适用";
+    default:
+      return "待确认";
+  }
+}
+
 function generateHumanDocument(
   config: ReleaseConfig,
   objects: KnowledgeObject[],
@@ -345,7 +361,12 @@ function generateHumanDocument(
       "",
       requirement.statement,
       "",
-      `适用分支：${requirement.applicability.framework_branches.values.map((item) => `\`${item}\``).join("、")}`,
+      `适用分支：${config.topic_selection
+        ? formatScopeSelector(
+          requirement.applicability.framework_branches.mode,
+          requirement.applicability.framework_branches.values,
+        )
+        : requirement.applicability.framework_branches.values.map((item) => `\`${item}\``).join("、")}`,
       "",
       "依据：",
       "",
@@ -401,7 +422,8 @@ function generateHumanDocument(
     "",
   );
 
-  return `${lines.join("\n")}\n`;
+  const document = lines.join("\n");
+  return config.topic_selection ? `${document.trimEnd()}\n` : `${document}\n`;
 }
 
 async function readInputs(config: ReleaseConfig, repositoryRoot: string): Promise<Record<string, InputManifest>> {
@@ -492,6 +514,7 @@ export async function generateRelease(
   let releaseEntries = report.entries;
   let selectedTopicEntries: LoadedTopicManifest[] = [];
   let topicSchemaPath: string | undefined;
+  let completeChainExemptIds: ReadonlySet<string> = new Set();
 
   if (config.topic_selection) {
     const topicDirectory = resolveRepositoryPath(root, config.topic_selection.directory);
@@ -520,10 +543,12 @@ export async function generateRelease(
       );
     }
 
-    releaseEntries = resolveTopicEntries(
+    const resolvedTopicClosure = resolveTopicClosure(
       selectedTopicEntries.map((entry) => entry.object),
       report.entries,
     );
+    releaseEntries = resolvedTopicClosure.entries;
+    completeChainExemptIds = resolvedTopicClosure.contextOnlyIds;
     if (releaseEntries.length === 0) {
       throw new Error("Topic selection resolved to no knowledge objects.");
     }
@@ -544,6 +569,7 @@ export async function generateRelease(
 
   const closureIssues = validateKnowledgeGraph(releaseEntries, {
     allowExternalHistoricalReferences: true,
+    completeChainExemptIds,
   });
   if (closureIssues.length > 0) {
     throw new Error(`Release knowledge graph is invalid:\n${formatIssues(closureIssues)}`);

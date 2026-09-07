@@ -150,16 +150,9 @@ export function validateTopicGraph(
       continue;
     }
 
-    const resolvedEntries = resolveTopicEntries([topic], knowledgeEntries);
-    const entryOnlyEntries = resolveTopicEntries([{
-      ...topic,
-      context_object_ids: [],
-    }], knowledgeEntries);
-    const entryOnlyIds = new Set(entryOnlyEntries.map((resolvedEntry) => resolvedEntry.object.id));
-    const contextOnlyIds = new Set(
-      resolvedEntries
-        .filter((resolvedEntry) => !entryOnlyIds.has(resolvedEntry.object.id))
-        .map((resolvedEntry) => resolvedEntry.object.id),
+    const { entries: resolvedEntries, contextOnlyIds } = resolveTopicClosure(
+      [topic],
+      knowledgeEntries,
     );
     for (const resolvedEntry of resolvedEntries) {
       if (resolvedEntry.object.lifecycle_status !== "approved") {
@@ -277,4 +270,20 @@ export function resolveTopicEntries(
   }
 
   return sortKnowledgeEntries([...selectedIds].map((id) => entriesById.get(id)!));
+}
+
+export function resolveTopicClosure(
+  topics: TopicManifest[],
+  knowledgeEntries: LoadedKnowledgeObject[],
+): { entries: LoadedKnowledgeObject[]; contextOnlyIds: ReadonlySet<string> } {
+  const entries = resolveTopicEntries(topics, knowledgeEntries);
+  const entryOnlyEntries = resolveTopicEntries(
+    topics.map((topic) => ({ ...topic, context_object_ids: [] })),
+    knowledgeEntries,
+  );
+  const entryOnlyIds = new Set(entryOnlyEntries.map((entry) => entry.object.id));
+  const contextOnlyIds = new Set(
+    entries.filter((entry) => !entryOnlyIds.has(entry.object.id)).map((entry) => entry.object.id),
+  );
+  return { entries, contextOnlyIds };
 }

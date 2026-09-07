@@ -3,7 +3,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 专题标识 | `dora-ict-incident-management-reporting` |
-| 状态 | 评审中，完整知识链已建立 |
+| 状态 | 已批准并固定在 `v0.2.0` |
 | 目标发布 | `v0.2.0` |
 | 来源复核 | [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../../sources/dora-ict-incidents-source-review.md) |
 | 机器清单 | [`knowledge/topics/dora/ict-incident-management-reporting.yaml`](../../../knowledge/topics/dora/ict-incident-management-reporting.yaml) |
@@ -130,8 +130,8 @@
 3. 两份 MFSA Portal 用户指南的发布日期、版本号和替代关系。
 4. 具体机构的 DORA 完整或简化框架路径、内部严重程度、角色、升级目标和保存期限。
 
-## 7. 发布审查
+## 7. 发布结果
 
 Source、Provision、Requirement、Decision、Control、Verification 和 EvidenceRequirement 已经形成完整知识链，包含事件管理主干、完整与简化 ICT 风险管理分支、分类判断、三阶段报告、法定时限、自愿通知、安全提交、重分类、外包、Article 23 支付事件路径、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。
 
-下一步执行 `v0.2.0` 发布审查，固定两个专题和对象摘要，并完成人员、Agent 和产品三类使用验收。公开来源仍缺失的 Malta 操作信息继续保持待确认，并进入发布限制。
+`v0.2.0` 已固定两个专题、256 个对象和 679 条关系，内容摘要为 `5c8c30cbba76bcfbece378b48427d8d02d97384b12799113b8c3051f7c0557bd`，并完成人员、Agent 和产品三类独立工程使用验收。公开来源仍缺失的 Malta 操作信息继续保持待确认，并已进入发布限制。
