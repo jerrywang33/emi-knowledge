@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-22-d
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Retain incident evidence securely for a justified period
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 22(d), including the 2025-05-15 corrigendum
+  segments:
+    - {kind: article, value: "22"}
+    - {kind: point, value: d}
+heading: ICT-related incident management policy
+content_kind: editorial_summary
+content: The full-framework incident policy requires secure retention of all ICT-related incident evidence for no longer than necessary for its collection purpose, proportionate to the criticality of affected business functions, supporting processes and ICT and information assets, consistent with Regulation (EU) 2024/1772 Article 8(2) and applicable Union-law retention requirements.

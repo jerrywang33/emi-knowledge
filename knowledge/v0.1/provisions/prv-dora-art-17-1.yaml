@@ -1,0 +1,18 @@
+id: prv-dora-art-17-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Establish an ICT-related incident management process
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 17(1)
+  segments:
+    - {kind: article, value: "17"}
+    - {kind: paragraph, value: "1"}
+heading: ICT-related incident management process
+content_kind: editorial_summary
+content: Financial entities define, establish and implement a process to detect, manage and notify ICT-related incidents.

@@ -1,0 +1,18 @@
+id: prv-dora-art-3-13
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Definition of a significant cyber threat
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 3(13)
+  segments:
+    - {kind: article, value: "3"}
+    - {kind: point, value: "13"}
+heading: Definitions
+content_kind: editorial_summary
+content: A significant cyber threat is a cyber threat whose technical characteristics indicate that it could result in a major ICT-related incident or a major operational or security payment-related incident.

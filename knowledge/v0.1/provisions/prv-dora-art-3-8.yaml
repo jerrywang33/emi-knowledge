@@ -1,0 +1,18 @@
+id: prv-dora-art-3-8
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Definition of an ICT-related incident
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 3(8)
+  segments:
+    - {kind: article, value: "3"}
+    - {kind: point, value: "8"}
+heading: Definitions
+content_kind: editorial_summary
+content: An ICT-related incident is an unplanned single event or series of linked events that compromises network and information system security and adversely affects data availability, authenticity, integrity or confidentiality, or services provided by the financial entity.

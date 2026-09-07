@@ -1,0 +1,18 @@
+id: prv-dora-art-3-9
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Definition of an operational or security payment-related incident
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 3(9)
+  segments:
+    - {kind: article, value: "3"}
+    - {kind: point, value: "9"}
+heading: Definitions
+content_kind: editorial_summary
+content: An operational or security payment-related incident is an unplanned single event or series of linked events, whether ICT-related or not, that adversely affects payment-related data availability, authenticity, integrity or confidentiality, or payment-related services provided by an entity listed in Article 2(1)(a) to (d).

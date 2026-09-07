@@ -1,0 +1,18 @@
+id: prv-dora-art-10-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Resource monitoring of users, anomalies and incidents
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 10(3)
+  segments:
+    - {kind: article, value: "10"}
+    - {kind: paragraph, value: "3"}
+heading: Detection
+content_kind: editorial_summary
+content: Financial entities devote sufficient resources and capabilities to monitor user activity, ICT anomalies and ICT-related incidents, with particular attention to cyber-attacks.

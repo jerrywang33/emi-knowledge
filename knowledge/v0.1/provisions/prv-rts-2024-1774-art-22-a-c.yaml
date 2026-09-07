@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-22-a-c
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Document and support the full-framework incident policy
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 22(a)-(c)
+  segments:
+    - {kind: article, value: "22"}
+    - {kind: point, value: a-c}
+heading: ICT-related incident management policy
+content_kind: editorial_summary
+content: The full-framework incident policy documents the DORA Article 17 process, lists relevant internal and external ICT operations security contacts for cyber-threat monitoring, anomaly detection and vulnerability management, and establishes technical, organisational and operational mechanisms that support the process and prompt anomaly detection.

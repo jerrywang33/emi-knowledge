@@ -1,0 +1,30 @@
+id: req-simplified-security-event-logging
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Log access, operations, traffic and change events
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: For every ICT asset, an exempted electronic money institution using the simplified ICT risk management framework shall log logical and physical access, ICT operations, system and network traffic, and ICT change events at a level of detail aligned with the log purpose and use of the producing asset.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-rts-2024-1774-art-34-f-i, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: include, values: [emi_with_emd2_article_9_1_exemption]}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: include, values: [operational_data]}
+  framework_branches: {mode: include, values: [dora_simplified_ict_risk_management]}
+  effective_from: "2025-01-17"
+  effective_to: null
+  conditions: []
+  exclusions: []

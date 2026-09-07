@@ -1,0 +1,18 @@
+id: prv-dora-art-13-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Review major incidents that disrupt core activities
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 13(2)
+  segments:
+    - {kind: article, value: "13"}
+    - {kind: paragraph, value: "2"}
+heading: Learning and evolving
+content_kind: editorial_summary
+content: After a major ICT-related incident disrupts core activities, the financial entity reviews its causes and required improvements, assesses whether procedures were followed and actions were effective across alert response, impact and severity assessment, forensics where appropriate, escalation and communication, and, unless it is a microenterprise, communicates implemented changes to the competent authority on request.

@@ -1,0 +1,18 @@
+id: prv-dora-art-10-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Use layered controls and response-triggering alerts
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 10(2)
+  segments:
+    - {kind: article, value: "10"}
+    - {kind: paragraph, value: "2"}
+heading: Detection
+content_kind: editorial_summary
+content: Detection mechanisms provide multiple control layers, define alert thresholds and criteria that trigger ICT-related incident response, and automatically alert the relevant response staff.

@@ -1,0 +1,18 @@
+id: prv-dora-art-10-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Promptly detect anomalous activity and material single points of failure
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 10(1)
+  segments:
+    - {kind: article, value: "10"}
+    - {kind: paragraph, value: "1"}
+heading: Detection
+content_kind: editorial_summary
+content: Financial entities maintain mechanisms that promptly detect anomalous activities, ICT network performance issues and ICT-related incidents, identify potential material single points of failure, and are regularly tested under Article 25.

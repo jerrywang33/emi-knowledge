@@ -1,0 +1,19 @@
+id: prv-rts-2024-1774-art-23-2-c-d
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Prioritise anomaly alerts and evaluate anomaly information
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 23(2)(c)-(d)
+  segments:
+    - {kind: article, value: "23"}
+    - {kind: paragraph, value: "2"}
+    - {kind: point, value: c-d}
+heading: Anomalous activities detection and criteria for ICT-related incidents detection and response
+content_kind: editorial_summary
+content: Full-framework entities prioritise anomaly alerts so detected incidents can be managed within entity-specified expected resolution times both inside and outside working hours, and automatically or manually record, analyse and evaluate relevant information about all anomalous activities and behaviours.

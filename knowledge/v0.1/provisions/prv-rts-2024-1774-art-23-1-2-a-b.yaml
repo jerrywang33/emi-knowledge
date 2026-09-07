@@ -1,0 +1,19 @@
+id: prv-rts-2024-1774-art-23-1-2-a-b
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Assign detection roles and monitor relevant anomaly inputs
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 23(1)-(2)(a)-(b)
+  segments:
+    - {kind: article, value: "23"}
+    - {kind: paragraph, value: 1-2}
+    - {kind: point, value: a-b}
+heading: Anomalous activities detection and criteria for ICT-related incidents detection and response
+content_kind: editorial_summary
+content: Full-framework entities assign clear detection and response roles; collect, monitor and analyse internal and external factors, logs, business and ICT information, user reports, cyber threats and relevant third-party provider incident notifications; and use alerting tools to detect anomalous activity at least for assets supporting critical or important functions.

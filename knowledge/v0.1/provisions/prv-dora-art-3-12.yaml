@@ -1,0 +1,18 @@
+id: prv-dora-art-3-12
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Definition of a cyber threat
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 3(12)
+  segments:
+    - {kind: article, value: "3"}
+    - {kind: point, value: "12"}
+heading: Definitions
+content_kind: editorial_summary
+content: Cyber threat has the meaning assigned by Article 2(8) of Regulation (EU) 2019/881.

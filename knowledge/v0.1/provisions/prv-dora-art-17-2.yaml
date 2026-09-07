@@ -1,0 +1,18 @@
+id: prv-dora-art-17-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Record incidents and threats and address root causes
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 17(2)
+  segments:
+    - {kind: article, value: "17"}
+    - {kind: paragraph, value: "2"}
+heading: ICT-related incident management process
+content_kind: editorial_summary
+content: Financial entities record every ICT-related incident and significant cyber threat and use consistent, integrated monitoring, handling and follow-up procedures so root causes are identified, documented and addressed to prevent recurrence.

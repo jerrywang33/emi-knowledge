@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-22-e
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Analyse significant and recurring incident patterns
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 22(e)
+  segments:
+    - {kind: article, value: "22"}
+    - {kind: point, value: e}
+heading: ICT-related incident management policy
+content_kind: editorial_summary
+content: The full-framework incident policy establishes and implements mechanisms to analyse significant or recurring ICT-related incidents and patterns in incident number and occurrence.

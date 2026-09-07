@@ -1,0 +1,18 @@
+id: prv-dora-art-16-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Review and improve the simplified framework after a major incident
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 16(2)
+  segments:
+    - {kind: article, value: "16"}
+    - {kind: paragraph, value: "2"}
+heading: Simplified ICT risk management framework
+content_kind: editorial_summary
+content: The simplified ICT risk management framework is documented and reviewed periodically and upon a major ICT-related incident in compliance with supervisory instructions, continuously improved from implementation and monitoring lessons, and its review report is submitted to the competent authority on request.

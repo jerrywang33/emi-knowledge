@@ -70,8 +70,9 @@ test("the approved change topic resolves a complete deterministic object closure
 test("a draft topic may have no entry Requirements", async () => {
   const knowledgeEntries = await validKnowledgeEntries();
   const loadedTopics = await loadTopicDirectory(TOPICS);
-  const incidentTopic = loadedTopics.entries.find((entry) =>
+  const incidentTopic = cloneTopicEntries(loadedTopics.entries).find((entry) =>
     entry.object.id === "dora-ict-incident-management-reporting")!;
+  incidentTopic.object.entry_requirement_ids = [];
 
   assert.equal(incidentTopic.object.lifecycle_status, "draft");
   assert.deepEqual(resolveTopicEntries([incidentTopic.object], knowledgeEntries), []);
@@ -112,6 +113,7 @@ test("topic validation rejects unknown fields and incomplete approved topics", a
     entry.object.id === "dora-ict-incident-management-reporting")!;
   incidentTopic.object.uncontrolled_field = true;
   incidentTopic.object.lifecycle_status = "approved";
+  incidentTopic.object.entry_requirement_ids = [];
 
   const issues = await validateSchema(entries, TOPIC_SCHEMA);
   assert.ok(issues.some((issue) => issue.code === "schema.additionalProperties"));

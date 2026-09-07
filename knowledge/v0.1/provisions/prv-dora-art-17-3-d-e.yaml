@@ -1,0 +1,19 @@
+id: prv-dora-art-17-3-d-e
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Plan incident communication and management escalation
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 17(3)(d)-(e)
+  segments:
+    - {kind: article, value: "17"}
+    - {kind: paragraph, value: "3"}
+    - {kind: point, value: d-e}
+heading: ICT-related incident management process
+content_kind: editorial_summary
+content: The incident management process covers staff, stakeholder and media communication, client notification, internal escalation including customer complaints, and counterpart information as appropriate; at least major incidents are reported to senior management and explained to the management body with their impact, response and additional controls.

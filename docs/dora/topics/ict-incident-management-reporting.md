@@ -3,7 +3,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 专题标识 | `dora-ict-incident-management-reporting` |
-| 状态 | 草稿，来源复核和覆盖设计已完成 |
+| 状态 | 草稿，事件管理主干的 Provision 和 Requirement 已完成 |
 | 目标发布 | `v0.2.0` |
 | 来源复核 | [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../../sources/dora-ict-incidents-source-review.md) |
 | 机器清单 | [`knowledge/topics/dora/ict-incident-management-reporting.yaml`](../../../knowledge/topics/dora/ict-incident-management-reporting.yaml) |
@@ -109,4 +109,4 @@
 
 ## 6. 下一步
 
-按照本矩阵逐批建立 Source、Provision 和 Requirement。第一批覆盖 DORA 与 Regulation (EU) 2024/1774 的事件管理主干，第二批覆盖分类和重大性，第三批覆盖报告内容、时限与程序，第四批补充 Malta 操作路径和年度成本与损失指引。
+第一批已经建立 DORA 与 Regulation (EU) 2024/1774 事件管理主干的 Provision 和 Requirement，并分别覆盖共同义务、完整 ICT 风险管理框架和简化框架。下一批建立 Regulation (EU) 2024/1772 的分类标准、重大性阈值、重复事件和重大网络威胁条件，后续继续处理报告内容、时限、程序、Malta 操作路径和年度成本与损失指引。

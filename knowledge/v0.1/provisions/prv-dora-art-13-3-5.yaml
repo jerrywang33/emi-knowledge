@@ -1,0 +1,18 @@
+id: prv-dora-art-13-3-5
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Feed incident lessons into risk assessment and management reporting
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 13(3)-(5)
+  segments:
+    - {kind: article, value: "13"}
+    - {kind: paragraph, value: 3-5}
+heading: Learning and evolving
+content_kind: editorial_summary
+content: Lessons from real incidents and continuity or recovery challenges are continuously incorporated into ICT risk assessment and relevant framework reviews; incident trends and patterns are analysed, and senior ICT staff report the resulting findings and recommendations to the management body at least annually.

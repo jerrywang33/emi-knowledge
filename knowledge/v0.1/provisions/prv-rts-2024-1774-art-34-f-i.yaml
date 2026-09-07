@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-34-f-i
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Log and monitor security events under the simplified framework
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 34(f)-(i)
+  segments:
+    - {kind: article, value: "34"}
+    - {kind: point, value: f-i}
+heading: ICT operations security
+content_kind: editorial_summary
+content: For all ICT assets, a simplified-framework entity logs logical and physical access, ICT operations, system and network traffic, and ICT change events; monitors and analyses anomalous activity for critical or important ICT operations; monitors current cyber-threat information; and identifies information leakage, malicious code, other security threats, public vulnerabilities and corresponding updates. Log detail is aligned with its purpose and the producing asset's use.

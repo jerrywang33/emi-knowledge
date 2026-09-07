@@ -1,0 +1,31 @@
+id: req-full-crisis-communication
+type: requirement
+schema_version: 0.1.0
+revision: 1
+title: Maintain crisis and stakeholder communication arrangements
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+statement: An electronic money institution using the full ICT risk management framework shall maintain crisis communication plans and internal and external communication policies for responsible disclosure of at least major ICT-related incidents or vulnerabilities as appropriate, distinguish response staff from staff who need information, and assign at least one person to implement the incident communication strategy and public and media function.
+requirement_kind: obligation
+derivation_type: direct
+provision_refs:
+  - {provision_id: prv-dora-art-14-1-3, relation: direct_basis}
+  - {provision_id: prv-dora-art-2-1-d, relation: scope_basis}
+  - {provision_id: prv-dora-art-16-1-simplified-entities, relation: scope_basis}
+  - {provision_id: prv-dora-art-64-application, relation: scope_basis}
+applicability:
+  basis: source_defined
+  jurisdictions: {mode: include, values: [EU]}
+  entity_types: {mode: include, values: [electronic_money_institution]}
+  license_roles: {mode: include, values: [emi_without_emd2_article_9_1_exemption]}
+  activities: {mode: include, values: [ict_risk_management]}
+  products: {mode: not_applicable, values: []}
+  data_categories: {mode: not_applicable, values: []}
+  framework_branches: {mode: include, values: [dora_full_ict_risk_management]}
+  effective_from: "2025-01-17"
+  effective_to: null
+  conditions: []
+  exclusions:
+    - Electronic money institutions exempted pursuant to Directive 2009/110/EC use the simplified ICT risk management branch.

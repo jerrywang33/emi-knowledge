@@ -1,0 +1,20 @@
+id: prv-rts-2024-1774-art-31-1-e-incident
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Assess ICT risk after a major incident under the simplified framework
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 31(1)(e), major-incident clause
+  segments:
+    - {kind: article, value: "31"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: e}
+    - {kind: other, value: major-incident clause}
+heading: ICT risk management
+content_kind: editorial_summary
+content: A simplified-framework entity identifies and assesses ICT and information security risks after every major ICT-related incident.

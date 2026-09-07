@@ -1,6 +1,6 @@
 id: dora-ict-incident-management-reporting
 schema_version: 0.1.0
-revision: 1
+revision: 2
 title: DORA ICT incident management, classification, and regulatory reporting
 language: en
 domain: dora
@@ -20,12 +20,38 @@ scope:
     - Institution-specific incident decisions, internal severity thresholds, staffing models, and risk acceptance.
     - Automatic submission to a competent authority or automatic approval of an incident classification.
     - Business continuity, resilience testing, and ICT third-party risk as complete standalone topics.
-entry_requirement_ids: []
+entry_requirement_ids:
+  - req-full-annual-incident-findings-report
+  - req-full-anomaly-record-protection
+  - req-full-crisis-communication
+  - req-full-framework-review-after-major-incident
+  - req-full-incident-alerting-and-prioritisation
+  - req-full-incident-detection-and-monitoring
+  - req-full-incident-evidence-retention
+  - req-full-incident-lessons-risk-assessment
+  - req-full-incident-policy
+  - req-full-incident-response-recovery-arrangements
+  - req-full-incident-response-trigger-criteria
+  - req-full-post-incident-review
+  - req-full-significant-and-recurring-incident-analysis
+  - req-incident-communications-and-escalation
+  - req-incident-early-warning-and-classification
+  - req-incident-management-process
+  - req-incident-recording-and-root-cause-follow-up
+  - req-incident-response-and-secure-restoration
+  - req-incident-roles-and-responsibilities
+  - req-simplified-framework-review-after-major-incident
+  - req-simplified-incident-alert-thresholds
+  - req-simplified-incident-review-report-content
+  - req-simplified-incident-risk-assessment
+  - req-simplified-security-event-logging
+  - req-simplified-security-monitoring
+  - req-simplified-threat-monitoring
 context_object_ids: []
 coverage:
   sources: complete
-  provisions: not_started
-  requirements: not_started
+  provisions: in_progress
+  requirements: in_progress
   decisions: not_started
   controls: not_started
   verifications: not_started

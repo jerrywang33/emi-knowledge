@@ -1,0 +1,18 @@
+id: prv-dora-art-14-1-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Maintain ICT crisis and stakeholder communication arrangements
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 14(1)-(3)
+  segments:
+    - {kind: article, value: "14"}
+    - {kind: paragraph, value: 1-3}
+heading: Communication
+content_kind: editorial_summary
+content: Financial entities maintain crisis communication plans for responsible disclosure of at least major ICT-related incidents or vulnerabilities to clients, counterparts and the public as appropriate, implement internal and external communication policies that distinguish response staff from staff who need information, and assign at least one person to implement the incident communication strategy and public and media function.

@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-23-5-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Apply incident detection and response trigger criteria
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 23(5)-(6)
+  segments:
+    - {kind: article, value: "23"}
+    - {kind: paragraph, value: 5-6}
+heading: Anomalous activities detection and criteria for ICT-related incidents detection and response
+content_kind: editorial_summary
+content: Full-framework entities consider indications of malicious activity or compromise, losses of data availability, authenticity, integrity or confidentiality, adverse transaction or operational impact, ICT system or network unavailability, and the criticality of affected services when triggering incident detection and response processes.

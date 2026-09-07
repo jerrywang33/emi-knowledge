@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-23-3-4
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Protect and time-stamp anomalous activity records
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 23(3)-(4)
+  segments:
+    - {kind: article, value: "23"}
+    - {kind: paragraph, value: 3-4}
+heading: Anomalous activities detection and criteria for ICT-related incidents detection and response
+content_kind: editorial_summary
+content: Full-framework entities protect anomalous activity records from tampering and unauthorised access at rest, in transit and where relevant in use, and log enough information to identify each anomaly's occurrence time, detection time and type.

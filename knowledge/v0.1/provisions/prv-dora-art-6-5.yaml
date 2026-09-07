@@ -1,0 +1,18 @@
+id: prv-dora-art-6-5
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Review the full ICT risk management framework after a major incident
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 6(5)
+  segments:
+    - {kind: article, value: "6"}
+    - {kind: paragraph, value: "5"}
+heading: ICT risk management framework
+content_kind: editorial_summary
+content: The documented ICT risk management framework is reviewed at least annually, periodically for microenterprises, and upon a major ICT-related incident, supervisory instruction, or relevant testing or audit conclusion; it is continuously improved from implementation and monitoring lessons, and its review report is submitted to the competent authority on request.

@@ -1,0 +1,20 @@
+id: prv-rts-2024-1774-art-41-2-c-ii
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Include incident and root-cause details in a simplified-framework review report
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 41(2)(c)(ii)
+  segments:
+    - {kind: article, value: "41"}
+    - {kind: paragraph, value: "2"}
+    - {kind: point, value: c}
+    - {kind: subpoint, value: ii}
+heading: Format and content of the report on the review of the simplified ICT risk management framework
+content_kind: editorial_summary
+content: When a simplified-framework review was initiated following ICT-related incidents, its review report describes that reason and lists every such incident with the related root-cause analysis.
