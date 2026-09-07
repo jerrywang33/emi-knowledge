@@ -1,21 +1,21 @@
 # EMI Knowledge Roadmap
 
-- 当前阶段：`v0.2 DORA ICT 事件管理、分类与监管报告已完成`
-- 当前步骤：`v0.2.0` 已发布并通过独立工程使用验收
+- 当前阶段：`v0.3 DORA ICT 业务连续性、备份与恢复`
+- 当前步骤：第 1 步已完成，正在进行第 2 步来源复核
 - 当前固定发布：`v0.2.0`
 - 最后更新：2026-09-07
 
 ## 当前计划
 
-`v0.2` 建设第二条 DORA 完整知识链，覆盖 ICT 事件管理、分类与监管报告，并将现有 ICT 变更管理登记为第一个正式专题。具体范围、步骤和完成条件见 [`v0.2 DORA ICT 事件专题 Roadmap`](v0.2-dora-ict-incidents.md)。
+`v0.3` 建设第三条 DORA 完整知识链，覆盖 ICT 业务连续性、备份与恢复。具体范围、测试边界、步骤和完成条件见 [`v0.3 DORA ICT 业务连续性、备份与恢复 Roadmap`](v0.3-dora-ict-business-continuity-backup-recovery.md)。
 
-专题目录和组合发布采用 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)。`v0.1.0` 发布目录和 Git tag 保持不变。
+当前固定发布仍为 `v0.2.0`。专题目录和组合发布继续采用 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)，工作知识与历史发布的隔离继续采用 [Decision 0003](../docs/decisions/0003-working-knowledge-and-frozen-releases.md)。`v0.1.0` 和 `v0.2.0` 的发布目录及 Git tag 保持不变。
 
-事件专题来源已经通过 [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../docs/sources/dora-ict-incidents-source-review.md) 完成工程复核。该增量记录引用现有 DORA 来源基线，不改写 `v0.1.0` 使用的固定输入。
+第三专题将核对 DORA Articles 11、12、16 及其直接依赖，以及 Regulation (EU) 2024/1774 对完整框架和简化框架下业务连续性、备份与恢复的细化要求。来源复核采用独立增量记录，不改写历史发布固定的来源输入。
 
-两个专题已经登记到 [`knowledge/topics/dora/`](../knowledge/topics/dora/)，事件条款的纳入、上下文和待确认边界见 [ICT 事件专题说明](../docs/dora/topics/ict-incident-management-reporting.md)。
+本专题纳入直接针对 ICT 业务连续性计划和恢复计划的测试要求。DORA Chapter IV 的通用数字运营韧性测试和 TLPT 留给后续独立专题；ICT 第三方依赖只纳入连续性和恢复所需边界，第三方风险管理仍保持独立。
 
-事件专题现有 66 个入口 Requirement，覆盖事件管理、分类、欧盟层报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。13 个 Control、13 个 Verification、26 类证据要求和 5 个工程 Decision 已经闭合全部入口要求。`v0.2.0` 固定两个 Topic、256 个对象和 679 条关系，并已通过人员、Agent 和产品三类独立工程使用验收。
+`v0.2.0` 已固定 ICT 变更管理和 ICT 事件管理两个 Topic、256 个对象和 679 条关系。`v0.3` 将在不改变该历史版本的前提下增加第三个 Topic，并复用已有的主体范围、治理、事件响应、沟通和变更关系。
 
 ## v0.1 阶段目标
 
