@@ -1,0 +1,18 @@
+id: prv-rts-2024-1772-art-9-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Clients, counterparts and transactions materiality thresholds
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 9(1)
+  segments:
+    - {kind: article, value: "9"}
+    - {kind: paragraph, value: "1"}
+heading: Materiality thresholds for determining major incidents
+content_kind: editorial_summary
+content: This threshold is met if affected clients exceed 10 percent of clients using the affected service or 100,000 clients; affected financial counterparts exceed 30 percent of relevant counterparts; affected transaction count or value exceeds 10 percent of the related daily average; or a client or counterpart identified as relevant under Article 1(3) is affected. Unavailable actual values are estimated from comparable reference periods.

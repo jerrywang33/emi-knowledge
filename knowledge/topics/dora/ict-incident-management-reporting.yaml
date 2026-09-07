@@ -1,6 +1,6 @@
 id: dora-ict-incident-management-reporting
 schema_version: 0.1.0
-revision: 2
+revision: 3
 title: DORA ICT incident management, classification, and regulatory reporting
 language: en
 domain: dora
@@ -34,12 +34,16 @@ entry_requirement_ids:
   - req-full-incident-response-trigger-criteria
   - req-full-post-incident-review
   - req-full-significant-and-recurring-incident-analysis
+  - req-incident-classification-assessment
   - req-incident-communications-and-escalation
   - req-incident-early-warning-and-classification
   - req-incident-management-process
   - req-incident-recording-and-root-cause-follow-up
   - req-incident-response-and-secure-restoration
   - req-incident-roles-and-responsibilities
+  - req-major-incident-determination
+  - req-recurring-incident-monthly-assessment
+  - req-significant-cyber-threat-classification
   - req-simplified-framework-review-after-major-incident
   - req-simplified-incident-alert-thresholds
   - req-simplified-incident-review-report-content

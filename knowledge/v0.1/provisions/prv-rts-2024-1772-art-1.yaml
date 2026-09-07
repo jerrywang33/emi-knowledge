@@ -1,0 +1,17 @@
+id: prv-rts-2024-1772-art-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Measure affected clients, counterparts and transactions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 1
+  segments:
+    - {kind: article, value: "1"}
+heading: Clients, financial counterparts and transactions
+content_kind: editorial_summary
+content: Affected-client counts include users unable to use or adversely affected by the service and contractually covered third-party beneficiaries; affected-counterpart counts cover contractual financial counterparts; relevance considers business objectives and market efficiency; transaction counts and values include monetary transactions with at least one Union leg. Unavailable actual values are estimated from comparable reference periods.

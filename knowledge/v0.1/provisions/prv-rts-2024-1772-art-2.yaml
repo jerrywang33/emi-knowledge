@@ -1,0 +1,17 @@
+id: prv-rts-2024-1772-art-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Determine incident reputational impact
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 2
+  segments:
+    - {kind: article, value: "2"}
+heading: Reputational impact
+content_kind: editorial_summary
+content: Reputational impact exists when the incident is reflected in media, generates repetitive complaints from different clients or counterparts, causes or is likely to cause regulatory non-compliance, or causes or is likely to cause a material loss of clients or counterparts; the entity also considers actual or likely visibility for each condition.

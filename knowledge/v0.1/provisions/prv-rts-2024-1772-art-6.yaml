@@ -1,0 +1,17 @@
+id: prv-rts-2024-1772-art-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Determine whether critical services are affected
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 6
+  segments:
+    - {kind: article, value: "6"}
+heading: Criticality of services affected
+content_kind: editorial_summary
+content: Critical services are affected when an incident affects ICT services or systems supporting critical or important functions, affects authorised, registered or supervised financial services, or constitutes successful malicious and unauthorised access to the entity's network and information systems.

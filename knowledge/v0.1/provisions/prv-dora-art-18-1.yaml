@@ -1,0 +1,18 @@
+id: prv-dora-art-18-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Classify ICT incidents using six impact criteria
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 18(1)
+  segments:
+    - {kind: article, value: "18"}
+    - {kind: paragraph, value: "1"}
+heading: Classification of ICT-related incidents and cyber threats
+content_kind: editorial_summary
+content: Financial entities classify ICT-related incidents and determine their impact using affected clients, financial counterparts and transactions plus reputational impact; duration and downtime; geographical spread; data availability, authenticity, integrity and confidentiality losses; affected-service criticality; and direct and indirect economic impact.

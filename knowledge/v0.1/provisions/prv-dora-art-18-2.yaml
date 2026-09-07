@@ -1,0 +1,18 @@
+id: prv-dora-art-18-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Classify cyber threats using potential impact criteria
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 18(2)
+  segments:
+    - {kind: article, value: "18"}
+    - {kind: paragraph, value: "2"}
+heading: Classification of ICT-related incidents and cyber threats
+content_kind: editorial_summary
+content: Financial entities classify cyber threats as significant based on criticality of services, transactions and operations at risk, the number or relevance of targeted clients or financial counterparts, and the geographical spread of areas at risk.

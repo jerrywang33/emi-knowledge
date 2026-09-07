@@ -1,0 +1,17 @@
+id: prv-rts-2024-1772-art-7
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Calculate direct and indirect incident costs and losses
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 7
+  segments:
+    - {kind: article, value: "7"}
+heading: Economic impact
+content_kind: editorial_summary
+content: Economic impact sums incident-caused direct and indirect costs and losses without financial recoveries, including liable stolen assets, replacement or relocation, staff, contractual fees, customer redress, forgone revenue, communication and advisory costs. Day-to-day operation, post-incident business enhancement and insurance premium costs are excluded; available actual values or estimates are used at reporting time.

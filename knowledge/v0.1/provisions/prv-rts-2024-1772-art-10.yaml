@@ -1,0 +1,17 @@
+id: prv-rts-2024-1772-art-10
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Determine whether a cyber threat is significant
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 10
+  segments:
+    - {kind: article, value: "10"}
+heading: High materiality thresholds for determining significant cyber threats
+content_kind: editorial_summary
+content: A cyber threat is significant only when it could affect critical or important functions or specified external parties, has a high probability of materialisation based at least on relevant risks and exploitable vulnerabilities, known actor capability and intent, persistence and incident knowledge, and could meet the critical-services criterion, the clients-counterparts-transactions threshold or the geographical-spread threshold. Other materiality thresholds may also be considered when the threat type and available information support them.

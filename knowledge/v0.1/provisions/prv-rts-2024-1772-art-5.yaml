@@ -1,0 +1,17 @@
+id: prv-rts-2024-1772-art-5
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Assess availability, authenticity, integrity and confidentiality losses
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 5
+  segments:
+    - {kind: article, value: "5"}
+heading: Data losses
+content_kind: editorial_summary
+content: Data-loss assessment considers temporary or permanent inaccessibility or unusability for availability, compromised source trustworthiness for authenticity, unauthorised modification causing inaccuracy or incompleteness for integrity, and unauthorised access or disclosure for confidentiality.

@@ -1,0 +1,18 @@
+id: prv-rts-2024-1772-art-9-5
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Data-loss materiality thresholds
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 9(5)
+  segments:
+    - {kind: article, value: "9"}
+    - {kind: paragraph, value: "5"}
+heading: Materiality thresholds for determining major incidents
+content_kind: editorial_summary
+content: The data-loss threshold is met when availability, authenticity, integrity or confidentiality impact has or will adversely affect business objectives or regulatory compliance, or when successful malicious and unauthorised access to network and information systems outside that condition may result in data loss.

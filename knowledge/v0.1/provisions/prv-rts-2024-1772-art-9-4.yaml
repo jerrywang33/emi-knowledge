@@ -1,0 +1,18 @@
+id: prv-rts-2024-1772-art-9-4
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Geographical spread materiality threshold
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 9(4)
+  segments:
+    - {kind: article, value: "9"}
+    - {kind: paragraph, value: "4"}
+heading: Materiality thresholds for determining major incidents
+content_kind: editorial_summary
+content: The geographical-spread threshold is met when the incident impacts two or more Member States as assessed under Article 4.

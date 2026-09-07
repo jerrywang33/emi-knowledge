@@ -1,0 +1,18 @@
+id: prv-rts-2024-1772-art-9-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Reputational impact materiality threshold
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 9(2)
+  segments:
+    - {kind: article, value: "9"}
+    - {kind: paragraph, value: "2"}
+heading: Materiality thresholds for determining major incidents
+content_kind: editorial_summary
+content: The reputational-impact threshold is met when any reputational-impact condition in Article 2(1)(a) to (d) is fulfilled.

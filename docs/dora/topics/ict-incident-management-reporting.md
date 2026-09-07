@@ -3,7 +3,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 专题标识 | `dora-ict-incident-management-reporting` |
-| 状态 | 草稿，事件管理主干的 Provision 和 Requirement 已完成 |
+| 状态 | 草稿，事件管理与分类的 Provision 和 Requirement 已完成 |
 | 目标发布 | `v0.2.0` |
 | 来源复核 | [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../../sources/dora-ict-incidents-source-review.md) |
 | 机器清单 | [`knowledge/topics/dora/ict-incident-management-reporting.yaml`](../../../knowledge/topics/dora/ict-incident-management-reporting.yaml) |
@@ -109,4 +109,4 @@
 
 ## 6. 下一步
 
-第一批已经建立 DORA 与 Regulation (EU) 2024/1774 事件管理主干的 Provision 和 Requirement，并分别覆盖共同义务、完整 ICT 风险管理框架和简化框架。下一批建立 Regulation (EU) 2024/1772 的分类标准、重大性阈值、重复事件和重大网络威胁条件，后续继续处理报告内容、时限、程序、Malta 操作路径和年度成本与损失指引。
+前两批已经建立事件管理主干及 Regulation (EU) 2024/1772 分类规则的 Provision 和 Requirement，覆盖共同义务、完整和简化 ICT 风险管理分支、分类输入、重大事件组合判断、重复事件及重大网络威胁。下一批处理报告内容、时限和程序，后续补充 Malta 操作路径及年度成本与损失指引。

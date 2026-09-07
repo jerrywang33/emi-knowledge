@@ -1,0 +1,18 @@
+id: prv-rts-2024-1772-art-9-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Economic impact materiality threshold
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 9(6)
+  segments:
+    - {kind: article, value: "9"}
+    - {kind: paragraph, value: "6"}
+heading: Materiality thresholds for determining major incidents
+content_kind: editorial_summary
+content: The economic-impact threshold is met when incident costs and losses have exceeded or are likely to exceed EUR 100,000.

@@ -1,0 +1,18 @@
+id: prv-rts-2024-1772-art-8-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Assess recurring non-major incidents collectively each month
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 8(2)
+  segments:
+    - {kind: article, value: "8"}
+    - {kind: paragraph, value: "2"}
+heading: Major incidents
+content_kind: editorial_summary
+content: Non-major incidents are treated collectively as one major incident when they occur at least twice within six months, share the same apparent root cause and collectively meet Article 8(1). Financial entities assess recurrence monthly; this rule excludes microenterprises and DORA Article 16(1) entities.

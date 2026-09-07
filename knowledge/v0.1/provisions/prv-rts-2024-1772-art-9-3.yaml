@@ -1,0 +1,18 @@
+id: prv-rts-2024-1772-art-9-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Duration and downtime materiality thresholds
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1772
+locator:
+  label: Article 9(3)
+  segments:
+    - {kind: article, value: "9"}
+    - {kind: paragraph, value: "3"}
+heading: Materiality thresholds for determining major incidents
+content_kind: editorial_summary
+content: The duration and downtime threshold is met when incident duration exceeds 24 hours or service downtime exceeds two hours for an ICT service supporting a critical or important function.
