@@ -7,7 +7,7 @@ import { formatIssues, validateKnowledge } from "./validation.js";
 function usage(): string {
   return [
     "Usage:",
-    "  tsx src/cli.ts validate <knowledge-directory> <schema-path>",
+    "  tsx src/cli.ts validate <knowledge-directory> <schema-path> [--allow-incomplete]",
     "  tsx src/cli.ts validate-topics <topic-directory> <topic-schema-path> <knowledge-directory> <knowledge-schema-path>",
     "  tsx src/cli.ts release <release-config-path>",
   ].join("\n");
@@ -17,13 +17,15 @@ export async function main(arguments_: string[]): Promise<number> {
   const [command, ...argumentsList] = arguments_;
 
   if (command === "validate") {
-    const [knowledgeDirectory, schemaPath] = argumentsList;
-    if (!knowledgeDirectory || !schemaPath) {
+    const [knowledgeDirectory, schemaPath, validationMode] = argumentsList;
+    if (!knowledgeDirectory || !schemaPath || (validationMode && validationMode !== "--allow-incomplete")) {
       console.error(usage());
       return 2;
     }
 
-    const report = await validateKnowledge(knowledgeDirectory, schemaPath);
+    const report = await validateKnowledge(knowledgeDirectory, schemaPath, {
+      requireCompleteChain: validationMode !== "--allow-incomplete",
+    });
     if (report.issues.length > 0) {
       console.error(formatIssues(report.issues));
       return 1;
@@ -41,7 +43,9 @@ export async function main(arguments_: string[]): Promise<number> {
       return 2;
     }
 
-    const knowledgeReport = await validateKnowledge(knowledgeDirectory, knowledgeSchemaPath);
+    const knowledgeReport = await validateKnowledge(knowledgeDirectory, knowledgeSchemaPath, {
+      requireCompleteChain: false,
+    });
     if (knowledgeReport.issues.length > 0) {
       console.error(formatIssues(knowledgeReport.issues));
       return 1;

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { promises as fs } from "node:fs";
 import test from "node:test";
 import path from "node:path";
 import { validateKnowledgeGraph } from "../src/graph-validator.js";
@@ -29,19 +30,28 @@ async function loadedEntries(): Promise<LoadedKnowledgeObject[]> {
   return loaded.entries;
 }
 
-test("the v0.1 knowledge chain passes all validation layers", async () => {
-  const report = await validateKnowledge(KNOWLEDGE, SCHEMA);
-  assert.deepEqual(report.issues, []);
-  assert.equal(report.entries.length, 57);
-  assert.equal(report.referenceCount, 147);
-  assert.deepEqual(report.counts, {
-    source: 3,
-    provision: 20,
-    requirement: 15,
-    decision: 3,
-    control: 8,
-    verification: 8,
+async function v01ReleaseEntries(): Promise<LoadedKnowledgeObject[]> {
+  const entries = await loadedEntries();
+  const manifest = JSON.parse(
+    await fs.readFile(path.join(ROOT, "releases/v0.1.0/manifest.json"), "utf8"),
+  ) as { objects: Array<{ id: string }> };
+  const entriesById = new Map(entries.map((entry) => [entry.object.id, entry]));
+  return manifest.objects.map(({ id }) => entriesById.get(id)!);
+}
+
+test("working knowledge passes Schema and repository graph validation", async () => {
+  const report = await validateKnowledge(KNOWLEDGE, SCHEMA, {
+    requireCompleteChain: false,
   });
+  assert.deepEqual(report.issues, []);
+  assert.ok(report.entries.length >= 64);
+  assert.equal(report.counts.source, 10);
+});
+
+test("the v0.1.0 release selection remains a complete knowledge chain", async () => {
+  const entries = await v01ReleaseEntries();
+  assert.equal(entries.length, 57);
+  assert.deepEqual(validateKnowledgeGraph(entries), []);
 });
 
 test("Schema validation rejects unknown fields", async () => {
@@ -56,7 +66,7 @@ test("graph validation rejects duplicate IDs and broken references", async () =>
   entries.push({ ...entries[0]!, object: structuredClone(entries[0]!.object) });
   const requirement = entries.find((entry) => entry.object.type === "requirement")!.object as RequirementObject;
   requirement.provision_refs[0]!.provision_id = "prv-missing-reference";
-  const issues = validateKnowledgeGraph(entries);
+  const issues = validateKnowledgeGraph(entries, { requireCompleteChain: false });
   assert.ok(issues.some((issue) => issue.code === "graph.duplicate_id"));
   assert.ok(issues.some((issue) => issue.code === "graph.missing_reference"));
 });
@@ -67,9 +77,9 @@ test("graph validation rejects target type and approval-state conflicts", async 
   const control = entries.find((entry) => entry.object.type === "control")!.object as ControlObject;
   requirement.provision_refs[0]!.provision_id = control.id;
 
-  const source = entries.find((entry) => entry.object.type === "source")!.object;
+  const source = entries.find((entry) => entry.object.id === "src-eu-reg-2022-2554")!.object;
   source.lifecycle_status = "draft";
-  const issues = validateKnowledgeGraph(entries);
+  const issues = validateKnowledgeGraph(entries, { requireCompleteChain: false });
   assert.ok(issues.some((issue) => issue.code === "graph.reference_type"));
   assert.ok(issues.some((issue) => issue.code === "graph.approved_dependency"));
 });
@@ -83,13 +93,13 @@ test("graph validation requires a decision for confirmed controls", async () => 
       decision.subject_control_ids = decision.subject_control_ids.filter((id) => id !== control.id);
     }
   }
-  const issues = validateKnowledgeGraph(entries);
+  const issues = validateKnowledgeGraph(entries, { requireCompleteChain: false });
   assert.ok(issues.some((issue) =>
     issue.code === "graph.confirmation_without_decision" && issue.path.includes(control.id)));
 });
 
 test("graph validation rejects replacement cycles and incomplete chains", async () => {
-  const entries = cloneEntries(await loadedEntries());
+  const entries = cloneEntries(await v01ReleaseEntries());
   const controls = entries.filter((entry) => entry.object.type === "control").slice(0, 2);
   controls[0]!.object.replaces = [controls[1]!.object.id];
   controls[1]!.object.replaces = [controls[0]!.object.id];
@@ -112,7 +122,7 @@ test("graph validation rejects credential-like material", async () => {
   const entries = cloneEntries(await loadedEntries());
   const tokenLikeValue = ["ghp", "A".repeat(30)].join("_");
   entries[0]!.rawContent += `\naccess_token: ${tokenLikeValue}\n`;
-  const issues = validateKnowledgeGraph(entries);
+  const issues = validateKnowledgeGraph(entries, { requireCompleteChain: false });
   assert.ok(issues.some((issue) => issue.code === "sensitive.github_token"));
   assert.ok(issues.some((issue) => issue.code === "sensitive.credential_field"));
 });

@@ -1,0 +1,33 @@
+id: src-esa-jc-gl-2024-34
+type: source
+schema_version: 0.1.0
+revision: 1
+title: Joint Guidelines on the estimation of aggregated annual costs and losses caused by major ICT-related incidents
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+issuer_name: Joint Committee of the European Supervisory Authorities
+issuer_acronym: ESAs
+jurisdictions: [EU, EEA]
+document_type: esa_guideline
+authority_level: regulatory_guideline
+official_identifier: JC/GL/2024/34
+registry_identifiers:
+  - registry: eba
+    value: JC/GL/2024/34
+version_label: Final English guidelines published in the official EU languages before the 2025-05-19 application date
+official_url: https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/joint-guidelines-estimation-aggregated-annual-costs-and-losses-caused-major-ict-related-incidents
+published_on: "2024-07-17"
+effective_from: null
+applies_from: "2025-05-19"
+effective_to: null
+retrieved_on: "2026-09-07"
+document_status: current
+source_relations:
+  - relation: supplements
+    source_id: src-eu-reg-2022-2554
+  - relation: references
+    source_id: src-eu-reg-2024-1772

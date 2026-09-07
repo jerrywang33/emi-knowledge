@@ -22,6 +22,8 @@
 
 专题清单字段、批准条件和解析规则见 [v0.1 专题清单模型](../model/v0.1-topic-manifest.md)。`v0.2` 发布制品使用独立的 [release artifact Schema](../../schemas/v0.2/release-artifact.schema.json)，保留 `v0.1.0` 使用的 Schema 与生成结果。
 
+持续增加知识对象后的仓库校验和历史发布复现规则见 [Decision 0003](0003-working-knowledge-and-frozen-releases.md)。
+
 ## 目录
 
 ```text

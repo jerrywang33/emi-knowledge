@@ -1,0 +1,35 @@
+id: src-mfsa-major-ict-incident-process-2025
+type: source
+schema_version: 0.1.0
+revision: 1
+title: Major ICT-Related Incident Reporting Process
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+issuer_name: Malta Financial Services Authority
+issuer_acronym: MFSA
+jurisdictions: [MT]
+document_type: regulator_guidance
+authority_level: supervisory_guidance
+official_identifier: MFSA Major ICT-Related Incident Reporting Process, Version 3.00
+registry_identifiers:
+  - registry: mfsa
+    value: major-ict-related-incident-reporting-process-v3-00
+version_label: Version 3.00
+official_url: https://www.mfsa.mt/wp-content/uploads/2022/10/Major-ICT-Related-Incident-Reporting-Process.pdf
+published_on: "2025-03-24"
+effective_from: null
+applies_from: null
+effective_to: null
+retrieved_on: "2026-09-07"
+document_status: current
+source_relations:
+  - relation: references
+    source_id: src-eu-reg-2022-2554
+  - relation: references
+    source_id: src-eu-reg-2025-301
+  - relation: references
+    source_id: src-mfsa-crms-circular-2025

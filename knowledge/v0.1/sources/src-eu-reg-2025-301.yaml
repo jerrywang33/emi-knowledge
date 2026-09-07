@@ -1,0 +1,33 @@
+id: src-eu-reg-2025-301
+type: source
+schema_version: 0.1.0
+revision: 1
+title: Commission Delegated Regulation (EU) 2025/301
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+issuer_name: European Commission
+issuer_acronym: EC
+jurisdictions: [EU]
+document_type: eu_delegated_regulation
+authority_level: binding_law
+official_identifier: Commission Delegated Regulation (EU) 2025/301
+registry_identifiers:
+  - registry: celex
+    value: "32025R0301"
+  - registry: eli
+    value: http://data.europa.eu/eli/reg_del/2025/301/oj
+version_label: English Official Journal text; identified corrigenda do not amend EN
+official_url: https://eur-lex.europa.eu/eli/reg_del/2025/301/oj/eng
+published_on: "2025-02-20"
+effective_from: "2025-03-12"
+applies_from: null
+effective_to: null
+retrieved_on: "2026-09-07"
+document_status: current
+source_relations:
+  - relation: supplements
+    source_id: src-eu-reg-2022-2554

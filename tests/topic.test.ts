@@ -33,7 +33,9 @@ function cloneKnowledgeEntries(entries: LoadedKnowledgeObject[]): LoadedKnowledg
 }
 
 async function validKnowledgeEntries(): Promise<LoadedKnowledgeObject[]> {
-  const report = await validateKnowledge(KNOWLEDGE, KNOWLEDGE_SCHEMA);
+  const report = await validateKnowledge(KNOWLEDGE, KNOWLEDGE_SCHEMA, {
+    requireCompleteChain: false,
+  });
   assert.deepEqual(report.issues, []);
   return report.entries;
 }

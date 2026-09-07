@@ -1,5 +1,10 @@
 import path from "node:path";
-import { countReferences, emptyCounts, validateKnowledgeGraph } from "./graph-validator.js";
+import {
+  countReferences,
+  emptyCounts,
+  validateKnowledgeGraph,
+  type KnowledgeGraphValidationOptions,
+} from "./graph-validator.js";
 import { loadKnowledgeDirectory } from "./loader.js";
 import type { LoadedKnowledgeObject, ValidationIssue, ValidationReport } from "./model.js";
 import { validateSchema } from "./schema-validator.js";
@@ -13,6 +18,7 @@ export async function validateLoadedKnowledge(
   entries: LoadedKnowledgeObject[],
   schemaPath: string,
   initialIssues: ValidationIssue[] = [],
+  options: KnowledgeGraphValidationOptions = {},
 ): Promise<ValidationReport> {
   const issues = [...initialIssues];
   let schemaIssues: ValidationIssue[] = [];
@@ -22,7 +28,7 @@ export async function validateLoadedKnowledge(
     issues.push(...schemaIssues);
   }
   if (issues.length === 0) {
-    issues.push(...validateKnowledgeGraph(entries));
+    issues.push(...validateKnowledgeGraph(entries, options));
   }
 
   const counts = emptyCounts();
@@ -43,9 +49,10 @@ export async function validateLoadedKnowledge(
 export async function validateKnowledge(
   knowledgeDirectory: string,
   schemaPath: string,
+  options: KnowledgeGraphValidationOptions = {},
 ): Promise<ValidationReport> {
   const loaded = await loadKnowledgeDirectory(knowledgeDirectory);
-  return validateLoadedKnowledge(loaded.entries, schemaPath, loaded.issues);
+  return validateLoadedKnowledge(loaded.entries, schemaPath, loaded.issues, options);
 }
 
 export function formatIssues(issues: ValidationIssue[]): string {
@@ -57,4 +64,3 @@ export function assertValid(report: ValidationReport): void {
     throw new Error(`Knowledge validation failed:\n${formatIssues(report.issues)}`);
   }
 }
-

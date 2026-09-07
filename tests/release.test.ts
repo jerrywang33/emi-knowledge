@@ -165,3 +165,17 @@ test("a release rejects draft and unknown topic selections", async (context) => 
     /Unknown topic ID in release config: dora-unknown-topic/,
   );
 });
+
+test("a new release cannot select the whole knowledge directory implicitly", async (context) => {
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-unscoped-release-"));
+  context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
+
+  await assert.rejects(
+    generateRelease({
+      ...CONFIG,
+      release_version: "v9.9.9",
+      output_directory: "releases/nonexistent-unscoped-release",
+    }, ROOT, temporaryDirectory),
+    /new release must define topic_selection/,
+  );
+});

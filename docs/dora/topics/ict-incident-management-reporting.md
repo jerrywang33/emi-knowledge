@@ -109,4 +109,4 @@
 
 ## 6. 下一步
 
-下一步为专题清单增加 JSON Schema、引用校验和按专题解析测试。校验和发布选择能力完成后，再按本矩阵逐批建立 Source、Provision 和 Requirement，确保 `v0.1.0` 固定发布保持不变。
+按照本矩阵逐批建立 Source、Provision 和 Requirement。第一批覆盖 DORA 与 Regulation (EU) 2024/1774 的事件管理主干，第二批覆盖分类和重大性，第三批覆盖报告内容、时限与程序，第四批补充 Malta 操作路径和年度成本与损失指引。

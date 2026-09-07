@@ -424,6 +424,49 @@ async function readInputs(config: ReleaseConfig, repositoryRoot: string): Promis
   return result;
 }
 
+async function readHistoricalObjectLock(
+  config: ReleaseConfig,
+  repositoryRoot: string,
+): Promise<string[] | undefined> {
+  if (config.topic_selection) {
+    return undefined;
+  }
+
+  const manifestPath = resolveRepositoryPath(repositoryRoot, path.join(config.output_directory, "manifest.json"));
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(await fs.readFile(manifestPath, "utf8"));
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return undefined;
+    }
+    throw new Error(`Cannot read historical release manifest ${manifestPath}: ${(error as Error).message}`);
+  }
+
+  if (typeof parsed !== "object" || parsed === null) {
+    throw new Error(`Historical release manifest must contain an object: ${manifestPath}`);
+  }
+  const manifest = parsed as { release_version?: unknown; objects?: unknown };
+  if (manifest.release_version !== config.release_version) {
+    throw new Error(`Historical release manifest version does not match ${config.release_version}: ${manifestPath}`);
+  }
+  if (!Array.isArray(manifest.objects) || manifest.objects.length === 0) {
+    throw new Error(`Historical release manifest has no object selection: ${manifestPath}`);
+  }
+
+  const objectIds = manifest.objects.map((value, index) => {
+    if (typeof value !== "object" || value === null || !("id" in value)
+      || typeof value.id !== "string" || value.id.trim() === "") {
+      throw new Error(`Historical release manifest has an invalid object at index ${index}: ${manifestPath}`);
+    }
+    return value.id;
+  });
+  if (new Set(objectIds).size !== objectIds.length) {
+    throw new Error(`Historical release manifest contains duplicate object IDs: ${manifestPath}`);
+  }
+  return objectIds;
+}
+
 export async function generateRelease(
   config: ReleaseConfig,
   repositoryRoot: string,
@@ -441,7 +484,9 @@ export async function generateRelease(
   }
   const releaseArtifactSchemaId = releaseArtifactSchema.$id;
   const artifactSchemaVersion = config.inputs.release_artifact_schema.version;
-  const report = await validateKnowledge(knowledgeDirectory, schemaPath);
+  const report = await validateKnowledge(knowledgeDirectory, schemaPath, {
+    requireCompleteChain: false,
+  });
   assertValid(report);
 
   let releaseEntries = report.entries;
@@ -482,13 +527,26 @@ export async function generateRelease(
     if (releaseEntries.length === 0) {
       throw new Error("Topic selection resolved to no knowledge objects.");
     }
-    const closureIssues = validateKnowledgeGraph(releaseEntries, {
-      requireCompleteChain: false,
-      allowExternalHistoricalReferences: true,
-    });
-    if (closureIssues.length > 0) {
-      throw new Error(`Selected topic graph is invalid:\n${formatIssues(closureIssues)}`);
+  } else {
+    const historicalObjectIds = await readHistoricalObjectLock(config, root);
+    if (!historicalObjectIds) {
+      throw new Error("A new release must define topic_selection; only an existing historical manifest can lock an object-only release.");
     }
+    const entriesById = new Map(report.entries.map((entry) => [entry.object.id, entry]));
+    releaseEntries = historicalObjectIds.map((objectId) => {
+      const entry = entriesById.get(objectId);
+      if (!entry) {
+        throw new Error(`Historical release object is missing from current knowledge: ${objectId}`);
+      }
+      return entry;
+    });
+  }
+
+  const closureIssues = validateKnowledgeGraph(releaseEntries, {
+    allowExternalHistoricalReferences: true,
+  });
+  if (closureIssues.length > 0) {
+    throw new Error(`Release knowledge graph is invalid:\n${formatIssues(closureIssues)}`);
   }
 
   const nonApproved = releaseEntries.filter((entry) => entry.object.lifecycle_status !== "approved");

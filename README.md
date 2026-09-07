@@ -216,14 +216,16 @@ npm run release:v0.1
 npm run example:query -- req-full-change-controlled-lifecycle
 ```
 
-`npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、知识链缺口或已配置的敏感内容模式都会使命令失败。`npm run release:v0.1` 根据固定配置重新生成发布目录，自动化测试检查生成结果与仓库版本一致。`npm run example:query` 展示产品如何锁定版本并查询一条完整关系链。
+`npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、已批准专题的知识链缺口或已配置的敏感内容模式都会使命令失败。`npm run release:v0.1` 根据历史 Manifest 固定的对象集合重新生成发布目录，自动化测试检查生成结果与仓库版本一致。`npm run example:query` 展示产品如何锁定版本并查询一条完整关系链。
 
 专题清单同时进入 `npm run check`。它会检查清单 Schema、目录命名、入口引用、批准状态和解析结果；字段及组合发布规则见 [v0.1 专题清单模型](docs/model/v0.1-topic-manifest.md)。
+
+当前知识目录可以包含仍在建设的专题对象。仓库检查验证对象结构和引用，已批准 Topic 与发布候选继续执行完整知识链检查。无 Topic 的历史发布通过已固定 Manifest 复现；规则见 [Decision 0003](docs/decisions/0003-working-knowledge-and-frozen-releases.md)。
 
 ## 当前状态
 
 `v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。
 
-当前工作进入 `v0.2`，建设 DORA ICT 事件管理、分类与监管报告完整知识链，并验证两个专题能够共享知识对象、独立检查和组合发布。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
+当前工作进入 `v0.2`，事件专题所需的 9 个 Source 已经建立或复用，正在拆分 Provision 和 Requirement。该阶段同时验证两个专题能够共享知识对象、独立检查和组合发布。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。

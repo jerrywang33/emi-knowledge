@@ -1,0 +1,31 @@
+id: src-mfsa-crms-circular-2025
+type: source
+schema_version: 0.1.0
+revision: 1
+title: Cyber Reporting Management System (CRMS)
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+issuer_name: Malta Financial Services Authority
+issuer_acronym: MFSA
+jurisdictions: [MT]
+document_type: regulator_guidance
+authority_level: official_information
+official_identifier: MFSA Circular dated 17 January 2025
+registry_identifiers:
+  - registry: mfsa
+    value: cyber-reporting-management-system-crms-2025-01-17
+version_label: Circular dated 17 January 2025
+official_url: https://www.mfsa.mt/wp-content/uploads/2025/01/Cyber-Reporting-Management-System-CRMS.pdf
+published_on: "2025-01-17"
+effective_from: null
+applies_from: null
+effective_to: null
+retrieved_on: "2026-09-07"
+document_status: current
+source_relations:
+  - relation: references
+    source_id: src-eu-reg-2022-2554
