@@ -1,0 +1,51 @@
+id: ver-continuity-recovery-objectives-capacity
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify recovery objectives and supporting capacity
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-recovery-objectives-capacity]
+verification_type: test
+execution_mode: hybrid
+executor_role: ict_recovery_architecture_assurance
+operation_mode: scheduled
+trigger_or_frequency: After target or architecture changes and during each applicable continuity test cycle
+preconditions:
+  - Approved BIA, function criticality, recovery targets, dependency mappings, capacity design and test environment are available.
+procedure:
+  - Trace each sampled function from BIA conclusions to approved recovery level, RTO, RPO, service level, dependencies and capacity components.
+  - Inspect capacity assumptions, failure domains, resource limits, third-party constraints and any microenterprise redundancy assessment.
+  - Test the sampled recovery path under an approved relevant extreme scenario and measure achieved recovery time, recovery point, operating duration and service level.
+  - Compare observed results with targets and confirm failures, limitations and residual risks are recorded and authorised without rewriting target values.
+expected_result: Recovery targets are authorised and traceable, supporting capacity is justified, and tested results meet the approved targets or remain explicitly failed with governed remediation or risk disposition.
+failure_criteria:
+  - A recovery target is missing, inherited without approval or disconnected from BIA and dependencies.
+  - Capacity design or microenterprise assessment lacks evidence for an in-scope function.
+  - Observed recovery time, recovery point, duration or service level misses its target and is reported as passed.
+on_failure: Mark the affected capability unready, record measured gaps, route plan or capacity remediation, and retest before readiness approval.
+evidence_requirements:
+  - key: recovery-target-register
+    artifact_type: document
+    description: Approved function-level recovery targets and traceability to BIA, service levels, dependencies and capacity.
+    required_fields: [function identifier, criticality, BIA reference, recovery level, RTO, RPO, service level, dependencies, capacity mapping, assumptions, owner, approver, effective date]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: recovery-capacity-test
+    artifact_type: test_report
+    description: Measured recovery and capacity results for an approved disruption scenario.
+    required_fields: [test identifier, target register version, scenario, environment, components, dependencies, measured RTO, measured recovery point, operating duration, achieved service level, exceptions, residual risks, result, reviewers]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []

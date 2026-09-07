@@ -1,0 +1,51 @@
+id: ver-continuity-plan-lifecycle
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify continuity and recovery plan executability
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-plan-lifecycle]
+verification_type: test
+execution_mode: hybrid
+executor_role: ict_continuity_plan_assurance
+operation_mode: scheduled
+trigger_or_frequency: During each plan test cycle and after a material plan input or version change
+preconditions:
+  - Approved plan versions, function and dependency mappings, recovery objectives, role roster, activation criteria and test scenario are available.
+procedure:
+  - Trace each in-scope function and dependency to one current continuity and response and recovery path and confirm controlled versions are accessible to assigned participants.
+  - Exercise trigger evaluation and authorised activation, escalation, hand-offs, action sequencing and deactivation without granting the test Agent or operator approval authority.
+  - Exercise short-term, long-term, partial and alternative recovery options relevant to the scenario and inspect security, integrity and success gates.
+  - Confirm incident, test, risk, threat, objective, dependency and change inputs update affected plan versions and invalidate stale copies.
+expected_result: In-scope plans are complete, current, accessible and executable by authorised roles through a traceable activation, recovery and deactivation lifecycle.
+failure_criteria:
+  - A function or material dependency lacks a current executable plan path.
+  - Activation, hand-off, recovery or deactivation relies on an unavailable role, ambiguous criterion or stale document.
+  - A recovery option or success gate is missing, bypassed or unsupported by evidence.
+on_failure: Mark affected plans not ready, retain test evidence, open corrective action, and repeat the failed path before plan approval.
+evidence_requirements:
+  - key: controlled-continuity-plan-set
+    artifact_type: document
+    description: Current continuity and response and recovery plans with mappings, criteria, roles, options, gates and change history.
+    required_fields: [plan identifiers, versions, functions, dependencies, recovery objectives, activation criteria, deactivation criteria, roles, actions, hand-offs, recovery options, success gates, approvals, change history]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: plan-execution-test
+    artifact_type: test_report
+    description: Exercise record showing authorised participants can execute the selected plan path and recovery options.
+    required_fields: [test identifier, plan versions, scenario, participants, trigger evidence, decisions, actions, timestamps, hand-offs, options exercised, gates, exceptions, result, corrective actions]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

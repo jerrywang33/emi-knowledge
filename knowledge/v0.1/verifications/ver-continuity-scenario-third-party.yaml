@@ -1,0 +1,51 @@
+id: ver-continuity-scenario-third-party
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify disruption scenario and third-party coverage
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-scenario-third-party]
+verification_type: review
+execution_mode: hybrid
+executor_role: ict_continuity_scenario_assurance
+operation_mode: scheduled
+trigger_or_frequency: Before each continuity test cycle and after material threat, incident, BIA or dependency changes
+preconditions:
+  - Current threat inputs, BIA, ICT risk assessment, incident lessons, dependency register, provider scope and scenario catalogue are available.
+procedure:
+  - Map the scenario catalogue to each source-defined category and record justified applicability, exclusions, tailoring and institution-added scenarios.
+  - Trace selected scenarios to current threats, BIA impacts, functions, assets, people, premises, data locations, infrastructure and third-party dependencies.
+  - Inspect provider failure, insolvency and relevant jurisdictional political-risk coverage and confirm participation, interface or substitute evidence is planned.
+  - Challenge critical assumptions for roles, communications, recovery capacity, operating duration, provider response and restoration of normal operation.
+expected_result: The scenario set covers all relevant source-defined categories, reflects current institution risks and dependencies, and exposes critical assumptions and third-party constraints for testing.
+failure_criteria:
+  - A source-defined scenario category is omitted without approved applicability rationale.
+  - A critical third-party dependency or data-location risk lacks a failure scenario or recorded substitute.
+  - A critical assumption is treated as verified without analysis or test evidence.
+on_failure: Keep scenario coverage incomplete, update the catalogue and test design, and prohibit a complete continuity-readiness conclusion.
+evidence_requirements:
+  - key: continuity-scenario-catalogue
+    artifact_type: document
+    description: Governed scenario catalogue with source mapping, relevance analysis, assumptions, scope and approval.
+    required_fields: [catalogue version, source categories, scenario identifiers, threats, functions, assets, people, premises, providers, data locations, assumptions, applicability, exclusions, rationale, owner, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: third-party-scenario-assessment
+    artifact_type: test_report
+    description: Assessment or exercise results for relevant provider failure and jurisdictional scenarios and interfaces.
+    required_fields: [scenario identifier, providers, services, functions, failure mode, jurisdictional factors, participation, substitute evidence, communication path, response assumptions, results, gaps, residual risk]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []

@@ -1,0 +1,51 @@
+id: ver-continuity-bia-dependency
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify continuity scope, dependencies, and BIA inputs
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-bia-dependency]
+verification_type: review
+execution_mode: hybrid
+executor_role: ict_continuity_assurance
+operation_mode: scheduled
+trigger_or_frequency: At least annually and after an in-scope material change before affected continuity plans or targets are approved
+preconditions:
+  - Current function, asset, dependency and ownership records and the applicable BIA and proportionality decision are available.
+procedure:
+  - Trace a risk-based sample of functions through processes, information and ICT assets, people, premises and relevant ICT third-party dependencies and identify orphan or conflicting records.
+  - Confirm criticality classifications and inventories have authorised ownership, change history, source evidence and an annual or more recent review.
+  - Reperform selected BIA calculations or judgments from approved criteria and source data and inspect quantitative, qualitative and scenario assumptions.
+  - Confirm BIA results drive recovery priorities, objectives and redundancy design and that proportionality rationale does not change the authorised DORA framework branch.
+expected_result: The sampled continuity scope and dependencies are complete and current, BIA conclusions are reproducible and approved, and downstream recovery design traces to those conclusions.
+failure_criteria:
+  - An in-scope function, asset, owner, location or third-party dependency is missing, stale or cannot be traced.
+  - BIA results use unapproved criteria, unsupported inputs or unresolved assumptions as facts.
+  - Recovery priorities or proportionality choices cannot be traced to approved institution evidence.
+on_failure: Mark affected BIA outputs, recovery targets and plans unapproved, open remediation, and repeat the affected review before readiness approval.
+evidence_requirements:
+  - key: function-dependency-inventory
+    artifact_type: document
+    description: Versioned function, asset, ownership and dependency register with criticality and review history.
+    required_fields: [inventory version, function identifiers, criticality, processes, information assets, ICT assets, people, premises, third-party services, owners, source records, last review, changes, approver]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: approved-bia-and-proportionality
+    artifact_type: document
+    description: BIA inputs, method, scenarios, results, assumptions, downstream mappings and approved proportionality rationale.
+    required_fields: [BIA version, scope, criteria, source data, scenarios, impacts, assumptions, criticality conclusions, recovery dependencies, proportionality factors, framework branch, reviewers, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []

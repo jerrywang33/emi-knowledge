@@ -1,0 +1,52 @@
+id: ver-continuity-activation-communication
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify plan activation, crisis communication, and chronology
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-activation-communication]
+verification_type: observation
+execution_mode: hybrid
+executor_role: ict_crisis_assurance
+operation_mode: event_driven
+trigger_or_frequency: During each plan activation or controlled activation exercise and before deactivation and record closure
+preconditions:
+  - Trigger criteria, decision authorities, role roster, communication matrix, approved channels, current facts and activity-record mechanism are available.
+procedure:
+  - Trace trigger evidence to activation, escalation and deactivation decisions and confirm actors had current authority and an Agent did not approve its own conclusion.
+  - Observe crisis role mobilisation and alternate routing where the full-framework non-microenterprise condition applies.
+  - Compare internal and external messages with verified facts, approval, recipients, channels, timestamps and delivery outcomes and inspect handling of conflicts or failed delivery.
+  - Reconstruct the disruption chronology from pre-activation assessment through actions, hand-offs, recovery status, deactivation and follow-up and identify missing or altered records.
+expected_result: Activation and deactivation are authorised and evidence-based, crisis roles and communications operate through approved paths, and one protected chronology supports the complete event.
+failure_criteria:
+  - A plan state was declared by an unauthorised actor or without recorded trigger evidence and rationale.
+  - Required crisis roles, recipients or channels were unavailable without an approved alternate.
+  - Messages used unsupported or inconsistent facts or lack approval and delivery status.
+  - The chronology cannot account for a material decision, action, hand-off or timestamp.
+on_failure: Preserve the pending or restricted state, escalate authority or communication gaps, reconstruct records from controlled sources, and repeat verification before closure.
+evidence_requirements:
+  - key: plan-activation-chronology
+    artifact_type: audit_log
+    description: Protected chronology of trigger assessment, activation, crisis roles, actions, hand-offs, recovery status, deactivation and follow-up.
+    required_fields: [case identifier, plan versions, trigger evidence, decisions, rationale, actors, authority, timestamps, actions, hand-offs, exceptions, recovery status, deactivation, follow-up, record integrity]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: crisis-communication-record
+    artifact_type: document
+    description: Internal and external communication facts, approvals, recipients, channels, delivery outcomes and corrections.
+    required_fields: [case identifier, communication type, fact version, message, approver, recipients, channel, sender, timestamp, delivery outcome, failed delivery, correction, escalation]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

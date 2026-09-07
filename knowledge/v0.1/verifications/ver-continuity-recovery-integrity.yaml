@@ -1,0 +1,51 @@
+id: ver-continuity-recovery-integrity
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify recovery security, integrity, reconciliation, and acceptance
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-recovery-integrity]
+verification_type: test
+execution_mode: hybrid
+executor_role: ict_recovery_assurance
+operation_mode: event_driven
+trigger_or_frequency: During every in-scope recovery and before technical, business or final recovery acceptance
+preconditions:
+  - Recovery case, affected systems and data, approved gate criteria, source and backup records, reconciliation rules, roles and residual-risk process are available.
+procedure:
+  - Confirm technical restoration, functionality, security, integrity, reconciliation and business gates are distinct, complete and assigned to authorised roles.
+  - Reperform sampled integrity checks and reconciliations across restored, reconstructed and external data and trace discrepancies to controlled disposition.
+  - Verify gate results, exceptions, compensating measures and degraded-operation limits use current evidence and preserve failed or unevaluated states.
+  - Confirm final or constrained resumption was approved only by the authorised role after required gates and residual-risk decisions.
+expected_result: Recovery status reflects actual gate results, reconstructed and restored data reconcile within approved criteria, and service resumption has traceable authorised acceptance.
+failure_criteria:
+  - A required gate is missing, bypassed, failed or unevaluated while recovery is reported complete.
+  - Data integrity or reconciliation exceptions lack traceable investigation and authorised disposition.
+  - An Agent or unauthorised actor approved recovery, degraded operation or residual risk.
+on_failure: Keep or return the service to a restricted state, quarantine affected data, escalate discrepancies and repeat failed verification before acceptance.
+evidence_requirements:
+  - key: recovery-gate-record
+    artifact_type: approval_record
+    description: Stage-by-stage recovery checks, results, exceptions, residual risks and authorised acceptance.
+    required_fields: [case identifier, systems and services, gate criteria version, technical result, functionality result, security result, integrity result, business result, exceptions, degraded limits, residual risks, actors, timestamps, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: recovery-reconciliation-report
+    artifact_type: test_report
+    description: Data integrity and reconciliation evidence for restored or reconstructed records across systems and external sources.
+    required_fields: [case identifier, data sets, source versions, checks, repeated checks, reconciliation rules, tolerances, counts, discrepancies, investigations, dispositions, reviewers, result]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

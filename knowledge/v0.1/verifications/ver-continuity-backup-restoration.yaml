@@ -1,0 +1,51 @@
+id: ver-continuity-backup-restoration
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify secure backup and restoration capability
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-backup-restoration]
+verification_type: test
+execution_mode: hybrid
+executor_role: ict_backup_recovery_assurance
+operation_mode: scheduled
+trigger_or_frequency: At least annually for the simplified framework and at the applicable full-framework interval and material-change trigger
+preconditions:
+  - Approved backup policy, inventory, criticality, recovery targets, access rules, separation design, selected backup sets and controlled test environment are available.
+procedure:
+  - Trace sampled systems and data to approved backup scope, schedule, ownership, retention within the backup lifecycle and recovery targets and inspect execution history for missed or failed jobs.
+  - Inspect access controls, integrity protection and physical and logical segregation applicable to the recovery path.
+  - Restore selected backup sets through approved roles and procedures in a controlled environment and measure backup age, completeness, integrity, recovery point and recovery time.
+  - Confirm restored systems and data remain isolated until required security, integrity and functional gates pass and failed sets or paths are quarantined and remediated.
+expected_result: Selected backups are current, protected, separated where required and restorable through authorised procedures within approved recovery and integrity expectations.
+failure_criteria:
+  - An in-scope system or data set lacks an approved backup or has missed execution beyond its schedule.
+  - Backup access, integrity protection or required physical and logical segregation fails.
+  - Restoration cannot complete within approved targets or produces incomplete, corrupt or insecure output.
+on_failure: Quarantine failed backup sets, mark the recovery path unavailable, escalate the coverage gap, remediate and repeat restoration testing.
+evidence_requirements:
+  - key: backup-configuration-and-execution
+    artifact_type: configuration_snapshot
+    description: Approved backup scope and configuration with protected execution and exception history.
+    required_fields: [snapshot time, system and data identifiers, criticality, backup scope, frequency, lifecycle retention, access controls, integrity controls, separation, job history, failures, owner, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: backup-restore-test
+    artifact_type: test_report
+    description: Controlled restore results for selected backup sets and recovery procedures.
+    required_fields: [test identifier, backup identifiers, backup age, environment, authorised actors, procedure version, start and end times, completeness, integrity, recovery point, security checks, result, defects, remediation]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []

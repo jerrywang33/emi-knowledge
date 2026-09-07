@@ -1,0 +1,51 @@
+id: ver-continuity-findings-improvement
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify continuity finding remediation and feedback
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-findings-improvement]
+verification_type: review
+execution_mode: hybrid
+executor_role: ict_continuity_improvement_assurance
+operation_mode: event_driven
+trigger_or_frequency: After each test, activation, relevant incident, audit or supervisory finding and before finding or framework-review closure
+preconditions:
+  - Test and incident results, findings, management reports, remediation records, risk and plan changes, retest evidence and authorised exception records are available.
+procedure:
+  - Trace sampled findings from source evidence through affected requirements, controls, functions, assets and plans to severity, ownership, due date and closure criteria.
+  - Confirm deficiencies and remediation status were reported to the management body through the applicable branch-specific process.
+  - Verify relevant lessons update ICT risk assessment, BIA, recovery objectives, continuity plans, controls, training and framework reviews or have recorded authorised rationale for no change.
+  - Reperform closure checks against corrective-action and retest evidence and confirm unresolved or failed items remain open with residual risk visible.
+expected_result: Findings are complete and traceable, management receives current results, relevant lessons reach downstream risk and plan artifacts, and closure relies on successful retesting and authorised disposition.
+failure_criteria:
+  - A deficiency lacks ownership, due date, affected-object traceability or management reporting.
+  - Relevant lessons do not reach risk assessment, plans, controls, training or framework review and lack approved rationale.
+  - A finding is closed without corrective-action evidence, retest or authorised residual-risk disposition.
+on_failure: Reopen or keep the finding open, correct downstream artifacts and management reporting, escalate overdue actions, and repeat closure review.
+evidence_requirements:
+  - key: continuity-finding-register
+    artifact_type: ticket
+    description: Traceable register of test, activation, incident, audit and supervisory findings and corrective actions.
+    required_fields: [finding identifier, source, affected requirements, controls, functions, assets, plans, evidence, severity, owner, due date, status, dependencies, remediation, closure criteria, residual risk]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: continuity-improvement-and-closure
+    artifact_type: approval_record
+    description: Management reporting, downstream updates, retest results and authorised finding closure or exception.
+    required_fields: [reporting date, management recipients, finding status, risk assessment updates, BIA updates, target updates, plan updates, control updates, training updates, framework review, retest, closure result, approver, exceptions]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []

@@ -1,0 +1,51 @@
+id: ver-continuity-policy-governance
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify continuity policy, governance, access, and audit
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-policy-governance]
+verification_type: inspection
+execution_mode: hybrid
+executor_role: ict_governance_assurance
+operation_mode: scheduled
+trigger_or_frequency: On policy approval or material revision and during the scheduled governance review
+preconditions:
+  - Framework-branch evidence, current policies and plans, role mappings, resource records, emergency-access method and microenterprise status are available.
+procedure:
+  - Confirm the authorised DORA framework branch and inspect that only the matching branch obligations are asserted.
+  - Inspect policy and plan content for required objectives, scope, limits, time horizon, governance, resources, activation criteria, recovery objectives, lifecycle, effectiveness and communication alignment.
+  - Verify management-body or other authorised approval, named ownership, escalation, resource allocation and controlled emergency access using an independent access exercise.
+  - For a non-microenterprise under the full framework, confirm response and recovery plans were reviewed by an independent internal audit function and findings entered remediation.
+expected_result: The applicable continuity policy and plans are complete, approved, owned, resourced and accessible, and any source-defined independent audit requirement is satisfied without self-review.
+failure_criteria:
+  - Framework branch or microenterprise status lacks authorised evidence.
+  - Required policy content, approval, ownership, resources or emergency access is missing or inconsistent.
+  - A required independent audit is absent, not independent or has untracked findings.
+on_failure: Prevent operational-readiness approval, restrict use of the affected policy or plan version, and route governance or audit remediation.
+evidence_requirements:
+  - key: continuity-policy-package
+    artifact_type: document
+    description: Approved policy and plan package with branch, content, ownership, resources, version and emergency-access evidence.
+    required_fields: [framework branch, policy version, scope, exclusions, BIA reference, objectives, activation criteria, recovery objectives, roles, escalation, resources, communication alignment, approval, effective date, emergency access result]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: conditional-audit-record
+    artifact_type: audit_log
+    description: Microenterprise assessment and, where required, independent internal audit scope, conclusion and finding disposition.
+    required_fields: [institution status, status evidence, audit applicability, audit function, independence evidence, plan versions, audit scope, result, findings, remediation references, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []

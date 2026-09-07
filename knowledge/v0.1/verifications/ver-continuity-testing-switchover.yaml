@@ -1,0 +1,51 @@
+id: ver-continuity-testing-switchover
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify continuity test scheduling, execution, and switchover
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-continuity-testing-switchover]
+verification_type: test
+execution_mode: hybrid
+executor_role: ict_operational_resilience_assurance
+operation_mode: scheduled
+trigger_or_frequency: At least annually where required and after each applicable substantive system or major plan change
+preconditions:
+  - Applicable DORA branch, microenterprise status, test inventory, approved test design, scenarios, participants, environments, safety constraints, recovery targets and evidence channels are available.
+procedure:
+  - Compare the test inventory and execution dates with branch-specific annual and change-triggered obligations and identify overdue or incorrectly inherited tests.
+  - Inspect the approved test design and confirm scope, scenarios, assumptions, participants, provider interfaces, data safeguards, objectives, targets, abort criteria and expected evidence.
+  - Observe or reperform selected execution steps and verify staff, systems, services, providers, communication, backup and restoration capabilities and sustained operation for the approved duration.
+  - Where the full-framework non-microenterprise condition applies, verify cyber-attack and primary-to-redundant switchover and restoration of normal operation; record all untested and failed elements separately.
+expected_result: Required tests occur on time, execute safely against approved designs, produce capability-level results and, where applicable, demonstrate controlled switchover and restoration without overstating scope.
+failure_criteria:
+  - A required annual or change-triggered test is overdue, missing or assigned to the wrong framework branch.
+  - Test execution bypasses safety, data, approval, scenario or evidence requirements.
+  - A required capability or conditional switchover is untested or fails while the overall result is reported as passed.
+on_failure: Stop unsafe execution, mark affected capabilities unverified, open corrective actions, and require approved retesting before readiness approval.
+evidence_requirements:
+  - key: continuity-test-register-and-plan
+    artifact_type: document
+    description: Branch-aware test inventory and approved plan covering schedules, triggers, scope, safeguards, scenarios and expected evidence.
+    required_fields: [framework branch, microenterprise status, test identifiers, legal triggers, due dates, plan versions, scope, scenarios, participants, providers, environment, data safeguards, targets, abort criteria, approvals]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: continuity-and-switchover-test-report
+    artifact_type: test_report
+    description: Time-stamped execution and capability results, including conditional switchover and restoration where applicable.
+    required_fields: [test identifier, plan and scenario versions, environment, actors, actions, timestamps, capabilities tested, measured targets, operating duration, switchover applicability, switchover result, restoration result, failures, exceptions, final result]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
