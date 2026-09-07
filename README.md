@@ -1,6 +1,6 @@
 # EMI Knowledge｜面向欧洲 EMI 的法规、业务与技术知识库
 
-EMI Knowledge 正在建设 DORA `v0.1` 工程基线。仓库已经形成首条 ICT 变更管理知识链，尚未发布可用于具体机构业务判断的法律或合规结论。
+EMI Knowledge 当前固定发布为 DORA `v0.1.0` 工程基线，已经形成首条 ICT 变更管理知识链。仓库现进入 `v0.2`，扩展 DORA ICT 事件管理、分类与监管报告专题。当前内容尚未形成可用于具体机构业务判断的法律或合规结论。
 
 当前建设范围、步骤和完成条件见 [Roadmap](roadmap/README.md)。
 
@@ -173,6 +173,8 @@ EMI Knowledge 通过稳定 Schema、版本化文件和后续接口发布知识�
 
 第一阶段采用“DORA 全景目录 + ICT 变更管理完整知识链”。全景目录用于说明 DORA 的主题、文件和条款关系；ICT 变更管理用于跑通从权威来源到控制、检查和证据的完整过程。
 
+`v0.2` 在现有方法上增加 DORA ICT 事件管理、分类与监管报告知识链。专题范围、实施步骤和完成条件见 [`v0.2 Roadmap`](roadmap/v0.2-dora-ict-incidents.md)，目录与发布方式见 [Decision 0002](docs/decisions/0002-dora-topic-index-and-release-composition.md)。
+
 当前来源收集和版本核对结果见 [DORA 权威来源基线](docs/sources/dora-source-baseline.md)。`DORA-SOURCES-2026-08-31-R2` 已经人工复核，可作为 v0.1 后续知识建设的来源输入；具体机构适用性仍需单独判断。
 
 DORA 的正式结构、主题、条款、配套文件和 EMI 适用路径见 [DORA 全景目录](docs/dora/dora-landscape.md)。`DORA-LANDSCAPE-2026-08-31` 已经人工复核，可作为知识模型与 Schema 设计输入。
@@ -197,6 +199,7 @@ DORA 的正式结构、主题、条款、配套文件和 EMI 适用路径见 [DO
 ## 技术选择
 
 - 知识正文优先使用 Markdown，结构化元数据优先使用 YAML 或 JSON，并由 JSON Schema 校验。
+- 六类知识对象继续按类型保存；专题清单单独记录每个专题的范围、入口要求和建设状态。
 - Git 保存版本、评审和变更历史；正式发布版本使用不可变标识和内容摘要。
 - 校验、转换和发布工具使用 TypeScript，知识内容不依赖特定 Agent Runtime 或目标产品。
 - 初始阶段不引入数据库、向量数据库或 RAG 服务。真实使用证明需要后再增加，并确保索引可以从仓库内容重新生成。
@@ -217,6 +220,8 @@ npm run example:query -- req-full-change-controlled-lifecycle
 
 ## 当前状态
 
-`v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。后续通过真实项目使用继续校准内容和接口。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
+`v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。
+
+当前工作进入 `v0.2`，建设 DORA ICT 事件管理、分类与监管报告完整知识链，并验证两个专题能够共享知识对象、独立检查和组合发布。README 中列出的长期内容范围是建设目标，不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。
