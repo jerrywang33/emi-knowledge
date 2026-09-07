@@ -1,0 +1,51 @@
+id: ver-incident-communications
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify incident escalation and stakeholder communications
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-incident-communications]
+verification_type: review
+execution_mode: hybrid
+executor_role: communications_assurance
+operation_mode: event_driven
+trigger_or_frequency: When a communication obligation is triggered and before communication work is closed
+preconditions:
+  - The incident classification, impact assessment, communication plan, escalation matrix, client assessment, and external obligation register are available.
+procedure:
+  - Confirm required senior-management and management-body escalations were complete and timely.
+  - Confirm crisis and public communications used authorised roles, content, recipients, and channels.
+  - Confirm affected-client and significant-threat protection communications match the documented trigger and contain required mitigation information.
+  - Reconcile the case against the external notification register and confirm every parallel obligation has an outcome.
+expected_result: Every triggered communication is authorised, complete, timely, consistent with case facts, and traceable to recipients and delivery evidence.
+failure_criteria:
+  - A required internal escalation, client communication, or parallel notification is missing or overdue.
+  - External content was issued by an unauthorised role or conflicts with verified incident facts.
+  - A potentially applicable obligation lacks a documented decision.
+on_failure: Escalate immediately, correct or issue the communication through an approved channel, record impact, and repeat verification.
+evidence_requirements:
+  - key: communication-plan-and-assessment
+    artifact_type: document
+    description: Applicable communication plan, trigger assessment, recipients, content approval, and external-obligation evaluation.
+    required_fields: [case identifier, plan version, trigger, impact assessment, recipients, content version, approver, obligation outcomes]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data]
+    redaction_required: true
+    open_questions: []
+  - key: communication-delivery-log
+    artifact_type: audit_log
+    description: Trace of internal, client, public, and authority communications issued for the case.
+    required_fields: [case identifier, communication type, content version, sender, recipient set, channel, sent timestamp, delivery result]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data]
+    redaction_required: true
+    open_questions: []

@@ -1,0 +1,55 @@
+id: ctl-incident-classification
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Classify incidents and significant cyber threats
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Every in-scope event has a repeatable, versioned assessment of all prescribed criteria and a traceable conclusion on major-incident or significant-cyber-threat status.
+requirement_refs:
+  - {requirement_id: req-incident-classification-assessment, relation: implements}
+  - {requirement_id: req-major-incident-determination, relation: implements}
+  - {requirement_id: req-significant-cyber-threat-classification, relation: implements}
+control_category: process
+control_functions: [preventive, detective]
+owner_role: incident_classification_owner
+operation_mode: event_driven
+trigger_or_frequency: At initial triage and whenever new information may change a classification conclusion
+implementation_rules:
+  - key: prescribed-criteria-assessment
+    rule_type: process
+    statement: Assess affected clients, financial counterparts and transactions, reputational impact, duration and downtime, geographical spread, data losses, affected-service criticality, and economic impact using the current prescribed methods, and label every estimated value.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The case is an ICT-related incident.
+    failure_handling: Keep the classification open, state unavailable inputs, and apply conservative escalation until the required criteria can be assessed.
+    open_questions: []
+  - key: major-incident-combination-rule
+    rule_type: process
+    statement: Classify an ICT-related incident as major only through the prescribed critical-service condition and malicious-access or multi-threshold combination rule, using the current legal thresholds without substituting internal severity thresholds.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The case is an ICT-related incident.
+    failure_handling: Reject an unsupported conclusion, retain the previous reportability state, and require reassessment by the classification owner.
+    open_questions: []
+  - key: significant-threat-rule
+    rule_type: process
+    statement: Classify a cyber threat as significant only after recording the potentially affected functions or parties, high-probability factors, and the applicable hypothetical materiality condition prescribed for significant cyber threats.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The case concerns a cyber threat that has not materialised as an incident.
+    failure_handling: Reject the significant-threat classification until all prescribed conditions are evidenced.
+    open_questions: []
+  - key: classification-version-and-history
+    rule_type: data
+    statement: Record assessment inputs, calculation results, source-rule version, assessor, timestamps, conclusion, and every reassessment without overwriting prior conclusions.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Treat the classification as unverified and prevent closure until a complete history is restored.
+    open_questions: []

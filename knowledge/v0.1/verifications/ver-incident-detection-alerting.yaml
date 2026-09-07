@@ -1,0 +1,51 @@
+id: ver-incident-detection-alerting
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Test incident detection, logging, triage, and alerting
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-incident-detection-alerting]
+verification_type: test
+execution_mode: hybrid
+executor_role: security_monitoring_assurance
+operation_mode: scheduled
+trigger_or_frequency: At the approved monitoring-test frequency and after material monitoring changes
+preconditions:
+  - The asset inventory, critical-function mapping, monitoring coverage, logging standard, thresholds, and escalation routes are available.
+procedure:
+  - Map required monitoring inputs and simplified-framework log categories to covered assets and identify gaps.
+  - Inject or replay representative malicious activity, data-loss, availability, operational-impact, vulnerability, user-report, and third-party indicators.
+  - Confirm each applicable indicator is logged, triaged, prioritised, linked to an incident case, and sent to the responsible role inside and outside working hours.
+  - Confirm failures and inconclusive automated decisions trigger manual triage and preserve source data.
+expected_result: Required inputs and assets are covered, representative indicators create complete alerts, and failed or inconclusive detection enters a controlled fallback path.
+failure_criteria:
+  - A required input, critical asset, or simplified-framework event category lacks effective monitoring or logging.
+  - A representative indicator does not create a timely, prioritised, traceable alert.
+  - Out-of-hours or manual fallback processing fails.
+on_failure: Record the control gap, apply compensating monitoring, prioritise critical coverage, remediate, and repeat the failed test.
+evidence_requirements:
+  - key: monitoring-configuration
+    artifact_type: configuration_snapshot
+    description: Versioned monitoring, logging, threshold, ownership, and coverage configuration used by the test.
+    required_fields: [configuration version, asset coverage, input sources, log categories, thresholds, priorities, owners, out-of-hours route]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: detection-test-results
+    artifact_type: test_report
+    description: Results and alert traces for each representative detection scenario.
+    required_fields: [test identifier, scenario, injected indicator, expected result, actual result, timestamps, alert identifier, incident case identifier, defects]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []

@@ -1,0 +1,51 @@
+id: ver-incident-trend-management-reporting
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify recurring-incident analysis and management reporting
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-incident-trend-management-reporting]
+verification_type: query
+execution_mode: hybrid
+executor_role: ict_risk_assurance
+operation_mode: scheduled
+trigger_or_frequency: After each monthly assessment and each annual management-body report
+preconditions:
+  - The complete incident population, root-cause links, classification data, trend output, and management reporting calendar are available.
+procedure:
+  - Reconcile the monthly population and identify all qualifying two-or-more incident groups in the six-month lookback period.
+  - Reperform the aggregate major-incident calculation for each qualifying group and trace any major result to reporting assessment.
+  - Confirm significant and recurring pattern analysis covers the prescribed dimensions and links findings to action.
+  - Confirm senior ICT staff provided complete findings and recommendations to the management body within the annual cycle and retained its decisions.
+expected_result: Monthly recurring assessments are complete and reproducible, trends drive action, and annual findings reach the management body with recorded outcomes.
+failure_criteria:
+  - The monthly population or six-month grouping is incomplete.
+  - A collectively major group lacks a reporting assessment.
+  - Trend dimensions, recommendations, management-body delivery, or resulting decisions are missing.
+on_failure: Complete the missing assessment or report, escalate potentially reportable groups immediately, and repeat verification.
+evidence_requirements:
+  - key: recurring-incident-analysis
+    artifact_type: document
+    description: Monthly recurring-incident population, grouping, calculations, trends, and resulting actions.
+    required_fields: [assessment period, incident population, six-month lookback, root-cause groups, aggregate criteria, conclusions, reporting referrals, actions]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data]
+    redaction_required: true
+    open_questions: []
+  - key: annual-management-report
+    artifact_type: document
+    description: Annual incident-derived findings and recommendations delivered by senior ICT staff to the management body.
+    required_fields: [reporting period, findings, trends, risks, recommendations, unresolved issues, presenter role, meeting date, management decisions]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []

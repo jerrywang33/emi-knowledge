@@ -1,0 +1,51 @@
+id: ver-post-incident-review-learning
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify post-incident review and learning
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-post-incident-review-learning]
+verification_type: review
+execution_mode: manual
+executor_role: ict_risk_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before closing each required post-incident and framework review
+preconditions:
+  - The complete incident record, response chronology, classification, root-cause analysis, framework branch, risks, controls, and corrective actions are available.
+procedure:
+  - Confirm the review covers causes, procedure adherence, response effectiveness, impact assessment, forensics where appropriate, escalation, communication, containment, and recovery.
+  - Trace each supported finding to an owned corrective action, risk update, control update, or justified no-action decision.
+  - Confirm the applicable full- or simplified-framework review requirements and report content are complete.
+  - Confirm the review report can be supplied to the competent authority when required.
+expected_result: The review is evidence-based, complete for the applicable framework, and every finding has a traceable risk, control, or corrective-action outcome.
+failure_criteria:
+  - Root causes or a required effectiveness area are missing or unsupported.
+  - A finding lacks an owner, due date, and treatment outcome.
+  - Required full- or simplified-framework review content is absent.
+on_failure: Keep the review open, assign remediation, escalate overdue items, and repeat assurance before closure.
+evidence_requirements:
+  - key: post-incident-review
+    artifact_type: document
+    description: Root-cause, procedure, effectiveness, and lesson review for the incident.
+    required_fields: [case identifier, framework branch, disruption causes, root causes, review areas, findings, evidence links, reviewers, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: improvement-and-risk-record
+    artifact_type: document
+    description: Traceability from findings to risk, framework, control, and corrective-action updates.
+    required_fields: [finding identifier, target record, action, owner, due date, status, residual risk, decision]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []

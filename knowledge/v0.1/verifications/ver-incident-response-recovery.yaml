@@ -1,0 +1,51 @@
+id: ver-incident-response-recovery
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify incident containment and secure restoration
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-incident-response-recovery]
+verification_type: test
+execution_mode: hybrid
+executor_role: incident_response_assurance
+operation_mode: event_driven
+trigger_or_frequency: During response and before declaring affected services restored
+preconditions:
+  - The incident case, applicable playbook, affected services, current impact estimate, and restoration criteria are available.
+procedure:
+  - Confirm the selected containment and recovery arrangements match the recorded incident facts and were activated with timestamps.
+  - Check impact, damage, loss, estimate status, and material updates are current and traceable.
+  - Test service functionality, security, data integrity, and temporary risk treatments against the approved restoration criteria.
+  - Confirm material response and recovery changes reached communication and reporting owners.
+expected_result: Containment is controlled, estimates are current, and service is restored only after all approved operational and security criteria pass.
+failure_criteria:
+  - Required containment or recovery actions are missing, unsuitable, or untraceable.
+  - Impact information is stale or mixes estimated and actual values.
+  - Service restoration is declared with a failed or unevaluated security, integrity, or functionality criterion.
+on_failure: Keep or return the service to a restricted state, escalate the failed criterion, continue recovery, and repeat verification.
+evidence_requirements:
+  - key: response-and-recovery-timeline
+    artifact_type: ticket
+    description: Chronology of containment, recovery, impact estimates, material updates, and decisions.
+    required_fields: [case identifier, playbook version, actions, actors, timestamps, impact estimates, estimate status, update recipients, exceptions]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: secure-restoration-test
+    artifact_type: test_report
+    description: Results for functionality, security, integrity, and temporary-treatment checks before restoration.
+    required_fields: [case identifier, affected service, criteria version, tests, results, residual risks, approver, restoration timestamp]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, restricted]
+    redaction_required: true
+    open_questions: []

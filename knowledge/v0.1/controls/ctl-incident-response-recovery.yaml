@@ -1,0 +1,55 @@
+id: ctl-incident-response-recovery
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Contain incidents and restore services securely
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Each incident activates suitable containment and recovery arrangements, limits impact, maintains current impact estimates, and returns affected services to a verified operational and secure state.
+requirement_refs:
+  - {requirement_id: req-incident-response-and-secure-restoration, relation: implements}
+  - {requirement_id: req-full-incident-response-recovery-arrangements, relation: implements}
+control_category: operational
+control_functions: [corrective, recovery]
+owner_role: ict_incident_response_owner
+operation_mode: event_driven
+trigger_or_frequency: For every incident from response activation until secure service restoration
+implementation_rules:
+  - key: containment-and-recovery-activation
+    rule_type: operations
+    statement: Select and activate approved containment and recovery arrangements according to incident type, severity, affected-service criticality, and current evidence, while recording decisions and timestamps.
+    parameter_status: institution_defined
+    parameters:
+      - {name: containment-and-recovery-playbooks, value: null, unit: null}
+    conditions: []
+    failure_handling: Escalate to crisis management, apply the safest available containment, and document unavailable or ineffective arrangements.
+    open_questions: []
+  - key: impact-damage-and-loss-estimate
+    rule_type: data
+    statement: Establish a preliminary impact, damage, and loss estimate and update it as reliable facts become available, keeping estimates distinguishable from actual values.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Mark the estimate incomplete, state the missing inputs, and continue collection under the response owner.
+    open_questions: []
+  - key: secure-restoration-gate
+    rule_type: process
+    statement: Return an affected service to normal operation only after confirming service functionality, security, data integrity, and any required temporary risk treatment.
+    parameter_status: institution_defined
+    parameters:
+      - {name: secure-restoration-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep the service restricted or invoke an approved degraded mode, record the failed criterion, and continue recovery.
+    open_questions: []
+  - key: response-status-updates
+    rule_type: process
+    statement: Provide current response, impact, recovery, and residual-risk information to the communication and regulatory-reporting controls whenever material facts change.
+    parameter_status: institution_defined
+    parameters:
+      - {name: material-update-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Escalate stale or conflicting status information and prevent unsupported closure or external reporting.
+    open_questions: []

@@ -1,0 +1,51 @@
+id: ctl-incident-trend-management-reporting
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Analyse recurring incidents and report findings to management
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Recurring and significant incident patterns are assessed on schedule, collectively reclassified when required, and reflected in at least annual findings and recommendations to the management body.
+requirement_refs:
+  - {requirement_id: req-recurring-incident-monthly-assessment, relation: implements}
+  - {requirement_id: req-full-significant-and-recurring-incident-analysis, relation: implements}
+  - {requirement_id: req-full-annual-incident-findings-report, relation: implements}
+control_category: governance
+control_functions: [detective, corrective]
+owner_role: ict_risk_reporting_owner
+operation_mode: scheduled
+trigger_or_frequency: Monthly for recurring-incident assessment and at least annually for management-body reporting
+implementation_rules:
+  - key: monthly-recurring-assessment
+    rule_type: process
+    statement: Each month, identify individually non-major incidents occurring at least twice within six months with the same apparent root cause, aggregate their prescribed classification inputs, and apply the major-incident combination rule.
+    parameter_status: fixed
+    parameters:
+      - {name: assessment-frequency, value: 1, unit: month}
+      - {name: lookback-period, value: 6, unit: months}
+      - {name: minimum-occurrences, value: 2, unit: incidents}
+    conditions:
+      - The institution is not a microenterprise and the full ICT risk management framework applies.
+    failure_handling: Complete the overdue assessment immediately, preserve the original due date, and trigger reporting assessment for any collectively major result.
+    open_questions: []
+  - key: significant-and-recurring-pattern-analysis
+    rule_type: process
+    statement: Analyse significant and recurring incidents by number, occurrence, frequency, type, magnitude, evolution, and pattern, and link supported findings to risks and corrective actions.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Record the analysis gap and require completion before the next management report.
+    open_questions: []
+  - key: annual-management-body-report
+    rule_type: process
+    statement: Senior ICT staff shall report incident-derived ICT risk findings, trends, unresolved issues, and recommendations to the management body at least annually and retain the resulting decisions.
+    parameter_status: fixed
+    parameters:
+      - {name: minimum-report-frequency, value: 1, unit: year}
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Escalate an overdue or incomplete report and schedule a replacement management-body review.
+    open_questions: []

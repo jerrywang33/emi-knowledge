@@ -1,0 +1,39 @@
+id: dec-incident-operational-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Engineering baseline for governed incident operations
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-incident-governance-records
+  - ctl-incident-detection-alerting
+  - ctl-incident-response-recovery
+  - ctl-incident-communications
+question: Which reusable engineering pattern should govern incident intake, monitoring, response, recovery, records, and communications?
+conclusion: Use one stable incident case, explicit scope and role routing, protected chronology, monitored trigger inputs, controlled response and secure-restoration gates, and traceable communication outcomes.
+rationale: This pattern connects event detection to action and evidence while preserving institution-specific systems, roles, alert thresholds, internal targets, communication channels, and retention schedules as configuration.
+basis_provision_ids:
+  - prv-dora-art-17-1
+  - prv-dora-art-17-2
+  - prv-dora-art-17-3-a-b
+  - prv-dora-art-17-3-c
+  - prv-dora-art-17-3-d-e
+  - prv-dora-art-17-3-f
+  - prv-rts-2024-1774-art-22-a-c
+  - prv-rts-2024-1774-art-22-d
+  - prv-rts-2024-1774-art-23-1-2-a-b
+assumptions:
+  - An institution maps the generic owner roles and process interfaces to authorised functions before operational use.
+conditions:
+  - Statutory scope and conditions remain governed by the referenced Requirements and Provisions.
+  - Internal targets, systems, channels, access rules, and retention schedules require institution approval.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-07"
+effective_from: "2026-09-07"
+effective_to: null
+review_due_on: null

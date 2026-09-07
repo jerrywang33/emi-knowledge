@@ -1,0 +1,64 @@
+id: ctl-incident-detection-alerting
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Detect, log, triage, and alert on incident indicators
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Relevant monitoring inputs and early-warning indicators produce timely, traceable, prioritised alerts and initiate the applicable incident response process.
+requirement_refs:
+  - {requirement_id: req-incident-early-warning-and-classification, relation: implements}
+  - {requirement_id: req-full-incident-alerting-and-prioritisation, relation: implements}
+  - {requirement_id: req-full-incident-detection-and-monitoring, relation: implements}
+  - {requirement_id: req-full-incident-response-trigger-criteria, relation: implements}
+  - {requirement_id: req-simplified-incident-alert-thresholds, relation: implements}
+  - {requirement_id: req-simplified-security-event-logging, relation: implements}
+  - {requirement_id: req-simplified-security-monitoring, relation: implements}
+  - {requirement_id: req-simplified-threat-monitoring, relation: implements}
+control_category: technical
+control_functions: [preventive, detective]
+owner_role: security_monitoring_owner
+operation_mode: continuous
+trigger_or_frequency: Continuous monitoring with regular mechanism tests and immediate processing of generated alerts
+implementation_rules:
+  - key: monitoring-input-coverage
+    rule_type: configuration
+    statement: Monitor relevant ICT and business information, security and performance logs, user reports, current cyber-threat information, public vulnerabilities, and third-party incident notifications, with explicit coverage of assets supporting critical or important functions.
+    parameter_status: institution_defined
+    parameters:
+      - {name: monitoring-coverage-register, value: null, unit: null}
+      - {name: mechanism-test-frequency, value: null, unit: null}
+    conditions: []
+    failure_handling: Record the monitoring gap, apply compensating detection, and escalate uncovered critical or important assets immediately.
+    open_questions: []
+  - key: simplified-event-logging
+    rule_type: data
+    statement: For each ICT asset in the simplified-framework scope, log logical and physical access, ICT operations, system and network traffic, and ICT change events at detail aligned with the log purpose and asset use.
+    parameter_status: institution_defined
+    parameters:
+      - {name: simplified-logging-standard, value: null, unit: null}
+    conditions:
+      - The simplified ICT risk management framework applies.
+    failure_handling: Flag the asset as lacking required telemetry and apply approved compensating monitoring until logging is restored.
+    open_questions: []
+  - key: response-trigger-criteria
+    rule_type: configuration
+    statement: Evaluate malicious activity or compromise, data availability, authenticity, integrity and confidentiality loss, transaction or operational impact, system or network unavailability, and affected-service criticality when deciding whether to trigger response.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Trigger manual triage when required input is unavailable or the automated decision is inconclusive.
+    open_questions: []
+  - key: alert-thresholds-and-priority
+    rule_type: operations
+    statement: Apply approved alert thresholds, notify responsible staff automatically, and assign initial category, priority, severity, and affected-service criticality so the response can operate inside and outside working hours.
+    parameter_status: institution_defined
+    parameters:
+      - {name: response-alert-thresholds, value: null, unit: null}
+      - {name: expected-resolution-targets, value: null, unit: null}
+      - {name: out-of-hours-escalation-route, value: null, unit: null}
+    conditions: []
+    failure_handling: Create a highest-priority manual alert, notify the monitoring owner, and preserve the unprocessed indicator for investigation.
+    open_questions: []

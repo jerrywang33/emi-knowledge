@@ -1,0 +1,73 @@
+id: ctl-incident-communications
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Coordinate incident escalation and stakeholder communications
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Incident information reaches authorised internal decision-makers, affected clients, external stakeholders, and every separately competent authority through approved, timely, and traceable communication paths.
+requirement_refs:
+  - {requirement_id: req-incident-communications-and-escalation, relation: implements}
+  - {requirement_id: req-full-crisis-communication, relation: implements}
+  - {requirement_id: req-major-incident-client-notification, relation: implements}
+  - {requirement_id: req-significant-threat-client-protection-information, relation: implements}
+  - {requirement_id: req-malta-parallel-incident-notifications, relation: implements}
+control_category: process
+control_functions: [preventive, corrective]
+owner_role: incident_communications_owner
+operation_mode: event_driven
+trigger_or_frequency: When escalation, client impact, crisis communication, or an external notification obligation is triggered
+implementation_rules:
+  - key: internal-escalation
+    rule_type: process
+    statement: Escalate incidents through approved severity and criticality paths; report at least every major ICT-related incident to senior management and provide the management body with impact, response, and resulting control information.
+    parameter_status: institution_defined
+    parameters:
+      - {name: internal-escalation-matrix, value: null, unit: null}
+      - {name: management-body-reporting-route, value: null, unit: null}
+    conditions: []
+    failure_handling: Use the emergency escalation route, record the missed target, and notify the communication owner.
+    open_questions: []
+  - key: crisis-communication-arrangements
+    rule_type: process
+    statement: Maintain approved internal and external crisis communication plans, distinguish active response staff from information recipients, and assign an authorised person for incident communication and public or media functions.
+    parameter_status: institution_defined
+    parameters:
+      - {name: crisis-communication-plan, value: null, unit: null}
+      - {name: authorised-public-communication-role, value: null, unit: null}
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Restrict unapproved external communication and escalate to the crisis owner.
+    open_questions: []
+  - key: affected-client-notification
+    rule_type: process
+    statement: Notify clients without undue delay when a major ICT-related incident affects their financial interests, identify the adverse effect, and explain mitigation measures taken.
+    parameter_status: institution_defined
+    parameters:
+      - {name: client-impact-assessment-owner, value: null, unit: null}
+      - {name: approved-client-communication-channels, value: null, unit: null}
+    conditions:
+      - A major ICT-related incident affects client financial interests.
+    failure_handling: Escalate the overdue notification, use an approved fallback channel, and record affected clients and corrective action.
+    open_questions: []
+  - key: significant-threat-client-protection
+    rule_type: process
+    statement: Where applicable, provide potentially affected clients with actionable protection measures for a significant cyber threat and record the applicability assessment.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The case is classified as a significant cyber threat and client protection information is applicable.
+    failure_handling: Escalate the missing protection information and prevent communication closure until addressed.
+    open_questions: []
+  - key: parallel-obligation-register
+    rule_type: process
+    statement: Evaluate every case against the institution's current external notification register and complete each Malta or other competent-authority notification that remains applicable alongside DORA.
+    parameter_status: institution_defined
+    parameters:
+      - {name: external-notification-obligation-register, value: null, unit: null}
+    conditions:
+      - The institution is subject to an external notification obligation that DORA has not superseded.
+    failure_handling: Escalate the missed or uncertain obligation to the authorised regulatory liaison and preserve the assessment record.
+    open_questions: []

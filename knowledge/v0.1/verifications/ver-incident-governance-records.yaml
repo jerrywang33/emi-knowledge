@@ -1,0 +1,51 @@
+id: ver-incident-governance-records
+type: verification
+schema_version: 0.1.0
+revision: 1
+title: Verify incident governance, records, and evidence handling
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+control_ids: [ctl-incident-governance-records]
+verification_type: review
+execution_mode: hybrid
+executor_role: incident_control_assurance
+operation_mode: event_driven
+trigger_or_frequency: Before case closure and when the incident policy, role map, record controls, or retention schedule changes
+preconditions:
+  - The incident policy, role map, case record, evidence inventory, and retention schedule are available.
+procedure:
+  - Confirm the case scope includes applicable ICT, threat, and payment-event paths and has one stable identifier.
+  - Confirm activated roles, contacts, chronology, decisions, actions, and root-cause follow-up are complete.
+  - Inspect access and integrity controls for the record and linked evidence.
+  - Confirm the applied retention outcome follows the approved schedule, criticality basis, recurring-assessment need, and legal hold status.
+expected_result: The case is governed, complete, protected, traceable, and subject to an approved evidence-retention outcome.
+failure_criteria:
+  - An in-scope event lacks a stable case, owner, or applicable process path.
+  - Required chronology or root-cause follow-up data is missing or can be altered without trace.
+  - Evidence access, integrity, retention, or disposal conflicts with the approved controls.
+on_failure: Prevent closure or disposal, preserve available evidence, escalate the gap, remediate it, and repeat verification.
+evidence_requirements:
+  - key: governed-incident-case
+    artifact_type: ticket
+    description: The complete governed record for the event, threat, or payment-related incident.
+    required_fields: [case identifier, event scope, occurrence time, detection time, event type, activated roles, chronology, decisions, actions, root-cause status, evidence links]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential, personal_data, restricted]
+    redaction_required: true
+    open_questions: []
+  - key: governance-and-retention-record
+    artifact_type: document
+    description: Approved policy, responsibility map, contacts, record protection, and retention decision applicable to the case.
+    required_fields: [policy version, role map version, contact register version, integrity control, access control, retention rule, approval]
+    source_status: institution_defined
+    source_system: null
+    retention_status: institution_defined
+    retention_period: null
+    data_classifications: [internal, confidential]
+    redaction_required: true
+    open_questions: []

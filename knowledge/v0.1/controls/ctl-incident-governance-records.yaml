@@ -1,0 +1,62 @@
+id: ctl-incident-governance-records
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Govern incident scope, ownership, records, and evidence
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Every in-scope ICT incident, significant cyber threat, and payment-related operational or security incident enters one governed process with named ownership, a protected record, root-cause follow-up, and justified evidence retention.
+requirement_refs:
+  - {requirement_id: req-incident-management-process, relation: implements}
+  - {requirement_id: req-incident-recording-and-root-cause-follow-up, relation: implements}
+  - {requirement_id: req-incident-roles-and-responsibilities, relation: implements}
+  - {requirement_id: req-full-incident-policy, relation: implements}
+  - {requirement_id: req-full-anomaly-record-protection, relation: implements}
+  - {requirement_id: req-full-incident-evidence-retention, relation: implements}
+  - {requirement_id: req-payment-incident-chapter-three-application, relation: implements}
+control_category: governance
+control_functions: [preventive, detective, corrective]
+owner_role: ict_incident_governance_owner
+operation_mode: event_driven
+trigger_or_frequency: When an in-scope event or threat is detected and throughout its lifecycle
+implementation_rules:
+  - key: governed-scope-and-case
+    rule_type: process
+    statement: Route every ICT-related incident, significant cyber threat, and operational or security payment-related incident, including a non-ICT payment incident, into the governed incident process and assign one stable case identifier.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Create or reconcile the missing case immediately, preserve the original detection time, and escalate the intake failure.
+    open_questions: []
+  - key: policy-roles-and-contacts
+    rule_type: process
+    statement: Maintain an approved incident policy, scenario-specific responsibility map, and current internal and external ICT operations security contacts; record the roles activated for each case.
+    parameter_status: institution_defined
+    parameters:
+      - {name: approved-incident-role-map, value: null, unit: null}
+      - {name: contact-register-owner, value: null, unit: null}
+    conditions: []
+    failure_handling: Escalate to the governance owner and prevent case closure until ownership and contacts are recorded.
+    open_questions: []
+  - key: protected-chronology
+    rule_type: data
+    statement: Preserve a tamper-evident chronology containing occurrence time, detection time, event type, material decisions, status changes, actions, evidence links, and root-cause follow-up, with protection against unauthorised access at rest, in transit, and where relevant in use.
+    parameter_status: institution_defined
+    parameters:
+      - {name: incident-record-system, value: null, unit: null}
+      - {name: integrity-protection-method, value: null, unit: null}
+    conditions: []
+    failure_handling: Restrict access, preserve available source records, open an integrity investigation, and reconstruct the chronology under approval.
+    open_questions: []
+  - key: evidence-retention
+    rule_type: data
+    statement: Apply an approved retention schedule that keeps incident evidence securely only as long as necessary, proportionate to affected-function, process, and asset criticality, while supporting recurring-incident assessment and applicable Union-law obligations.
+    parameter_status: institution_defined
+    parameters:
+      - {name: incident-evidence-retention-schedule, value: null, unit: null}
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Suspend deletion for the affected case, notify the record owner, and resolve the schedule or legal-hold conflict before disposal.
+    open_questions: []

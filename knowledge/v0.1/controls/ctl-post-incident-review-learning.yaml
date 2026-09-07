@@ -1,0 +1,60 @@
+id: ctl-post-incident-review-learning
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Complete post-incident review and apply lessons
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Every applicable major incident produces a complete root-cause and effectiveness review, updates risks and controls, and supports the required full- or simplified-framework review record.
+requirement_refs:
+  - {requirement_id: req-full-framework-review-after-major-incident, relation: implements}
+  - {requirement_id: req-full-incident-lessons-risk-assessment, relation: implements}
+  - {requirement_id: req-full-post-incident-review, relation: implements}
+  - {requirement_id: req-simplified-framework-review-after-major-incident, relation: implements}
+  - {requirement_id: req-simplified-incident-review-report-content, relation: implements}
+  - {requirement_id: req-simplified-incident-risk-assessment, relation: implements}
+  - {requirement_id: req-incident-recording-and-root-cause-follow-up, relation: supports}
+control_category: governance
+control_functions: [detective, corrective]
+owner_role: post_incident_review_owner
+operation_mode: event_driven
+trigger_or_frequency: After every major incident and after any other incident selected by the approved review criteria
+implementation_rules:
+  - key: root-cause-and-effectiveness-review
+    rule_type: process
+    statement: Identify and document root causes, disruption causes, procedure adherence, and the effectiveness of alert response, impact and severity assessment, forensics where appropriate, escalation, communication, containment, and recovery.
+    parameter_status: institution_defined
+    parameters:
+      - {name: post-incident-review-criteria, value: null, unit: null}
+      - {name: review-completion-target, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep corrective actions and the incident review open, escalate overdue analysis, and record unresolved evidence gaps.
+    open_questions: []
+  - key: lessons-and-risk-updates
+    rule_type: process
+    statement: Convert supported findings into owned improvements and incorporate relevant incident frequency, type, magnitude, evolution, patterns, and recovery challenges into ICT risk assessments and framework reviews.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Reject review closure until findings have an approved treatment, owner, due date, and target risk or control record.
+    open_questions: []
+  - key: full-framework-review
+    rule_type: process
+    statement: After a major ICT-related incident, review and improve the full ICT risk management framework and retain a report suitable for submission to the competent authority on request.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Escalate the missing review to the ICT risk management owner and track completion.
+    open_questions: []
+  - key: simplified-framework-review
+    rule_type: process
+    statement: After a major ICT-related incident, identify and assess ICT and information security risks, review and improve the simplified framework under supervisory instructions, and list the triggering incidents and related root-cause analyses in the review report.
+    parameter_status: not_applicable
+    parameters: []
+    conditions:
+      - The simplified ICT risk management framework applies.
+    failure_handling: Escalate the missing risk assessment or review content and keep the framework review open.
+    open_questions: []

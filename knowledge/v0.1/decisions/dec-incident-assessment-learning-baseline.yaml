@@ -1,0 +1,36 @@
+id: dec-incident-assessment-learning-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Engineering baseline for incident classification and learning
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-incident-classification
+  - ctl-post-incident-review-learning
+  - ctl-incident-trend-management-reporting
+question: Which reusable engineering pattern should support classification, recurring analysis, post-incident review, and management learning?
+conclusion: Use versioned criteria assessments, immutable reassessment history, evidence-linked root-cause and effectiveness reviews, monthly recurring-incident grouping, and at least annual management-body reporting.
+rationale: The pattern keeps legal thresholds distinct from internal severity measures and creates reproducible links from incident facts to classification, improvements, risks, and governance decisions.
+basis_provision_ids:
+  - prv-dora-art-18-1
+  - prv-dora-art-18-2
+  - prv-rts-2024-1772-art-8-1
+  - prv-rts-2024-1772-art-8-2
+  - prv-dora-art-13-2
+  - prv-dora-art-13-3-5
+  - prv-dora-art-6-5
+assumptions:
+  - Current legal criteria and thresholds are available to the institution's classification process in a controlled form.
+conditions:
+  - Internal severity labels may support operations but cannot replace DORA classification criteria or materiality thresholds.
+  - Review ownership, completion targets, systems, and evidence retention require institution approval.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-07"
+effective_from: "2026-09-07"
+effective_to: null
+review_due_on: null
