@@ -1,0 +1,62 @@
+id: ctl-continuity-plan-lifecycle
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Maintain executable continuity and recovery plans
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Continuity and response and recovery plans are current, accessible and executable from authorised activation through controlled recovery and deactivation for each applicable function and dependency.
+requirement_refs:
+  - {requirement_id: req-full-critical-function-continuity-plans, relation: implements}
+  - {requirement_id: req-full-ict-response-recovery-plans, relation: implements}
+  - {requirement_id: req-simplified-continuity-plan-governance, relation: implements}
+  - {requirement_id: req-simplified-continuity-alternatives-communication-updates, relation: implements}
+control_category: process
+control_functions: [preventive, corrective, recovery]
+owner_role: ict_continuity_plan_owner
+operation_mode: continuous
+trigger_or_frequency: Maintain continuously and review after tests, activations, relevant incidents, risk changes, recovery-objective changes, and major organisational or ICT changes
+implementation_rules:
+  - key: plan-coverage-and-versions
+    rule_type: process
+    statement: Maintain approved, versioned and cross-referenced plans for in-scope functions, ICT systems and services, supporting processes, information assets, people, premises and relevant third-party dependencies.
+    parameter_status: institution_defined
+    parameters:
+      - {name: plan-repository, value: null, unit: null}
+      - {name: plan-owner-mapping, value: null, unit: null}
+    conditions: []
+    failure_handling: Mark uncovered functions or dependencies and stale or conflicting plans as not ready and open remediation.
+    open_questions: []
+  - key: authorised-activation-lifecycle
+    rule_type: operations
+    statement: Define activation and deactivation conditions, exceptions, decision authority, escalation, action sequence, dependencies, timestamps and hand-offs for every plan.
+    parameter_status: institution_defined
+    parameters:
+      - {name: activation-criteria, value: null, unit: null}
+      - {name: activation-authority, value: null, unit: null}
+      - {name: deactivation-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Prevent automatic or unauthorised activation decisions, escalate ambiguous criteria, and use the safest authorised response path.
+    open_questions: []
+  - key: recovery-options-and-success
+    rule_type: operations
+    statement: Define short-term, long-term, partial and alternative recovery options, required integrity and security checks, and authorised criteria for successful execution and transition to normal or approved degraded operation.
+    parameter_status: institution_defined
+    parameters:
+      - {name: recovery-success-criteria, value: null, unit: null}
+      - {name: degraded-operation-criteria, value: null, unit: null}
+      - {name: recovery-acceptance-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep recovery status incomplete, continue an approved restricted or alternative path, and escalate failed criteria and residual risk.
+    open_questions: []
+  - key: plan-change-inputs
+    rule_type: process
+    statement: Update affected plans when incidents, tests, findings, risks, threats, recovery objectives, dependencies, organisation or supporting ICT assets materially change.
+    parameter_status: institution_defined
+    parameters:
+      - {name: material-plan-change-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Flag impacted plans as stale, prevent closure of the triggering change or finding, and route plan review.
+    open_questions: []

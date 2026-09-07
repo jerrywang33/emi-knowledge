@@ -1,0 +1,60 @@
+id: ctl-continuity-scenario-third-party
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Govern severe-disruption and third-party continuity scenarios
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Continuity and recovery plans and tests use a current, traceable and institution-relevant set of severe but plausible scenarios, including failures in people, premises, infrastructure and third-party ICT services.
+requirement_refs:
+  - {requirement_id: req-full-continuity-test-scenarios, relation: implements}
+  - {requirement_id: req-full-ict-response-recovery-plans, relation: supports}
+  - {requirement_id: req-simplified-continuity-plan-governance, relation: supports}
+  - {requirement_id: req-simplified-continuity-recovery-backup, relation: supports}
+control_category: process
+control_functions: [preventive, detective, recovery]
+owner_role: ict_continuity_scenario_owner
+operation_mode: continuous
+trigger_or_frequency: Review when threats, incidents, dependencies, BIA conclusions, providers or recovery designs change and before each continuity test cycle
+implementation_rules:
+  - key: governed-scenario-catalogue
+    rule_type: data
+    statement: Maintain a scenario catalogue covering relevant cyber-attack and switchover, service degradation or failure, provider failure, premises and data-centre failure, ICT and communications failure, staff unavailability, environmental and physical events, insider attack, geopolitical instability and widespread power outage.
+    parameter_status: institution_defined
+    parameters:
+      - {name: scenario-catalogue-owner, value: null, unit: null}
+      - {name: scenario-review-trigger, value: null, unit: null}
+    conditions: []
+    failure_handling: Mark missing source-defined scenario categories and prevent an unsupported coverage conclusion.
+    open_questions: []
+  - key: relevance-and-plausibility
+    rule_type: process
+    statement: Select, tailor and approve scenarios using current threat information, BIA, ICT risk assessment, incident lessons, affected functions and dependencies, recording rationale for exclusions and added scenarios.
+    parameter_status: institution_defined
+    parameters:
+      - {name: scenario-selection-criteria, value: null, unit: null}
+      - {name: scenario-approval-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep disputed exclusions or unsupported assumptions open and route them to risk and continuity owners.
+    open_questions: []
+  - key: third-party-failure-scenarios
+    rule_type: interface
+    statement: Cover relevant ICT third-party insolvency, operational failure, jurisdictional political risk, service degradation, communication paths and provider participation or evidence needed for continuity and recovery.
+    parameter_status: institution_defined
+    parameters:
+      - {name: critical-provider-scope, value: null, unit: null}
+      - {name: provider-test-interface, value: null, unit: null}
+    conditions: []
+    failure_handling: Record unavailable provider participation or evidence, test an authorised substitute where possible, and retain the residual dependency risk.
+    open_questions: []
+  - key: scenario-assumption-challenge
+    rule_type: process
+    statement: Record and challenge assumptions about governance, communications, staffing, facilities, data, dependencies, recovery capacity and the duration for which critical or important functions can operate.
+    parameter_status: institution_defined
+    parameters:
+      - {name: assumption-review-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Treat untested critical assumptions as readiness gaps and require additional analysis or test coverage.
+    open_questions: []

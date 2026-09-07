@@ -1,0 +1,50 @@
+id: ctl-continuity-recovery-integrity
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Gate recovery on service security and data integrity
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Recovered systems, services and data return to normal or approved degraded operation only after functionality, security, integrity, reconciliation and residual-risk criteria have been checked and authorised.
+requirement_refs:
+  - {requirement_id: req-full-recovery-data-integrity-reconciliation, relation: implements}
+  - {requirement_id: req-full-ict-response-recovery-plans, relation: supports}
+control_category: operational
+control_functions: [detective, corrective, recovery]
+owner_role: ict_recovery_assurance_owner
+operation_mode: event_driven
+trigger_or_frequency: During every in-scope recovery and before service or data restoration is accepted
+implementation_rules:
+  - key: staged-recovery-gates
+    rule_type: operations
+    statement: Define and execute separate technical restoration, security, data-integrity, reconciliation, business-function and final acceptance gates with named evidence and authorised decision roles.
+    parameter_status: institution_defined
+    parameters:
+      - {name: recovery-gate-criteria, value: null, unit: null}
+      - {name: recovery-acceptance-roles, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep the affected system or service restricted, record failed or unevaluated gates, and continue approved recovery or remediation.
+    open_questions: []
+  - key: integrity-and-reconciliation
+    rule_type: data
+    statement: Perform the checks, repeated checks and reconciliations needed for affected data sets and systems, including externally reconstructed data, and preserve source, completeness, ordering and exception information.
+    parameter_status: institution_defined
+    parameters:
+      - {name: reconciliation-rules, value: null, unit: null}
+      - {name: reconciliation-tolerances, value: null, unit: null}
+    conditions:
+      - Recovery includes data restoration, reconstruction or cross-system reconciliation.
+    failure_handling: Quarantine unresolved data, prevent final recovery acceptance, and escalate discrepancies for authorised disposition.
+    open_questions: []
+  - key: residual-risk-disposition
+    rule_type: exception
+    statement: Record failed checks, compensating measures, degraded-operation limits and residual risk, and require approval from the institution's authorised role before any constrained resumption.
+    parameter_status: institution_defined
+    parameters:
+      - {name: residual-risk-approval-role, value: null, unit: null}
+      - {name: degraded-operation-limits, value: null, unit: null}
+    conditions: []
+    failure_handling: Prevent unsupported service resumption and escalate to crisis and risk governance.
+    open_questions: []

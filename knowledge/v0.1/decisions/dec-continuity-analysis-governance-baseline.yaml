@@ -1,0 +1,38 @@
+id: dec-continuity-analysis-governance-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Engineering baseline for continuity analysis and governance
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-continuity-bia-dependency
+  - ctl-continuity-policy-governance
+question: Which reusable engineering pattern should connect continuity scope, dependencies, BIA, framework selection, policy governance, emergency access, resources, and conditional audit?
+conclusion: Use stable identifiers and traceable dependency records, an authorised and versioned BIA, explicit full or simplified branch evidence, controlled policy and plan versions, named ownership and resources, emergency-accessible copies, and conditional independent-audit routing.
+rationale: This pattern makes continuity design inputs and governance inspectable while preserving the institution's function classification, impact criteria, tolerances, roles, repositories, resource decisions, microenterprise status and framework branch as authorised institution facts.
+basis_provision_ids:
+  - prv-dora-art-8-1
+  - prv-dora-art-8-4-6
+  - prv-dora-art-11-1
+  - prv-dora-art-11-3
+  - prv-dora-art-11-5
+  - prv-rts-2024-1774-art-1-continuity
+  - prv-rts-2024-1774-art-24-1-a
+  - prv-rts-2024-1774-art-24-1-b-i-iii
+  - prv-rts-2024-1774-art-39-1
+  - prv-rts-2024-1774-art-39-2-a-c
+assumptions:
+  - The institution supplies current business, asset, dependency and legal-status facts before applying this engineering pattern.
+conditions:
+  - The applicable full or simplified DORA framework branch is confirmed from institution evidence by an authorised role.
+  - BIA conclusions, proportionality choices, microenterprise status, approval roles, resources and audit arrangements remain institution decisions.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-07"
+effective_from: "2026-09-07"
+effective_to: null
+review_due_on: null

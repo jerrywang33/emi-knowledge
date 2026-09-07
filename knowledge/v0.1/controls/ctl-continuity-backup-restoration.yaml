@@ -1,0 +1,62 @@
+id: ctl-continuity-backup-restoration
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Operate secure backup, restoration, and recovery controls
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: In-scope systems and data can be restored from protected and sufficiently separated backups within approved recovery targets without compromising security or data integrity.
+requirement_refs:
+  - {requirement_id: req-full-backup-restoration-policy, relation: implements}
+  - {requirement_id: req-full-secure-segregated-backup-restoration, relation: implements}
+  - {requirement_id: req-simplified-continuity-recovery-backup, relation: implements}
+control_category: technical
+control_functions: [preventive, detective, recovery]
+owner_role: ict_backup_recovery_owner
+operation_mode: continuous
+trigger_or_frequency: Execute on the approved backup schedule and verify during each required restore or continuity test
+implementation_rules:
+  - key: risk-based-backup-policy
+    rule_type: configuration
+    statement: Define backup scope, minimum frequency, retention within the backup lifecycle, recovery method and ownership for each in-scope data set and system using approved function criticality, data confidentiality and recovery targets.
+    parameter_status: institution_defined
+    parameters:
+      - {name: backup-scope, value: null, unit: null}
+      - {name: backup-frequency, value: null, unit: null}
+      - {name: backup-lifecycle-retention, value: null, unit: null}
+    conditions: []
+    failure_handling: Flag unprotected or stale data and systems, restrict unsupported recovery claims, and escalate missed backup execution.
+    open_questions: []
+  - key: backup-security-and-separation
+    rule_type: configuration
+    statement: Protect backup systems and data against unauthorised access and corruption and, for full-framework restoration through the institution's own systems, maintain physical and logical segregation from source systems.
+    parameter_status: institution_defined
+    parameters:
+      - {name: backup-access-policy, value: null, unit: null}
+      - {name: segregation-design, value: null, unit: null}
+      - {name: backup-integrity-controls, value: null, unit: null}
+    conditions: []
+    failure_handling: Quarantine affected backup sets, prohibit their use for approved restoration, investigate integrity or access failures, and invoke an authorised alternative.
+    open_questions: []
+  - key: controlled-backup-activation
+    rule_type: access
+    statement: Permit backup activation and restoration only through approved procedures, authorised roles and recorded actions that preserve network, system and data security.
+    parameter_status: institution_defined
+    parameters:
+      - {name: restoration-authorised-roles, value: null, unit: null}
+      - {name: restoration-procedure, value: null, unit: null}
+    conditions: []
+    failure_handling: Stop unauthorised or unsafe restoration, preserve evidence, escalate, and continue through an approved recovery path.
+    open_questions: []
+  - key: restoration-test-and-currency
+    rule_type: operations
+    statement: Test selected backup sets and restoration and recovery procedures against approved scope, security, integrity, RPO and RTO expectations and record backup age and test outcome.
+    parameter_status: institution_defined
+    parameters:
+      - {name: restore-test-scope, value: null, unit: null}
+      - {name: restore-test-environment, value: null, unit: null}
+    conditions: []
+    failure_handling: Mark failed or untested recovery paths unavailable, open remediation, and repeat the restore test before readiness approval.
+    open_questions: []

@@ -1,0 +1,40 @@
+id: dec-continuity-testing-improvement-baseline
+type: decision
+schema_version: 0.1.0
+revision: 1
+title: Engineering baseline for continuity testing and improvement
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+decision_type: implementation_choice
+subject_requirement_ids: []
+subject_control_ids:
+  - ctl-continuity-scenario-third-party
+  - ctl-continuity-testing-switchover
+  - ctl-continuity-findings-improvement
+question: Which reusable engineering pattern should govern disruption scenarios, continuity testing, switchover, findings, remediation and feedback into risk and plans?
+conclusion: Use a governed scenario catalogue, documented relevance and assumption analysis, branch-aware statutory test scheduling, approved and safe test designs, explicit capability results, a traceable finding register, management reporting, downstream risk and plan updates, and evidence-based remediation closure.
+rationale: This pattern separates plan design, controlled test execution, test result, production recovery and compliance conclusions while retaining statutory frequencies and conditions and leaving test environments, severity methods, deadlines and acceptance thresholds to the institution.
+basis_provision_ids:
+  - prv-dora-art-11-6-a-b
+  - prv-dora-art-11-6-scenarios-review
+  - prv-dora-art-13-3-5
+  - prv-dora-art-16-1-g
+  - prv-dora-art-16-1-h
+  - prv-rts-2024-1774-art-25-1
+  - prv-rts-2024-1774-art-25-2
+  - prv-rts-2024-1774-art-25-5
+  - prv-rts-2024-1774-art-26-2
+  - prv-rts-2024-1774-art-40-1
+  - prv-rts-2024-1774-art-40-2-3
+assumptions:
+  - Tests use controlled data and environments and preserve any required third-party and production safeguards.
+conditions:
+  - Scenario selection, test depth, participants, safety limits, internal remediation deadlines and closure authority remain institution-defined.
+  - A passed test is evidence for the tested scope and time and does not prove future production recovery or institution compliance.
+decided_by_role: emi_knowledge_engineering_maintainer
+decided_on: "2026-09-07"
+effective_from: "2026-09-07"
+effective_to: null
+review_due_on: null

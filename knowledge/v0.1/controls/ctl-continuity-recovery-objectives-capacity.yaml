@@ -1,0 +1,62 @@
+id: ctl-continuity-recovery-objectives-capacity
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Govern recovery objectives and supporting capacity
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Each in-scope function has approved recovery targets and a traceable capacity design that can support the required recovery level under relevant disruption scenarios.
+requirement_refs:
+  - {requirement_id: req-full-recovery-objectives, relation: implements}
+  - {requirement_id: req-full-redundant-ict-capacity, relation: implements}
+  - {requirement_id: req-simplified-continuity-recovery-backup, relation: implements}
+  - {requirement_id: req-full-continuity-business-impact-analysis, relation: supports}
+control_category: technical
+control_functions: [preventive, recovery]
+owner_role: ict_recovery_architecture_owner
+operation_mode: continuous
+trigger_or_frequency: When BIA, criticality, dependency, service-level, architecture, or recovery assumptions change and during continuity tests
+implementation_rules:
+  - key: recovery-target-approval
+    rule_type: process
+    statement: Define and approve recovery levels, RTO, RPO and service-level expectations per in-scope function using BIA criticality, dependency and potential market-impact evidence.
+    parameter_status: institution_defined
+    parameters:
+      - {name: recovery-targets, value: null, unit: null}
+      - {name: recovery-target-approval-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep the affected plan and capacity design unapproved and prohibit use of assumed or inherited recovery values.
+    open_questions: []
+  - key: capacity-traceability
+    rule_type: configuration
+    statement: Map each recovery target to primary and recovery components, dependencies, resources, capacity assumptions, service levels and an executable recovery or continuity path.
+    parameter_status: institution_defined
+    parameters:
+      - {name: capacity-evidence-sources, value: null, unit: null}
+      - {name: minimum-operating-duration, value: null, unit: null}
+    conditions: []
+    failure_handling: Record the unsupported target or dependency as a recovery gap and prevent readiness approval.
+    open_questions: []
+  - key: microenterprise-capacity-branch
+    rule_type: exception
+    statement: For the full framework, maintain adequate redundant ICT capacity when the institution is not a microenterprise; when it is a microenterprise, record and approve the risk-based assessment of whether redundant capacity is needed.
+    parameter_status: institution_defined
+    parameters:
+      - {name: microenterprise-status-evidence, value: null, unit: null}
+      - {name: redundancy-assessment-approver, value: null, unit: null}
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Treat missing status or assessment evidence as an unresolved capacity requirement and escalate.
+    open_questions: []
+  - key: extreme-scenario-alignment
+    rule_type: configuration
+    statement: Evaluate whether recovery targets and supporting capacity preserve approved service levels in the institution's relevant extreme scenarios and record any approved limitations or residual risks.
+    parameter_status: institution_defined
+    parameters:
+      - {name: extreme-scenario-set, value: null, unit: null}
+      - {name: residual-risk-approval-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Mark failed targets as unmet, route capacity or plan remediation, and prohibit an unsupported recovery-readiness conclusion.
+    open_questions: []

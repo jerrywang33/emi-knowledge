@@ -1,0 +1,64 @@
+id: ctl-continuity-testing-switchover
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Execute governed continuity, restoration, and switchover tests
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Required continuity, response, recovery, communication, backup, restoration and switchover capabilities are tested safely, on time and against approved objectives and scenarios.
+requirement_refs:
+  - {requirement_id: req-full-continuity-test-frequency, relation: implements}
+  - {requirement_id: req-full-continuity-test-scenarios, relation: implements}
+  - {requirement_id: req-simplified-continuity-test-frequency, relation: implements}
+  - {requirement_id: req-simplified-continuity-test-outcomes, relation: implements}
+  - {requirement_id: req-full-critical-function-continuity-plans, relation: supports}
+control_category: operational
+control_functions: [detective, corrective, recovery]
+owner_role: ict_continuity_test_owner
+operation_mode: scheduled
+trigger_or_frequency: At least annually where required and after the source-defined substantive system or major plan changes
+implementation_rules:
+  - key: statutory-test-schedule
+    rule_type: process
+    statement: Maintain a test schedule that covers the full-framework annual and substantive-system-change triggers and the simplified-framework annual backup and restore and major-plan-change triggers without treating one branch as the other.
+    parameter_status: fixed
+    parameters:
+      - {name: maximum-annual-test-interval, value: P1Y, unit: iso-8601-duration}
+    conditions: []
+    failure_handling: Flag overdue tests, prevent current-readiness claims for affected capabilities, and escalate scheduling remediation.
+    open_questions: []
+  - key: controlled-test-design
+    rule_type: process
+    statement: Define objectives, scope, scenarios, assumptions, participants, data handling, environment, safety constraints, recovery targets, expected results, abort criteria and evidence before execution.
+    parameter_status: institution_defined
+    parameters:
+      - {name: test-approval-role, value: null, unit: null}
+      - {name: test-environment, value: null, unit: null}
+      - {name: test-abort-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Do not execute an unsafe or unapproved test; preserve the gap and reschedule after design approval.
+    open_questions: []
+  - key: capability-and-duration
+    rule_type: operations
+    statement: Exercise relevant staff, ICT systems and services, third-party interfaces, crisis communications, backup and restoration, and verify that critical or important functions can operate for the approved duration and normal functioning can be restored.
+    parameter_status: institution_defined
+    parameters:
+      - {name: required-operating-duration, value: null, unit: null}
+      - {name: recovery-test-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Record each failed or untested capability, prohibit a complete pass result, and open corrective action.
+    open_questions: []
+  - key: conditional-switchover
+    rule_type: operations
+    statement: For full-framework entities other than microenterprises, test cyber-attack and switchover scenarios from primary infrastructure to redundant capacity, backups and redundant facilities and test restoration of normal operation.
+    parameter_status: institution_defined
+    parameters:
+      - {name: microenterprise-status-evidence, value: null, unit: null}
+      - {name: switchover-test-scope, value: null, unit: null}
+    conditions:
+      - The full ICT risk management framework applies.
+      - The institution is not a microenterprise as defined by DORA.
+    failure_handling: Mark the switchover capability unverified, retain the failed state and evidence, and route remediation before readiness approval.
+    open_questions: []

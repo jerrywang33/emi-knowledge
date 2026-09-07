@@ -1,0 +1,60 @@
+id: ctl-continuity-findings-improvement
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Remediate continuity findings and update risk and plans
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Test, incident, audit and supervisory findings are recorded, assessed, reported, remediated and reflected in continuity plans, ICT risk assessment and framework reviews.
+requirement_refs:
+  - {requirement_id: req-full-continuity-test-remediation, relation: implements}
+  - {requirement_id: req-simplified-continuity-test-outcomes, relation: implements}
+  - {requirement_id: req-simplified-continuity-findings-risk-assessment, relation: implements}
+control_category: process
+control_functions: [detective, corrective]
+owner_role: ict_continuity_improvement_owner
+operation_mode: event_driven
+trigger_or_frequency: After each continuity test, plan activation, relevant incident, audit or supervisory finding and during framework review
+implementation_rules:
+  - key: governed-finding-record
+    rule_type: data
+    statement: Record each finding with source, affected requirement, control, function, asset or plan, evidence, severity, owner, due date, status, dependencies and closure criteria.
+    parameter_status: institution_defined
+    parameters:
+      - {name: finding-severity-method, value: null, unit: null}
+      - {name: finding-record-system, value: null, unit: null}
+    conditions: []
+    failure_handling: Reject incomplete closure, preserve the finding as open, and escalate missing ownership or evidence.
+    open_questions: []
+  - key: management-reporting
+    rule_type: interface
+    statement: Report test results, identified deficiencies, remediation status, overdue actions and residual risk to the management body through the applicable branch-specific process.
+    parameter_status: institution_defined
+    parameters:
+      - {name: management-report-format, value: null, unit: null}
+      - {name: reporting-timing, value: null, unit: null}
+    conditions: []
+    failure_handling: Flag missing or stale management reporting and prohibit governance closure until corrected.
+    open_questions: []
+  - key: risk-and-plan-feedback
+    rule_type: process
+    statement: Assess findings and lessons for updates to ICT risk assessment, BIA, continuity and recovery plans, recovery objectives, controls, training and the applicable ICT risk management framework review.
+    parameter_status: institution_defined
+    parameters:
+      - {name: feedback-assessment-owner, value: null, unit: null}
+      - {name: material-update-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep the finding open where required downstream updates are missing and escalate rejected lessons with rationale.
+    open_questions: []
+  - key: evidence-based-closure
+    rule_type: process
+    statement: Close a finding only after corrective action and affected-control retesting meet approved closure criteria and residual risks or exceptions have authorised disposition.
+    parameter_status: institution_defined
+    parameters:
+      - {name: closure-approval-role, value: null, unit: null}
+      - {name: retest-depth, value: null, unit: null}
+    conditions: []
+    failure_handling: Reopen failed remediation, preserve previous results, and escalate overdue or repeatedly ineffective actions.
+    open_questions: []

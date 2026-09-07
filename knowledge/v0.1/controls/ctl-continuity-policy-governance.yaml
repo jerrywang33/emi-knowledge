@@ -1,0 +1,61 @@
+id: ctl-continuity-policy-governance
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Govern ICT continuity policies, plans, roles, and audit
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: The applicable continuity framework has approved ownership, complete policy and plan content, sufficient resources, accessible controlled copies, and independent review where required.
+requirement_refs:
+  - {requirement_id: req-full-ict-business-continuity-policy, relation: implements}
+  - {requirement_id: req-full-response-recovery-plan-independent-audit, relation: implements}
+  - {requirement_id: req-simplified-continuity-plan-governance, relation: implements}
+  - {requirement_id: req-continuity-proportionate-arrangements, relation: supports}
+control_category: governance
+control_functions: [preventive, detective]
+owner_role: ict_continuity_governance_owner
+operation_mode: continuous
+trigger_or_frequency: When the continuity framework is established or changed and during each scheduled governance review
+implementation_rules:
+  - key: branch-and-scope
+    rule_type: process
+    statement: Record the institution's authorised full or simplified DORA branch and apply the matching policy, plan, approval, audit and testing obligations without mixing branch-specific requirements.
+    parameter_status: institution_defined
+    parameters:
+      - {name: framework-branch-evidence, value: null, unit: null}
+      - {name: framework-branch-approver, value: null, unit: null}
+    conditions: []
+    failure_handling: Keep branch-dependent conclusions pending and prevent approval of an ambiguous policy set.
+    open_questions: []
+  - key: controlled-policy-content
+    rule_type: process
+    statement: Maintain versioned policy and plan content covering applicable objectives, scope, limitations, timeframe, governance, resources, activation criteria, recovery objectives, plan lifecycle, effectiveness review and communication alignment.
+    parameter_status: not_applicable
+    parameters: []
+    conditions: []
+    failure_handling: Reject incomplete or conflicting versions, identify the missing content, and open a governed remediation item.
+    open_questions: []
+  - key: approval-access-and-resources
+    rule_type: access
+    statement: Record approval by the authorised body, map named roles and escalation paths, allocate execution resources, and preserve an emergency-accessible controlled plan copy.
+    parameter_status: institution_defined
+    parameters:
+      - {name: approval-authority, value: null, unit: null}
+      - {name: emergency-access-method, value: null, unit: null}
+      - {name: resource-adequacy-criteria, value: null, unit: null}
+    conditions: []
+    failure_handling: Prevent the plan from being treated as operationally ready and escalate missing approval, access, role or resource evidence.
+    open_questions: []
+  - key: independent-audit-routing
+    rule_type: process
+    statement: Route full-framework ICT response and recovery plans to independent internal audit review when the institution does not qualify as a microenterprise and preserve findings separately from plan ownership.
+    parameter_status: institution_defined
+    parameters:
+      - {name: microenterprise-status-evidence, value: null, unit: null}
+      - {name: independent-audit-function, value: null, unit: null}
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Mark the audit obligation unresolved, prevent self-review from satisfying it, and escalate to continuity governance.
+    open_questions: []

@@ -1,0 +1,64 @@
+id: ctl-continuity-activation-communication
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Control plan activation, crisis communication, and activity records
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: Continuity and recovery activation decisions, actions and communications are authorised, timely, consistent and traceable from pre-activation assessment through deactivation and follow-up.
+requirement_refs:
+  - {requirement_id: req-full-crisis-management-function, relation: implements}
+  - {requirement_id: req-full-continuity-activation-records, relation: implements}
+  - {requirement_id: req-simplified-continuity-alternatives-communication-updates, relation: implements}
+control_category: operational
+control_functions: [preventive, corrective, recovery]
+owner_role: ict_crisis_coordination_owner
+operation_mode: event_driven
+trigger_or_frequency: From assessment of a possible plan trigger through authorised deactivation, communication completion, and record closure
+implementation_rules:
+  - key: activation-authority-and-routing
+    rule_type: access
+    statement: Evaluate approved trigger criteria, route the proposed activation or deactivation to authorised roles, record the decision and rationale, and prevent an Agent or unapproved actor from declaring a disaster or recovery state.
+    parameter_status: institution_defined
+    parameters:
+      - {name: activation-authority, value: null, unit: null}
+      - {name: escalation-path, value: null, unit: null}
+    conditions: []
+    failure_handling: Escalate under the safest approved path, preserve the pending state, and prohibit unsupported status declarations.
+    open_questions: []
+  - key: crisis-coordination
+    rule_type: operations
+    statement: When required for a non-microenterprise under the full framework, activate the crisis management function with named command, operational, communication, risk and recovery responsibilities and current contact paths.
+    parameter_status: institution_defined
+    parameters:
+      - {name: crisis-role-roster, value: null, unit: null}
+      - {name: crisis-contact-methods, value: null, unit: null}
+    conditions:
+      - The full ICT risk management framework applies.
+      - The institution is not a microenterprise as defined by DORA.
+    failure_handling: Escalate unavailable roles, invoke approved alternates, and record command or communication gaps.
+    open_questions: []
+  - key: controlled-communications
+    rule_type: interface
+    statement: Maintain consistent internal and external communication, escalation and responsible-disclosure actions using current verified facts, approved recipients and channels, and explicit message approval and delivery outcomes.
+    parameter_status: institution_defined
+    parameters:
+      - {name: communication-matrix, value: null, unit: null}
+      - {name: message-approval-role, value: null, unit: null}
+      - {name: communication-channels, value: null, unit: null}
+    conditions: []
+    failure_handling: Stop unsupported messages, resolve conflicting facts, use an approved alternate channel, and preserve failed-delivery evidence.
+    open_questions: []
+  - key: activation-chronology
+    rule_type: data
+    statement: Preserve readily accessible records of trigger evidence, decisions, actors, timestamps, actions, hand-offs, communications, exceptions, recovery status, deactivation and follow-up throughout the disruption.
+    parameter_status: institution_defined
+    parameters:
+      - {name: activation-record-system, value: null, unit: null}
+      - {name: authorised-record-access, value: null, unit: null}
+      - {name: record-retention-period, value: null, unit: null}
+    conditions: []
+    failure_handling: Mark the chronology incomplete, reconstruct from controlled sources where possible, restrict closure, and escalate evidence gaps.
+    open_questions: []

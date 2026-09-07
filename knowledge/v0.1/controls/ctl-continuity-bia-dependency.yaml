@@ -1,0 +1,60 @@
+id: ctl-continuity-bia-dependency
+type: control
+schema_version: 0.1.0
+revision: 1
+title: Govern continuity scope, dependencies, and business impact analysis
+language: en
+lifecycle_status: approved
+confirmation: {status: confirmed, open_questions: []}
+replaces: []
+objective: ICT continuity scope and recovery design are based on an approved, current and traceable view of business functions, impacts, assets, people, premises and third-party dependencies.
+requirement_refs:
+  - {requirement_id: req-continuity-proportionate-arrangements, relation: implements}
+  - {requirement_id: req-full-continuity-function-dependency-inventory, relation: implements}
+  - {requirement_id: req-full-continuity-business-impact-analysis, relation: implements}
+control_category: governance
+control_functions: [preventive, detective]
+owner_role: ict_continuity_analysis_owner
+operation_mode: continuous
+trigger_or_frequency: Maintain continuously and review at least annually and after material business, asset, dependency, risk, or service changes
+implementation_rules:
+  - key: function-dependency-register
+    rule_type: data
+    statement: Maintain stable identifiers and traceable relationships for functions, criticality, processes, information and ICT assets, people, premises, internal dependencies, and relevant ICT third-party services.
+    parameter_status: institution_defined
+    parameters:
+      - {name: inventory-source-systems, value: null, unit: null}
+      - {name: criticality-method, value: null, unit: null}
+    conditions: []
+    failure_handling: Mark affected continuity analysis and plans incomplete, identify missing relationships, and route remediation to the continuity analysis owner.
+    open_questions: []
+  - key: business-impact-analysis
+    rule_type: process
+    statement: Perform and approve a BIA using documented quantitative and qualitative criteria, relevant internal and external data, severe-disruption scenarios, and explicit impact and dependency assumptions.
+    parameter_status: institution_defined
+    parameters:
+      - {name: impact-criteria, value: null, unit: null}
+      - {name: impact-tolerances, value: null, unit: null}
+      - {name: bia-approval-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Prevent unapproved BIA results from setting recovery priorities or objectives and escalate unresolved assumptions.
+    open_questions: []
+  - key: proportionality-record
+    rule_type: process
+    statement: Record how institution size, overall risk profile, service nature, scale, complexity, and disruption impact informed the selected continuity arrangements without changing the applicable DORA framework branch.
+    parameter_status: institution_defined
+    parameters:
+      - {name: proportionality-approval-role, value: null, unit: null}
+    conditions: []
+    failure_handling: Treat unsupported proportionality choices as unapproved exceptions and require authorised review.
+    open_questions: []
+  - key: inventory-review
+    rule_type: process
+    statement: Review classification and supporting documentation at least annually and update inventories and mappings after major changes.
+    parameter_status: fixed
+    parameters:
+      - {name: maximum-review-interval, value: P1Y, unit: iso-8601-duration}
+    conditions:
+      - The full ICT risk management framework applies.
+    failure_handling: Flag overdue or change-affected records, block reliance on stale mappings, and open remediation.
+    open_questions: []
