@@ -1,0 +1,20 @@
+id: prv-rts-2024-1774-art-24-1-b-i-iii
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Govern, align, and prioritise continuity plans
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 24(1)(b)(i)-(iii)
+  segments:
+    - {kind: article, value: "24"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: b}
+    - {kind: subpoint, value: i-iii}
+heading: Components of the ICT business continuity policy
+content_kind: editorial_summary
+content: Full-framework continuity policies establish governance, roles, responsibilities, escalation and sufficient resources; align ICT and overall business continuity plans on failure scenarios and recovery objectives including RTO and RPO; and provide severe-disruption plans with risk-based prioritisation of continuity actions.

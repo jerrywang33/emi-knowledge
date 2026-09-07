@@ -1,0 +1,18 @@
+id: prv-dora-art-8-4-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Map critical assets and ICT third-party dependencies and maintain inventories
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 8(4)-(6)
+  segments:
+    - {kind: article, value: "8"}
+    - {kind: paragraph, value: 4-6}
+heading: Identification
+content_kind: editorial_summary
+content: Financial entities identify information and ICT assets, map critical assets, configurations, links and interdependencies, document ICT third-party-dependent processes and interconnections supporting critical or important functions, and keep the relevant inventories current, including after major changes.

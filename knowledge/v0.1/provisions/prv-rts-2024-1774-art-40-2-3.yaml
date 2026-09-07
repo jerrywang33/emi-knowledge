@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-40-2-3
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Demonstrate business viability and remediate continuity-test deficiencies
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 40(2)-(3)
+  segments:
+    - {kind: article, value: "40"}
+    - {kind: paragraph, value: 2-3}
+heading: Testing of business continuity plans
+content_kind: editorial_summary
+content: Simplified-framework continuity-plan tests demonstrate the ability to sustain business viability until critical operations are re-established and identify deficiencies; entities document results and analyse, address and report identified deficiencies to the management body.

@@ -1,0 +1,17 @@
+id: prv-rts-2024-1774-art-1-continuity
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Apply proportionality when developing continuity arrangements
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 1
+  segments:
+    - {kind: article, value: "1"}
+heading: Overall risk profile and complexity
+content_kind: editorial_summary
+content: When developing and implementing the Title II ICT policies, procedures, protocols and tools and the Title III simplified framework, financial entities take account of their size, overall risk profile, and the nature, scale and complexity of their services, activities and operations, including the effect of ICT risk and disruption on data and operational continuity and availability.

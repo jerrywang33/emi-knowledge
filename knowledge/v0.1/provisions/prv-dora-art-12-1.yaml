@@ -1,0 +1,18 @@
+id: prv-dora-art-12-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Document backup, restoration, and recovery policies and procedures
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 12(1)
+  segments:
+    - {kind: article, value: "12"}
+    - {kind: paragraph, value: "1"}
+heading: Backup policies and procedures, restoration and recovery procedures and methods
+content_kind: editorial_summary
+content: To restore ICT systems and data with minimum downtime, disruption, and loss, financial entities document backup policies and procedures defining data scope and minimum frequency based on information criticality or data confidentiality, together with restoration and recovery procedures and methods.

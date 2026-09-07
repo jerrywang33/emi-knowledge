@@ -1,0 +1,19 @@
+id: prv-dora-art-11-2-a
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Ensure continuity of critical or important functions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 11(2)(a)
+  segments:
+    - {kind: article, value: "11"}
+    - {kind: paragraph, value: "2"}
+    - {kind: point, value: a}
+heading: Response and recovery
+content_kind: editorial_summary
+content: Financial entities implement their ICT business continuity policy through dedicated, appropriate, and documented arrangements, plans, procedures, and mechanisms that ensure continuity of critical or important functions.

@@ -1,0 +1,18 @@
+id: prv-dora-art-11-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Maintain a comprehensive ICT business continuity policy
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 11(1)
+  segments:
+    - {kind: article, value: "11"}
+    - {kind: paragraph, value: "1"}
+heading: Response and recovery
+content_kind: editorial_summary
+content: As part of the ICT risk management framework and based on Article 8 identification, financial entities put in place a comprehensive ICT business continuity policy that may be dedicated and forms an integral part of the overall business continuity policy.

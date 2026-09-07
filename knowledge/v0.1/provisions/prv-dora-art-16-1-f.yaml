@@ -1,0 +1,19 @@
+id: prv-dora-art-16-1-f
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Maintain simplified-framework continuity, response, recovery, and backup measures
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 16(1), second subparagraph, point (f)
+  segments:
+    - {kind: article, value: "16"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: f}
+heading: Simplified ICT risk management framework
+content_kind: editorial_summary
+content: Entities in the simplified ICT risk management framework ensure continuity of critical or important functions through business continuity plans and response and recovery measures that include at least backup and restoration measures.

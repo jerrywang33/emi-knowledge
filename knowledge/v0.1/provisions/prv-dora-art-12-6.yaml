@@ -1,0 +1,18 @@
+id: prv-dora-art-12-6
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Set recovery time and recovery point objectives by function impact
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 12(6)
+  segments:
+    - {kind: article, value: "12"}
+    - {kind: paragraph, value: "6"}
+heading: Backup policies and procedures, restoration and recovery procedures and methods
+content_kind: editorial_summary
+content: Financial entities determine recovery time and recovery point objectives for each function by considering whether it is critical or important and its potential overall effect on market efficiency, and set objectives that preserve agreed service levels under extreme scenarios.

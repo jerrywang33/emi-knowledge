@@ -1,0 +1,19 @@
+id: prv-rts-2024-1774-art-39-2-a-c
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Approve, preserve, and resource simplified continuity plans
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 39(2)(a)-(c)
+  segments:
+    - {kind: article, value: "39"}
+    - {kind: paragraph, value: "2"}
+    - {kind: point, value: a-c}
+heading: Components of the ICT business continuity plan
+content_kind: editorial_summary
+content: Simplified-framework ICT business continuity plans are approved by the management body, documented and readily accessible during emergencies or crises, and allocated sufficient execution resources.

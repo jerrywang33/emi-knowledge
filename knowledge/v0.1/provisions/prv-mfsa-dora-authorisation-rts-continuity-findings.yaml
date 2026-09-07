@@ -1,0 +1,18 @@
+id: prv-mfsa-dora-authorisation-rts-continuity-findings
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: MFSA observations on recovery, backup, and severe-disruption scenarios
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-dora-authorisation-observations-2026
+locator:
+  label: Chapter II observations on Articles 24 to 26 of Commission Delegated Regulation (EU) 2024/1774
+  segments:
+    - {kind: chapter, value: II}
+    - {kind: other, value: ICT business continuity observations}
+heading: ICT business continuity management
+content_kind: editorial_summary
+content: MFSA identifies recurring gaps in applicants' treatment of recovery objectives, plan activation, backup and restoration, alternative recovery arrangements, third-party dependencies, and the range of severe but plausible disruption scenarios expected by Articles 24 to 26 of Commission Delegated Regulation (EU) 2024/1774.

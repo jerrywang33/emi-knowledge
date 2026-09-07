@@ -1,0 +1,19 @@
+id: prv-dora-art-11-6-a-b
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Test continuity, response, recovery, and crisis communication plans
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 11(6), first subparagraph, points (a)-(b)
+  segments:
+    - {kind: article, value: "11"}
+    - {kind: paragraph, value: "6"}
+    - {kind: point, value: a-b}
+heading: Response and recovery
+content_kind: editorial_summary
+content: Financial entities test ICT business continuity and ICT response and recovery plans for ICT systems supporting all functions at least yearly and after substantive changes to ICT systems supporting critical or important functions, and also test their crisis communication plans.

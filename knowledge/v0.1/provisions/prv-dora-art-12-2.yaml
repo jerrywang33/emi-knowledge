@@ -1,0 +1,18 @@
+id: prv-dora-art-12-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Maintain secure and periodically tested backup activation
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 12(2)
+  segments:
+    - {kind: article, value: "12"}
+    - {kind: paragraph, value: "2"}
+heading: Backup policies and procedures, restoration and recovery procedures and methods
+content_kind: editorial_summary
+content: Financial entities establish backup systems that can be activated under approved procedures without jeopardising network and information-system security or data availability, authenticity, integrity, or confidentiality, and periodically test backup, restoration, and recovery procedures and methods.

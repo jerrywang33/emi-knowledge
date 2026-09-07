@@ -1,0 +1,19 @@
+id: prv-dora-art-16-1-g
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Regularly test simplified-framework continuity plans and controls
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 16(1), second subparagraph, point (g)
+  segments:
+    - {kind: article, value: "16"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: g}
+heading: Simplified ICT risk management framework
+content_kind: editorial_summary
+content: Entities in the simplified ICT risk management framework regularly test their business continuity, response, recovery, backup, and restoration plans and measures, together with the effectiveness of prescribed framework and resilience controls.

@@ -1,0 +1,18 @@
+id: prv-dora-art-8-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Identify and document ICT-supported functions, assets, roles, and dependencies
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 8(1)
+  segments:
+    - {kind: article, value: "8"}
+    - {kind: paragraph, value: "1"}
+heading: Identification
+content_kind: editorial_summary
+content: Financial entities identify, classify, and adequately document ICT-supported business functions, related roles and responsibilities, supporting information and ICT assets, and their ICT-risk dependencies, and review the classification and documentation as needed and at least yearly.

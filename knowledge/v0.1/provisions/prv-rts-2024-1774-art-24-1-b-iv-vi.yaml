@@ -1,0 +1,20 @@
+id: prv-rts-2024-1774-art-24-1-b-iv-vi
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Test and review recovery arrangements and align crisis communication
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 24(1)(b)(iv)-(vi)
+  segments:
+    - {kind: article, value: "24"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: b}
+    - {kind: subpoint, value: iv-vi}
+heading: Components of the ICT business continuity policy
+content_kind: editorial_summary
+content: Full-framework continuity policies cover development, testing and review of ICT response and recovery plans, review of the effectiveness of implemented continuity arrangements, and alignment with the DORA communication policy and crisis communication actions.

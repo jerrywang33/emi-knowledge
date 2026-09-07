@@ -1,0 +1,19 @@
+id: prv-dora-art-11-6-scenarios-review
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Test attack and switchover scenarios and review continuity arrangements
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 11(6), second and third subparagraphs
+  segments:
+    - {kind: article, value: "11"}
+    - {kind: paragraph, value: "6"}
+    - {kind: other, value: second-and-third-subparagraphs}
+heading: Response and recovery
+content_kind: editorial_summary
+content: Continuity testing by financial entities other than microenterprises includes cyber-attack scenarios and switching from primary infrastructure to redundant capacity, backups, and redundant facilities; all financial entities regularly review their continuity policy and response and recovery plans using test, audit, and supervisory findings.

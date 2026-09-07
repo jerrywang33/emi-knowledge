@@ -1,0 +1,18 @@
+id: prv-dora-art-11-7-8
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Operate crisis management and retain plan-activation records
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 11(7)-(8)
+  segments:
+    - {kind: article, value: "11"}
+    - {kind: paragraph, value: 7-8}
+heading: Response and recovery
+content_kind: editorial_summary
+content: Financial entities other than microenterprises maintain a crisis management function with clear internal and external communication procedures when continuity or recovery plans are activated, and all financial entities keep readily accessible records of activities before and during disruption events involving plan activation.

@@ -45,7 +45,7 @@ test("working knowledge passes Schema and repository graph validation", async ()
   });
   assert.deepEqual(report.issues, []);
   assert.ok(report.entries.length >= 64);
-  assert.equal(report.counts.source, 10);
+  assert.equal(report.counts.source, 11);
 });
 
 test("the v0.1.0 release selection remains a complete knowledge chain", async () => {

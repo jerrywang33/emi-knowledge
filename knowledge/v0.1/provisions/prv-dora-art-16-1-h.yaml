@@ -1,0 +1,19 @@
+id: prv-dora-art-16-1-h
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Apply simplified-framework test and incident conclusions
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 16(1), second subparagraph, point (h)
+  segments:
+    - {kind: article, value: "16"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: h}
+heading: Simplified ICT risk management framework
+content_kind: editorial_summary
+content: Entities in the simplified ICT risk management framework implement relevant operational conclusions from continuity tests and post-incident analysis in the ICT risk assessment process and develop risk-appropriate awareness and resilience training as needed.

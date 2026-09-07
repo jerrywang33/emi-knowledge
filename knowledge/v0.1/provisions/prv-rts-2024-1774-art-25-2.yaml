@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-25-2
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Test continuity under severe scenarios and verify response capability
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 25(2)
+  segments:
+    - {kind: article, value: "25"}
+    - {kind: paragraph, value: "2"}
+heading: Testing of the ICT business continuity plans
+content_kind: editorial_summary
+content: Full-framework entities use continuity-plan tests to assess whether critical or important functions can continue. Tests cover severe but plausible disruption scenarios used in plan development, applicable third-party ICT services and provider failure or jurisdictional political risk, assumption challenges, and the response ability of staff, providers, systems and services; entities other than microenterprises also test switchover to redundant capacity, backups and facilities and verify sustained operation and restoration.

@@ -1,0 +1,19 @@
+id: prv-rts-2024-1774-art-39-2-d-g
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Set recovery targets, activation actions, and backup measures
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 39(2)(d)-(g) and final subparagraph
+  segments:
+    - {kind: article, value: "39"}
+    - {kind: paragraph, value: "2"}
+    - {kind: point, value: d-g}
+heading: Components of the ICT business continuity plan
+content_kind: editorial_summary
+content: Simplified-framework continuity plans establish recovery levels and timeframes for functions and key dependencies, activation conditions and availability, continuity and recovery actions, restoration measures for critical or important functions, supporting processes, information assets and interdependencies, and risk-based backup scope and minimum frequency; recovery measures also mitigate failures of critical third-party providers.

@@ -1,0 +1,18 @@
+id: prv-dora-art-12-4
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Maintain or assess redundant ICT capacity
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 12(4)
+  segments:
+    - {kind: article, value: "12"}
+    - {kind: paragraph, value: "4"}
+heading: Backup policies and procedures, restoration and recovery procedures and methods
+content_kind: editorial_summary
+content: Financial entities other than microenterprises maintain redundant ICT capacities with resources, capabilities, and functions adequate for business needs; microenterprises assess the need for such redundant capacity according to their risk profile.

@@ -1,0 +1,33 @@
+id: src-mfsa-dora-authorisation-observations-2026
+type: source
+schema_version: 0.1.0
+revision: 1
+title: General Observations on Digital Operational Resilience in Authorisation Applications Received in 2025
+language: en
+lifecycle_status: approved
+confirmation:
+  status: not_required
+  open_questions: []
+replaces: []
+issuer_name: Malta Financial Services Authority
+issuer_acronym: MFSA
+jurisdictions: [MT]
+document_type: regulator_guidance
+authority_level: supervisory_guidance
+official_identifier: MFSA Circular dated 9 June 2026
+registry_identifiers:
+  - registry: mfsa
+    value: general-observations-digital-operational-resilience-authorisation-2025
+version_label: Circular retrieved on 2026-09-07
+official_url: https://www.mfsa.mt/wp-content/uploads/2026/06/General-Observations-on-Digital-Operational-Resilience-in-Authorisation-Applications-Received-in-2025.pdf
+published_on: "2026-06-09"
+effective_from: null
+applies_from: null
+effective_to: null
+retrieved_on: "2026-09-07"
+document_status: current
+source_relations:
+  - relation: references
+    source_id: src-eu-reg-2022-2554
+  - relation: references
+    source_id: src-eu-reg-2024-1774

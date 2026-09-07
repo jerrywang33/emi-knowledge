@@ -1,0 +1,19 @@
+id: prv-rts-2024-1774-art-24-1-a
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Define continuity policy objectives, scope, timeframe, and activation criteria
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 24(1)(a)
+  segments:
+    - {kind: article, value: "24"}
+    - {kind: paragraph, value: "1"}
+    - {kind: point, value: a}
+heading: Components of the ICT business continuity policy
+content_kind: editorial_summary
+content: Full-framework entities include in the ICT business continuity policy its objectives and relationship with overall business continuity using BIA results, the scope and any limits or exclusions of continuity arrangements, the covered timeframe, and criteria for activating and deactivating continuity, response and recovery, and crisis communication plans.

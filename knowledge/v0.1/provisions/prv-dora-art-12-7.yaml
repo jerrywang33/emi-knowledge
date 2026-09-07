@@ -1,0 +1,18 @@
+id: prv-dora-art-12-7
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Verify and reconcile data integrity during recovery
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 12(7)
+  segments:
+    - {kind: article, value: "12"}
+    - {kind: paragraph, value: "7"}
+heading: Backup policies and procedures, restoration and recovery procedures and methods
+content_kind: editorial_summary
+content: During recovery from an ICT-related incident, financial entities perform necessary checks, including multiple checks and reconciliations where needed, to maintain the highest level of data integrity, including when reconstructing data from external stakeholders and reconciling across systems.

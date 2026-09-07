@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-39-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Develop simplified continuity plans from severe-disruption analysis
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 39(1)
+  segments:
+    - {kind: article, value: "39"}
+    - {kind: paragraph, value: "1"}
+heading: Components of the ICT business continuity plan
+content_kind: editorial_summary
+content: Simplified-framework entities develop ICT business continuity plans using analysis of their exposure to and potential impact from severe business disruptions and scenarios affecting ICT assets that support critical or important functions, including a cyber-attack scenario.

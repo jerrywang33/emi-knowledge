@@ -1,0 +1,19 @@
+id: prv-dora-art-12-3-first-subparagraph
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Restore through segregated and protected ICT systems
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2022-2554
+locator:
+  label: Article 12(3), first subparagraph
+  segments:
+    - {kind: article, value: "12"}
+    - {kind: paragraph, value: "3"}
+    - {kind: other, value: first-subparagraph}
+heading: Backup policies and procedures, restoration and recovery procedures and methods
+content_kind: editorial_summary
+content: When restoring backup data using their own systems, financial entities use systems physically and logically segregated from the source, protect them from unauthorised access and ICT corruption, and enable timely restoration of services from data and system backups.

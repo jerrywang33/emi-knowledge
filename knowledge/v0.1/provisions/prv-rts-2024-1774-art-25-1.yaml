@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-25-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Base continuity-plan testing on BIA and ICT risk assessment
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 25(1)
+  segments:
+    - {kind: article, value: "25"}
+    - {kind: paragraph, value: "1"}
+heading: Testing of the ICT business continuity plans
+content_kind: editorial_summary
+content: Full-framework entities take their business impact analysis and ICT risk assessment into account when testing ICT business continuity plans under DORA Article 11(6).

@@ -1,0 +1,19 @@
+id: prv-rts-2024-1774-art-39-2-h-j
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Maintain alternatives, communication, and current continuity plans
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 39(2)(h)-(j)
+  segments:
+    - {kind: article, value: "39"}
+    - {kind: paragraph, value: "2"}
+    - {kind: point, value: h-j}
+heading: Components of the ICT business continuity plan
+content_kind: editorial_summary
+content: Simplified-framework continuity plans include alternative options when short-term recovery may not be feasible, internal and external communication and escalation arrangements, and updates driven by incident and test lessons, new risks and threats, changed recovery objectives, and major organisational or supporting-asset changes.

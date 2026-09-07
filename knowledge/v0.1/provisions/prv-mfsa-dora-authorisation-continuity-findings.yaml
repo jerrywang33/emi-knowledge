@@ -1,0 +1,18 @@
+id: prv-mfsa-dora-authorisation-continuity-findings
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: MFSA observations on continuity documentation in authorisation applications
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-mfsa-dora-authorisation-observations-2026
+locator:
+  label: Executive Summary and Chapter II observations on ICT business continuity
+  segments:
+    - {kind: section, value: Executive Summary}
+    - {kind: chapter, value: II}
+heading: ICT business continuity management
+content_kind: editorial_summary
+content: MFSA reports recurring authorisation-application weaknesses where continuity material is generic, insufficiently connected to the applicant's business model, critical or important functions, business impact analysis and dependencies, or lacks adequately developed and executable ICT business continuity and response and recovery plans.

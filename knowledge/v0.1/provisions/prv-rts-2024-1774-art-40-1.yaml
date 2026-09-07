@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-40-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Test simplified continuity plans at required intervals and changes
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 40(1)
+  segments:
+    - {kind: article, value: "40"}
+    - {kind: paragraph, value: "1"}
+heading: Testing of business continuity plans
+content_kind: editorial_summary
+content: Simplified-framework entities test their continuity plans and included scenarios at least annually for backup and restore procedures and upon every major change to the business continuity plan.

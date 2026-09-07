@@ -1,0 +1,18 @@
+id: prv-rts-2024-1774-art-26-1
+type: provision
+schema_version: 0.1.0
+revision: 1
+title: Define executable ICT response and recovery plans
+language: en
+lifecycle_status: approved
+confirmation: {status: not_required, open_questions: []}
+replaces: []
+source_id: src-eu-reg-2024-1774
+locator:
+  label: Article 26(1)
+  segments:
+    - {kind: article, value: "26"}
+    - {kind: paragraph, value: "1"}
+heading: ICT response and recovery plans
+content_kind: editorial_summary
+content: Full-framework entities develop BIA-informed ICT response and recovery plans that define activation and deactivation conditions and exceptions, actions to preserve availability, integrity, continuity and recovery of systems and services supporting critical or important functions, recovery-objective alignment, assigned roles, readily accessible documentation, short- and long-term options including partial recovery, plan objectives, and successful-execution criteria.
