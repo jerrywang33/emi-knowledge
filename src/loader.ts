@@ -1,7 +1,12 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { parseDocument } from "yaml";
-import type { KnowledgeObject, LoadedKnowledgeObject, ValidationIssue } from "./model.js";
+import type {
+  KnowledgeObject,
+  LoadedDocument,
+  LoadedKnowledgeObject,
+  ValidationIssue,
+} from "./model.js";
 
 const SUPPORTED_EXTENSIONS = new Set([".json", ".yaml", ".yml"]);
 
@@ -63,14 +68,17 @@ function parseJson(content: string, relativePath: string): { value?: unknown; is
   }
 }
 
-export interface LoadResult {
-  entries: LoadedKnowledgeObject[];
+export interface LoadResult<T extends Record<string, unknown>> {
+  entries: LoadedDocument<T>[];
   issues: ValidationIssue[];
 }
 
-export async function loadKnowledgeDirectory(directory: string): Promise<LoadResult> {
+export async function loadStructuredDirectory<T extends Record<string, unknown>>(
+  directory: string,
+  contentLabel: string,
+): Promise<LoadResult<T>> {
   const absoluteDirectory = path.resolve(directory);
-  const entries: LoadedKnowledgeObject[] = [];
+  const entries: LoadedDocument<T>[] = [];
   const issues: ValidationIssue[] = [];
   let files: string[];
 
@@ -91,7 +99,7 @@ export async function loadKnowledgeDirectory(directory: string): Promise<LoadRes
     issues.push({
       code: "load.empty",
       path: absoluteDirectory,
-      message: "No YAML or JSON knowledge objects were found.",
+      message: `No YAML or JSON ${contentLabel} were found.`,
     });
   }
 
@@ -116,7 +124,7 @@ export async function loadKnowledgeDirectory(directory: string): Promise<LoadRes
     }
 
     entries.push({
-      object: parsed.value as KnowledgeObject,
+      object: parsed.value as T,
       filePath,
       relativePath,
       rawContent,
@@ -126,3 +134,6 @@ export async function loadKnowledgeDirectory(directory: string): Promise<LoadRes
   return { entries, issues };
 }
 
+export async function loadKnowledgeDirectory(directory: string): Promise<LoadResult<KnowledgeObject>> {
+  return loadStructuredDirectory<KnowledgeObject>(directory, "knowledge objects");
+}

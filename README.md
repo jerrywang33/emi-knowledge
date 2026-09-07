@@ -218,6 +218,8 @@ npm run example:query -- req-full-change-controlled-lifecycle
 
 `npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、知识链缺口或已配置的敏感内容模式都会使命令失败。`npm run release:v0.1` 根据固定配置重新生成发布目录，自动化测试检查生成结果与仓库版本一致。`npm run example:query` 展示产品如何锁定版本并查询一条完整关系链。
 
+专题清单同时进入 `npm run check`。它会检查清单 Schema、目录命名、入口引用、批准状态和解析结果；字段及组合发布规则见 [v0.1 专题清单模型](docs/model/v0.1-topic-manifest.md)。
+
 ## 当前状态
 
 `v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。

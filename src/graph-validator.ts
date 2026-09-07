@@ -22,14 +22,14 @@ const TYPE_DIRECTORIES: Record<KnowledgeType, string> = {
   verification: "verifications",
 };
 
-interface ObjectReference {
+export interface ObjectReference {
   targetId: string;
   expectedType: KnowledgeType;
   path: string;
   dependency: boolean;
 }
 
-function objectReferences(object: KnowledgeObject): ObjectReference[] {
+export function knowledgeObjectReferences(object: KnowledgeObject): ObjectReference[] {
   if (!isKnowledgeType(object.type)) {
     return [];
   }
@@ -228,7 +228,8 @@ function checkDateRanges(entry: LoadedKnowledgeObject, issues: ValidationIssue[]
   }
 }
 
-function checkSensitiveContent(entry: LoadedKnowledgeObject, issues: ValidationIssue[]): void {
+export function findSensitiveContentIssues(rawContent: string, relativePath: string): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
   const patterns: Array<{ code: string; pattern: RegExp; description: string }> = [
     {
       code: "sensitive.private_key",
@@ -253,14 +254,16 @@ function checkSensitiveContent(entry: LoadedKnowledgeObject, issues: ValidationI
   ];
 
   for (const item of patterns) {
-    if (item.pattern.test(entry.rawContent)) {
+    if (item.pattern.test(rawContent)) {
       issues.push({
         code: item.code,
-        path: entry.relativePath,
+        path: relativePath,
         message: item.description,
       });
     }
   }
+
+  return issues;
 }
 
 function checkReplacementCycles(
@@ -413,10 +416,18 @@ function checkCompleteChain(
 }
 
 export function countReferences(entries: LoadedKnowledgeObject[]): number {
-  return entries.reduce((count, entry) => count + objectReferences(entry.object).length, 0);
+  return entries.reduce((count, entry) => count + knowledgeObjectReferences(entry.object).length, 0);
 }
 
-export function validateKnowledgeGraph(entries: LoadedKnowledgeObject[]): ValidationIssue[] {
+export interface KnowledgeGraphValidationOptions {
+  requireCompleteChain?: boolean;
+  allowExternalHistoricalReferences?: boolean;
+}
+
+export function validateKnowledgeGraph(
+  entries: LoadedKnowledgeObject[],
+  options: KnowledgeGraphValidationOptions = {},
+): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const objectsById = new Map<string, KnowledgeObject>();
   const entriesById = new Map<string, LoadedKnowledgeObject>();
@@ -450,7 +461,7 @@ export function validateKnowledgeGraph(entries: LoadedKnowledgeObject[]): Valida
 
     checkLocalUniqueness(entry, issues);
     checkDateRanges(entry, issues);
-    checkSensitiveContent(entry, issues);
+    issues.push(...findSensitiveContentIssues(entry.rawContent, entry.relativePath));
   }
 
   const locatorOwners = new Map<string, LoadedKnowledgeObject>();
@@ -474,9 +485,12 @@ export function validateKnowledgeGraph(entries: LoadedKnowledgeObject[]): Valida
 
   for (const entry of entries) {
     const owner = entry.object;
-    for (const reference of objectReferences(owner)) {
+    for (const reference of knowledgeObjectReferences(owner)) {
       const target = objectsById.get(reference.targetId);
       if (!target) {
+        if (!reference.dependency && options.allowExternalHistoricalReferences) {
+          continue;
+        }
         issues.push({
           code: "graph.missing_reference",
           path: `${entry.relativePath}/${reference.path}`,
@@ -515,7 +529,9 @@ export function validateKnowledgeGraph(entries: LoadedKnowledgeObject[]): Valida
   const controls = objects.filter((object) => object.type === "control") as ControlObject[];
   const decisions = objects.filter((object) => object.type === "decision") as DecisionObject[];
   checkConfirmationSupport(requirements, controls, decisions, entriesById, issues);
-  checkCompleteChain(objects, entriesById, issues);
+  if (options.requireCompleteChain ?? true) {
+    checkCompleteChain(objects, entriesById, issues);
+  }
 
   return issues.sort((left, right) =>
     left.path.localeCompare(right.path) || left.code.localeCompare(right.code) || left.message.localeCompare(right.message));
@@ -524,4 +540,3 @@ export function validateKnowledgeGraph(entries: LoadedKnowledgeObject[]): Valida
 export function emptyCounts(): Record<KnowledgeType, number> {
   return Object.fromEntries(KNOWLEDGE_TYPES.map((type) => [type, 0])) as Record<KnowledgeType, number>;
 }
-

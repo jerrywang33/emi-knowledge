@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jerrywang33/emi-knowledge/schemas/v0.1/topic-manifest.schema.json",
+  "title": "EMI Knowledge v0.1 topic manifest",
+  "description": "Schema for selecting a governed knowledge topic without duplicating core knowledge objects.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "schema_version",
+    "revision",
+    "title",
+    "language",
+    "domain",
+    "lifecycle_status",
+    "source_review_ids",
+    "scope",
+    "entry_requirement_ids",
+    "context_object_ids",
+    "coverage",
+    "open_questions"
+  ],
+  "properties": {
+    "id": { "$ref": "#/$defs/topicId" },
+    "schema_version": { "const": "0.1.0" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "title": { "$ref": "#/$defs/nonEmptyString" },
+    "language": { "const": "en" },
+    "domain": { "$ref": "#/$defs/localIdentifier" },
+    "lifecycle_status": {
+      "enum": ["draft", "in_review", "approved", "superseded", "retired"]
+    },
+    "source_review_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/sourceReviewId" },
+      "uniqueItems": true
+    },
+    "scope": { "$ref": "#/$defs/scope" },
+    "entry_requirement_ids": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/requirementId" },
+      "uniqueItems": true
+    },
+    "context_object_ids": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/knowledgeId" },
+      "uniqueItems": true
+    },
+    "coverage": { "$ref": "#/$defs/coverage" },
+    "open_questions": { "$ref": "#/$defs/nonEmptyStringArray" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "lifecycle_status": { "const": "approved" } },
+        "required": ["lifecycle_status"]
+      },
+      "then": {
+        "properties": {
+          "entry_requirement_ids": { "minItems": 1 },
+          "coverage": {
+            "properties": {
+              "sources": { "const": "complete" },
+              "provisions": { "const": "complete" },
+              "requirements": { "const": "complete" },
+              "decisions": { "const": "complete" },
+              "controls": { "const": "complete" },
+              "verifications": { "const": "complete" }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyString" },
+      "uniqueItems": true
+    },
+    "localIdentifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "topicId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "knowledgeId": {
+      "type": "string",
+      "pattern": "^(src|prv|req|dec|ctl|ver)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "requirementId": {
+      "type": "string",
+      "pattern": "^req-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sourceReviewId": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "includes", "excludes"],
+      "properties": {
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "includes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        },
+        "excludes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "coverageStatus": {
+      "enum": ["not_started", "in_progress", "complete"]
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sources",
+        "provisions",
+        "requirements",
+        "decisions",
+        "controls",
+        "verifications"
+      ],
+      "properties": {
+        "sources": { "$ref": "#/$defs/coverageStatus" },
+        "provisions": { "$ref": "#/$defs/coverageStatus" },
+        "requirements": { "$ref": "#/$defs/coverageStatus" },
+        "decisions": { "$ref": "#/$defs/coverageStatus" },
+        "controls": { "$ref": "#/$defs/coverageStatus" },
+        "verifications": { "$ref": "#/$defs/coverageStatus" }
+      }
+    }
+  }
+}

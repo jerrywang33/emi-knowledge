@@ -51,6 +51,35 @@ const CONFIG: ReleaseConfig = {
   limitations: ["Institution-specific parameters and evidence retention periods remain unresolved."],
 };
 
+const TOPIC_CONFIG: ReleaseConfig = {
+  ...CONFIG,
+  release_version: "v0.2.0",
+  released_on: "2026-09-07",
+  tool_version: "0.2.0",
+  inputs: {
+    ...CONFIG.inputs,
+    release_artifact_schema: {
+      id: "RELEASE-ARTIFACT-SCHEMA-V0.2",
+      version: "0.2.0",
+      path: "schemas/v0.2/release-artifact.schema.json",
+    },
+  },
+  scope: {
+    title: "EMI Knowledge v0.2 topic-selected release test",
+    includes: ["The approved DORA ICT change management topic."],
+    excludes: ["Draft topics and institution-specific conclusions."],
+  },
+  topic_selection: {
+    directory: "knowledge/topics",
+    schema: {
+      id: "TOPIC-MANIFEST-SCHEMA-V0.1",
+      version: "0.1.0",
+      path: "schemas/v0.1/topic-manifest.schema.json",
+    },
+    topic_ids: ["dora-ict-change-management"],
+  },
+};
+
 test("release generation is deterministic and exposes unresolved institution items", async (context) => {
   const temporaryRoot = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-release-"));
   context.after(async () => fs.rm(temporaryRoot, { recursive: true, force: true }));
@@ -85,4 +114,54 @@ test("checked-in v0.1.0 artifacts match the fixed release config", async (contex
     const checkedInContent = await fs.readFile(path.join(releaseDirectory, artifactPath), "utf8");
     assert.equal(checkedInContent, generatedContent, `${artifactPath} has drifted from release.config.json`);
   }
+});
+
+test("a topic-selected release fixes topic and object revisions", async (context) => {
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-topic-release-"));
+  context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
+
+  const generated = await generateRelease(TOPIC_CONFIG, ROOT, temporaryDirectory);
+  const knowledgeBundle = JSON.parse(generated.artifacts["knowledge.json"]!) as {
+    topics: Array<{ id: string; revision: number }>;
+    objects: Array<{ id: string }>;
+  };
+
+  assert.equal(generated.manifest.manifest_schema_version, "0.2.0");
+  assert.equal(generated.manifest.object_count, 57);
+  assert.equal(generated.manifest.reference_count, 147);
+  assert.deepEqual(generated.manifest.topics?.map((topic) => topic.id), ["dora-ict-change-management"]);
+  assert.equal(generated.manifest.inputs.topic_schema?.version, "0.1.0");
+  assert.deepEqual(
+    knowledgeBundle.topics.map((topic) => ({ id: topic.id, revision: topic.revision })),
+    [{ id: "dora-ict-change-management", revision: 1 }],
+  );
+  assert.equal(knowledgeBundle.objects.length, 57);
+  assert.match(generated.artifacts["README.md"]!, /dora-ict-change-management/);
+});
+
+test("a release rejects draft and unknown topic selections", async (context) => {
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-topic-reject-"));
+  context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
+
+  await assert.rejects(
+    generateRelease({
+      ...TOPIC_CONFIG,
+      topic_selection: {
+        ...TOPIC_CONFIG.topic_selection!,
+        topic_ids: ["dora-ict-incident-management-reporting"],
+      },
+    }, ROOT, temporaryDirectory),
+    /non-approved topics: dora-ict-incident-management-reporting/,
+  );
+
+  await assert.rejects(
+    generateRelease({
+      ...TOPIC_CONFIG,
+      topic_selection: {
+        ...TOPIC_CONFIG.topic_selection!,
+        topic_ids: ["dora-unknown-topic"],
+      },
+    }, ROOT, temporaryDirectory),
+    /Unknown topic ID in release config: dora-unknown-topic/,
+  );
 });

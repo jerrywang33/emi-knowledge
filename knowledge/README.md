@@ -42,4 +42,4 @@ Source <- Provision <- Requirement <- Control <- Verification
 | DORA ICT 变更管理 | `approved` | 已进入 `v0.1.0` |
 | DORA ICT 事件管理、分类与监管报告 | `draft` | 计划进入 `v0.2.0` |
 
-专题清单格式将在 `v0.2` 第 4 步加入 JSON Schema 和自动校验。目录与组合发布决定见 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)。
+专题清单格式由 [`schemas/v0.1/topic-manifest.schema.json`](../schemas/v0.1/topic-manifest.schema.json) 校验，字段与对象解析方式见 [v0.1 专题清单模型](../docs/model/v0.1-topic-manifest.md)，目录与组合发布决定见 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)。

@@ -20,6 +20,8 @@
 6. 每个发布版本明确选择一个或多个专题，并在 Manifest 中固定专题清单、对象修订和文件摘要。
 7. `releases/v0.1.0/` 和 Git tag `v0.1.0` 保持冻结。第二专题完成后形成新的 `v0.2.0` 发布。
 
+专题清单字段、批准条件和解析规则见 [v0.1 专题清单模型](../model/v0.1-topic-manifest.md)。`v0.2` 发布制品使用独立的 [release artifact Schema](../../schemas/v0.2/release-artifact.schema.json)，保留 `v0.1.0` 使用的 Schema 与生成结果。
+
 ## 目录
 
 ```text

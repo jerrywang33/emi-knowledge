@@ -9,6 +9,9 @@ export const KNOWLEDGE_TYPES = [
 
 export type KnowledgeType = (typeof KNOWLEDGE_TYPES)[number];
 
+export type LifecycleStatus = "draft" | "in_review" | "approved" | "superseded" | "retired";
+export type TopicCoverageStatus = "not_started" | "in_progress" | "complete";
+
 export interface Confirmation {
   status: "not_required" | "pending" | "confirmed";
   open_questions: string[];
@@ -21,7 +24,7 @@ export interface KnowledgeObject extends Record<string, unknown> {
   revision: number;
   title: string;
   language: string;
-  lifecycle_status: "draft" | "in_review" | "approved" | "superseded" | "retired";
+  lifecycle_status: LifecycleStatus;
   confirmation: Confirmation;
   replaces: string[];
 }
@@ -120,12 +123,35 @@ export type TypedKnowledgeObject =
   | ControlObject
   | VerificationObject;
 
-export interface LoadedKnowledgeObject {
-  object: KnowledgeObject;
+export interface TopicManifest extends Record<string, unknown> {
+  id: string;
+  schema_version: string;
+  revision: number;
+  title: string;
+  language: string;
+  domain: string;
+  lifecycle_status: LifecycleStatus;
+  source_review_ids: string[];
+  scope: {
+    summary: string;
+    includes: string[];
+    excludes: string[];
+  };
+  entry_requirement_ids: string[];
+  context_object_ids: string[];
+  coverage: Record<`${KnowledgeType}s`, TopicCoverageStatus>;
+  open_questions: string[];
+}
+
+export interface LoadedDocument<T extends Record<string, unknown>> {
+  object: T;
   filePath: string;
   relativePath: string;
   rawContent: string;
 }
+
+export type LoadedKnowledgeObject = LoadedDocument<KnowledgeObject>;
+export type LoadedTopicManifest = LoadedDocument<TopicManifest>;
 
 export interface ValidationIssue {
   code: string;
@@ -147,4 +173,3 @@ export function isKnowledgeType(value: unknown): value is KnowledgeType {
 export function asTypedObject(object: KnowledgeObject): TypedKnowledgeObject {
   return object as TypedKnowledgeObject;
 }
-

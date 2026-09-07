@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import { Ajv2020, type ErrorObject, type ValidateFunction } from "ajv/dist/2020.js";
 import formatsModule, { type FormatsPlugin } from "ajv-formats";
-import type { LoadedKnowledgeObject, ValidationIssue } from "./model.js";
+import type { LoadedDocument, ValidationIssue } from "./model.js";
 
 function formatSchemaError(error: ErrorObject): string {
   const detail = error.message ?? error.keyword;
@@ -44,8 +44,8 @@ export async function assertMatchesSchema(
   }
 }
 
-export async function validateSchema(
-  entries: LoadedKnowledgeObject[],
+export async function validateSchema<T extends Record<string, unknown>>(
+  entries: LoadedDocument<T>[],
   schemaPath: string,
 ): Promise<ValidationIssue[]> {
   const validate = await compileKnowledgeSchema(schemaPath);
