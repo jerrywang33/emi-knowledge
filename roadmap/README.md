@@ -1,23 +1,25 @@
 # EMI Knowledge Roadmap
 
-- 当前阶段：`v0.3 DORA ICT 业务连续性、备份与恢复`
-- 当前步骤：第 5 步已完成，正在进行第 6 步发布与独立使用验收
-- 当前固定发布：`v0.2.0`
+- 当前阶段：`v0.3 已完成，下一阶段待确认`
+- 当前步骤：第 1 至第 6 步均已完成
+- 当前固定发布：`v0.3.0`
 - 最后更新：2026-09-07
 
 ## 当前计划
 
-`v0.3` 建设第三条 DORA 完整知识链，覆盖 ICT 业务连续性、备份与恢复。具体范围、测试边界、步骤和完成条件见 [`v0.3 DORA ICT 业务连续性、备份与恢复 Roadmap`](v0.3-dora-ict-business-continuity-backup-recovery.md)。
+`v0.3` 已完成第三条 DORA 完整知识链，覆盖 ICT 业务连续性、备份与恢复。具体范围、测试边界、步骤和完成结果见 [`v0.3 DORA ICT 业务连续性、备份与恢复 Roadmap`](v0.3-dora-ict-business-continuity-backup-recovery.md)。
 
-当前固定发布仍为 `v0.2.0`。专题目录和组合发布继续采用 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)，工作知识与历史发布的隔离继续采用 [Decision 0003](../docs/decisions/0003-working-knowledge-and-frozen-releases.md)。`v0.1.0` 和 `v0.2.0` 的发布目录及 Git tag 保持不变。
+当前固定发布为 [`v0.3.0`](../releases/v0.3.0/README.md)。专题目录和组合发布继续采用 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)，工作知识与历史发布的隔离继续采用 [Decision 0003](../docs/decisions/0003-working-knowledge-and-frozen-releases.md)。`v0.1.0` 和 `v0.2.0` 的发布目录及 Git tag 保持不变。
 
 第三专题来源已经通过 [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](../docs/sources/dora-ict-business-continuity-source-review.md) 完成工程复核。欧盟主链复用 DORA 和 Regulation (EU) 2024/1774，新增 MFSA 2026 年授权观察作为监督背景，不改写历史发布固定的来源输入。
 
 本专题纳入直接针对 ICT 业务连续性计划和恢复计划的测试要求。DORA Chapter IV 的通用数字运营韧性测试和 TLPT 留给后续独立专题；ICT 第三方依赖只纳入连续性和恢复所需边界，第三方风险管理仍保持独立。
 
-第三个 [`approved` Topic](../knowledge/topics/dora/ict-business-continuity-backup-recovery.yaml) 和[条款覆盖矩阵](../docs/dora/topics/ict-business-continuity-backup-recovery.md) 已经完成。Topic 以 23 个 Requirement 为入口，通过共享 Provision 保留与事件响应、经验学习和危机沟通的关系，独立闭包包含 94 个对象、10 个 Control、10 个 Verification 和 20 类 EvidenceRequirement。下一步生成并验收三专题 `v0.3.0` 固定发布。
+第三个 [`approved` Topic](../knowledge/topics/dora/ict-business-continuity-backup-recovery.yaml) 和[条款覆盖矩阵](../docs/dora/topics/ict-business-continuity-backup-recovery.md) 已经完成。Topic 以 23 个 Requirement 为入口，通过共享 Provision 保留与事件响应、经验学习和危机沟通的关系，独立闭包包含 94 个对象、10 个 Control、10 个 Verification 和 20 类 EvidenceRequirement。
 
-`v0.2.0` 已固定 ICT 变更管理和 ICT 事件管理两个 Topic、256 个对象和 679 条关系。`v0.3` 将在不改变该历史版本的前提下增加第三个 Topic，并复用已有的主体范围、治理、事件响应、沟通和变更关系。
+`v0.3.0` 固定三个 Topic、342 个对象、945 条关系、62 类 EvidenceRequirement 和 243 个待确认项，内容摘要为 `6adba77ba28d33c8d7ed02b13848b3bb9114f6b13209fe274bb76c53c6dbdad4`。发布记录和三类使用结果见 [`v0.3.0` 发布记录](../docs/releases/v0.3.0.md)与[独立使用验收](../docs/acceptance/v0.3.0.md)。
+
+下一阶段的专题尚未确定。真实 EMI 场景优先用于校准现有知识链、机构参数和人员、Agent、产品三类使用方式，再根据结果确定后续专题。
 
 ## v0.1 阶段目标
 

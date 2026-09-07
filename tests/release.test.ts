@@ -137,6 +137,31 @@ test("checked-in v0.2.0 artifacts match the fixed topic release config", async (
   }
 });
 
+test("checked-in v0.3.0 artifacts match the fixed three-topic release config", async (context) => {
+  const releaseDirectory = path.join(ROOT, "releases/v0.3.0");
+  const config = JSON.parse(
+    await fs.readFile(path.join(releaseDirectory, "release.config.json"), "utf8"),
+  ) as ReleaseConfig;
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-v03-release-"));
+  context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));
+
+  const generated = await generateRelease(config, ROOT, temporaryDirectory);
+  assert.equal(generated.manifest.object_count, 342);
+  assert.equal(generated.manifest.reference_count, 945);
+  assert.deepEqual(
+    generated.manifest.topics?.map((topic) => topic.id),
+    [
+      "dora-ict-business-continuity-backup-recovery",
+      "dora-ict-change-management",
+      "dora-ict-incident-management-reporting",
+    ],
+  );
+  for (const [artifactPath, generatedContent] of Object.entries(generated.artifacts)) {
+    const checkedInContent = await fs.readFile(path.join(releaseDirectory, artifactPath), "utf8");
+    assert.equal(checkedInContent, generatedContent, `${artifactPath} has drifted from release.config.json`);
+  }
+});
+
 test("a topic-selected release fixes topic and object revisions", async (context) => {
   const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "emi-knowledge-topic-release-"));
   context.after(async () => fs.rm(temporaryDirectory, { recursive: true, force: true }));

@@ -1,10 +1,10 @@
 # EMI Knowledge｜面向欧洲 EMI 的法规、业务与技术知识库
 
-EMI Knowledge 当前固定发布为 DORA `v0.2.0` 工程基线，包含 ICT 变更管理，以及 ICT 事件管理、分类与监管报告两条完整知识链。`v0.3` 正在建设 ICT 业务连续性、备份与恢复知识链。当前内容不提供具体机构的法律适用性或合规结论。
+EMI Knowledge 当前固定发布为 DORA `v0.3.0` 工程基线，包含 ICT 变更管理，ICT 事件管理、分类与监管报告，以及 ICT 业务连续性、备份与恢复三条完整知识链。当前内容不提供具体机构的法律适用性或合规结论。
 
 当前建设范围、步骤和完成条件见 [Roadmap](roadmap/README.md)。
 
-当前固定发布为 [`v0.2.0`](releases/v0.2.0/README.md)，版本范围和限制见[发布记录](docs/releases/v0.2.0.md)，三类使用结果见[独立使用验收](docs/acceptance/v0.2.0.md)。首版 [`v0.1.0`](docs/releases/v0.1.0.md) 继续作为历史固定版本保留。
+当前固定发布为 [`v0.3.0`](releases/v0.3.0/README.md)，版本范围和限制见[发布记录](docs/releases/v0.3.0.md)，三类使用结果见[独立使用验收](docs/acceptance/v0.3.0.md)。[`v0.1.0`](docs/releases/v0.1.0.md) 和 [`v0.2.0`](docs/releases/v0.2.0.md) 继续作为历史固定版本保留。
 
 ---
 
@@ -175,7 +175,7 @@ EMI Knowledge 通过稳定 Schema、版本化文件和后续接口发布知识�
 
 `v0.2` 在现有方法上增加 DORA ICT 事件管理、分类与监管报告知识链。专题范围、实施步骤和完成条件见 [`v0.2 Roadmap`](roadmap/v0.2-dora-ict-incidents.md)，目录与发布方式见 [Decision 0002](docs/decisions/0002-dora-topic-index-and-release-composition.md)，来源核对结果和条款范围分别见 [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](docs/sources/dora-ict-incidents-source-review.md)与[事件专题说明](docs/dora/topics/ict-incident-management-reporting.md)。
 
-`v0.3` 增加 DORA ICT 业务连续性、备份与恢复知识链，覆盖完整框架和简化框架下的 BIA、连续性计划、恢复目标、备份还原、计划启动、恢复演练和整改。DORA Chapter IV 的通用数字运营韧性测试及 TLPT 保持为后续独立专题。范围和完成条件见 [`v0.3 Roadmap`](roadmap/v0.3-dora-ict-business-continuity-backup-recovery.md)。
+`v0.3` 已增加 DORA ICT 业务连续性、备份与恢复知识链，覆盖完整框架和简化框架下的 BIA、连续性计划、恢复目标、备份还原、计划启动、恢复演练和整改。DORA Chapter IV 的通用数字运营韧性测试及 TLPT 保持为后续独立专题。范围和完成结果见 [`v0.3 Roadmap`](roadmap/v0.3-dora-ict-business-continuity-backup-recovery.md)。
 
 当前来源收集和版本核对结果见 [DORA 权威来源基线](docs/sources/dora-source-baseline.md)。`DORA-SOURCES-2026-08-31-R2` 已经人工复核，可作为 v0.1 后续知识建设的来源输入；具体机构适用性仍需单独判断。
 
@@ -187,7 +187,7 @@ DORA 的正式结构、主题、条款、配套文件和 EMI 适用路径见 [DO
 - [Commission Delegated Regulation (EU) 2024/1774](https://eur-lex.europa.eu/eli/reg_del/2024/1774)，其中 Article 17 细化 ICT 变更管理程序。
 - [MFSA：ICT Change Management under DORA](https://www.mfsa.mt/publication/ict-change-management-under-the-digital-operational-resilience-act-dora/)，作为 Malta 主管机关发布的说明材料记录，并与具有约束力的法规来源分层管理。
 
-第一阶段计划形成：
+第一阶段形成以下基础能力：
 
 1. DORA 官方来源清单及文件关系。
 2. DORA 主题地图和明确的覆盖边界。
@@ -216,10 +216,11 @@ npm ci
 npm run check
 npm run release:v0.1
 npm run release:v0.2
-npm run example:query -- req-major-incident-determination v0.2.0
+npm run release:v0.3
+npm run example:query -- req-full-recovery-objectives v0.3.0
 ```
 
-`npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、已批准专题的知识链缺口或已配置的敏感内容模式都会使命令失败。`npm run release:v0.1` 根据历史 Manifest 固定的对象集合重新生成发布目录，自动化测试检查生成结果与仓库版本一致。`npm run example:query` 展示产品如何锁定版本并查询一条完整关系链。
+`npm run check` 依次执行 TypeScript 类型检查、自动化测试、Schema 校验和跨对象知识图校验。任何未知字段、断裂引用、状态冲突、确认关系缺失、已批准专题的知识链缺口或已配置的敏感内容模式都会使命令失败。三个发布命令分别按固定配置重新生成对应版本，自动化测试逐字节检查生成结果与仓库版本一致。`npm run example:query` 展示产品如何锁定发布版本、从 Manifest 解析 Schema，并查询一条完整关系链。
 
 专题清单同时进入 `npm run check`。它会检查清单 Schema、目录命名、入口引用、批准状态和解析结果；字段及组合发布规则见 [v0.1 专题清单模型](docs/model/v0.1-topic-manifest.md)。
 
@@ -229,8 +230,10 @@ npm run example:query -- req-major-incident-determination v0.2.0
 
 `v0.1.0` 已经完成 DORA 权威来源基线 R2、DORA 全景目录、v0.1 知识模型与 JSON Schema、包含 57 个对象的 ICT 变更管理完整知识链、TypeScript 校验与确定性发布工具，以及人员、Agent 和产品三类独立工程使用验收。
 
-`v0.2.0` 已经固定两个 Topic、256 个对象和 679 条关系，并通过人员、Agent 和产品三类独立工程使用验收。事件专题包含 66 项入口 Requirement、13 项 Control、13 项 Verification 和 26 类证据要求，覆盖事件管理、分类、欧盟层监管报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。下一阶段将使用真实 EMI 场景校准知识内容和使用方式；README 中列出的长期内容范围不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
+`v0.2.0` 固定两个 Topic、256 个对象和 679 条关系，并通过人员、Agent 和产品三类独立工程使用验收。事件专题包含 66 项入口 Requirement、13 项 Control、13 项 Verification 和 26 类证据要求，覆盖事件管理、分类、欧盟层监管报告、年度成本与损失估算以及 Malta 已公开确认的 CRMS 路径。
 
-`v0.3` 已完成专题范围、测试边界、来源复核和从 Source 到 EvidenceRequirement 的完整知识链。已批准 Topic 包含 23 个入口 Requirement、10 个 Control、10 个 Verification 和 20 类证据要求，正在生成和验收三专题固定发布。来源复核见 [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](docs/sources/dora-ict-business-continuity-source-review.md)，专题边界见[业务连续性、备份与恢复专题说明](docs/dora/topics/ict-business-continuity-backup-recovery.md)。当前固定发布仍为 `v0.2.0`，`v0.3.0` 发布验收完成前不能作为固定发布使用。
+`v0.3.0` 已固定三个 Topic、342 个对象、945 条关系、62 类证据要求和 243 个明确待确认项，并通过人员、Agent 和产品三类独立工程使用验收。业务连续性专题包含 23 个入口 Requirement、10 个 Control、10 个 Verification 和 20 类证据要求；其独立闭包为 94 个对象，未改变 `v0.1.0` 和 `v0.2.0`。来源复核见 [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](docs/sources/dora-ict-business-continuity-source-review.md)，专题边界见[业务连续性、备份与恢复专题说明](docs/dora/topics/ict-business-continuity-backup-recovery.md)。
+
+下一专题尚未确定。真实 EMI 场景将用于校准知识内容、机构待定参数和三类使用方式；README 中列出的长期内容范围不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。

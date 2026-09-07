@@ -1,0 +1,88 @@
+{
+  "release_version": "v0.3.0",
+  "release_level": "engineering_baseline",
+  "released_on": "2026-09-07",
+  "knowledge_directory": "knowledge/v0.1",
+  "output_directory": "releases/v0.3.0",
+  "tool_version": "0.3.0",
+  "inputs": {
+    "source_baseline": {
+      "id": "DORA-SOURCES-2026-08-31-R2",
+      "path": "docs/sources/dora-source-baseline.md"
+    },
+    "incident_source_review": {
+      "id": "DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1",
+      "path": "docs/sources/dora-ict-incidents-source-review.md"
+    },
+    "continuity_source_review": {
+      "id": "DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1",
+      "path": "docs/sources/dora-ict-business-continuity-source-review.md"
+    },
+    "landscape": {
+      "id": "DORA-LANDSCAPE-2026-08-31",
+      "path": "docs/dora/dora-landscape.md"
+    },
+    "knowledge_model": {
+      "id": "KNOWLEDGE-MODEL-V0.1",
+      "path": "docs/model/v0.1-knowledge-model.md"
+    },
+    "topic_model": {
+      "id": "TOPIC-MANIFEST-MODEL-V0.1",
+      "path": "docs/model/v0.1-topic-manifest.md"
+    },
+    "schema": {
+      "id": "KNOWLEDGE-OBJECT-SCHEMA-V0.1",
+      "version": "0.1.0",
+      "path": "schemas/v0.1/knowledge-object.schema.json"
+    },
+    "release_artifact_schema": {
+      "id": "RELEASE-ARTIFACT-SCHEMA-V0.2",
+      "version": "0.2.0",
+      "path": "schemas/v0.2/release-artifact.schema.json"
+    }
+  },
+  "topic_selection": {
+    "directory": "knowledge/topics",
+    "schema": {
+      "id": "TOPIC-MANIFEST-SCHEMA-V0.1",
+      "version": "0.1.0",
+      "path": "schemas/v0.1/topic-manifest.schema.json"
+    },
+    "topic_ids": [
+      "dora-ict-change-management",
+      "dora-ict-incident-management-reporting",
+      "dora-ict-business-continuity-backup-recovery"
+    ]
+  },
+  "scope": {
+    "title": "EMI Knowledge v0.3｜DORA ICT 变更、事件与业务连续性",
+    "includes": [
+      "DORA ICT 变更管理完整知识链，包括完整与简化 ICT 风险管理框架路径。",
+      "DORA ICT 事件发现、记录、响应、恢复、分类、沟通、复盘和监管报告知识链。",
+      "完整与简化框架下的 ICT 业务连续性、BIA、响应恢复、备份还原和恢复目标知识链。",
+      "严重中断及第三方依赖场景、计划启动、危机沟通、恢复完整性、计划测试、切换和缺陷整改控制。",
+      "Malta 已公开确认的事件报送路径和 2026 年 DORA 授权申请监督观察。"
+    ],
+    "excludes": [
+      "任何具体电子货币机构的法律适用性、事件分类、灾难声明、恢复接受、风险接受或合规结论。",
+      "Agent 自动批准框架分支、计划启动、外部通信、监管提交、恢复完成或整改关闭。",
+      "机构内部政策、监管往来、客户数据、生产配置、日志、凭据、真实计划和实际证据。",
+      "DORA Chapter IV 通用数字运营韧性测试和 TLPT，以及 Chapter V ICT 第三方风险的独立完整专题。",
+      "GDPR、AML/CFT、制裁、EMD2 业务要求及其他法规领域的详细知识链。"
+    ]
+  },
+  "review": {
+    "reviewed_by_role": "emi_knowledge_engineering_maintainer",
+    "reviewed_on": "2026-09-07",
+    "scope": "核对三个专题的来源定位、对象状态、独立与组合闭包、完整和简化框架边界、工程决定、控制、验证、证据要求、机器文件 Schema 和发布可重复性；未执行具体机构法律审查、真实连续性演练或监管报送。"
+  },
+  "limitations": [
+    "公开来源不能确定具体 EMI 的 EMD2 Article 9(1) 豁免状态、DORA microenterprise 状态及完整或简化框架适用结论。",
+    "关键或重要职能、BIA 结论、RTO、RPO、备份频率、启动阈值、恢复架构、测试参数、验收标准和风险接受需要机构确认。",
+    "Malta EMI 申请使用的 AX05、Minimum Requirements Guidelines、Addendum 及可能存在的连续性材料模板需要在真实任务中核对当前版本和提交范围。",
+    "Malta 非 ICT 重大支付运营或安全事件流程、年度成本损失请求方式及 MFSA 动态报送材料仍需在执行时核对。",
+    "机构角色、系统、渠道、权限、证据来源和保存期限需要使用方确认。",
+    "发布内容尚未使用真实 EMI 组织、系统、连续性计划、灾备配置、演练、事件和运行证据完成业务验收。",
+    "工程审查不构成法律意见、监管批准、合规认证或生产就绪结论。"
+  ]
+}

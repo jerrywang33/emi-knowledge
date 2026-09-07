@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { resolveReleaseSchemaPaths } from "../examples/consumer/query-release.js";
 import {
   KnowledgeIndex,
   answerFromAgentContext,
@@ -21,6 +22,7 @@ const SCHEMAS_V02 = {
   knowledgeObjectSchema: path.join(ROOT, "schemas/v0.1/knowledge-object.schema.json"),
   topicManifestSchema: path.join(ROOT, "schemas/v0.1/topic-manifest.schema.json"),
 };
+const RELEASE_V03 = path.join(ROOT, "releases/v0.3.0");
 
 test("a product can query source, requirement, control, verification, and evidence relations", async () => {
   const bundle = await loadKnowledgeBundle(path.join(RELEASE, "knowledge.json"), "v0.1.0", SCHEMAS);
@@ -167,5 +169,90 @@ test("v0.2 human, Agent, and product artifacts carry the same topic-selected fac
   assert.match(humanDocument, /`ctl-incident-classification`/);
   assert.match(humanDocument, /`ver-incident-classification`/);
   assert.match(humanDocument, /`classification-assessment`/);
+  assert.match(humanDocument, new RegExp(bundle.content_sha256));
+});
+
+test("a product can query the fixed v0.3 backup and restoration chain", async () => {
+  const bundle = await loadKnowledgeBundle(
+    path.join(RELEASE_V03, "knowledge.json"),
+    "v0.3.0",
+    SCHEMAS_V02,
+  );
+  const index = new KnowledgeIndex(bundle);
+
+  assert.deepEqual(
+    bundle.topics?.map((topic) => topic.id),
+    [
+      "dora-ict-business-continuity-backup-recovery",
+      "dora-ict-change-management",
+      "dora-ict-incident-management-reporting",
+    ],
+  );
+  assert.deepEqual(
+    index.requirementToControls("req-full-backup-restoration-policy").map((control) => control.id),
+    ["ctl-continuity-backup-restoration"],
+  );
+  const evidence = index.controlToEvidence("ctl-continuity-backup-restoration");
+  assert.deepEqual(evidence.map((item) => item.verification.id), ["ver-continuity-backup-restoration"]);
+  assert.deepEqual(
+    evidence.flatMap((item) => item.evidence_requirements.map((requirement) => requirement.key)),
+    ["backup-configuration-and-execution", "backup-restore-test"],
+  );
+});
+
+test("the consumer resolves artifact schemas from the fixed release manifest", async () => {
+  const schemaPaths = await resolveReleaseSchemaPaths(ROOT, "v0.3.0");
+
+  assert.deepEqual(schemaPaths, SCHEMAS_V02);
+});
+
+test("the v0.3 Agent context preserves recovery citations and institution decisions", async () => {
+  const context = await loadAgentContext(
+    path.join(RELEASE_V03, "agent-context.json"),
+    "v0.3.0",
+    SCHEMAS_V02,
+  );
+  const answer = answerFromAgentContext(context, "req-full-recovery-objectives");
+
+  assert.equal(answer.release_version, "v0.3.0");
+  assert.ok(answer.citations.some((citation) =>
+    citation.provision_id === "prv-dora-art-12-6"
+    && citation.source_id === "src-eu-reg-2022-2554"
+    && citation.authority_level === "binding_law"));
+  assert.ok(answer.citations.some((citation) =>
+    citation.provision_id === "prv-mfsa-dora-authorisation-rts-continuity-findings"
+    && citation.relation === "supporting_context"
+    && citation.authority_level === "supervisory_guidance"));
+  assert.deepEqual(
+    answer.controls.map((control) => control.control_id),
+    ["ctl-continuity-recovery-objectives-capacity"],
+  );
+  assert.ok(answer.unresolved_items.some((item) => item.path.includes("recovery-targets")));
+  assert.ok(answer.unresolved_items.some((item) => item.path.includes("retention_period")));
+  assert.ok(answer.usage_constraints.some((constraint) =>
+    constraint.includes("Do not infer institution-specific")));
+});
+
+test("v0.3 human, Agent, and product artifacts carry the same three-topic facts", async () => {
+  const [humanDocument, bundle, context, manifest] = await Promise.all([
+    fs.readFile(path.join(RELEASE_V03, "README.md"), "utf8"),
+    loadKnowledgeBundle(path.join(RELEASE_V03, "knowledge.json"), "v0.3.0", SCHEMAS_V02),
+    loadAgentContext(path.join(RELEASE_V03, "agent-context.json"), "v0.3.0", SCHEMAS_V02),
+    fs.readFile(path.join(RELEASE_V03, "manifest.json"), "utf8").then(
+      (content) => JSON.parse(content) as Record<string, unknown>,
+    ),
+  ]);
+
+  assert.equal(bundle.content_sha256, context.content_sha256);
+  assert.equal(bundle.content_sha256, manifest.content_sha256);
+  assert.deepEqual(bundle.topics, context.topics);
+  assert.deepEqual(bundle.objects, context.objects);
+  assert.deepEqual(bundle.unresolved_items, context.unresolved_items);
+  assert.equal(bundle.objects.length, 342);
+  assert.match(humanDocument, /dora-ict-business-continuity-backup-recovery/);
+  assert.match(humanDocument, /`req-full-recovery-objectives`/);
+  assert.match(humanDocument, /`ctl-continuity-recovery-objectives-capacity`/);
+  assert.match(humanDocument, /`ver-continuity-recovery-objectives-capacity`/);
+  assert.match(humanDocument, /`recovery-target-register`/);
   assert.match(humanDocument, new RegExp(bundle.content_sha256));
 });
