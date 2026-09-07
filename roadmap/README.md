@@ -1,7 +1,7 @@
 # EMI Knowledge Roadmap
 
 - 当前阶段：`v0.3 DORA ICT 业务连续性、备份与恢复`
-- 当前步骤：第 1 步已完成，正在进行第 2 步来源复核
+- 当前步骤：第 2 步已完成，正在进行第 3 步专题清单和覆盖矩阵
 - 当前固定发布：`v0.2.0`
 - 最后更新：2026-09-07
 
@@ -11,7 +11,7 @@
 
 当前固定发布仍为 `v0.2.0`。专题目录和组合发布继续采用 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)，工作知识与历史发布的隔离继续采用 [Decision 0003](../docs/decisions/0003-working-knowledge-and-frozen-releases.md)。`v0.1.0` 和 `v0.2.0` 的发布目录及 Git tag 保持不变。
 
-第三专题将核对 DORA Articles 11、12、16 及其直接依赖，以及 Regulation (EU) 2024/1774 对完整框架和简化框架下业务连续性、备份与恢复的细化要求。来源复核采用独立增量记录，不改写历史发布固定的来源输入。
+第三专题来源已经通过 [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](../docs/sources/dora-ict-business-continuity-source-review.md) 完成工程复核。欧盟主链复用 DORA 和 Regulation (EU) 2024/1774，新增 MFSA 2026 年授权观察作为监督背景，不改写历史发布固定的来源输入。
 
 本专题纳入直接针对 ICT 业务连续性计划和恢复计划的测试要求。DORA Chapter IV 的通用数字运营韧性测试和 TLPT 留给后续独立专题；ICT 第三方依赖只纳入连续性和恢复所需边界，第三方风险管理仍保持独立。
 
