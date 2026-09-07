@@ -1,7 +1,7 @@
 # EMI Knowledge Roadmap
 
 - 当前阶段：`v0.2 DORA ICT 事件管理、分类与监管报告`
-- 当前步骤：事件专题来源已核对，开始建立专题清单和覆盖矩阵
+- 当前步骤：专题清单和覆盖矩阵已完成，开始实现专题校验与组合发布
 - 当前固定发布：`v0.1.0`
 - 最后更新：2026-09-07
 
@@ -12,6 +12,8 @@
 专题目录和组合发布采用 [Decision 0002](../docs/decisions/0002-dora-topic-index-and-release-composition.md)。`v0.1.0` 发布目录和 Git tag 保持不变。
 
 事件专题来源已经通过 [`DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1`](../docs/sources/dora-ict-incidents-source-review.md) 完成工程复核。该增量记录引用现有 DORA 来源基线，不改写 `v0.1.0` 使用的固定输入。
+
+两个专题已经登记到 [`knowledge/topics/dora/`](../knowledge/topics/dora/)，事件条款的纳入、上下文和待确认边界见 [ICT 事件专题说明](../docs/dora/topics/ict-incident-management-reporting.md)。
 
 ## v0.1 阶段目标
 

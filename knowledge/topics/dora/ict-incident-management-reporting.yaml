@@ -1,0 +1,36 @@
+id: dora-ict-incident-management-reporting
+schema_version: 0.1.0
+revision: 1
+title: DORA ICT incident management, classification, and regulatory reporting
+language: en
+domain: dora
+lifecycle_status: draft
+source_review_ids:
+  - DORA-SOURCES-2026-08-31-R2
+  - DORA-ICT-INCIDENT-SOURCES-2026-09-07-R1
+scope:
+  summary: ICT incident management, classification, major-incident reporting, and voluntary significant-cyber-threat notification for electronic money institutions under DORA, including the Malta public reporting route.
+  includes:
+    - Recording, detection, handling, escalation, response, recovery, root-cause analysis, follow-up, communication, and evidence retention for ICT-related incidents.
+    - Classification criteria and materiality thresholds for major ICT-related incidents, including recurring incidents where applicable.
+    - Initial notification, intermediate report, final report, reclassification, secure submission, and reporting-outsourcing procedures.
+    - Voluntary classification and notification of significant cyber threats.
+    - The DORA Chapter III path for operational or security payment-related incidents affecting electronic money institutions.
+  excludes:
+    - Institution-specific incident decisions, internal severity thresholds, staffing models, and risk acceptance.
+    - Automatic submission to a competent authority or automatic approval of an incident classification.
+    - Business continuity, resilience testing, and ICT third-party risk as complete standalone topics.
+entry_requirement_ids: []
+context_object_ids: []
+coverage:
+  sources: complete
+  provisions: not_started
+  requirements: not_started
+  decisions: not_started
+  controls: not_started
+  verifications: not_started
+open_questions:
+  - Confirm the current MFSA process, template, and submission route for non-ICT major operational or security payment-related incidents under DORA Article 23.
+  - Confirm whether and how MFSA requests annual aggregated cost and loss estimates under DORA Article 11(10).
+  - Confirm stable dates, versions, and replacement relationships for MFSA portal user guides.
+  - Confirm the Provision granularity for the data fields in the annexes to Commission Implementing Regulation (EU) 2025/302.

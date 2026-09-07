@@ -17,8 +17,8 @@
 
 ## 2. 复核结论
 
-1. `DORA-SOURCES-2026-08-31-R2` 登记的四份核心欧盟法律文件继续有效，英文工作文本的处理方式无需调整。
-2. Regulation (EU) 2022/2554 和 Regulations (EU) 2024/1772、2025/301、2025/302 构成事件管理、分类、报告内容、时限、模板和程序的主要法律来源。
+1. `DORA-SOURCES-2026-08-31-R2` 登记的五份核心欧盟法律文件继续有效，英文工作文本的处理方式无需调整。
+2. Regulation (EU) 2022/2554 和 Regulations (EU) 2024/1774、2024/1772、2025/301、2025/302 构成事件策略、检测、分类、报告内容、时限、模板和程序的主要法律来源。
 3. `JC/GL/2024/34` 与重大 ICT 事件的年度成本和损失估算直接相关，作为事件专题的相邻监管来源保留。
 4. MFSA 已公开 CRMS Circular、重大 ICT 事件报告流程和重大网络威胁通知流程，并通过 Licence Holder Portal 的 CRMS 提供操作入口。
 5. MFSA 的重大 ICT 事件报告流程当前为 Version 3.00，发布日期为 2025-03-24，已经引用生效后的 Regulation (EU) 2025/301 报告时限。
@@ -31,6 +31,7 @@
 | 来源 | 当前状态与英文版本 | 专题用途 | 后续处理 |
 | --- | --- | --- | --- |
 | [Regulation (EU) 2022/2554](https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng)；CELEX `32022R2554` | EUR-Lex 显示 in force；2023 至 2025 年识别的 9 项勘误均不影响 English | Articles 3、10 至 14、17 至 23、46、64；主体范围、定义、事件流程和报告义务 | 复用 `src-eu-reg-2022-2554`，对象修订时更新获取日期 |
+| [Commission Delegated Regulation (EU) 2024/1774](https://eur-lex.europa.eu/eli/reg_del/2024/1774/2024-06-25/eng)；CELEX `02024R1774-20240625` | EUR-Lex 显示 in force；使用合并 2025-05-15 English 勘误的文本 | 完整框架下的事件策略、检测、告警、日志和证据保存，以及简化框架中的相关事件触发与监控要求 | 复用 `src-eu-reg-2024-1774`，新增事件相关 Provision |
 | [Commission Delegated Regulation (EU) 2024/1772](https://eur-lex.europa.eu/eli/reg_del/2024/1772/oj/eng)；CELEX `32024R1772` | EUR-Lex 显示 in force；2024-06-25 发布，2024-07-15 生效；未识别影响 English 的勘误 | 分类标准、重大性阈值、重复事件、重大网络威胁和报告详情 | 新增 Source，并按 Articles 1 至 12 拆分必要 Provision |
 | [Commission Delegated Regulation (EU) 2025/301](https://eur-lex.europa.eu/eli/reg_del/2025/301/oj/eng)；CELEX `32025R0301` | EUR-Lex 显示 in force；2025-02-20 发布，2025-03-12 生效；2025-09-12 勘误只影响 French | 初始通知、中间报告、最终报告、重大网络威胁通知内容及时限 | 新增 Source，并按报告阶段与时限拆分 Provision |
 | [Commission Implementing Regulation (EU) 2025/302](https://eur-lex.europa.eu/eli/reg_impl/2025/302/oj/eng)；CELEX `32025R0302` | EUR-Lex 显示 in force；2025-02-20 发布，2025-03-12 生效；2025-09-11 勘误只影响 French | 标准表单、联合提交、重复事件、安全电子渠道和外包报告程序 | 新增 Source，并按 Articles、Annex 和数据字段组拆分必要 Provision |
@@ -78,6 +79,7 @@ Directive (EU) 2022/2556 及其 Malta 转化材料用于核对 PSD2 事件报告
 | 处理 | Source ID 候选 | 内容 |
 | --- | --- | --- |
 | 复用 | `src-eu-reg-2022-2554` | DORA Level 1 |
+| 复用 | `src-eu-reg-2024-1774` | 完整与简化 ICT 风险管理框架中的事件检测和响应要求 |
 | 新增 | `src-eu-reg-2024-1772` | 事件分类和重大性阈值 RTS |
 | 新增 | `src-eu-reg-2025-301` | 报告内容和时限 RTS |
 | 新增 | `src-eu-reg-2025-302` | 报告模板和程序 ITS |

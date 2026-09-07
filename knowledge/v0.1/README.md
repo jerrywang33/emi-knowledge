@@ -1,6 +1,10 @@
-# DORA ICT Change Management v0.1
+# Knowledge objects using schema v0.1
 
-本目录保存 EMI Knowledge v0.1 的受控知识对象。范围包括 DORA ICT 变更管理的完整 ICT 风险管理框架路径和简化框架路径。
+本目录保存遵循 EMI Knowledge Schema `0.1.0` 的受控知识对象。对象按 `Source`、`Provision`、`Requirement`、`Decision`、`Control` 和 `Verification` 六种类型保存，通过稳定 ID 建立关系；专题范围由 [`knowledge/topics/`](../topics/) 中的清单选择。
+
+当前目录中的已批准对象形成 DORA ICT 变更管理完整知识链，并已经固定在 `v0.1.0` 发布中。DORA ICT 事件管理、分类与监管报告对象将在 `v0.2` 继续加入本模型版本目录，发布版本通过 Release Manifest 与 Schema 版本保持独立。
+
+## ICT 变更管理路径
 
 | 路径 | EMI 条件 | 主要来源 |
 | --- | --- | --- |

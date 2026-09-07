@@ -1,0 +1,43 @@
+id: dora-ict-change-management
+schema_version: 0.1.0
+revision: 1
+title: DORA ICT change management
+language: en
+domain: dora
+lifecycle_status: approved
+source_review_ids:
+  - DORA-SOURCES-2026-08-31-R2
+scope:
+  summary: ICT change management requirements and controls for electronic money institutions under the full and simplified DORA ICT risk management frameworks.
+  includes:
+    - Full-framework ICT change policies, procedures, controls, approval, testing, fallback, and post-implementation verification.
+    - Simplified-framework ICT system acquisition, development, project management, change management, security testing, and major-change risk assessment.
+    - Public MFSA context on ICT change lifecycle and material ICT changes.
+  excludes:
+    - Institution-specific change classifications, approval roles, risk tolerances, and evidence retention periods.
+    - ICT incident management, business continuity, digital operational resilience testing, and ICT third-party risk as complete topics.
+entry_requirement_ids:
+  - req-full-change-approval-independence
+  - req-full-change-controlled-lifecycle
+  - req-full-change-details
+  - req-full-change-fallback
+  - req-full-change-management-approval
+  - req-full-change-roles-and-quality
+  - req-full-change-security-impact
+  - req-full-change-security-verification
+  - req-full-change-specific-protocols
+  - req-full-emergency-change-post-review
+  - req-full-emergency-change-safeguards
+  - req-simplified-change-controlled-lifecycle
+  - req-simplified-change-security-testing-plan
+  - req-simplified-major-change-risk-assessment
+  - req-simplified-production-change-test-approval
+context_object_ids: []
+coverage:
+  sources: complete
+  provisions: complete
+  requirements: complete
+  decisions: complete
+  controls: complete
+  verifications: complete
+open_questions: []
