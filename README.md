@@ -118,9 +118,11 @@ EMI & Payments 同时承担业务学习入口，说明客户如何开户、资�
 
 首份[“支付处理与异常”业务说明](docs/emi-payments/payment-processing-and-exceptions.md)已形成修订 2 集中审阅稿，以普通 SEPA 欧元转账（SCT）为例，包含正常流程、异常区别、记录与处理建议和待确认清单。[来源核对记录 R2](docs/sources/emi-payments-sct-source-review.md)保存 EPC 文件版本、指定章节与 PDF 摘要；[10 个案例与文档检查结果](docs/emi-payments/payment-processing-and-exceptions-cases.md)分别记录事实、判断依据、建议与禁止动作，以及未决事项。
 
-本轮正文整理和作者文档自查已完成，维护者审阅、独立使用检查及真实渠道验证尚未进行。真实 PSP、接入方式、账务规则和法律适用性仍需确认；公开知识缺口与机构输入分别维护在业务说明第 9 节。
+第二份[“账务与对账”说明](docs/emi-payments/accounting-and-reconciliation.md)进一步说明订单、分录、明细账、总账和外部流水的关系，包含输入完整性、逐笔与汇总匹配、余额核对、差异和更正。配套[8 个案例与检查记录](docs/emi-payments/accounting-and-reconciliation-cases.md)及[来源记录](docs/sources/emi-payments-reconciliation-source-review.md)，区分作者文本检查、合成数值复算和实际系统测试。
 
-业务说明放在现有 [`docs/emi-payments/`](docs/emi-payments/README.md) 中，关联各领域知识对象；受控 Topic 继续保存在 `knowledge/topics/`。当前草案未建立普通 SCT 的正式知识链，不进入现有 JSON 发布；固定版本继续为 `v0.3.0`。
+两份说明的整理和作者文档检查已完成，维护者审阅、独立使用及真实渠道和账务验证尚未进行。具体 PSP、接入方式、账务规则和法律适用性仍需确认；公开知识缺口与机构输入分别保留在两份说明中，关联但不自动关闭。
+
+业务说明放在现有 [`docs/emi-payments/`](docs/emi-payments/README.md) 中，关联各领域知识对象；受控 Topic 继续保存在 `knowledge/topics/`。两份草案尚未建立各自的正式知识链，不进入现有 JSON 发布；固定版本继续为 `v0.3.0`。
 
 ### 法规边界
 

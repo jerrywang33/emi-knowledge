@@ -16,7 +16,7 @@
 | 客户与账户 | 客户、账户和钱包的概念与关系；开户、启用、限制和关闭的步骤、记录及异常。 |
 | 电子货币与资金流转 | 充值、发行、支付和赎回的过程；客户余额、业务记录与外部资金的对应关系。 |
 | [支付处理与异常](payment-processing-and-exceptions.md) | 普通 SCT 集中审阅稿；正常流程、异常与记录建议、10 个案例回答和缺口清单。作者自查已完成，待维护者审阅。 |
-| 账务与对账 | 业务订单、交易流水、账务分录和外部账单的对应关系；重复、遗漏和金额差异的发现、调查与处理。 |
+| [账务与对账](accounting-and-reconciliation.md) | 订单、分录、明细账、总账和外部流水的关系；完整性、匹配、余额、差异与更正，附 8 个案例及作者检查记录。待维护者审阅。 |
 
 ## 业务说明的内容
 
@@ -36,16 +36,19 @@
 
 ## 当前状态与顺序
 
-四个业务专题的范围已确认，首份“支付处理与异常”已按用户确认的普通 SCT 学习范围形成集中审阅稿。正文区分来源说明、工程建议和待确认事项，保留 8 个固定 `v0.3.0` 的 DORA 对象作为背景引用。
+四个业务专题的范围已确认，“支付处理与异常”和“账务与对账”已形成待集中审阅的说明。正文区分来源说明、工程建议和待确认事项；DORA 引用继续使用固定 `v0.3.0`，不因新增业务说明扩大已批准控制的范围。
 
 | 文件 | 职责与当前版本 |
 | --- | --- |
 | [payment-processing-and-exceptions.md](payment-processing-and-exceptions.md) | 业务说明修订 2；保存流程、异常、工程建议和唯一的 SCT-Q1 至 SCT-Q6 缺口清单。 |
 | [payment-processing-and-exceptions-cases.md](payment-processing-and-exceptions-cases.md) | 案例记录修订 1；保存 10 个案例回答、正文修改原因和作者文档检查结果，不作为独立验收记录。 |
 | [emi-payments-sct-source-review.md](../sources/emi-payments-sct-source-review.md) | 来源记录 R2；保存官方文件、版本、章节、PDF 摘要、核对范围和来源缺口。 |
+| [accounting-and-reconciliation.md](accounting-and-reconciliation.md) | 账务与对账修订 1；说明记录、余额、对账流程和差异，维护 RECON-Q1 至 RECON-Q6。 |
+| [accounting-and-reconciliation-cases.md](accounting-and-reconciliation-cases.md) | 案例记录修订 1；保存 8 个案例回答、5 组可复算的合成数值与作者检查结果。 |
+| [emi-payments-reconciliation-source-review.md](../sources/emi-payments-reconciliation-source-review.md) | 来源记录 R1；保存 EPC 客户报告和 ACCA 教学资料的身份、范围、限制及所沿用的固定输入。 |
 
-本轮正文整理、来源复查和 10 个案例的作者自查已完成。用户已暂停逐节走读，改为完成后集中审阅；维护者批准、独立人员或 Agent 使用检查，以及真实渠道和账务验证仍未完成。不能以文档自查代替这些检查。
+普通 SCT 修订 2 与原案例、来源记录保持不变。账务与对账本轮完成写作、8 个案例的作者文本检查和 5 组数值复算；两份说明均待集中审阅。维护者批准、独立人员或 Agent 使用检查，以及真实渠道和账务验证仍未完成，不能以文档或算术检查代替。
 
-后续建议先补充“账务与对账”，说明支付、余额和外部流水的关系；本轮未开始该专题，也未改变其他领域的建设顺序。当前计划和后续输入见 [V1.0 Roadmap](../../roadmap/v1.0/README.md)。
+客户与账户、电子货币与资金流转尚未开始；后续业务专题、渠道校准和其他领域的实施顺序另行安排。当前计划和输入见 [V1.0 Roadmap](../../roadmap/v1.0/README.md)。
 
 当前尚无已批准的 EMI & Payments Topic，业务说明不进入现有 JSON 发布。监管全景与受控专题仍按其范围完成 EMD2、PSD2、Malta Financial Institutions Act/FIR 及相关迁移状态的来源复核后建设。
