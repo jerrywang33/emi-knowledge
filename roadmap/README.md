@@ -1,7 +1,7 @@
 # EMI Knowledge Roadmap
 
 - 当前阶段：`V1.0 EMI 业务说明建设`
-- 当前步骤：支付处理与异常、账务与对账两份说明已完成作者检查，等待集中审阅
+- 当前步骤：支付处理与异常、账务与对账、客户与账户三份审阅稿及案例已形成；作者检查结果与缺口见各自记录
 - 当前固定发布：`v0.3.0`
 - 最后更新：2026-09-08
 
@@ -25,7 +25,9 @@ EMI & Payments 的四个业务专题保持既定范围。首份[“支付处理�
 
 第二份[“账务与对账”说明](../docs/emi-payments/accounting-and-reconciliation.md)及[来源记录](../docs/sources/emi-payments-reconciliation-source-review.md)已完成，配套[8 个案例与检查记录](../docs/emi-payments/accounting-and-reconciliation-cases.md)。本轮完成作者文本检查和 5 组合成数值复算，未运行真实记账或对账程序；仅沿用三个固定 DORA 恢复完整性对象作为背景，原 SCT 输入和历史发布未修改。
 
-两份说明的维护者审阅、独立使用验收和真实渠道验证尚未进行；正式知识链、真实产品、PSP、账务规则与法律适用性继续保留缺口。客户与账户、电子货币与资金流转尚未开始；其他领域 Topic 和整体发布顺序另行讨论。
+第三份[“客户与账户”说明](../docs/emi-payments/customers-and-accounts.md)与[8 个案例](../docs/emi-payments/customers-and-accounts-cases.md)已形成，涵盖概念、开户与启用、限制与恢复、关闭及数据请求。[来源记录](../docs/sources/emi-payments-accounts-source-review.md)固定两份 EBA PDF 的摘要与阅读范围；EUR-Lex 材料目前只取得相关官方条款检索片段，完整来源及适用性复核待完成。前两专题的六份文件与固定发布保持不变。
+
+三份说明的维护者审阅、独立使用验收和真实渠道验证尚未进行；正式知识链、真实产品、PSP、账务规则与法律适用性继续保留缺口。电子货币与资金流转尚未开始；其他领域 Topic 和整体发布顺序另行讨论。
 
 真实 EMI 场景优先用于校准现有知识链、机构参数和人员、Agent、产品三类使用方式，再根据结果调整后续专题。
 

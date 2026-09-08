@@ -13,7 +13,7 @@
 
 | 专题 | 说明内容 |
 | --- | --- |
-| 客户与账户 | 客户、账户和钱包的概念与关系；开户、启用、限制和关闭的步骤、记录及异常。 |
+| [客户与账户](customers-and-accounts.md) | 客户、账户、钱包和 IBAN 的关系；开户、启用、限制、恢复与关闭，附 8 个案例。集中审阅稿，部分来源全文复核待完成。 |
 | 电子货币与资金流转 | 充值、发行、支付和赎回的过程；客户余额、业务记录与外部资金的对应关系。 |
 | [支付处理与异常](payment-processing-and-exceptions.md) | 普通 SCT 集中审阅稿；正常流程、异常与记录建议、10 个案例回答和缺口清单。作者自查已完成，待维护者审阅。 |
 | [账务与对账](accounting-and-reconciliation.md) | 订单、分录、明细账、总账和外部流水的关系；完整性、匹配、余额、差异与更正，附 8 个案例及作者检查记录。待维护者审阅。 |
@@ -36,7 +36,7 @@
 
 ## 当前状态与顺序
 
-四个业务专题的范围已确认，“支付处理与异常”和“账务与对账”已形成待集中审阅的说明。正文区分来源说明、工程建议和待确认事项；DORA 引用继续使用固定 `v0.3.0`，不因新增业务说明扩大已批准控制的范围。
+四个业务专题的范围已确认，“支付处理与异常”“账务与对账”“客户与账户”已形成待集中审阅的说明。正文区分来源说明、工程建议和待确认事项；前两专题的 DORA 引用继续使用固定 `v0.3.0`，不因新增业务说明扩大已批准控制的范围。
 
 | 文件 | 职责与当前版本 |
 | --- | --- |
@@ -46,9 +46,12 @@
 | [accounting-and-reconciliation.md](accounting-and-reconciliation.md) | 账务与对账修订 1；说明记录、余额、对账流程和差异，维护 RECON-Q1 至 RECON-Q6。 |
 | [accounting-and-reconciliation-cases.md](accounting-and-reconciliation-cases.md) | 案例记录修订 1；保存 8 个案例回答、5 组可复算的合成数值与作者检查结果。 |
 | [emi-payments-reconciliation-source-review.md](../sources/emi-payments-reconciliation-source-review.md) | 来源记录 R1；保存 EPC 客户报告和 ACCA 教学资料的身份、范围、限制及所沿用的固定输入。 |
+| [customers-and-accounts.md](customers-and-accounts.md) | 客户与账户修订 1；说明概念、流程、状态和操作权限，维护 ACCOUNT-Q1 至 ACCOUNT-Q6。 |
+| [customers-and-accounts-cases.md](customers-and-accounts-cases.md) | 案例记录修订 1；保存 8 个合成案例、作者检查结果及未执行的验证。 |
+| [emi-payments-accounts-source-review.md](../sources/emi-payments-accounts-source-review.md) | 来源记录 R1；区分 EBA PDF 的指定页读取与 EUR-Lex 条款检索片段，保留全文、当前状态和适用性缺口。 |
 
-普通 SCT 修订 2 与原案例、来源记录保持不变。账务与对账本轮完成写作、8 个案例的作者文本检查和 5 组数值复算；两份说明均待集中审阅。维护者批准、独立人员或 Agent 使用检查，以及真实渠道和账务验证仍未完成，不能以文档或算术检查代替。
+前两专题的正文、案例和来源六份文件保持不变。客户与账户新增 8 个案例，用于检查概念与流程说明，不运行开户、筛查、权限或删除程序。三份说明均待集中审阅；维护者批准、独立人员或 Agent 使用检查，以及真实渠道和账务验证仍未完成，不能以文档或算术检查代替。
 
-客户与账户、电子货币与资金流转尚未开始；后续业务专题、渠道校准和其他领域的实施顺序另行安排。当前计划和输入见 [V1.0 Roadmap](../../roadmap/v1.0/README.md)。
+电子货币与资金流转尚未开始；来源补齐、后续业务专题、渠道校准和其他领域的实施顺序另行安排。当前计划和输入见 [V1.0 Roadmap](../../roadmap/v1.0/README.md)。
 
 当前尚无已批准的 EMI & Payments Topic，业务说明不进入现有 JSON 发布。监管全景与受控专题仍按其范围完成 EMD2、PSD2、Malta Financial Institutions Act/FIR 及相关迁移状态的来源复核后建设。

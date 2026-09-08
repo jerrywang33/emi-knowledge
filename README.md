@@ -120,9 +120,11 @@ EMI & Payments 同时承担业务学习入口，说明客户如何开户、资�
 
 第二份[“账务与对账”说明](docs/emi-payments/accounting-and-reconciliation.md)进一步说明订单、分录、明细账、总账和外部流水的关系，包含输入完整性、逐笔与汇总匹配、余额核对、差异和更正。配套[8 个案例与检查记录](docs/emi-payments/accounting-and-reconciliation-cases.md)及[来源记录](docs/sources/emi-payments-reconciliation-source-review.md)，区分作者文本检查、合成数值复算和实际系统测试。
 
-两份说明的整理和作者文档检查已完成，维护者审阅、独立使用及真实渠道和账务验证尚未进行。具体 PSP、接入方式、账务规则和法律适用性仍需确认；公开知识缺口与机构输入分别保留在两份说明中，关联但不自动关闭。
+第三份[“客户与账户”说明](docs/emi-payments/customers-and-accounts.md)讲清客户、账户、钱包与 IBAN 的关系，以及开户、启用、限制、恢复和关闭。配套[8 个案例与检查记录](docs/emi-payments/customers-and-accounts-cases.md)和[来源记录](docs/sources/emi-payments-accounts-source-review.md)，分别说明身份核验、产品准入、操作权限和个人数据处理；部分法规目前仅取得官方条款检索片段，全文与适用性复核仍待完成。
 
-业务说明放在现有 [`docs/emi-payments/`](docs/emi-payments/README.md) 中，关联各领域知识对象；受控 Topic 继续保存在 `knowledge/topics/`。两份草案尚未建立各自的正式知识链，不进入现有 JSON 发布；固定版本继续为 `v0.3.0`。
+三份说明均为待集中审阅稿，维护者审阅、独立使用及真实渠道和账务验证尚未进行。具体产品、PSP、接入方式、账务规则和法律适用性仍需确认；公开知识缺口与机构输入分别保留在各份说明中，关联但不自动关闭。作者检查结果见各自的案例记录。
+
+业务说明放在现有 [`docs/emi-payments/`](docs/emi-payments/README.md) 中，关联各领域知识对象；受控 Topic 继续保存在 `knowledge/topics/`。三份草案尚未建立各自的正式知识链，不进入现有 JSON 发布；固定版本继续为 `v0.3.0`。
 
 ### 法规边界
 
