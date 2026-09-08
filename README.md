@@ -246,6 +246,119 @@ DORA 的正式结构、主题、条款、配套文件和 EMI 适用路径见 [DO
 
 第一阶段完成时，每项已发布要求都应能回到精确权威来源，明确适用边界和确认状态，关联可执行控制、检查方式与证据要求，并能够由人员、Agent 和其他产品按固定版本独立使用。
 
+## 仓库结构
+
+仓库按照受控知识、人员文档、可复用执行资源、验收场景和固定发布分层。六类知识对象保持全局唯一，领域通过 Topic 组合对象；同一项控制可以同时承接多个法规领域的 Requirement。
+
+```text
+emi-knowledge/
+├── README.md
+├── knowledge/
+│   ├── README.md
+│   ├── v0.1/
+│   │   ├── sources/
+│   │   ├── provisions/
+│   │   ├── requirements/
+│   │   ├── decisions/
+│   │   ├── controls/
+│   │   └── verifications/
+│   └── topics/
+│       ├── emi-payments/
+│       ├── dora/
+│       ├── gdpr/
+│       ├── aml-cft/
+│       └── restrictive-measures/
+├── docs/
+│   ├── emi-payments/
+│   │   └── topics/
+│   ├── dora/
+│   │   └── topics/
+│   ├── gdpr/
+│   │   └── topics/
+│   ├── aml-cft/
+│   │   └── topics/
+│   ├── restrictive-measures/
+│   │   └── topics/
+│   ├── sources/
+│   ├── decisions/
+│   ├── model/
+│   ├── acceptance/
+│   └── releases/
+├── skills/
+│   ├── emi-payments/
+│   ├── dora/
+│   ├── gdpr/
+│   ├── aml-cft/
+│   └── restrictive-measures/
+├── templates/
+│   ├── tasks/
+│   ├── evidence/
+│   └── deliverables/
+├── scenarios/
+├── roadmap/
+│   └── v1.0/
+├── schemas/
+├── releases/
+├── examples/
+├── src/
+└── tests/
+```
+
+### 内容目录
+
+| 路径 | 文件职责 |
+| --- | --- |
+| [`knowledge/v0.1/`](knowledge/v0.1/README.md) | 保存当前 Schema `0.1.0` 的六类受控知识对象。每个 YAML 文件只保存一个对象，文件名必须等于对象稳定 ID。 |
+| [`knowledge/v0.1/sources/`](knowledge/v0.1/sources/) | `src-*.yaml` 保存法规、监管材料和其他权威输入的发布机构、版本、效力、司法辖区、日期及官方地址。 |
+| [`knowledge/v0.1/provisions/`](knowledge/v0.1/provisions/) | `prv-*.yaml` 保存来源中的精确条款位置和受控摘要。 |
+| [`knowledge/v0.1/requirements/`](knowledge/v0.1/requirements/) | `req-*.yaml` 保存从 Provision 推导的监管要求、适用范围和确认状态。 |
+| [`knowledge/v0.1/decisions/`](knowledge/v0.1/decisions/) | `dec-*.yaml` 保存经过确认的通用工程选择、理由、前提和替代关系。 |
+| [`knowledge/v0.1/controls/`](knowledge/v0.1/controls/) | `ctl-*.yaml` 保存承接 Requirement 的业务或技术控制及实施规则。 |
+| [`knowledge/v0.1/verifications/`](knowledge/v0.1/verifications/) | `ver-*.yaml` 保存 Control 的检查步骤、通过与失败条件、失败处理和 EvidenceRequirement。 |
+| [`knowledge/topics/`](knowledge/topics/README.md) | 按五条独立知识链保存 Topic Manifest。`<domain>/<topic>.yaml` 只选择和组合知识对象，不复制对象正文。 |
+| [`docs/`](docs/README.md) | 保存人员可读的领域地图、专题说明、来源复核、设计决定、发布和验收记录。 |
+| [`skills/`](skills/README.md) | 保存独立于具体 Agent Runtime 的可复用工作方法；Skill 必须绑定知识版本、输入输出和人工授权边界。 |
+| [`templates/`](templates/README.md) | 保存任务、证据和交付物模板，只定义结构和必填内容，不保存真实机构数据或运行证据。 |
+| [`scenarios/`](scenarios/README.md) | 保存经过脱敏的跨领域验收场景、输入和固定预期，用于验证人员、Agent 和产品的使用结果。 |
+
+### 工程与发布目录
+
+| 路径或文件 | 职责 |
+| --- | --- |
+| [`roadmap/`](roadmap/README.md) | 记录当前阶段、实施步骤和完成条件；[`roadmap/v1.0/`](roadmap/v1.0/README.md) 维护 V1.0 总体计划。 |
+| [`schemas/`](schemas/) | 保存知识对象、Topic 和发布制品的 JSON Schema。目录版本表示 Schema 版本，与产品发布版本独立。 |
+| [`releases/`](releases/) | 保存不可变发布。每个版本包含人员 `README.md`、产品 `knowledge.json`、Agent `agent-context.json`、输入与摘要 `manifest.json`、可重复生成配置 `release.config.json`。 |
+| [`examples/`](examples/) | 保存知识模型示例和固定发布的独立读取示例，不作为正式知识或生产集成。 |
+| [`src/`](src/) | 保存 TypeScript 加载、Schema 校验、知识图校验、Topic 解析、确定性发布、固定版本读取和 CLI 实现。 |
+| [`tests/`](tests/) | 保存知识校验、Topic 闭包、发布复现和三类消费者契约测试。 |
+| [`package.json`](package.json) | 固定 Node.js 要求、依赖和检查、校验、生成、查询命令。 |
+| [`package-lock.json`](package-lock.json) | 锁定依赖解析结果，保证本地和 CI 安装一致。 |
+| [`tsconfig.json`](tsconfig.json) | 定义 TypeScript 编译和类型检查规则。 |
+| [`.gitignore`](.gitignore) | 排除依赖、本地环境和临时文件，避免它们进入公开知识版本。 |
+
+### 实现与测试文件
+
+| 文件 | 职责 |
+| --- | --- |
+| [`src/model.ts`](src/model.ts) | 定义六类知识对象、Topic、已加载文档和校验结果的 TypeScript 类型。 |
+| [`src/loader.ts`](src/loader.ts) | 确定性遍历目录并解析 YAML、JSON 文件，报告读取和语法问题。 |
+| [`src/schema-validator.ts`](src/schema-validator.ts) | 加载 JSON Schema，注册外部引用并执行单文件结构校验。 |
+| [`src/graph-validator.ts`](src/graph-validator.ts) | 检查文件位置、全局 ID、类型化引用、状态、替代链、完整知识链和敏感内容。 |
+| [`src/validation.ts`](src/validation.ts) | 组合加载、Schema 和知识图检查，形成仓库级校验结果。 |
+| [`src/topic.ts`](src/topic.ts) | 加载和校验 Topic Manifest，并从入口 Requirement 解析确定性对象闭包。 |
+| [`src/release.ts`](src/release.ts) | 按固定配置生成面向人员、Agent 和产品的发布文件及 Manifest。 |
+| [`src/release-reader.ts`](src/release-reader.ts) | 校验并读取固定发布，提供关系查询和受约束 Agent 回答结构。 |
+| [`src/stable-json.ts`](src/stable-json.ts) | 提供稳定 JSON 序列化，保证相同输入生成相同字节和摘要。 |
+| [`src/cli.ts`](src/cli.ts) | 提供知识校验、Topic 校验和发布生成命令入口。 |
+| [`tests/validation.test.ts`](tests/validation.test.ts) | 覆盖知识对象正常路径和 Schema、引用、状态、替代关系、敏感内容失败路径。 |
+| [`tests/topic.test.ts`](tests/topic.test.ts) | 覆盖 Topic Manifest、对象闭包、领域隔离和批准状态检查。 |
+| [`tests/release.test.ts`](tests/release.test.ts) | 覆盖确定性发布、历史版本复现、Topic 选择和发布拒绝条件。 |
+| [`tests/consumer.test.ts`](tests/consumer.test.ts) | 覆盖人员、Agent 和产品读取同一固定事实及版本锁定。 |
+| [`examples/model-v0.1/`](examples/model-v0.1/README.md) | 展示六类对象的最小合法文件组合。 |
+| [`examples/consumer/`](examples/consumer/README.md) | 展示产品按 Requirement ID 和发布版本查询完整关系链。 |
+
+新增目录必须同时具有明确职责和实际内容。历史发布引用的文件路径保持不变；目录调整不能破坏 `v0.1.0`、`v0.2.0` 和 `v0.3.0` 的确定性复现。
+
 ## 技术选择
 
 - 知识正文优先使用 Markdown，结构化元数据优先使用 YAML 或 JSON，并由 JSON Schema 校验。
@@ -253,7 +366,7 @@ DORA 的正式结构、主题、条款、配套文件和 EMI 适用路径见 [DO
 - Git 保存版本、评审和变更历史；正式发布版本使用不可变标识和内容摘要。
 - 校验、转换和发布工具使用 TypeScript，知识内容不依赖特定 Agent Runtime 或目标产品。
 - 初始阶段不引入数据库、向量数据库或 RAG 服务。真实使用证明需要后再增加，并确保索引可以从仓库内容重新生成。
-- 不为规划中的能力预建空目录或占位代码。首条知识链和 Schema 确认后，再据此确定实际仓库结构。
+- 不创建空目录或占位代码。目录至少包含职责说明或经过检查的实际内容，规划中的文件在进入对应实施步骤后创建。
 
 ### 本地检查
 
@@ -282,6 +395,6 @@ npm run example:query -- req-full-recovery-objectives v0.3.0
 
 `v0.3.0` 已固定三个 Topic、342 个对象、945 条关系、62 类证据要求和 243 个明确待确认项，并通过人员、Agent 和产品三类独立工程使用验收。业务连续性专题包含 23 个入口 Requirement、10 个 Control、10 个 Verification 和 20 类证据要求；其独立闭包为 94 个对象，未改变 `v0.1.0` 和 `v0.2.0`。来源复核见 [`DORA-ICT-CONTINUITY-SOURCES-2026-09-07-R1`](docs/sources/dora-ict-business-continuity-source-review.md)，专题边界见[业务连续性、备份与恢复专题说明](docs/dora/topics/ict-business-continuity-backup-recovery.md)。
 
-V1.0 的总体领域、知识链和验收场景已经确定，实施顺序和下一个专题仍待讨论。真实 EMI 场景将用于校准知识内容、机构待定参数和三类使用方式；README 中列出的长期内容范围不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
+V1.0 的总体领域、知识链、验收场景和目录职责已经确定，实施顺序和下一个专题仍待讨论。真实 EMI 场景将用于校准知识内容、机构待定参数和三类使用方式；README 中列出的长期内容范围不表示相关知识适用于任何具体 EMI 机构、司法辖区或生产系统。
 
 本项目提供工程化知识管理方法和公开参考内容，不构成法律意见、监管批准、合规认证或生产就绪声明。
