@@ -91,7 +91,7 @@ EMI Knowledge 不代替法律、合规、业务或管理机构作出适用性判
 
 首选来源是法规制定机构、主管机关和标准制定机构发布的正式材料。例如 [EUR-Lex](https://eur-lex.europa.eu/)、[European Banking Authority](https://www.eba.europa.eu/)、[European Data Protection Board](https://www.edpb.europa.eu/)、[MFSA](https://www.mfsa.mt/) 和 [FATF](https://www.fatf-gafi.org/)。二手文章可以帮助发现问题，但不能单独作为关键结论的依据。
 
-当前阶段聚焦 [DORA](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554)。DORA Article 2 将电子货币机构列入适用主体范围，并对 ICT 风险管理、事件、韧性测试、第三方风险和信息共享等领域作出规定。具体机构的适用结论仍需结合主体资格、规模、活动和相关例外逐项确认。
+当前已发布知识聚焦 [DORA](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554)，V1.0 建设已开始补充 EMI 与支付业务说明。DORA Article 2 将电子货币机构列入适用主体范围，并对 ICT 风险管理、事件、韧性测试、第三方风险和信息共享等领域作出规定。具体机构的适用结论仍需结合主体资格、规模、活动和相关例外逐项确认。
 
 ## V1.0 范围
 
@@ -116,7 +116,9 @@ EMI & Payments 同时承担业务学习入口，说明客户如何开户、资�
 | 支付处理与异常 | 参与方、正常处理步骤、状态与记录，以及重复请求、超时、结果未知、失败和退款的处理依据。 |
 | 账务与对账 | 业务订单、交易流水、账务分录和外部账单的关系，以及重复、遗漏和金额差异的调查与处理。 |
 
-首份[“支付处理与异常”学习草案](docs/emi-payments/payment-processing-and-exceptions.md)以普通 SEPA 欧元转账（SCT）为例，包含参与方、正常流程、异常区别、记录与处理建议、现有知识引用和 10 个走读用例。[来源核对记录](docs/sources/emi-payments-sct-source-review.md)保存 EPC 文件版本、指定章节与 PDF 摘要。正文和来源记录待维护者逐节复核；真实 PSP、接入方式、账务规则和法律适用性仍需确认。
+首份[“支付处理与异常”业务说明](docs/emi-payments/payment-processing-and-exceptions.md)已形成修订 2 集中审阅稿，以普通 SEPA 欧元转账（SCT）为例，包含正常流程、异常区别、记录与处理建议和待确认清单。[来源核对记录 R2](docs/sources/emi-payments-sct-source-review.md)保存 EPC 文件版本、指定章节与 PDF 摘要；[10 个案例与文档检查结果](docs/emi-payments/payment-processing-and-exceptions-cases.md)分别记录事实、判断依据、建议与禁止动作，以及未决事项。
+
+本轮正文整理和作者文档自查已完成，维护者审阅、独立使用检查及真实渠道验证尚未进行。真实 PSP、接入方式、账务规则和法律适用性仍需确认；公开知识缺口与机构输入分别维护在业务说明第 9 节。
 
 业务说明放在现有 [`docs/emi-payments/`](docs/emi-payments/README.md) 中，关联各领域知识对象；受控 Topic 继续保存在 `knowledge/topics/`。当前草案未建立普通 SCT 的正式知识链，不进入现有 JSON 发布；固定版本继续为 `v0.3.0`。
 
