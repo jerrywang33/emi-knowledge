@@ -6,7 +6,7 @@
 
 | 目录 | 内容 |
 | --- | --- |
-| [`emi-payments/`](emi-payments/README.md) | EMI 牌照、电子货币和支付服务领域地图与专题说明。 |
+| [`emi-payments/`](emi-payments/README.md) | EMI 业务概念、流程与设计说明，以及牌照、电子货币和支付服务领域地图与专题说明。 |
 | [`dora/`](dora/README.md) | DORA 领域地图及已建设专题说明。 |
 | [`gdpr/`](gdpr/README.md) | GDPR 和 Malta 数据保护领域地图与专题说明。 |
 | [`aml-cft/`](aml-cft/README.md) | AML/CFT 领域地图与专题说明。 |
@@ -19,6 +19,7 @@
 
 ## 文件规则
 
+- EMI 业务说明使用 `emi-payments/<business-subject>.md`，记录业务范围、流程、异常、来源和待确认问题，可以引用多个领域的知识对象；具体内容结构见 [EMI & Payments 文档](emi-payments/README.md)。
 - 领域全景文件使用 `<domain>-landscape.md`，说明法规结构、主题、适用路径和覆盖状态。
 - 专题说明使用 `<domain>/topics/<topic>.md`，并与 `knowledge/topics/<domain>/<topic>.yaml` 使用相同文件主名。
 - 来源基线使用 `<domain>-source-baseline.md`；专题增量复核使用 `<domain>-<topic>-source-review.md`。
